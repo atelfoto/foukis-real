@@ -4,10 +4,11 @@
 /app/tmp
 /lib/Cake/Console/Templates/skel/tmp/
 /plugins
-/vendors
+vendors
 /build
 /dist
 /tags
+node_modules/
 *.mo
 
 # IDE and editor specific files #
