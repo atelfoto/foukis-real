@@ -18,6 +18,14 @@ class PostsController extends AppController {
 	public $components = array('Paginator', 'Flash', 'Session');
 
 /**
+* index
+**/
+public function index(){
+	$this->Post->recursive = 0;
+	$this->set('posts',$this->Paginator->paginate());
+
+}
+/**
  * admin_index method
  *
  * @return void
