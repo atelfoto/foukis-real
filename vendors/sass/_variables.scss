@@ -5,11 +5,12 @@ $typo-texte: 'Roboto Condensed', sans-serif;
 
 //couleurs
 $couleur-front: rgb(24,146,191);
-$couleur-bg: #2e7d32;
+//$couleur-bg: #2e7d32;
+$couleur-bg: #000;
 $couleur-dark: lighten(rgb(0,0,0),30%);
 $couleur-grey:  rgb(153,153,153);
 $couleur-light: transparentize($couleur-grey, 0.8);
-$couleur-white: white; 
+$couleur-white: white;
 
 //dimension menu
 

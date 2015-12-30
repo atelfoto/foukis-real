@@ -50,7 +50,8 @@ a{
 		padding: 010px;
 	}
 	a:hover{
-		color: #c6ff00;
+		//color: #c6ff00;
+		color: $couleur-dark;
 	}
 }
 	footer{
