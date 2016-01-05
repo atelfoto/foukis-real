@@ -18,7 +18,7 @@ $desktop:(
     gutters : 30px/100px,
 );
 
-@include layout($desktop);
+//@include layout($desktop);
 
 @include sticky-footer(50px, "#container", "#container_footer", "#footer");
 html,body{
@@ -36,7 +36,7 @@ a{
 }.container{
 	margin: 0 20px;
 
-	@include container;
+	//@include container;
 	@include clearfix;
 }
 .site-content{
@@ -72,21 +72,10 @@ a{
 	}
 	a:hover{
 		//color: #c6ff00;
-		color: $couleur-border;
+		color: $couleur-dark;
 	}
 }
-.main{
-    @include span(3 of 4);
-   // background:#f00!important;
-    padding:50px;
-}
-.sidebar{
-    @include span(1 of 4);
-   // background:#00f;
-    height:100%;
-    @include clearfix;
 
-}
 /*------------------------------------*\
     $footer
 \*------------------------------------*/

@@ -39,7 +39,8 @@ module.exports=function(grunt){
         cssmin: {
             target: {
                 files: {
-                    'app/webroot/css/styles.min.css': ['vendors/css/*.css']
+                    'app/webroot/css/styles.min.css': ['vendors/css/styles.css'],
+                    'app/webroot/css/admin.min.css': ['vendors/css/admin.css']
                 }
             }
         },

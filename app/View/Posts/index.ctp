@@ -1,4 +1,4 @@
-<div class="posts index">
+<div class="posts index main">
 	<h2><?php echo __('Posts'); ?></h2>
 	<table cellpadding="0" cellspacing="0">
 	<thead>
@@ -47,7 +47,7 @@
 			<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $post['Post']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $post['Post']['id']))); ?>
 		</td>
 	</tr>
-<?php endforeach; ?>
+	<?php endforeach; ?>
 	</tbody>
 	</table>
 	<p>
@@ -64,7 +64,7 @@
 	?>
 	</div>
 </div>
-<div class="actions">
+<div class="actions sidebar">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
 		<li><?php echo $this->Html->link(__('New Post'), array('action' => 'add')); ?></li>

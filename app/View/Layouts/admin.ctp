@@ -28,7 +28,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css('styles.min');
+		echo $this->Html->css('admin.min');
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 	?>
@@ -37,17 +37,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div  class="site-container">
 		<header class="header">
 			<a href="#" class="header__icon" id="header__icon"></a>
-			<a href="#" class="header__logo">Logo</a>
+			<a href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'index', 'admin'=>false)); ?>" class="header__logo">Logo</a>
 			<nav class="menu">
-				<a href="#">item 01</a>
-				<a href="#">item 02</a>
+				<?php echo $this->Html->link('post', array('controller' => 'posts', 'action' => 'index',"admin"=>true)); ?>
+				<?php echo $this->Html->link(__('account'), array('controller' => 'users', 'action' => 'account')); ?>
 				<a href="#">item 03</a>
 				<a href="#">item 04</a>
 				<a href="#">item 05</a>
 				<a href="#">item 06</a>
 				<a href="#">item 07</a>
-				<a href="<?php echo $this->Html->url(array('controller' => 'users', 'action' => 'account', "admin"=>true)); ?>"><?php echo __('account'); ?>
-				</a>
+				<a href="#">item 08</a>
 			</nav>
 			<!-- <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1> -->
 		</header>

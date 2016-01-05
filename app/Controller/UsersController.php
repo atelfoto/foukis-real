@@ -84,6 +84,14 @@ class UsersController extends AppController {
 	}
 
 /**
+* admin_account
+**/
+public function admin_account(){
+	$this->layout="admin";
+
+}
+
+/**
  * admin_delete method
  *
  * @throws NotFoundException

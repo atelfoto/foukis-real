@@ -3,6 +3,7 @@
 	//site-puscher
 	{
 		height: 100%;
+
 	}
 	.site-container{
 		overflow: hidden;
@@ -58,18 +59,29 @@
 
 		a{
 			display: block;
-			height: 40px;
+			height: 30px;
 
 			text-align: center;
-			line-height: 40px;
-			//border-bottom: 1px solid $couleur-bg;
-			border-bottom: 1px solid $couleur-dark;
+			line-height: 30px;
+    		border-bottom: 1px solid #000;
+    		border-top:1px solid #32353e;
 			//border-bottom: 1px solid #999;
 
 
 		}
 
 	}
+
+	.main{
+    @include span(4 of 4);
+  //  background:#f00!important;
+}
+.sidebar{
+    @include span(4 of 4);
+//background:#00f;
+    height:100%;
+    @include clearfix;
+}
 	.with--sidebar{
 		.site-pusher{
 			@include transform(translateX($menu-width));

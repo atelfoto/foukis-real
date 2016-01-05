@@ -31,7 +31,19 @@ class Post extends AppModel {
 			),
 		),
 	);
-
+/**
+ * [$actsAs description]
+ * @var array
+ */
+	public $actsAs = array(
+		'Sluggable.Sluggable' => array(
+	        'field'     => 'name',  // Field that will be slugged
+	        'slug'      => 'slug',  // Field that will be used for the slug
+	        'lowercase' => true,    // Do we lowercase the slug ?
+	        'separator' => '-',     //
+	        'overwrite' => false    // Does the slug is auto generated when field is saved no matter what
+		)
+	);
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**

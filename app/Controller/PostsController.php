@@ -25,12 +25,16 @@ public function index(){
 	$this->set('posts',$this->Paginator->paginate());
 
 }
+
+
+
 /**
  * admin_index method
  *
  * @return void
  */
 	public function admin_index() {
+		$this->layout = "admin";
 		$this->Post->recursive = 0;
 		$this->set('posts', $this->Paginator->paginate());
 	}
@@ -56,6 +60,7 @@ public function index(){
  * @return void
  */
 	public function admin_add() {
+		$this->layout= "admin";
 		if ($this->request->is('post')) {
 			$this->Post->create();
 			if ($this->Post->save($this->request->data)) {
