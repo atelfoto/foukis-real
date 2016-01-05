@@ -1,4 +1,5 @@
 module.exports=function(grunt){
+
     require('load-grunt-tasks')(grunt);
    grunt.loadNpmTasks('grunt-devtools');
    grunt.loadNpmTasks('grunt-fontello');
@@ -51,6 +52,16 @@ module.exports=function(grunt){
         		}
         	}
         },
+        imagemin: {
+        	dist: {
+        		files: [{
+        			expand: true,
+        			cwd: 'vendors/img/',
+        			src: ['*.{png,jpg,gif}'],
+        			dest: 'app/webroot/img/'
+        		}]
+        	}
+        },
         watch:{
         	dist:{
         		files:['vendors/sass/*.scss'],
@@ -65,20 +76,26 @@ module.exports=function(grunt){
         		files:['vendors/js/*.js','!vendors/js/min.js'],
         		tasks:['jshint','uglify'],
                 options: { spawn: false }
+        	},
+        	img:{
+        		files:['vendors/img/*.png','vendors/img/*.jpg'],
+        		tasks:['imagemin']
         	}
         },
-        imagemin: {
-            dynamic: {
-                files: [{
-                    expand: true,
-                    cwd: 'img',
-                    src: ['**/*.{png,jpg,gif}'],
-                    dest: 'app/webroot/img/'
+
+        replace: {
+            dist: {
+                src: ['css/min.css'],
+                overwrite: true,                 // overwrite matched source files
+                replacements: [{
+                  from: "img/",
+                  to: "app/webroot/img/"
                 }]
             }
         }
     });
-    grunt.registerTask('default',['fontello'] )
+    grunt.registerTask('default',['replace'] )
+    //grunt.registerTask('default',['fontello'] )
 
 
 }

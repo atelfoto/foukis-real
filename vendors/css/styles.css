@@ -1,4 +1,8 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,700,900|Roboto+Condensed|Roboto+Slab);
+.icones-sprite, ul.flag a.Greek, ul.flag a.French, ul.flag a.English {
+  background-image: url('../img/icones-sb61e621732.png');
+  background-repeat: no-repeat; }
+
 html, body {
   height: 100%; }
 
@@ -23,6 +27,51 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0; }
+
+ul.flag {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  *zoom: 1;
+  float: right;
+  margin-left: -10px;
+  padding: 24px 24px 0;
+  margin-top: -10px; }
+  ul.flag li {
+    list-style-image: none;
+    list-style-type: none;
+    margin-left: 0;
+    white-space: nowrap;
+    float: left;
+    padding-left: 4px;
+    padding-right: 4px; }
+    ul.flag li:first-child {
+      padding-left: 0; }
+    ul.flag li:last-child {
+      padding-right: 0; }
+    ul.flag li.last {
+      padding-right: 0; }
+  ul.flag li.selected a {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+    opacity: 0.2; }
+  ul.flag a {
+    display: block;
+    text-indent: -9999px;
+    padding: 0px;
+    margin-top: 10px; }
+    ul.flag a.Greek {
+      background-position: 0 -72px;
+      height: 24px;
+      width: 24px; }
+    ul.flag a.French {
+      background-position: 0 -24px;
+      height: 24px;
+      width: 24px; }
+    ul.flag a.English {
+      background-position: 0 -48px;
+      height: 24px;
+      width: 24px; }
 
 a {
   text-decoration: none;

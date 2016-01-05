@@ -3,6 +3,9 @@
 @import "variables";
 @import "compass/layout.scss";
 @import "breakpoint";
+$icones-layout:smart;
+$icones-sprite-dimensions:true;
+ @import "icones/*.png";
 $susy:(
     container:960px,
     columns:12,
@@ -29,7 +32,34 @@ html,body{
 	margin: 0;
 	padding: 0;
 }
+ul.flag{
+	@include horizontal-list;
+	float: right;
+	margin-left: -10px;
+	padding: 24px 24px 0;
+	margin-top:-10px;
+ li.selected a {
+ 	@include opacity(0.2);
+ }
 
+	a{
+		 display: block;
+		 text-indent: -9999px;
+		padding: 0px;
+		margin-top:10px;
+		&.Greek{
+			@include  icones-sprite(gr);
+		}
+		&.French{
+			@include  icones-sprite(fr);
+		}
+		&.English{
+			@include  icones-sprite(gb);
+		}
+
+	}
+
+}
 a{
 	text-decoration: none;
 	color: inherit;
