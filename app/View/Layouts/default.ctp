@@ -38,16 +38,26 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<header class="header">
 			<a href="#" class="header__icon" id="header__icon"></a>
 			<a href="#" class="header__logo">Logo</a>
-			<nav class="menu">
+			<nav class="menu" style="witdh;50%;">
 				<a href="#">item 01</a>
 				<a href="#">item 02</a>
 				<a href="#">item 03</a>
 				<a href="#">item 04</a>
-				<a href="#">item 05</a>
-				<a href="#">item 06</a>
-				<a href="#">item 07</a>
 				<a href="<?php echo $this->Html->url(array('controller' => 'users', 'action' => 'account', "admin"=>true)); ?>"><?php echo __('account'); ?>
 				</a>
+			</nav>
+			<nav  style="float:right;witdh:50%;">
+				<ul class="flag">
+						<li class="selected">
+							<a href="#" class="French"></a>
+						</li>
+						<li>
+							<a href="#" class="English"></a>
+						</li>
+						<li>
+							<a href="#" class="Greek"></a>
+						</li>
+					</ul>
 			</nav>
 			<!-- <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1> -->
 		</header>
