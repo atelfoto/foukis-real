@@ -111,7 +111,9 @@ footer {
     background-color: #fff; }
 
   .header {
-    position: static; }
+    position: static;
+    height: 66px;
+    line-height: 66px; }
 
   .header__icon {
     position: relative;
@@ -146,6 +148,9 @@ footer {
       line-height: 30px;
       border-bottom: 1px solid #000;
       border-top: 1px solid #32353e; }
+
+  ul.flag a {
+    margin-top: 10px; }
 
   .main {
     -moz-box-sizing: border-box;

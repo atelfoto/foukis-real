@@ -73,4 +73,12 @@ class PagesController extends AppController {
 			throw new NotFoundException();
 		}
 	}
+
+	/**
+	* index
+	**/
+	public function index(){
+		$this->layout = "home";
+
+	}
 }

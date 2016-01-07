@@ -27,6 +27,8 @@
 	}
 	.header{
 		position: static;
+		height: 66px;
+		line-height: 66px;
 	}
 	.header__icon{
 		position: relative;
@@ -71,7 +73,9 @@
 		}
 
 	}
-
+ul.flag a{
+	margin-top: 10px;
+}
 	.main{
     @include span(4 of 4);
   //  background:#f00!important;

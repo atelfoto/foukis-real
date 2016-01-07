@@ -6,6 +6,7 @@
 $icones-layout:smart;
 $icones-sprite-dimensions:true;
  @import "icones/*.png";
+ @import "vegas";
 $susy:(
     container:960px,
     columns:12,
@@ -46,7 +47,7 @@ ul.flag{
 		 display: block;
 		 text-indent: -9999px;
 		padding: 0px;
-		margin-top:10px;
+		margin-top:-10px;
 		&.Greek{
 			@include  icones-sprite(gr);
 		}
@@ -76,13 +77,20 @@ a{
 /*------------------------------------*\
     $HEADER
 \*------------------------------------*/
-
+.top-nav{
+	@include container;
+}
 .header{
+
+	margin-right: auto;
+	margin-left: auto;
 	position: fixed;
 	left: 0;
 	right: 0;
-	height: 66px;
-	line-height: 66px;
+	//height: 66px;
+	height: 30px;
+	line-height: 30px;
+	//line-height: 66px;
 	color: #fff;
 	background-color: $couleur-bg;
 }
