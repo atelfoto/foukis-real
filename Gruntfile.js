@@ -63,6 +63,9 @@ module.exports=function(grunt){
         	}
         },
         watch:{
+        	options:{
+        		livereload: true,
+        	},
         	dist:{
         		files:['vendors/sass/*.scss'],
         		tasks:["compass"],
@@ -80,7 +83,7 @@ module.exports=function(grunt){
         	img:{
         		files:['vendors/img/*.png','vendors/img/*.jpg'],
         		tasks:['imagemin']
-        	}
+        	},
         },
 
         replace: {
