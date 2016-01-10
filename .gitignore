@@ -4,6 +4,10 @@
 /app/tmp
 /lib/Cake/Console/Templates/skel/tmp/
 vendors/sass/.sass-cache/
+/app/webroot/css/admin.min.css
+/app/webroot/css/styles.min.css
+/vendors/css/admin.css
+/vendors/css/styles.css
 /plugins
 /build
 /dist
@@ -12,6 +16,7 @@ node_modules/
 .sass-cache/
 *.mo
 *.OLD
+
 
 # IDE and editor specific files #
 #################################
