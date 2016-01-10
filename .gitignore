@@ -11,6 +11,7 @@ vendors/sass/.sass-cache/
 node_modules/
 .sass-cache/
 *.mo
+*.OLD
 
 # IDE and editor specific files #
 #################################

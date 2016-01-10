@@ -1,19 +1,19 @@
 @media only screen and(max-width: 750px){
-	.site-container,
+	#site-container, .site-container,
 	//site-puscher
 	{
-		//height: 100%;
-		//height: 100%;
-		height: 100vh;
+
+		height: 100vh !important;
 
 	}
 	.site-container{
 		overflow: hidden;
-		//height:500px !important;
+		//height: calc(100vh - 15px)!important;
+		//height: 100vh;
 	}
 	.site-pusher{
-		//height: 100%;
-		//height: calc(100vh - 66px);
+		height: 100vh;
+
 		@include transition-duration(0.3s);
 		@include transform(translateX(0px));
 	}

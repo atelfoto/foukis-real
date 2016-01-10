@@ -64,7 +64,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			</div>
 			<!-- <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1> -->
 		</header>
-		<!-- <div class="site-pusher">
+		<div class="site-pusher">
 			<div class="site-content" id="container" style="height:;" >
 				<div class="container" >
 					<?php echo $this->Flash->render(); ?>
@@ -73,7 +73,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 			</div><div class="site-cache" id="site-cache"></div>
 			<div  id="container_footer"></div>
-		</div> -->
+		</div>
 	</div><?php  echo $this->element('footer'); ?>
 	<?php // echo $this->element('sql_dump'); ?>
 	<?php echo  $this->Html->script(array('home.min'));
