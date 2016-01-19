@@ -60,4 +60,24 @@ class Post extends AppModel {
 			'order' => ''
 		)
 	);
+
+/**
+ * [afterFind]
+ * @param  [type]  $data    [pour le menu ]
+ * @param  boolean $primary [description]
+ * @return [type]           [description]
+ */
+	public function afterFind($data,$primary = false){
+		foreach ($data as $k => $d) {
+			if (isset($d['Post']['slug'])  && isset($d['Post']['type'])) {
+				$d['Post']['link'] = array(
+					'controller'     => Inflector::pluralize($d['Post']['type']),
+					'action'         =>'view',
+					'slug'           => $d['Post']['slug'],
+					);
+			}
+			$data[$k] =$d;
+		}
+		return $data;
+	}
 }

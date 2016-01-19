@@ -16,44 +16,14 @@
 			<?php echo h($post['Post']['slug']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Photo Dir'); ?></dt>
-		<dd>
-			<?php echo h($post['Post']['photo_dir']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Photo Type'); ?></dt>
-		<dd>
-			<?php echo h($post['Post']['photo_type']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Photo Size'); ?></dt>
-		<dd>
-			<?php echo h($post['Post']['photo_size']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Resume Dir'); ?></dt>
-		<dd>
-			<?php echo h($post['Post']['resume_dir']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Resume Type'); ?></dt>
-		<dd>
-			<?php echo h($post['Post']['resume_type']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Resume Size'); ?></dt>
-		<dd>
-			<?php echo h($post['Post']['resume_size']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('Photo'); ?></dt>
-		<dd>
-			<?php echo h($post['Post']['photo']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('Content'); ?></dt>
 		<dd>
 			<?php echo h($post['Post']['content']); ?>
+			&nbsp;
+		</dd>
+		<dt><?php echo __('Type'); ?></dt>
+		<dd>
+			<?php echo h($post['Post']['type']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Created'); ?></dt>
@@ -61,9 +31,9 @@
 			<?php echo h($post['Post']['created']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('Type'); ?></dt>
+		<dt><?php echo __('Modified'); ?></dt>
 		<dd>
-			<?php echo h($post['Post']['type']); ?>
+			<?php echo h($post['Post']['modified']); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Online'); ?></dt>

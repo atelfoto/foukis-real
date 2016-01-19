@@ -37,6 +37,13 @@ class PagesController extends AppController {
  */
 	public $uses = array();
 
+public function menu(){
+		$pages = $this->Post->find('all',array(
+			'conditions'=>array('type'=>'page','online'=>1),
+			'fields'    =>array('slug','name','type')
+			));
+		return $pages;
+	}
 /**
  * Displays a view
  *

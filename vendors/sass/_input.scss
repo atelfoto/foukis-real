@@ -1,0 +1,57 @@
+// input:required{
+// background-color: lightcoral;
+// }
+// input:optional{
+// 	background-color: lightgoldenrodyellow;
+
+// }
+
+input#envoi{
+	background: none;
+}
+input:focus{
+	outline:solid 2px green;
+	//outline-offset:2px;
+}
+input{
+	border: solid 1px gray;
+	width: 250px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    //border: 1px solid #ccc;
+    border-radius: 4px;
+}
+textarea{
+	border: solid 1px gray;
+	width: 100%;
+	margin-left: 15px;
+	margin-right: 15px;
+}
+label ,input{
+	display: inline-block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	height: 34px;
+}
+
+label{
+	width: 100px;
+	text-align: right;
+	margin-right: 10px;
+	}
+input[type=submit]{
+	width: 75px;
+	background: none;
+}
+
+input[type="text"] {
+  @include input-placeholder {
+    color: #bfbfbf;
+    font-style: italic;
+  }
+}

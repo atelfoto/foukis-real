@@ -6,13 +6,6 @@
 		echo $this->Form->input('id');
 		echo $this->Form->input('name');
 		echo $this->Form->input('slug');
-		echo $this->Form->input('photo_dir');
-		echo $this->Form->input('photo_type');
-		echo $this->Form->input('photo_size');
-		echo $this->Form->input('resume_dir');
-		echo $this->Form->input('resume_type');
-		echo $this->Form->input('resume_size');
-		echo $this->Form->input('photo');
 		echo $this->Form->input('content');
 		echo $this->Form->input('type');
 		echo $this->Form->input('online');

@@ -10,6 +10,14 @@ App::uses('AppController', 'Controller');
  */
 class PostsController extends AppController {
 
+	public function menu(){
+		$posts = $this->Post->find('all',array(
+			'conditions'=>array('type'=>'post','online'=>1),
+			'fields'    =>array('slug','name',"type")
+			));
+		return $posts;
+	}
+
 /**
  * Components
  *
@@ -26,7 +34,26 @@ public function index(){
 
 }
 
+/**
+* view
+**/
+public function view($slug=null){
+		if(!$slug)
+			throw new NotFoundException(__('No pages were found for this ID') ,'notif',array('class'=>'danger','type'=>'sign'));
+		$post = $this->Post->find('first',array(
+			'conditions'=>array('Post.slug'=>$slug	//'type'=>'post'
+				),
+			'recursive'=>0
+			));
+		if(empty($post))
+			throw new NotFoundException(__('No pages were found for this ID') ,'notif',array('class'=>'danger','type'=>'sign'));
+		if($slug != $post['Post']['slug'])
+			$this->redirect($post['Post']['link'],301);
+		$actionHeading = $post['Post']['name'];
+		$d['post'] = $post;
+		$this->set($d);
 
+}
 
 /**
  * admin_index method

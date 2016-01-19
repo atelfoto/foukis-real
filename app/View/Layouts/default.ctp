@@ -40,10 +40,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<a href="#" class="header__logo">Logo</a>
 			<nav class="menu" style="witdh;50%;">
 			<?php echo $this->Html->link("accueil", array('controller' => 'pages', 'action' => 'index')); ?>
-				<?php echo $this->Html->link("post", array('controller' => 'posts', 'action' => 'index')); ?>
-				<a href="#">item 02</a>
-				<a href="#">item 03</a>
-				<a href="#">item 04</a>
+			<?php echo $this->element("menu") ?>
 				<a href="<?php echo $this->Html->url(array('controller' => 'users', 'action' => 'account', "admin"=>true)); ?>"><?php echo __('account'); ?>
 				</a>
 			</nav>

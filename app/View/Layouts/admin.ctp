@@ -37,30 +37,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<div  class="site-container">
 		<header class="header">
 			<a href="#" class="header__icon" id="header__icon"></a>
-			<a href="<?php echo $this->Html->url(array('controller' => 'posts', 'action' => 'index', 'admin'=>false)); ?>" class="header__logo">Logo</a>
+			<a href="<?php echo $this->Html->url(array('controller' => 'pages', 'action' => 'index', 'admin'=>false)); ?>" class="header__logo">Logo</a>
 			<nav class="menu">
 				<?php echo $this->Html->link('post', array('controller' => 'posts', 'action' => 'index',"admin"=>true)); ?>
 				<?php echo $this->Html->link(__('account'), array('controller' => 'users', 'action' => 'account')); ?>
-				<li>
-					<a href="#">item 03</a>
-				</li>
-				<li>
-					<a href="#">item 04</a>
-				</li>
-				<li>
-					<a href="#">item 05</a>
-				</li>
-				<ul class="flag">
+
+
+				<!-- <ul class="flag">
 					<li>
-						<a href="#" class="French">item 06</a>
+						<a href="#" class="French"></a>
 					</li>
 					<li>
-						<a href="#" class="English">item 07</a>
+						<a href="#" class="English"></a>
 					</li>
 					<li>
-						<a href="#" class="Greek">item 08</a>
+						<a href="#" class="Greek"></a>
 					</li>
-				</ul>
+				</ul> -->
 			</nav>
 			<!-- <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1> -->
 		</header>

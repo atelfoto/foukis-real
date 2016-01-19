@@ -6,16 +6,9 @@
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('name'); ?></th>
 			<th><?php echo $this->Paginator->sort('slug'); ?></th>
-			<th><?php echo $this->Paginator->sort('photo_dir'); ?></th>
-			<th><?php echo $this->Paginator->sort('photo_type'); ?></th>
-			<th><?php echo $this->Paginator->sort('photo_size'); ?></th>
-			<th><?php echo $this->Paginator->sort('resume_dir'); ?></th>
-			<th><?php echo $this->Paginator->sort('resume_type'); ?></th>
-			<th><?php echo $this->Paginator->sort('resume_size'); ?></th>
-			<th><?php echo $this->Paginator->sort('photo'); ?></th>
-			<th><?php echo $this->Paginator->sort('content'); ?></th>
-			<th><?php echo $this->Paginator->sort('created'); ?></th>
 			<th><?php echo $this->Paginator->sort('type'); ?></th>
+			<th><?php echo $this->Paginator->sort('created'); ?></th>
+			<th><?php echo $this->Paginator->sort('modified'); ?></th>
 			<th><?php echo $this->Paginator->sort('online'); ?></th>
 			<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -27,16 +20,9 @@
 		<td><?php echo h($post['Post']['id']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['name']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['slug']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['photo_dir']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['photo_type']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['photo_size']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['resume_dir']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['resume_type']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['resume_size']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['photo']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['content']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['created']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['type']); ?>&nbsp;</td>
+		<td><?php echo h($post['Post']['created']); ?>&nbsp;</td>
+		<td><?php echo h($post['Post']['modified']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['online']); ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($post['User']['name'], array('controller' => 'users', 'action' => 'view', $post['User']['id'])); ?>

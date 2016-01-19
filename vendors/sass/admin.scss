@@ -2,16 +2,19 @@
 @import "susy";
 @import "variables";
 @import "compass/layout.scss";
+@import "compass/reset";
 @import "breakpoint";
+@import "input";
+@import "buttons";
 $susy:(
     container:960px,
     columns:12,
     gutters: 10px/100px,
     gutter-position: inside-static,
     column-width:100px,
-    debug:(
-        image:show,
-        )
+    // debug:(
+    //     image:show,
+    //     )
     );
 
 $desktop:(
@@ -33,20 +36,25 @@ html,body{
 a{
 	text-decoration: none;
 	color: inherit;
-}.container{
+}
+.container{
 	margin: 0 20px;
 
 	//@include container;
-	@include clearfix;
+	//@include clearfix;
+}
+
+.deux-column {
+  @include column-count(2);
+  //width: 300px;
+  margin-bottom: 20px;
 }
 .site-content{
 	height: 100%;
 	padding-top: 66px;
 }
-/*------------------------------------*\
-    $HEADER
-\*------------------------------------*/
 
+// $HEADER
 .header{
 	position: fixed;
 	left: 0;
@@ -61,12 +69,11 @@ a{
 	padding: 0 25px;
 	float: left;
 }
-/*------------------------------------*\
-    $MENU
-\*------------------------------------*/
 
+// $MENU
 .menu{
 	float: left;
+	height: 66px;
 	a{
 		padding: 010px;
 	}
@@ -76,11 +83,15 @@ a{
 	}
 }
 
-/*------------------------------------*\
-    $footer
-\*------------------------------------*/
+#container{
+	margin: 0 20px;
 
+	@include container;
+	@include clearfix;
 
+}
+
+ // $footer
 footer{
 	background:rgba(0, 0, 0, 0.64);
 	bottom:0px;
