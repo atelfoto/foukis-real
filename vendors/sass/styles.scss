@@ -9,6 +9,7 @@
 $icones-layout:smart;
 $icones-sprite-dimensions:true;
  @import "icones/*.png";
+
 $susy:(
     container:960px,
     columns:12,
