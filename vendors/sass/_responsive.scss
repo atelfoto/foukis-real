@@ -18,6 +18,7 @@
 		overflow: hidden;
 		height: calc(100vh - 65px)!important;
 		//height: 100vh;
+
 	}
 	.site-pusher{
 		height: 100vh;
@@ -35,6 +36,7 @@
 		overflow-y: scroll;
 		-webkit-overflow-scrolling: touch;
 		background-color: #fff;
+		@include span(4 of 4);
 
 	}
 	.header{
