@@ -1,11 +1,11 @@
 @import "compass";
 @import "susy";
-@import "variables";
+@import "utils/variables";
 @import "compass/layout.scss";
 @import "compass/reset";
 @import "breakpoint";
-@import "input";
-@import "buttons";
+@import "layout/input";
+@import "components/buttons";
 $susy:(
     container:960px,
     columns:12,

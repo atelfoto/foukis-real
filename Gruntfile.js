@@ -67,7 +67,7 @@ module.exports=function(grunt){
         		livereload: true,
         	},
         	dist:{
-        		files:['vendors/sass/*.scss'],
+        		files:['vendors/sass/*.scss','vendors/sass/**/*.scss'],
         		tasks:["compass"],
         		options:{ spawn:false}
         	},

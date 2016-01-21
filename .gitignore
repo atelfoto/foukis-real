@@ -16,6 +16,7 @@ node_modules/
 .sass-cache/
 *.mo
 *.OLD
+*.OLD.*
 
 
 # IDE and editor specific files #
