@@ -34,19 +34,18 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body id="home">
-	<div  class="site-container" id="site-container">
+	<div  class="site-container">
 		<header class="header">
-			<div class="top-nav">
-				<a href="#" class="header__icon" id="header__icon"></a>
-				<a href="#" class="header__logo">Logo</a>
-				<nav class="menu" >
-					<?php echo $this->Html->link("accueil", array('controller' => 'pages', 'action' => 'index')); ?>
-					<?php echo $this->element("menu") ?>
-					<a href="<?php echo $this->Html->url(array('controller' => 'users', 'action' => 'account', "admin"=>true)); ?>"><?php echo __('account'); ?>
-					</a>
-				</nav>
-				<nav  style="float:right;witdh:50%;">
-					<ul class="flag" style="float:right;witdh:50%;">
+			<a href="#" class="header__icon" id="header__icon"></a>
+			<a href="#" class="header__logo">Logo</a>
+			<nav class="menu" style="witdh;50%;">
+			<?php echo $this->Html->link("accueil", array('controller' => 'pages', 'action' => 'index')); ?>
+			<?php echo $this->element("menu") ?>
+				<a href="<?php echo $this->Html->url(array('controller' => 'users', 'action' => 'account', "admin"=>true)); ?>"><?php echo __('account'); ?>
+				</a>
+			</nav>
+			<nav  style="float:right;witdh:50%;">
+				<ul class="flag">
 						<li class="selected">
 							<a href="#" class="French"></a>
 						</li>
@@ -57,22 +56,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 							<a href="#" class="Greek"></a>
 						</li>
 					</ul>
-				</nav>
-			</div>
+			</nav>
 			<!-- <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1> -->
 		</header>
 		<div class="site-pusher">
-			<div class="site-content" id="container" style="height:;" >
-				<div class="container" >
+			<div class="site-content" >
+				<div class="container" id="container">
 					<?php echo $this->Flash->render(); ?>
 					<?php echo $this->fetch('content'); ?>
+					<div id="container_footer"></div>
 				</div>
+				<?php echo $this->element('footer'); ?>
+				<div class="site-cache" id="site-cache"></div>
+			</div>
 
-			</div><div class="site-cache" id="site-cache"></div>
-			<div  id="container_footer"></div>
 		</div>
-	</div><?php  echo $this->element('footer'); ?>
+	</div>
 	<?php echo  $this->Html->script(array('home.min'));
-	echo $this->fetch('script');?>
+		  echo $this->fetch('script');?>
 </body>
 </html>
