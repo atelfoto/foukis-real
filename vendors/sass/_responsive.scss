@@ -1,9 +1,17 @@
 @media only screen and(max-width: 750px){
+	body{
+		height:100vh;
+	}
+	// #footer{
+	// 	height: 57px;
+	// }
 	#site-container, .site-container,
 	//site-puscher
 	{
 
-		height: 100vh !important;
+		//height: 100vh !important;
+		//height: calc(100vh - 0px)!important;
+		overflow: hidden;
 
 	}
 	.site-container{

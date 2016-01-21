@@ -72,7 +72,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<div  id="container_footer"></div>
 		</div>
 	</div><?php  echo $this->element('footer'); ?>
-	<?php // echo $this->element('sql_dump'); ?>
 	<?php echo  $this->Html->script(array('home.min'));
 	echo $this->fetch('script');?>
 </body>

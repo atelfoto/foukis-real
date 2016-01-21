@@ -38,6 +38,7 @@ public function index(){
 * view
 **/
 public function view($slug=null){
+	$this->layout = "home";
 		if(!$slug)
 			throw new NotFoundException(__('No pages were found for this ID') ,'notif',array('class'=>'danger','type'=>'sign'));
 		$post = $this->Post->find('first',array(

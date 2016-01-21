@@ -1,3 +1,5 @@
+@charset 'utf-8';
+@import "compass/reset";
 @import "compass";
 @import "susy";
 @import "variables";
@@ -6,16 +8,15 @@
 $icones-layout:smart;
 $icones-sprite-dimensions:true;
  @import "icones/*.png";
- @import "vegas";
 $susy:(
     container:960px,
     columns:12,
     gutters: 10px/100px,
     gutter-position: inside-static,
     column-width:100px,
-    // debug:(
-    //     image:show,
-    //     )
+    debug:(
+        image:show,
+        )
      );
 
 $desktop:(
@@ -28,6 +29,7 @@ $desktop:(
 @include layout($desktop);
 
 @include sticky-footer(55px, "#site-container", "#container_footer", "#footer");
+
 html,body{
 	font-family: $typo-titre;
 	font-size: 16px;
@@ -68,8 +70,9 @@ ul.flag{
 //pour le footer en bas
 #site-container{
 
-	height: calc(100vh - 100px)!important;
-	    min-height: calc(100vh - 15px);
+	//height: calc(100vh - 100px)!important;
+	    //min-height: calc(100vh - 0px);
+	    min-height: 100vh ;
 
 }
 //fin footer en bas
@@ -83,6 +86,7 @@ a{
 	@include clearfix;
 }
 .site-content{
+	//height: 100vh;
 	height: calc(100vh -50px);
 	padding-top: 66px;
 }
@@ -123,7 +127,7 @@ a{
 
 	}
 	a{
-		padding: 010px;
+		padding: 10px;
 	}
 	a:hover{
 		//color: #c6ff00;
@@ -148,6 +152,7 @@ a{
 
 
 footer{
+	//background:rgb(0, 0, 0);
 	background:rgba(0, 0, 0, 0.64);
 	color: #fff;
 	bottom:0px;
@@ -166,3 +171,5 @@ footer{
     $RESPONSIVE
 \*------------------------------------*/
 @import "responsive";
+
+ @import "vegas";

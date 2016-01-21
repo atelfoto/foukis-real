@@ -90,6 +90,12 @@ public function admin_account(){
 	$this->layout="admin";
 
 }
+/**
+* login
+**/
+public function login(){
+
+}
 
 /**
  * admin_delete method
