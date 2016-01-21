@@ -5,6 +5,7 @@
 @import "variables";
 @import "compass/layout.scss";
 @import "breakpoint";
+@import "pages/home";
 $icones-layout:smart;
 $icones-sprite-dimensions:true;
  @import "icones/*.png";
@@ -28,7 +29,7 @@ $desktop:(
 
 @include layout($desktop);
 
-@include sticky-footer(55px, "#site-container", "#container_footer", "#footer");
+@include sticky-footer(170px, "#site-container", "#container_footer", "#footer");
 
 html,body{
 	font-family: $typo-titre;
@@ -152,8 +153,11 @@ a{
 
 
 footer{
+	@include box-sizing(border-box);
 	//background:rgb(0, 0, 0);
-	background:rgba(0, 0, 0, 0.64);
+	//background:rgba(0, 0, 0, 0.64);
+	border-top: 1px solid $stretch-color;
+	background:rgba(0, 0, 0, 0.32);
 	color: #fff;
 	bottom:0px;
 	margin-bottom: 0;

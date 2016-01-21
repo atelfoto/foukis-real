@@ -71,7 +71,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			</div><div class="site-cache" id="site-cache"></div>
 			<div  id="container_footer"></div>
 		</div>
-	</div><?php  echo $this->element('footer'); ?>
+	</div><?php  echo $this->element('footer-home'); ?>
 	<?php echo  $this->Html->script(array('home.min'));
 	echo $this->fetch('script');?>
 </body>

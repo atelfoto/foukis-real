@@ -1,0 +1,31 @@
+/*    streach-container
+	========================================================================== */
+	// @include sticky-footer(205px, "#site-container", "#container_footer", "#footer");
+$stretch-color: #100F0F;
+//$stretch-color: #646263;
+//$stretch-color: #4c6b99;
+	%stretched {
+
+		//border: 3px solid $stretch-color;
+		@include border-radius(8px);
+		display: block;
+		//background-color: darken($stretch-color, 30%);
+		//@include background-image(linear-gradient(white, #cccccc 30%, #bbbbbb 70%, #aaaaaa));
+		@include background-image(linear-gradient(rgba(0, 0, 0, 0.64) 30%,rgba(0, 0, 0, 0.80) 70%, $stretch-color));
+		color: white;
+		text-align: center;
+		vertical-align: middle;
+		padding: 0.5em;
+	}
+	.stretch-container {
+	 //   border: 1px solid #999999;
+		width: 100px;
+		height: 120px;
+		position: relative;
+		@include inline-block;
+	}
+
+	.stretch-offset {
+		@extend %stretched;
+		@include stretch(1em, 0.2em,1em, 0.2em);
+	}
