@@ -25,15 +25,15 @@ module.exports=function(grunt){
         	},
         	dist: {
         		options: {
-        			config  : 'vendors/fonts/config.json',
+        			config  : 'vendors/fonts/fontello/config.json',
         			fonts   : 'vendors/fonts/fontello/',
         			styles  : 'vendors/sass/fonts/fontello/',
         		}
         	},
         	dev: {
         		options: {
-        			config  : 'vendors/fonts/config.json',
-        			fonts   : 'app/webroot/font/',
+        			config  : 'vendors/fonts/fontello/config.json',
+        			fonts   : 'app/webroot/fonts/fontello',
         		}
         	}
         },

@@ -1,30 +1,45 @@
 <footer  id="footer">
-<ul>
-	<li class='stretch-container'><a href="">
+<ul class="stretch">
+	<li class='stretch-container'>
+	<a href="">
 		<div class='stretch-offset'>
-
-		</div></a>
+	<span class="glyphicon glyphicon-home" ></span>
+	<p><?php echo __('residential'); ?></p>
+		</div>
+	</a>
 	</li>
-	<li class='stretch-container'><a href="">
+	<li class='stretch-container'>
+	<a href="">
 		<div class='stretch-offset'>
+		<span class="icon-building-filled" aria-hidden="true"></span>
+		<p><?php echo __('land') ?></p>
 
-
-		</div></a>
+		</div>
+	</a>
 	</li>
-	<li class='stretch-container'><a href="">
+	<li class='stretch-container'>
+	<a href="">
 		<div class='stretch-offset'>
-
-		</div></a>
+		<span class="icon-money" aria-hidden="true"></span>
+		<p><?php echo __('business premises') ?></p>
+		</div>
+	</a>
 	</li>
-	<li class='stretch-container'><a href="">
+	<li class='stretch-container'>
+	<a href="">
 		<div class='stretch-offset'>
-
-		</div></a>
+		<span class="icon-money" aria-hidden="true"></span>
+		<p><?php echo __('businesses') ?></p>
+		</div>
+	</a>
 	</li>
-	<li class='stretch-container'><a href="">
+	<li class='stretch-container'>
+	<a href="">
 		<div class='stretch-offset'>
-
-		</div></a>
+		<span class="icon-money" aria-hidden="true"></span>
+		<p><?php echo __('property') ?></p>
+		</div>
+	</a>
 	</li>
 </ul>
 	<p>

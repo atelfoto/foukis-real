@@ -2,13 +2,15 @@
 @import "compass/reset";
 @import "compass";
 @import "susy";
-@import "variables";
+@import "utils/variables";
 @import "compass/layout.scss";
 @import "breakpoint";
-@import "pages/home";
+
 $icones-layout:smart;
 $icones-sprite-dimensions:true;
  @import "icones/*.png";
+@import "vendors-extensions/bootstrap";
+@import "fonts/fontello/fontello";
 
 $susy:(
     container:960px,
@@ -20,7 +22,6 @@ $susy:(
     //    image:show,
     //    )
      );
-
 $desktop:(
     gutters : 30px/100px,
 );
@@ -175,6 +176,7 @@ footer{
 /*------------------------------------*\
     $RESPONSIVE
 \*------------------------------------*/
+@import "pages/home";
 @import "responsive";
 
- @import "vegas";
+ @import "vendors/vegas";

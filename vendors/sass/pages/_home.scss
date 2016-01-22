@@ -1,9 +1,32 @@
 /*    streach-container
 	========================================================================== */
 	// @include sticky-footer(205px, "#site-container", "#container_footer", "#footer");
-$stretch-color: #100F0F;
-//$stretch-color: #646263;
-//$stretch-color: #4c6b99;
+ h1.title{
+ 	@include container;
+
+  	text-transform: capitalize;
+  	font-family: $typo-header;
+  	font-style: italic;
+	font-weight: bold;
+  	letter-spacing:-2px;
+  	//line-height:1em;
+  	//text-shadow:0 3px 3px #000;
+  	@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
+  	float: left;
+  	//margin-top: 0.5em;
+  	//margin-bottom: 0.5em;
+  	span{
+  		color:#00f;
+  		font-size:4em;
+
+  	}
+  	small{
+  		color: #fff;
+  		font-size: 3em;
+  		//@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
+  	}
+
+ }
 	%stretched {
 
 		//border: 3px solid $stretch-color;
@@ -28,4 +51,24 @@ $stretch-color: #100F0F;
 	.stretch-offset {
 		@extend %stretched;
 		@include stretch(1em, 0.2em,1em, 0.2em);
+		span{
+			font-size: 1.5em;
+		}
+		//font-size: 2.5em;
+		p:first-letter{
+		text-transform: uppercase;
 	}
+	}
+@media only screen and(max-width: 750px){
+//@include susy-breakpoint(750px, $desktop) {
+	.stretch-container {
+
+		width: 85px;
+		height: 90px;
+
+	}
+.stretch{
+  @include column-count(5);
+}
+
+}
