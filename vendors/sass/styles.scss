@@ -11,7 +11,6 @@ $icones-sprite-dimensions:true;
  @import "icones/*.png";
 @import "vendors-extensions/bootstrap";
 @import "fonts/fontello/fontello";
-
 $susy:(
     container:960px,
     columns:12,
@@ -40,6 +39,12 @@ html,body{
 	height: 100%;
 	margin: 0;
 	padding: 0;
+}
+@media only screen and(min-width: 750px){
+	 *, *::before, *::after {
+     box-sizing: border-box;
+ }
+
 }
 
 ul.flag{
@@ -156,6 +161,7 @@ a{
 
 footer{
 	@include box-sizing(border-box);
+	z-index: 60;
 	//background:rgb(0, 0, 0);
 	//background:rgba(0, 0, 0, 0.64);
 	border-top: 1px solid $stretch-color;
@@ -176,7 +182,12 @@ footer{
 /*------------------------------------*\
     $RESPONSIVE
 \*------------------------------------*/
+
 @import "pages/home";
+@import "vendors/app";
+@import "components/buttons";
+
 @import "responsive";
+
 
  @import "vendors/vegas";

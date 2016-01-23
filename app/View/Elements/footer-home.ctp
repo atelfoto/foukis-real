@@ -3,7 +3,7 @@
 	<li class='stretch-container'>
 	<a href="">
 		<div class='stretch-offset'>
-	<span class="glyphicon glyphicon-home" ></span>
+	<span class="icon-home-1" ></span>
 	<p><?php echo __('residential'); ?></p>
 		</div>
 	</a>

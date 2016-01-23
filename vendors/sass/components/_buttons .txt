@@ -1,0 +1,52 @@
+$default-transition-duration:0.2s;
+$color:#64b651;
+
+div.form button{
+		background-color:$color;
+	    padding:10px;
+	    position:relative;
+	    font-family: 'Open Sans', sans-serif;
+	    font-size:12px;
+	    text-decoration:none;
+	    color:#fff;
+}
+
+#submit{
+	button{
+		border: none;
+		cursor: pointer;
+		@include background-image( linear-gradient(top,$color,darken($color,10)) );
+		@include border-radius(5px);
+		@include box-shadow(inset 0px 1px 0px darken($color,10), 0px 5px 0px 0px darken($color,25), 0px 10px 5px #999);
+		padding: 10px 20px;
+		padding-right: 40px;
+	}
+	button:focus{
+		border: none;
+		outline-width: 0px;
+	}
+	button:active{
+		border: none;
+		top:4px;
+		@include background-image( linear-gradient(bottom,$color,darken($color,10)) );
+		@include box-shadow(inset 0px 1px 0px darken($color,10), 0px 1px 0px 0px darken($color,25), 0px 3px 5px #999 );
+	}
+	button:before{
+		background: url(rarr.png) center center no-repeat darken($color,10);
+		content:"";
+		width: 20px;
+		height: 20px;
+		display: block;
+		position: absolute;
+		top:50%;
+		margin-top: -10px;
+		right:10px;
+		@include border-radius(50%);
+		@include box-shadow(inset 0px 1px 0px darken($color,40), 0px 1px 0px lighten($color,10));
+	}
+	button:active:before{
+		margin-top: -14px;
+		@include box-shadow(inset 0px 1px 0px lighten($color,10), 0px 4px 0px 0px darken($color,35), 0px 4px 5px darken($color,30));
+	}
+
+}

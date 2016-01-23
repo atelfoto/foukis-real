@@ -94,8 +94,12 @@ public function admin_account(){
 * login
 **/
 public function login(){
+	$this->layout="home";
 
 }
+public function forgot() {
+
+	}
 
 /**
  * admin_delete method
