@@ -1,198 +1,42 @@
 @charset 'utf-8';
-@import "compass/reset";
-@import "compass";
-@import "susy";
-@import "utils/variables";
-@import "compass/layout.scss";
-@import "breakpoint";
 
-$icones-layout:smart;
-$icones-sprite-dimensions:true;
- @import "icones/*.png";
-@import "vendors-extensions/bootstrap";
-@import "fonts/fontello/fontello";
-@import "vendors/bootstrap-variables";
-@import "base/typography";
-$susy:(
-    container:960px,
-    columns:12,
-    gutters: 10px/100px,
-    gutter-position: inside-static,
-    column-width:100px,
-    //debug:(
-    //    image:show,
-    //    )
-     );
-$desktop:(
-    gutters : 30px/100px,
-);
-/*------------------------------------*\
-    $styles local
-\*------------------------------------*/
+// 1. Configuration and helpers
+@import
+  "compass/reset",
+  "compass",
+  "susy",
+  "utils/variables",
+  "compass/layout.scss",
+  "breakpoint",
+  'utils/functions',
+  'utils/mixins';
 
-@include layout($desktop);
+// 2. Vendors
+@import
+  "vendors-extensions/bootstrap",
+  "vendors/app",
+  "vendors/bootstrap-variables",
+  "vendors/vegas";
 
-@include sticky-footer(115px, "#site-container", "#container_footer", "#footer");
+// 3. Base stuff  'base/base','base/helpers'
+@import
+'base/base',
+  'base/fonts',
+  "fonts/fontello/fontello",
+  'base/typography';
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/navigation',
+  'layout/footer',
+  "layout/breadcrumb";
 
-html,body{
-	font-family: $typo-titre;
-	font-size: 16px;
-	line-height: 1.4;
-	height: 100%;
-	margin: 0;
-	padding: 0;
-}
-@media only screen and(min-width: 750px){
-	 *, *::before, *::after {
-     box-sizing: border-box;
- }
+// 5. Components
+@import
+  'components/buttons';
 
- @include sticky-footer(170px, "#site-container", "#container_footer", "#footer");
-
-}
-
-ul.flag{
-	@include horizontal-list;
-	float: right;
-	margin-left: -10px;
-	padding: 24px 24px 0;
-	margin-top:-10px;
- li.selected a {
- 	@include opacity(0.2);
- }
-
-	a{
-		 display: block;
-		 text-indent: -9999px;
-		padding: 0px;
-		margin-top:-10px;
-		&.Greek{
-			@include  icones-sprite(gr);
-		}
-		&.French{
-			@include  icones-sprite(fr);
-		}
-		&.English{
-			@include  icones-sprite(gb);
-		}
-
-	}
-
-}
-//pour le footer en bas
-#site-container{
-
-	//height: calc(100vh - 100px)!important;
-	    //min-height: calc(100vh - 0px);
-	    min-height: 100vh ;
-
-}
-//fin footer en bas
-a{
-	text-decoration: none;
-	color: inherit;
-}.container{
-	margin: 0 20px;
-
-	@include container;
-	@include clearfix;
-}
-.site-content{
-	//height: 100vh;
-	height: calc(100vh -50px);
-	padding-top: 66px;
-}
-/*------------------------------------*\
-    $HEADER
-\*------------------------------------*/
-.top-nav{
-	@include container;
-}
-.header{
-	margin-right: auto;
-	margin-left: auto;
-	position: fixed;
-	left: 0;
-	right: 0;
-	//height: 66px;
-	height: 30px;
-	line-height: 30px;
-	//line-height: 66px;
-	color: #fff;
-	//background-color:
-	//@include background-image(linear-gradient($couleur-bg, #cccccc, #aaaaaa));
-	 @include background-image(linear-gradient($couleur-bg, $couleur-bg 30%));
-	//background-color: $couleur-bg;
-}
-.header__logo{
-	font-weight: bold;
-	padding: 0 25px;
-	float: left;
-}
-/*------------------------------------*\
-    $MENU
-\*------------------------------------*/
-
-.menu{
-	float: left;
-	li{
-
-	}
-	a{
-		padding: 10px;
-	}
-	a:hover{
-		//color: #c6ff00;
-		color: $couleur-border;
-	}
-}
-.main{
-    @include span(3 of 4);
-   // background:#f00!important;
-    padding:50px;
-}
-.sidebar{
-    @include span(1 of 4);
-   // background:#00f;
-    height:100%;
-    @include clearfix;
-
-}
-/*------------------------------------*\
-    $footer
-\*------------------------------------*/
-
-
-footer{
-	@include box-sizing(border-box);
-	z-index: 60;
-	//background:rgb(0, 0, 0);
-	//background:rgba(0, 0, 0, 0.64);
-	border-top: 1px solid $stretch-color;
-	background:rgba(0, 0, 0, 0.32);
-	color: #fff;
-	bottom:0px;
-	margin-bottom: 0;
-	text-align:center;
-	p{padding: 5px;
-
-		font-size: .8em;
-		font-weight: 400;
-		font-style: italic;
-
-
-	}
-}
-/*------------------------------------*\
-    $RESPONSIVE
-\*------------------------------------*/
-
-@import "pages/home";
-@import "vendors/app";
-@import "components/buttons";
-@import "layout/breadcrumb";
+// 6. Page-specific styles
+@import
+  "pages/home";
 
 @import "responsive";
-
-
- @import "vendors/vegas";

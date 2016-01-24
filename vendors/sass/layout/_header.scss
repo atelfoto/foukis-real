@@ -1,0 +1,24 @@
+.top-nav{
+	@include container;
+}
+.header{
+	margin-right: auto;
+	margin-left: auto;
+	position: fixed;
+	left: 0;
+	right: 0;
+	//height: 66px;
+	height: 30px;
+	line-height: 30px;
+	//line-height: 66px;
+	color: #fff;
+	//background-color:
+	//@include background-image(linear-gradient($couleur-bg, #cccccc, #aaaaaa));
+	 @include background-image(linear-gradient($couleur-bg, $couleur-bg 30%));
+	//background-color: $couleur-bg;
+}
+.header__logo{
+	font-weight: bold;
+	padding: 0 25px;
+	float: left;
+}

@@ -1,6 +1,7 @@
 /*    streach-container
 	========================================================================== */
 	// @include sticky-footer(205px, "#site-container", "#container_footer", "#footer");
+@include layout($desktop);
  h1.title{
  	//@include container;
  	//position: absolute;

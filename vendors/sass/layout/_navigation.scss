@@ -1,0 +1,49 @@
+$icones-layout:smart;
+$icones-sprite-dimensions:true;
+@import "icones/*.png";
+.menu{
+	float: left;
+	li{
+
+	}
+	a{
+		padding: 10px;
+	}
+	a:hover{
+		color: $couleur-border;
+	}
+}
+.main{
+	@include span(3 of 4);
+	padding:50px;
+}
+.sidebar{
+	@include span(1 of 4);
+	height:100%;
+	@include clearfix;
+}
+ul.flag{
+	@include horizontal-list;
+	float: right;
+	margin-left: -10px;
+	padding: 24px 24px 0;
+	margin-top:-10px;
+	li.selected a {
+		@include opacity(0.2);
+	}
+	a{
+		display: block;
+		text-indent: -9999px;
+		padding: 0px;
+		margin-top:-10px;
+		&.Greek{
+			@include  icones-sprite(gr);
+		}
+		&.French{
+			@include  icones-sprite(fr);
+		}
+		&.English{
+			@include  icones-sprite(gb);
+		}
+	}
+}

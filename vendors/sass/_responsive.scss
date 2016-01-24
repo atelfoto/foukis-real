@@ -2,27 +2,17 @@
 	body{
 		height:100vh;
 	}
-	// #footer{
-	// 	height: 57px;
-	// }
-	#site-container, .site-container,
-	//site-puscher
-	{
-
+	#site-container, .site-container{
 		height: 100vh !important;
-		//height: calc(100vh - 0px)!important;
 		overflow: hidden;
-
 	}
 	.site-container{
 		overflow: hidden;
 		height: calc(100vh - 65px)!important;
-		//height: 100vh;
 
 	}
 	.site-pusher{
 		height: 100vh;
-
 		@include transition-duration(0.3s);
 		@include transform(translateX(0px));
 	}
@@ -60,9 +50,7 @@
 			top: 16px;
 			left: 15px;
 			@include box-shadow(0 10px 0 1px #fff ,0 16px 0 1px #fff,0 22px 0 1px #fff);
-
 		}
-
 	}
 	.menu{
 		position: absolute;
@@ -72,34 +60,27 @@
 		background-color: darken($couleur-bg, 5);
 		width: $menu-width;
 		// @include transform(translateX($menu-width * -1));
-
 		a{
 			display: block;
-			//height: 30px;//ancien sans box-sizing
 			height: 50px;
 			text-align: center;
 			line-height: 30px;
-    		border-bottom: 1px solid #000;
-    		border-top:1px solid #32353e;
-			//border-bottom: 1px solid #999;
-
-
+			border-bottom: 1px solid #000;
+			border-top:1px solid #32353e;
 		}
+	}
+	ul.flag a{
+		margin-top: 10px;
+	}
+	.main{
+		@include span(4 of 4);
 
 	}
-ul.flag a{
-	margin-top: 10px;
-}
-	.main{
-    @include span(4 of 4);
-  //  background:#f00!important;
-}
-.sidebar{
-    @include span(4 of 4);
-//background:#00f;
-    height:100%;
-    @include clearfix;
-}
+	.sidebar{
+		@include span(4 of 4);
+		height:100%;
+		@include clearfix;
+	}
 	.with--sidebar{
 		.site-pusher{
 			@include transform(translateX($menu-width));
@@ -113,7 +94,5 @@ ul.flag a{
 			bottom: 0;
 			background-color: rgba(0,0,0,0.6);
 		}
-
 	}
-
 }
