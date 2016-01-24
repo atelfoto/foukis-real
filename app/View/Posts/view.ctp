@@ -1,3 +1,4 @@
+<div class="content">
+	<?= $post['Post']['content']; ?>
+</div>
 
-
-<?= $post['Post']['content']; ?>

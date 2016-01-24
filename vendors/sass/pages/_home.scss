@@ -6,8 +6,6 @@
  	//position: absolute;
     padding-left: 50px;
     width: 100%;
-
-
   	text-transform: capitalize;
   	font-family: $typo-header;
   	font-style: italic;
@@ -37,6 +35,18 @@
   		//@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
   	}
 
+ }
+ h2.title{
+ 	background-color: $bg-color;
+ 	padding: 10px 10px;
+ }
+ .content{
+ 	background: $bg-color;
+ 	height: 100%;
+ 	color:#fff;
+ 	margin-top: 10px;
+ 	margin-bottom: 50px;
+ 	@include span(4 of 4);
  }
 	%stretched {
 
