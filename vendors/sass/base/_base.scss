@@ -1,0 +1,83 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+$susy:(
+    container:960px,
+    columns:12,
+    gutters: 10px/100px,
+    gutter-position: inside-static,
+    column-width:100px,
+    //debug:(
+    //    image:show,
+    //    )
+     );
+$desktop:(
+    gutters : 30px/100px,
+);
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+html,body{
+	font-family: $typo-titre;
+	font-size: 16px;
+	line-height: 1.4;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+/**
+ * Basic styles for links
+ */
+// a {
+//   color: $brand-color;
+//   text-decoration: none;
+
+//   @include on-event {
+//     color: $text-color;
+//     text-decoration: underline;
+//   }
+//}
+@include layout($desktop);
+
+@include sticky-footer(115px, "#site-container", "#container_footer", "#footer");
+
+@media only screen and(min-width: 750px){
+
+
+ @include sticky-footer(170px, "#site-container", "#container_footer", "#footer");
+
+}
+
+//pour le footer en bas
+#site-container{
+	    min-height: 100vh ;
+}
+//fin footer en bas
+//
+.container{
+	margin: 0 20px;
+	@include container;
+	@include clearfix;
+}
+.site-content{
+	//height: 100vh;
+	height: calc(100vh -50px);
+	padding-top: 66px;
+}
