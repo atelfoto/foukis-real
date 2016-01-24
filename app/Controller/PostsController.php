@@ -50,9 +50,10 @@ public function view($slug=null){
 			throw new NotFoundException(__('No pages were found for this ID') ,'notif',array('class'=>'danger','type'=>'sign'));
 		if($slug != $post['Post']['slug'])
 			$this->redirect($post['Post']['link'],301);
-		$actionHeading = $post['Post']['name'];
+		$name = $post['Post']['name'];
 		$d['post'] = $post;
 		$this->set($d);
+		$this->set(compact('name'));
 
 }
 

@@ -11,6 +11,8 @@ $icones-sprite-dimensions:true;
  @import "icones/*.png";
 @import "vendors-extensions/bootstrap";
 @import "fonts/fontello/fontello";
+@import "vendors/bootstrap-variables";
+@import "base/typography";
 $susy:(
     container:960px,
     columns:12,
@@ -30,7 +32,7 @@ $desktop:(
 
 @include layout($desktop);
 
-@include sticky-footer(170px, "#site-container", "#container_footer", "#footer");
+@include sticky-footer(115px, "#site-container", "#container_footer", "#footer");
 
 html,body{
 	font-family: $typo-titre;
@@ -44,6 +46,8 @@ html,body{
 	 *, *::before, *::after {
      box-sizing: border-box;
  }
+
+ @include sticky-footer(170px, "#site-container", "#container_footer", "#footer");
 
 }
 
@@ -186,6 +190,7 @@ footer{
 @import "pages/home";
 @import "vendors/app";
 @import "components/buttons";
+@import "layout/breadcrumb";
 
 @import "responsive";
 

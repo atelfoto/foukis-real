@@ -14,7 +14,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'Foukis Real Estate');
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
@@ -63,13 +63,29 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		</header>
 		<div class="site-pusher">
 			<div class="site-content" id="container">
+			<h1 class='title'><span>Foukis <br> real Estate </span> <small><?php echo __('Real Estate in Greece'); ?></small></h1>
 				<div class="container" >
+					<!--nocache-->
 					<?php echo $this->Flash->render(); ?>
+					<!--/nocache-->
+					<p class="breadcrumb ">
+						<?php   echo $this->Html->getCrumbs(' / ', array(
+							'text' => __('home'),
+							'url' => array('controller' => 'homes', 'action' => 'index'),
+							'escape' => false
+							)
+						);
+						?>/<?php  echo $this->fetch('title'); ?>/<?= isset($name) ? "<small>".$name."</small>" : false ; ?>
+					</p>
+					<div class="page-header" id="page-header">
+						<!-- <h2 class="title"><?php  echo $this->fetch('title'); ?> <?= isset($cat) ? "<small>".$cat."</small>" : false ; ?></h2> -->
+						<?= isset($name) ? '<h2 class="title">'. $name."</h2>" : false ; ?>
+					</div>
 					<?php echo $this->fetch('content'); ?>
 					<?php echo $this->element('vegas'); ?>
 				</div>
-
-			</div><div class="site-cache" id="site-cache"></div>
+			</div>
+			<div class="site-cache" id="site-cache"></div>
 			<div  id="container_footer"></div>
 		</div>
 	</div><?php  echo $this->element('footer-home'); ?>
@@ -77,6 +93,5 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	 echo  $this->Html->script(array('jquery.velocity.min'));
 	 echo  $this->Html->script(array('montest'));
 	echo $this->fetch('script');?>
-
 </body>
 </html>

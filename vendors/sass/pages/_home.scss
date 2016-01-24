@@ -2,13 +2,18 @@
 	========================================================================== */
 	// @include sticky-footer(205px, "#site-container", "#container_footer", "#footer");
  h1.title{
- 	@include container;
+ 	//@include container;
+ 	//position: absolute;
+    padding-left: 50px;
+    width: 100%;
+
 
   	text-transform: capitalize;
   	font-family: $typo-header;
   	font-style: italic;
 	font-weight: bold;
   	letter-spacing:-2px;
+  	line-height: -10px;
   	//line-height:1em;
   	//text-shadow:0 3px 3px #000;
   	@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
@@ -16,11 +21,17 @@
   	//margin-top: 0.5em;
   	//margin-bottom: 0.5em;
   	span{
+  		top: 30px;
   		color:#00f;
   		font-size:4em;
+  		line-height: .2em;
 
   	}
   	small{
+  		position: relative;
+  		display: inline-block;
+  		left: 10px;
+  		top: -50px;
   		color: #fff;
   		font-size: 3em;
   		//@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
@@ -52,23 +63,38 @@
 		@extend %stretched;
 		@include stretch(1em, 0.2em,1em, 0.2em);
 		span{
-			font-size: 1.5em;
+			font-size: 2.5em;
 		}
 		//font-size: 2.5em;
 		p:first-letter{
 		text-transform: uppercase;
 	}
 	}
-@media only screen and(max-width: 750px){
 //@include susy-breakpoint(750px, $desktop) {
-	.stretch-container {
+	@media only screen and(max-width: 750px){
+		h1.title{
+			left: 15px;
+			span{
+				font-size: 2em;
+			}
+			small{
+				font-size: 1.5em;
+			}
+		}
 
-		width: 85px;
-		height: 90px;
+		.stretch-container {
+			width: 85px;
+			height: 85px;
+		}
+		.stretch{
+			@include column-count(5);
+		}
+		.stretch-offset
+		span{
+			font-size: 1.8em;
+		}
+		p{
+			display: none;
+		}
 
 	}
-.stretch{
-  @include column-count(5);
-}
-
-}

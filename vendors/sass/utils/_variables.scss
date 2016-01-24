@@ -15,7 +15,11 @@ $couleur-dark: lighten(rgb(0,0,0),30%);
 $couleur-grey:  rgb(153,153,153);
 $couleur-light: transparentize($couleur-grey, 0.8);
 $couleur-white: white;
+$bg-color:rgba(0, 0, 0, 0.32);
 
 //dimension menu
 
 $menu-width: 250px !default;
+
+//$font-size-h2:            floor(($font-size-base * 2.15));// // ~30px
+//$font-size-h2:            floor(($font-size-base * 2.15)) !default;

@@ -75,8 +75,8 @@
 
 		a{
 			display: block;
-			height: 30px;
-
+			//height: 30px;//ancien sans box-sizing
+			height: 50px;
 			text-align: center;
 			line-height: 30px;
     		border-bottom: 1px solid #000;
@@ -106,7 +106,7 @@ ul.flag a{
 		}
 		.site-cache{
 			position: absolute;
-			z-index: 61;
+			z-index: 70;
 			top: 0;
 			left: 0;
 			right: 0;
