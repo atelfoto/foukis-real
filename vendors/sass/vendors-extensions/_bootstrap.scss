@@ -11,7 +11,7 @@
 // Reset and dependencies
 //@import "bootstrap/normalize";
 //@import "bootstrap/print";
-//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
+// @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/glyphicons";
 
 // Core CSS
 //@import "bootstrap/scaffolding";
@@ -36,7 +36,7 @@
 //@import "bootstrap/badges";
 //@import "bootstrap/jumbotron";
 //@import "bootstrap/thumbnails";
-//@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/alerts";
 //@import "bootstrap/progress-bars";
 //@import "bootstrap/media";
 //@import "bootstrap/list-group";
