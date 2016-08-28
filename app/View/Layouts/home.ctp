@@ -40,10 +40,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<a href="#" class="header__icon" id="header__icon"></a>
 				<a href="#" class="header__logo">Logo</a>
 				<nav class="menu" >
-					<?php echo $this->Html->link("accueil", array('controller' => 'pages', 'action' => 'index')); ?>
-					<?php echo $this->element("menu") ?>
-					<a href="<?php echo $this->Html->url(array('controller' => 'users', 'action' => 'account', "admin"=>true)); ?>"><?php echo __('account'); ?>
-					</a>
+				<ul>
+					<li <?php if ($this->request->controller =='pages' && $this->request->action =='index' ):?> class="active"<?php endif; ?>>
+						<?php echo $this->Html->link("accueil", array('controller' => 'pages', 'action' => 'index')); ?>
+					</li>
+						<?php echo $this->element("menu") ?>
+					<!-- <li> -->
+						<?php // echo $this->Html->link(__('account') , array('controller' => 'users', 'action' => 'account','admin'=>true)); ?>
+					<!-- </li> -->
+				</ul>
+					<!-- <a href="<?php // echo $this->Html->url(array('controller' => 'users', 'action' => 'account', "admin"=>true)); ?>"><?php // echo __('account'); ?> </a>-->
+
 				</nav>
 				<nav  style="float:right;witdh:50%;">
 					<ul class="flag" style="float:right;witdh:50%;">
