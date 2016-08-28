@@ -40,7 +40,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<a href="#" class="header__icon" id="header__icon"></a>
 				<a href="#" class="header__logo">Logo</a>
 				<nav class="menu" >
-				<ul>
+				<ul class="nav">
 					<li <?php if ($this->request->controller =='pages' && $this->request->action =='index' ):?> class="active"<?php endif; ?>>
 						<?php echo $this->Html->link("accueil", array('controller' => 'pages', 'action' => 'index')); ?>
 					</li>
