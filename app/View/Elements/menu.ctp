@@ -9,6 +9,6 @@
 <li>
 	<a href="#">Contact Us</a>
 </li>
-<li>
+<li <?php if ($this->request->controller == "users" && $this->request->action=="login"):?> class="active"<?php endif; ?>>
 <?php  echo $this->Html->link("login", array('controller' => 'users', 'action' => 'login')); ?>
 </li>

@@ -38,19 +38,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<header class="header">
 			<div class="top-nav">
 				<a href="#" class="header__icon" id="header__icon"></a>
-				<a href="#" class="header__logo">Logo</a>
+				<a href="#" class="header__logo">Foukis real Estate </a>
 				<nav class="menu" >
-				<ul class="nav">
-					<li <?php if ($this->request->controller =='pages' && $this->request->action =='index' ):?> class="active"<?php endif; ?>>
-						<?php echo $this->Html->link("accueil", array('controller' => 'pages', 'action' => 'index')); ?>
-					</li>
-						<?php echo $this->element("menu") ?>
-					<!-- <li> -->
-						<?php // echo $this->Html->link(__('account') , array('controller' => 'users', 'action' => 'account','admin'=>true)); ?>
-					<!-- </li> -->
-				</ul>
-					<!-- <a href="<?php // echo $this->Html->url(array('controller' => 'users', 'action' => 'account', "admin"=>true)); ?>"><?php // echo __('account'); ?> </a>-->
-
+					<ul class="nav">
+						<li <?php if ($this->request->controller =='pages' && $this->request->action =='index' ):?> class="active"<?php endif; ?>>
+							<?php echo $this->Html->link('<span class="icon-home-1"  aria-hidden="true"></span>' , array('controller' => 'pages', 'action' => 'index'),array('escape'=>false,'class'=>'home')); ?>
+						</li>
+							<?php echo $this->element("menu") ?>
+					</ul>
 				</nav>
 				<nav  style="float:right;witdh:50%;">
 					<ul class="flag" style="float:right;witdh:50%;">
@@ -66,7 +61,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 					</ul>
 				</nav>
 			</div>
-			<!-- <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1> -->
 		</header>
 		<div class="site-pusher">
 			<div class="site-content" id="container">
@@ -77,12 +71,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 					<!--/nocache-->
 					<p class="breadcrumb ">
 						<?php   echo $this->Html->getCrumbs(' / ', array(
-							'text' => __('home'),
-							'url' => array('controller' => 'homes', 'action' => 'index'),
-							'escape' => false
+							'text' => '<span class="icon-home-1"  aria-hidden="true"></span>' ,
+							'url' => array('controller' => 'pages', 'action' => 'index'),
+							'escape' => false,'title'=> __('home')
 							)
 						);
-						?>/<?php  echo $this->fetch('title'); ?>/<?= isset($name) ? "<small>".$name."</small>" : false ; ?>
+						?><?php // echo '/'. $this->fetch('title'); ?><?= isset($name) ? "<small>/".$name."</small>" : false ; ?>
 					</p>
 					<div class="page-header" id="page-header">
 						<!-- <h2 class="title"><?php  echo $this->fetch('title'); ?> <?= isset($cat) ? "<small>".$cat."</small>" : false ; ?></h2> -->

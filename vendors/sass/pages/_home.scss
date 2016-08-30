@@ -2,23 +2,17 @@
 	========================================================================== */
 	// @include sticky-footer(205px, "#site-container", "#container_footer", "#footer");
 @include layout($desktop);
- h1.title{
- 	//@include container;
- 	//position: absolute;
-    padding-left: 50px;
-    width: 100%;
-  	text-transform: capitalize;
-  	font-family: $typo-header;
-  	font-style: italic;
-	font-weight: bold;
-  	letter-spacing:-2px;
-  	line-height: -10px;
-  	//line-height:1em;
-  	//text-shadow:0 3px 3px #000;
-  	@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
-  	float: left;
-  	//margin-top: 0.5em;
-  	//margin-bottom: 0.5em;
+h1.title{
+ 	padding-left: 50px;//@include container;//position: absolute;
+ 	width: 100%;
+ 	text-transform: capitalize;
+ 	font-family: $typo-header;
+ 	font-style: italic;
+ 	font-weight: bold;
+ 	letter-spacing:-2px;
+ 	line-height: -10px;  	//line-height:1em;  	//text-shadow:0 3px 3px #000;
+ 	@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
+  	float: left;  	//margin-top: 0.5em;  	//margin-bottom: 0.5em;
   	span{
   		top: 30px;
   		color:#00f;
@@ -32,25 +26,23 @@
   		left: 10px;
   		top: -50px;
   		color: #fff;
-  		font-size: 3em;
-  		//@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
+  		font-size: 3em;	//@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
   	}
+}
 
- }
- h2.title{
- 	background-color: $bg-color;
- 	padding: 10px 10px;
- }
- .content{
- 	background: $bg-color;
- 	height: 100%;
- 	color:#fff;
- 	margin-top: 10px;
- 	margin-bottom: 50px;
- 	@include span(4 of 4);
- }
-	%stretched {
-
+h2.title{
+  	background-color: $bg-color;
+  	padding: 10px 10px;
+}
+.content{
+  	background: $bg-color;
+  	height: 100%;
+  	color:#fff;
+  	margin-top: 10px;
+  	margin-bottom: 50px;
+  	@include span(4 of 4);
+}
+%stretched {
 		//border: 3px solid $stretch-color;
 		@include border-radius(8px);
 		display: block;
@@ -60,26 +52,26 @@
 		color: white;
 		text-align: center;
 		vertical-align: middle;
-		padding: 0.5em;
-	}
+		//padding: 0.5em;
+}
 	.stretch-container {
 	 //   border: 1px solid #999999;
-		width: 100px;
-		height: 120px;
-		position: relative;
-		@include inline-block;
-	}
+	 width: 100px;
+	 height: 120px;
+	 position: relative;
+	 @include inline-block;
+}
 
-	.stretch-offset {
-		@extend %stretched;
-		@include stretch(1em, 0.2em,1em, 0.2em);
-		span{
-			font-size: 2.5em;
-		}
+.stretch-offset {
+	@extend %stretched;
+	@include stretch(1em, 0.2em,1em, 0.2em);
+	span{
+		font-size: 2.5em;
+	}
 		//font-size: 2.5em;
 		p:first-letter{
-		text-transform: uppercase;
-	}
+			text-transform: uppercase;
+		}
 	}
 //@include susy-breakpoint(750px, $desktop) {
 	@media only screen and(max-width: 750px){

@@ -5,7 +5,7 @@ if (navigator.userAgent.match(/(android|iphone|ipad|blackberry|symbian|symbianos
         $( function() {
             $('#home').vegas({
                 slides: [
-                {src: 'files/wallpaper/photo/desk_01.jpg' },
+                {src: '/files/wallpaper/photo/desk_01.jpg' },
                 ]
             });
         });
@@ -14,7 +14,7 @@ if (navigator.userAgent.match(/(android|iphone|ipad|blackberry|symbian|symbianos
         $( function() {
             $('.site-content').vegas({
                 slides: [
-                { src: 'files/wallpaper/photo/desk_03.jpg' },,
+                { src: '/files/wallpaper/photo/desk_03.jpg' },,
                 ]
             });
         });
@@ -29,7 +29,7 @@ if (navigator.userAgent.match(/(android|iphone|ipad|blackberry|symbian|symbianos
             delay: 1e4,
             slides:
             [{
-                src: 'files/wallpaper/photo/desk_01.jpg',
+                src: '/files/wallpaper/photo/desk_01.jpg',
                 color: "#DBC9B3",
                 transition: "fade2",
                 transitionDuration: 1e4

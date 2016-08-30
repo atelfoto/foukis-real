@@ -27,6 +27,9 @@
 		-webkit-overflow-scrolling: touch;
 		background-color: #fff;
 		@include span(4 of 4);
+		h1.title{
+			display: none;
+		}
 
 	}
 	.header{
