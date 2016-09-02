@@ -1,7 +1,7 @@
 <?php echo  $this->Html->scriptStart($options = array("inline"=>false)); ?>
 if (navigator.userAgent.match(/(android|iphone|ipad|blackberry|symbian|symbianos|symbos|netfront|model-orange|javaplatform|iemobile|windows phone|samsung|htc|opera mobile|opera mobi|opera mini|presto|huawei|blazer|bolt|doris|fennec|gobrowser|iris|maemo browser|mib|cldc|minimo|semc-browser|skyfire|teashark|teleca|uzard|uzardweb|meego|nokia|bb10|playbook)/gi)) {
     if ( ((screen.width  >= 480) && (screen.height >= 800)) || ((screen.width  >= 800) && (screen.height >= 480)) || navigator.userAgent.match(/ipad/gi) ) {
-       alert('tablette');
+     //  alert('tablette');
         $( function() {
             $('#home').vegas({
                 slides: [
@@ -10,7 +10,7 @@ if (navigator.userAgent.match(/(android|iphone|ipad|blackberry|symbian|symbianos
             });
         });
     } else  {
-        alert('mobile');
+     //   alert('mobile');
         $( function() {
             $('.site-content').vegas({
                 slides: [
