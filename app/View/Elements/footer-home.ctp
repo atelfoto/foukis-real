@@ -13,7 +13,6 @@
 		<div class='stretch-offset'>
 		<span class="icon-building-filled" aria-hidden="true"></span>
 		<p><?php echo __('land') ?></p>
-
 		</div>
 	</a>
 	</li>
@@ -43,6 +42,6 @@
 	</li>
 </ul>
 	<p>
-		<strong><small><em>Copyright &copy; 2014-<?php echo date('Y'); ?> <a href=""><?php echo env('HTTP_HOST'); ?></a></em></small></strong> All rights reserved.
+		<strong><small><em>Copyright &copy; 2007-<?php echo date('Y'); ?> <a href=""><?php echo env('HTTP_HOST'); ?></a></em></small></strong> All rights reserved.
 	</p>
 </footer>

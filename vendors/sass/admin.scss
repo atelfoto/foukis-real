@@ -95,19 +95,18 @@ a{
 }
 
  // $footer
-footer{
-	background:rgba(0, 0, 0, 0.64);
-	bottom:0px;
-	margin-bottom: 0;
-	text-align:center;
-	p{padding: 5px;
-
-		font-size: .8em;
-		font-weight: 400;
-		font-style: italic;
-
-	}
-}
+ footer{
+ 	background:rgba(0, 0, 0, 0.64);
+ 	bottom:0px;
+ 	margin-bottom: 0;
+ 	text-align:center;
+ 	p{
+ 		padding: 5px;
+ 		font-size: .8em;
+ 		font-weight: 400;
+ 		font-style: italic;
+ 	}
+ }
 /*------------------------------------*\
     $RESPONSIVE
 \*------------------------------------*/

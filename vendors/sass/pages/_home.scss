@@ -54,7 +54,7 @@ h2.title{
 		vertical-align: middle;
 		//padding: 0.5em;
 }
-	.stretch-container {
+.stretch-container {
 	 //   border: 1px solid #999999;
 	 width: 100px;
 	 height: 120px;
@@ -74,23 +74,15 @@ h2.title{
 		}
 	}
 //@include susy-breakpoint(750px, $desktop) {
-	@media only screen and(max-width: 750px){
-		h1.title{
-			left: 15px;
-			span{
-				font-size: 2em;
-			}
-			small{
-				font-size: 1.5em;
-			}
-		}
+@media only screen and(max-width: 750px){
+
 
 		.stretch-container {
-			width: 85px;
-			height: 85px;
+			width: 65px;
+			height: 75px;
 		}
 		.stretch{
-			@include column-count(5);
+			@include column-count(1);
 		}
 		.stretch-offset
 		span{
@@ -101,3 +93,4 @@ h2.title{
 		}
 
 	}
+

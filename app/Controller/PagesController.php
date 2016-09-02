@@ -35,7 +35,7 @@ class PagesController extends AppController {
  *
  * @var array
  */
-	public $uses = array();
+public $uses = array();
 
 public function menu(){
 		$pages = $this->Post->find('all',array(
