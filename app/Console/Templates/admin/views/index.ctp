@@ -22,7 +22,7 @@
 			<button class="btn " data-toggle="modal" data-target="#ModalAide">
 			<i class="fa fa-question-circle">&nbsp;<?= __('Help'); ?></i>
 			</button>
-				<?php echo "<?php echo \$this->Html->link(\"<i class='fa fa-plus'></i>\". __(\"Add article\"),array('action'=>'add'),
+				<?php echo "<?php echo \$this->Html->link(\"<i class='fa fa-plus'></i>\". __(\"Add\"),array('action'=>'add'),
 				array('class' =>\"btn btn-success \",'escape'=>false)); ?>\n";
 				echo"\t\t</div>"; ?>
 		<div class="panel table-responsive box-home">

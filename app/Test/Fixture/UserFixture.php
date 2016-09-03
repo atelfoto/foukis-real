@@ -15,6 +15,7 @@ class UserFixture extends CakeTestFixture {
 		'username' => array('type' => 'string', 'null' => true, 'default' => null, 'key' => 'index', 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'mail' => array('type' => 'string', 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'password' => array('type' => 'string', 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'group_id' => array('type' => 'integer', 'null' => false, 'default' => null, 'unsigned' => false),
 		'firstname' => array('type' => 'string', 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'lastname' => array('type' => 'string', 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'active' => array('type' => 'boolean', 'null' => true, 'default' => '0'),
@@ -43,15 +44,16 @@ class UserFixture extends CakeTestFixture {
 			'username' => 'Lorem ipsum dolor sit amet',
 			'mail' => 'Lorem ipsum dolor sit amet',
 			'password' => 'Lorem ipsum dolor sit amet',
+			'group_id' => 1,
 			'firstname' => 'Lorem ipsum dolor sit amet',
 			'lastname' => 'Lorem ipsum dolor sit amet',
 			'active' => 1,
 			'avatar' => 1,
-			'created' => '2015-12-30 14:21:28',
-			'modified' => '2015-12-30 14:21:28',
+			'created' => '2016-09-03 16:14:39',
+			'modified' => '2016-09-03 16:14:39',
 			'role' => 'Lorem ipsum dolor sit amet',
 			'token' => 'Lorem ipsum dolor sit amet',
-			'lastlogin' => '2015-12-30 14:21:28'
+			'lastlogin' => '2016-09-03 16:14:39'
 		),
 	);
 

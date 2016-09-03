@@ -25,9 +25,7 @@
 			</div>
 		</div>
 	</div>
-
 	<div class="row">
-
 		<div class="col-md-3">
 			<div class="actions">
 				<div class="panel panel-default">

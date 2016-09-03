@@ -10,64 +10,105 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
-
 /**
- * [$components description]
+ * Components
+ *
  * @var array
  */
-public $components = array(
-        'Acl',
-        'Auth' => array(
-            'authorize' => array(
-                'Actions' => array('actionPath' => 'controllers')
-            )
-        ),
-        'Session',
-        'Flash',
-        'Paginator'
-    );
-/**
- * [$helpers description]
- * @var array
- */
-public $helpers = array('Html', 'Form', 'Session');
-/**
- * [beforeFilter description]
- * @return [type] [description]
- */
-public function beforeFilter() {
-        //Configure AuthComponent
-        $this->Auth->loginAction = array(
-          'controller' => 'users',
-          'action' => 'login'
-        );
-        $this->Auth->logoutRedirect = array(
-          'controller' => 'users',
-          'action' => 'login'
-        );
-        $this->Auth->loginRedirect = array(
-          'controller' => 'posts',
-          'action' => 'add'
-        );
-    }
+	public $components = array('Paginator', 'Flash', 'Session');
 
 /**
-* login
-**/
-public function login() {
-	$this->layout="home";
-    if ($this->request->is('post')) {
-        if ($this->Auth->login()) {
-            return $this->redirect($this->Auth->redirectUrl());
-        } else {
-            $this->Session->setFlash(__('Votre nom d\'user ou mot de passe sont incorrects.'));
-        }
-    }
-}
+ * index method
+ *
+ * @return void
+ */
+	public function index() {
+		$this->layout="admin";
+		$this->User->recursive = 0;
+		$this->set('users', $this->Paginator->paginate());
+	}
 
-public function logout() {
-    //Laissez vide pour le moment.
-}
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		if (!$this->User->exists($id)) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+		$this->set('user', $this->User->find('first', $options));
+	}
+
+/**
+ * add method
+ *
+ * @return void
+ */
+	public function add() {
+		$this->layout='admin';
+		if ($this->request->is('post')) {
+			$this->User->create();
+			if ($this->User->save($this->request->data)) {
+				$this->Flash->success(__('The user has been saved.'),array('class' => 'alert alert-success'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Flash->error(__('The user could not be saved. Please, try again.'),array('class' => 'alert alert-danger'));
+			}
+		}
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
+	}
+
+/**
+ * edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function edit($id = null) {
+		if (!$this->User->exists($id)) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			if ($this->User->save($this->request->data)) {
+				$this->Flash->success(__('The user has been saved.'), 'default', array('class' => 'alert alert-success'));
+				return $this->redirect(array('action' => 'index'));
+			} else {
+				$this->Flash->error(__('The user could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+			}
+		} else {
+			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
+			$this->request->data = $this->User->find('first', $options);
+		}
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
+	}
+
+/**
+ * delete method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function delete($id = null) {
+		$this->User->id = $id;
+		if (!$this->User->exists()) {
+			throw new NotFoundException(__('Invalid user'));
+		}
+		$this->request->onlyAllow('post', 'delete');
+		if ($this->User->delete()) {
+			$this->Flash->success(__('The user has been deleted.'), 'default', array('class' => 'alert alert-success'));
+		} else {
+			$this->Flash->error(__('The user could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
+		}
+		return $this->redirect(array('action' => 'index'));
+	}
 
 /**
  * admin_index method
@@ -75,7 +116,6 @@ public function logout() {
  * @return void
  */
 	public function admin_index() {
-		$this->layout="admin";
 		$this->User->recursive = 0;
 		$this->set('users', $this->Paginator->paginate());
 	}
@@ -88,7 +128,6 @@ public function logout() {
  * @return void
  */
 	public function admin_view($id = null) {
-		$this->layout="admin";
 		if (!$this->User->exists($id)) {
 			throw new NotFoundException(__('Invalid user'));
 		}
@@ -102,16 +141,17 @@ public function logout() {
  * @return void
  */
 	public function admin_add() {
-		$this->layout="admin";
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved.'));
+				$this->Flash->success(__('The user has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The user could not be saved. Please, try again.'));
+				$this->Flash->error(__('The user could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		}
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
 	}
 
 /**
@@ -122,33 +162,22 @@ public function logout() {
  * @return void
  */
 	public function admin_edit($id = null) {
-		$this->layout="admin";
 		if (!$this->User->exists($id)) {
 			throw new NotFoundException(__('Invalid user'));
 		}
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved.'));
+				$this->Flash->success(__('The user has been saved.'), 'default', array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The user could not be saved. Please, try again.'));
+				$this->Flash->error(__('The user could not be saved. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 			}
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 			$this->request->data = $this->User->find('first', $options);
 		}
-	}
-
-/**
-* admin_account
-**/
-public function admin_account(){
-	$this->layout="admin";
-
-}
-
-public function forgot() {
-
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
 	}
 
 /**
@@ -163,11 +192,11 @@ public function forgot() {
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
-		$this->request->allowMethod('post', 'delete');
+		$this->request->onlyAllow('post', 'delete');
 		if ($this->User->delete()) {
-			$this->Flash->success(__('The user has been deleted.'));
+			$this->Flash->success(__('The user has been deleted.'), 'default', array('class' => 'alert alert-success'));
 		} else {
-			$this->Flash->error(__('The user could not be deleted. Please, try again.'));
+			$this->Flash->error(__('The user could not be deleted. Please, try again.'), 'default', array('class' => 'alert alert-danger'));
 		}
 		return $this->redirect(array('action' => 'index'));
 	}

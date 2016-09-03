@@ -13,7 +13,7 @@ class UserTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.user',
-		'app.message',
+		'app.group',
 		'app.post'
 	);
 

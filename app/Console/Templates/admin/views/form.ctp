@@ -100,7 +100,11 @@ $('#myTab a').click(function (e) {
 });
 //pour les toogle
   $(function() {
-    $('#{$modelClass}Online').bootstrapToggle();
+    $('#{$modelClass}Online').bootstrapToggle({
+		size:'large',
+		onstyle: 'primary',
+		offstyle:'danger',
+    });
   });
 //pour le textarea
 tinyMCE.init({

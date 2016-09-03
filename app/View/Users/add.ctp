@@ -1,31 +1,101 @@
-<div class="users form">
-<?php echo $this->Form->create('User'); ?>
-	<fieldset>
-		<legend><?php echo __('Add User'); ?></legend>
-	<?php
-		echo $this->Form->input('name');
-		echo $this->Form->input('username');
-		echo $this->Form->input('mail');
-		echo $this->Form->input('password');
-		echo $this->Form->input('firstname');
-		echo $this->Form->input('lastname');
-		echo $this->Form->input('active');
-		echo $this->Form->input('avatar');
-		echo $this->Form->input('role');
-		echo $this->Form->input('token');
-		echo $this->Form->input('lastlogin');
-	?>
-	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->assign('title', __('user')); ?>
+ <?php $this->Html->addCrumb(__('user'),array('controller'=>'users','action'=>'index','admin'=>true)); ?>
+ <?php $this->Html->addCrumb('edit' ); ?>
+<div class="users index row">
+	<div class="col-md-12 page-header">
+		<h2><i class="fa fa-book"></i>&nbsp;<?php echo __('Add User'); ?></h2>
+	</div>
+	<div class="col-md-12 col-lg-10 col-lg-offset-1">
+		<div class=" box-home">
+			<div class="well">
+				<?php echo $this->Form->create('User'); ?>
+				<div class="tabpanel">
+					<nav class="navbar">
+				    	<div class="collapse navbar-collapse">
+							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<?php echo $this->Form->input('active', array('label' =>false));?>
+								</li>
+								<li >
+									<?php echo $this->Form->button('<i class="fa fa-check fa-lg" style="color:#fff;">&nbsp;</i>'.__('publish'),array('class' => 'btn btn-success btn-lg')); ?>
+								</li >
+								<li >
+									<?php echo $this->html->link('<i class="fa fa-times-circle fa-lg" style="color:#f00;">&nbsp;</i>'.__('Closed'),	array('controller'=>'users','action'=>'index'),
+									array('class' => 'btn btn-default','type'=>'button','escape'=>false)); ?>
+								</li >
+							</ul>
+						</div>
+					</nav>
+					<div class="tab-content">
+						<div class="tab-pane fade in active" role="tabpanel" id="contenu">
+							<div class="form-group">
+								<?php echo $this->Form->input('name', array('class' => 'form-control',
+							 'placeholder' => __('Name')));?>
+							</div>
+							<div class="form-group">
+								<?php echo $this->Form->input('username', array('class' => 'form-control',
+							 'placeholder' => __('Username')));?>
+							</div>
+							<div class="form-group">
+								<?php echo $this->Form->input('mail', array('class' => 'form-control',
+							 'placeholder' => __('Mail')));?>
+							</div>
+							<div class="form-group">
+								<?php echo $this->Form->input('password', array('class' => 'form-control',
+							 'placeholder' => __('Password')));?>
+							</div>
+							<div class="form-group">
+								<?php echo $this->Form->input('group_id', array('class' => 'form-control',
+							 'placeholder' => __('Group Id')));?>
+							</div>
+						<!-- 	<div class="form-group">
+								<?php echo $this->Form->input('firstname', array('class' => 'form-control',
+							 'placeholder' => __('Firstname')));?>
+							</div>
+							<div class="form-group">
+								<?php echo $this->Form->input('lastname', array('class' => 'form-control',
+							 'placeholder' => __('Lastname')));?>
+							</div>
+							<div class="form-group">
+								<?php echo $this->Form->input('avatar', array('class' => 'form-control',
+							 'placeholder' => __('Avatar')));?>
+							</div>
+							<div class="form-group">
+								<?php echo $this->Form->input('role', array('class' => 'form-control',
+							 'placeholder' => __('Role')));?>
+							</div>
+							<div class="form-group">
+								<?php echo $this->Form->input('token', array('class' => 'form-control',
+							 'placeholder' => __('Token')));?>
+							</div>
+							<div class="form-group">
+								<?php echo $this->Form->input('lastlogin', array('class' => 'form-control',
+							 'placeholder' => __('Lastlogin')));?>
+							</div>-->
+					  	</div>
+					</div>
+				</div>
+				<div class="text-right" style="margin-top:10px;">
+					<?php echo $this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-primary')); ?>
+					<?php echo $this->html->link('<i class="fa fa-times-circle fa-lg" style="color:#f00;">&nbsp;</i>'.__('Closed'),
+					array('controller'=>'users','action'=>'index'),
+					array('class' => 'btn btn-default','escape'=>false)); ?>
+				</div>
+				<?php echo $this->Form->end() ?>
+			</div>
+		</div>
+	</div><!-- end containers -->
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
+<?php  echo $this->Html->css(array('bootstrap-toggle.min'),array('inline'=>false)); ?>
+<?php  echo $this->Html->script(array('bootstrap-toggle'),array('inline'=>false)); ?>
+<?php  echo  $this->Html->scriptStart(array('inline'=>false)); ?>
+//pour les toogle
+  $(function() {
+    $('#UserActive').bootstrapToggle({
+    size:'large',
+    onstyle:'primary',
+    offstyle:'danger',
 
-		<li><?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?></li>
-		<li><?php echo $this->Html->link(__('List Messages'), array('controller' => 'messages', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Message'), array('controller' => 'messages', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Posts'), array('controller' => 'posts', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Post'), array('controller' => 'posts', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
+    });
+  });
+<?= $this->Html->scriptEnd(); ?>

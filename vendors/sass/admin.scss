@@ -1,9 +1,9 @@
 @import "bootstrap-compass";
-@import "bootstrap-variables";
+@import "admin/bootstrap-variables";
 @import "bootstrap";
 @import "compass";
 
-@import "../admin/_AdminLTE";
+@import "admin/_AdminLTE";
 @import "bootstrap-toggle.scss";
 //travailler avec les sprites
 $icones-layout:smart;
@@ -83,6 +83,9 @@ form .input .required label:after{
 	color: #E32;
 content: '*';
 display: inline;
+}
+.input.checkbox{
+	margin:0px!important;
 }
 
 
