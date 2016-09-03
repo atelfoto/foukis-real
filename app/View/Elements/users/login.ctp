@@ -8,15 +8,10 @@
  			'placeholder'=>__('Username :'),'autofocus'=>true)); ?>
  			<?= $this->Form->input('password', array('required'=>false,'label' => __('Password'),
  			'placeholder'=>__('Password :'))); ?>
- 			<!-- <div class="input checkbox">
- 				<div class="checkbox"> -->
  					<?php echo  $this->Form->input('remember', array('type'=>'checkbox', "checked"=>true,
  					'label'=>__('Remember me') ,'div'=>false, 'required'=>false,'class'=>'input')); ?>
- 			<!-- 	</div>
- 			</div> -->
- 			<ul >
+ 			<ul>
  				<li>
- 					<?php // echo  $this->Html->link(__('Forgot password?'), array('action' => 'forgot'),array('id'=>"forgot")); ?>
  					<a href="#" id="forgot"><?php echo __('Forgot password?'); ?></a>
  				</li>
  			</ul>
@@ -24,7 +19,7 @@
 				<button  type="submit" class="btn btn-primary"> <?= __('Login'); ?></button>
 				<button  type="reset" class="btn btn-primary"> <?= __('Reset'); ?></button>
 			</div>
-			</fieldset>
+		</fieldset>
  			<?php  echo $this->Form->end(); ?>
  		</div>
  	</div>

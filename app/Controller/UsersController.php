@@ -10,12 +10,64 @@ App::uses('AppController', 'Controller');
  */
 class UsersController extends AppController {
 
+
 /**
- * Components
- *
+ * [$components description]
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
+public $components = array(
+        'Acl',
+        'Auth' => array(
+            'authorize' => array(
+                'Actions' => array('actionPath' => 'controllers')
+            )
+        ),
+        'Session',
+        'Flash',
+        'Paginator'
+    );
+/**
+ * [$helpers description]
+ * @var array
+ */
+public $helpers = array('Html', 'Form', 'Session');
+/**
+ * [beforeFilter description]
+ * @return [type] [description]
+ */
+public function beforeFilter() {
+        //Configure AuthComponent
+        $this->Auth->loginAction = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->logoutRedirect = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->loginRedirect = array(
+          'controller' => 'posts',
+          'action' => 'add'
+        );
+    }
+
+/**
+* login
+**/
+public function login() {
+	$this->layout="home";
+    if ($this->request->is('post')) {
+        if ($this->Auth->login()) {
+            return $this->redirect($this->Auth->redirectUrl());
+        } else {
+            $this->Session->setFlash(__('Votre nom d\'user ou mot de passe sont incorrects.'));
+        }
+    }
+}
+
+public function logout() {
+    //Laissez vide pour le moment.
+}
 
 /**
  * admin_index method
@@ -23,6 +75,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function admin_index() {
+		$this->layout="admin";
 		$this->User->recursive = 0;
 		$this->set('users', $this->Paginator->paginate());
 	}
@@ -35,6 +88,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function admin_view($id = null) {
+		$this->layout="admin";
 		if (!$this->User->exists($id)) {
 			throw new NotFoundException(__('Invalid user'));
 		}
@@ -48,6 +102,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function admin_add() {
+		$this->layout="admin";
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
@@ -67,6 +122,7 @@ class UsersController extends AppController {
  * @return void
  */
 	public function admin_edit($id = null) {
+		$this->layout="admin";
 		if (!$this->User->exists($id)) {
 			throw new NotFoundException(__('Invalid user'));
 		}
@@ -90,13 +146,7 @@ public function admin_account(){
 	$this->layout="admin";
 
 }
-/**
-* login
-**/
-public function login(){
-	$this->layout="home";
 
-}
 public function forgot() {
 
 	}

@@ -41,21 +41,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			<nav class="menu">
 				<?php echo $this->Html->link('post', array('controller' => 'posts', 'action' => 'index',"admin"=>true)); ?>
 				<?php echo $this->Html->link(__('account'), array('controller' => 'users', 'action' => 'account')); ?>
-
-
-				<!-- <ul class="flag">
-					<li>
-						<a href="#" class="French"></a>
-					</li>
-					<li>
-						<a href="#" class="English"></a>
-					</li>
-					<li>
-						<a href="#" class="Greek"></a>
-					</li>
-				</ul> -->
 			</nav>
-			<!-- <h1><?php echo $this->Html->link($cakeDescription, 'http://cakephp.org'); ?></h1> -->
 		</header>
 		<div class="site-pusher">
 			<div class="site-content" >
