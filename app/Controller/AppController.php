@@ -43,6 +43,27 @@ public $components = array(
             )
         ),
         'Session',
-        'DebugKit.Toolbar'
+        'DebugKit.Toolbar',
+        "flash"
     );
+/**
+ * [beforeFilter description]
+ * @return [type] [description]
+ */
+    public function beforeFilter() {
+        //Configure AuthComponent
+        $this->Auth->loginAction = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->logoutRedirect = array(
+          'controller' => 'users',
+          'action' => 'login'
+        );
+        $this->Auth->loginRedirect = array(
+          'controller' => 'posts',
+          'action' => 'add'
+        );
+       $this->Auth->allow('display');
+    }
 }

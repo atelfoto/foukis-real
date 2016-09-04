@@ -9,15 +9,47 @@ App::uses('AppController', 'Controller');
  * @property SessionComponent $Session
  */
 class UsersController extends AppController {
-	public function beforeFilter() {
+	/**
+ * Components
+ *
+ * @var array
+ */
+public $components = array('Paginator', 'Flash', 'Session');
+public function beforeFilter() {
     parent::beforeFilter();
-    $this->Auth->allow('initDB'); // Nous pouvons supprimer cette ligne après avoir fini
+    $this->Auth->allow('initDB','login',"logout"); // Nous pouvons supprimer cette ligne après avoir fini
 }
+/**
+ * [login description]
+ * @return [type] [description]
+ */
 public function login() {
-    if ($this->Session->read('Auth.User')) {
-        $this->Session->setFlash('Vous êtes connecté!');
-        return $this->redirect('/');
-    }
+	if ($this->request->is('post')) {
+		if ($this->Auth->login()) {
+			return $this->redirect($this->Auth->redirectUrl());
+		} else {
+			//$this->Session->setFlash(__('Votre nom d\'user ou mot de passe sont incorrects.'));
+			$this->Flash->error(__('Votre nom d\'user ou mot de passe sont incorrects.'));
+		}
+		if ($this->Session->read('Auth.User')) {
+        //$this->Session->setFlash('Vous êtes connecté!');
+			$this->Flash->success('Vous êtes connecté!');
+			return $this->redirect('/');
+		}
+	}
+}
+// public function login() {
+//     if ($this->Session->read('Auth.User')) {
+//         $this->Flash->success('Vous êtes connecté!');
+//         return $this->redirect('/');
+//     }
+// }
+
+public function logout() {
+	//debug($this->Auth->logout());die();
+    //$this->Session->setflash('Au-revoir');
+    $this->Flash->success('au-revoir');
+return $this->redirect($this->Auth->logout());
 }
 public function initDB() {
     $group = $this->User->Group;
@@ -44,12 +76,7 @@ public function initDB() {
     exit;
 }
 
-/**
- * Components
- *
- * @var array
- */
-	public $components = array('Paginator', 'Flash', 'Session');
+
 
 /**
  * index method
