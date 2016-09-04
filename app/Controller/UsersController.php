@@ -9,6 +9,40 @@ App::uses('AppController', 'Controller');
  * @property SessionComponent $Session
  */
 class UsersController extends AppController {
+	public function beforeFilter() {
+    parent::beforeFilter();
+    $this->Auth->allow('initDB'); // Nous pouvons supprimer cette ligne après avoir fini
+}
+public function login() {
+    if ($this->Session->read('Auth.User')) {
+        $this->Session->setFlash('Vous êtes connecté!');
+        return $this->redirect('/');
+    }
+}
+public function initDB() {
+    $group = $this->User->Group;
+    // Autorise l'accès à tout pour les admins
+    $group->id = 1;
+    $this->Acl->allow($group, 'controllers');
+
+    // Autorise l'accès aux posts et widgets pour les managers
+    $group->id = 2;
+    $this->Acl->deny($group, 'controllers');
+    $this->Acl->allow($group, 'controllers/Posts');
+
+    // Autorise l'accès aux actions add et edit des posts widgets pour les utilisateurs de ce groupe
+    $group->id = 3;
+    $this->Acl->deny($group, 'controllers');
+    $this->Acl->allow($group, 'controllers/Posts/add');
+    $this->Acl->allow($group, 'controllers/Posts/edit');
+
+    // Permet aux utilisateurs classiques de se déconnecter
+    $this->Acl->allow($group, 'controllers/users/logout');
+
+    // Nous ajoutons un exit pour éviter d'avoir un message d'erreur affreux "missing views" (manque une vue)
+    echo "tout est ok";
+    exit;
+}
 
 /**
  * Components
@@ -200,4 +234,5 @@ class UsersController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
 }

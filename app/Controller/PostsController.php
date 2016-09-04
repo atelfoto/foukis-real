@@ -10,7 +10,26 @@ App::uses('AppController', 'Controller');
  */
 class PostsController extends AppController {
 
-	public function menu(){
+/**
+ * Components
+ *
+ * @var array
+ */
+public $components = array('Paginator', 'Flash', 'Session');
+
+/**
+ * [beforeFilter description]
+ * @return [type] [description]
+ */
+public function beforeFilter() {
+    parent::beforeFilter();
+    $this->Auth->allow('index', 'view');
+}
+/**
+ * [menu description]
+ * @return [type] [description]
+ */
+public function menu(){
 		$posts = $this->Post->find('all',array(
 			'conditions'=>array('type'=>'post','online'=>1),
 			'fields'    =>array('slug','name',"type")
@@ -18,12 +37,6 @@ class PostsController extends AppController {
 		return $posts;
 	}
 
-/**
- * Components
- *
- * @var array
- */
-	public $components = array('Paginator', 'Flash', 'Session');
 
 /**
 * index
