@@ -12,7 +12,7 @@
 				<?php echo $this->Html->link("<i class='fa fa-plus'></i>". __("Add article"),array('action'=>'add'),
 				array('class' =>"btn btn-success ",'escape'=>false)); ?>
 		</div>		<div class="panel table-responsive box-home">
-			<table  class="table table-bordered text-center table-striped">
+			<table  class="table table-bordered text-center table-striped display">
 				<thead>
 					<tr class="info">
 						<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -72,7 +72,8 @@
 		</div>
 		<div class="col col-md-12 text-center">
 			<?php echo $this->element('pagination'); ?>
-			<?php  echo $this->element("pagination-counter"); ?>		</div>
+			<?php  echo $this->element("pagination-counter"); ?>
+		</div>
 	</div>
 </div><!-- end containing of content -->
 <?php foreach ($users  as $k => $v): $v = current($v);?><!-- modal supprimer -->
@@ -116,4 +117,8 @@
 		</div><!-- /.modal-aide-content -->
 	</div><!-- /.modal-aide-dialog -->
 </div><!-- /.modal-aide -->
-
+<?php $this->Html->scriptStart(array('inline'=>false)); ?>
+	$(document).ready(function() {
+    	$('table.display').DataTable();
+    } );
+<?php $this->Html->scriptEnd(); ?>
