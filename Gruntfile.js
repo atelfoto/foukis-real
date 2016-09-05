@@ -13,7 +13,7 @@ module.exports=function(grunt){
             },
             dist: {
                 files: {
-                    'app/webroot/js/home.min.js': ["vendors/js/jquery.min.js","vendors/js/*.js"],
+                    'app/webroot/js/home.min.js': ["vendors/js/jquery.min.js","vendors/js/*.js",'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js'],
                     'app/webroot/js/bootstrap-toggle.js': ["bower_components/bootstrap-toggle/js/bootstrap-toggle.js"]
 
                 }

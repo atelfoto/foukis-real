@@ -35,35 +35,35 @@ class AppController extends Controller {
  * [$components description]
  * @var array
  */
-public $components = array(
-        'Acl',
-        'Auth' => array(
-            'authorize' => array(
-                'Actions' => array('actionPath' => 'controllers')
-            )
-        ),
-        'Session',
-        'DebugKit.Toolbar',
-        "flash"
-    );
+// public $components = array(
+//         'Acl',
+//         'Auth' => array(
+//             'authorize' => array(
+//                 'Actions' => array('actionPath' => 'controllers')
+//             )
+//         ),
+//         'Session',
+//         'DebugKit.Toolbar',
+//         "flash"
+//     );
 /**
  * [beforeFilter description]
  * @return [type] [description]
  */
-    public function beforeFilter() {
-        //Configure AuthComponent
-        $this->Auth->loginAction = array(
-          'controller' => 'users',
-          'action' => 'login'
-        );
-        $this->Auth->logoutRedirect = array(
-          'controller' => 'users',
-          'action' => 'login'
-        );
-        $this->Auth->loginRedirect = array(
-          'controller' => 'posts',
-          'action' => 'add'
-        );
-       $this->Auth->allow('display');
-    }
+    // public function beforeFilter() {
+    //     //Configure AuthComponent
+    //     $this->Auth->loginAction = array(
+    //       'controller' => 'users',
+    //       'action' => 'login'
+    //     );
+    //     $this->Auth->logoutRedirect = array(
+    //       'controller' => 'users',
+    //       'action' => 'login'
+    //     );
+    //     $this->Auth->loginRedirect = array(
+    //       'controller' => 'posts',
+    //       'action' => 'add'
+    //     );
+    //    $this->Auth->allow('display');
+    // }
 }

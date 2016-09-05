@@ -19,16 +19,13 @@
 						<th><?php echo $this->Paginator->sort('name'); ?></th>
 						<th><?php echo $this->Paginator->sort('username'); ?></th>
 						<th><?php echo $this->Paginator->sort('mail'); ?></th>
-						<th><?php echo $this->Paginator->sort('password'); ?></th>
 						<th><?php echo $this->Paginator->sort('group_id'); ?></th>
 						<th><?php echo $this->Paginator->sort('firstname'); ?></th>
 						<th><?php echo $this->Paginator->sort('lastname'); ?></th>
 						<th><?php echo $this->Paginator->sort('active'); ?></th>
-						<th><?php echo $this->Paginator->sort('avatar'); ?></th>
 						<th><?php echo $this->Paginator->sort('created'); ?></th>
-						<th><?php echo $this->Paginator->sort('modified'); ?></th>
-						<th><?php echo $this->Paginator->sort('role'); ?></th>
-						<th><?php echo $this->Paginator->sort('token'); ?></th>
+						<th><?php echo $this->Paginator->sort('modified'); ?></th><!--
+						<th><?php // echo $this->Paginator->sort('role'); ?></th> -->
 						<th><?php echo $this->Paginator->sort('lastlogin'); ?></th>
 						<th colspan="3" class="actions"></th>
 					</tr>
@@ -40,19 +37,14 @@
 						<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
 						<td><?php echo h($user['User']['username']); ?>&nbsp;</td>
 						<td><?php echo h($user['User']['mail']); ?>&nbsp;</td>
-						<td><?php echo h($user['User']['password']); ?>&nbsp;</td>
-								<td>
-			<?php echo $this->Html->link($user['Group']['name'],
-									array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?>
-		</td>
+						<td><?php echo $this->Html->link($user['Group']['name'],
+						array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?></td>
 						<td><?php echo h($user['User']['firstname']); ?>&nbsp;</td>
 						<td><?php echo h($user['User']['lastname']); ?>&nbsp;</td>
 						<td><?php echo h($user['User']['active']); ?>&nbsp;</td>
-						<td><?php echo h($user['User']['avatar']); ?>&nbsp;</td>
-						<td><?php echo h($user['User']['created']); ?>&nbsp;</td>
-						<td><?php echo h($user['User']['modified']); ?>&nbsp;</td>
-						<td><?php echo h($user['User']['role']); ?>&nbsp;</td>
-						<td><?php echo h($user['User']['token']); ?>&nbsp;</td>
+						<td><?php  echo $this->Time->format($user['User']['created'], '%A %e %B, %Y'); ?>&nbsp;</td>
+						<td><?php echo h($user['User']['modified']); ?>&nbsp;</td><!--
+						<td><?php // echo h($user['User']['role']); ?>&nbsp;</td> -->
 						<td><?php echo h($user['User']['lastlogin']); ?>&nbsp;</td>
 						<td class="actions">
 							<?php echo $this->Html->link('<span class="fa fa-eye"></span>',
@@ -94,11 +86,13 @@
 			<div class="modal-body">
 				<p> <?php echo __('Are you sure you want to delete'); ?> <b style="color:#f00;">&nbsp;<?php echo $v['name'];?> &nbsp;</b>
 					<?php echo __('of your Articles') ?>
-					<span class="label-uname strong"></span> ? 
+					<span class="label-uname strong"></span> ?
 				</p>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __('Cancel') ?></button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">
+				<?php echo __('Cancel') ?>
+				</button>
 					<?php  echo $this->Form->postLink(__('Delete'),array('action' => 'delete',	$v['id']),
 							array('class' => 'btn btn-danger delete-user-link')) ?>
 			</div>

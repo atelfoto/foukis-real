@@ -9,48 +9,11 @@ App::uses('AuthComponent', 'Controller/Component');
  */
 class User extends AppModel {
 /**
- * [$actsAs description]
- * @var array
- */
-//public $actsAs = array('Acl' => array('type' => 'requester'));
-public $actsAs = array('Acl' => array('type' => 'requester', 'enabled' => false));
-/**
- * [parentNode description]
- * @return [type] [description]
- */
-public function parentNode() {
-	if (!$this->id && empty($this->data)) {
-		return null;
-	}
-	if (isset($this->data['User']['group_id'])) {
-		$groupId = $this->data['User']['group_id'];
-	} else {
-		$groupId = $this->field('group_id');
-	}
-	if (!$groupId) {
-		return null;
-	}
-	return array('Group' => array('id' => $groupId));
-}
-
-public function bindNode($user) {
-    return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
-}
-/**
  * Display field
  *
  * @var string
  */
 public $displayField = 'name';
-/**
- * [beforeFilter description]
- * @return [type] [description]
- */
-public function beforeFilter() {
-    parent::beforeFilter();
-    // Pour CakePHP 2.1 et supérieurs
-    $this->Auth->allow();
-}
 /**
  * [beforeSave description]
  * @param  array  $options [description]
@@ -60,7 +23,6 @@ public function beforeSave($options = array()) {
         $this->data['User']['password'] = AuthComponent::password($this->data['User']['password']);
         return true;
     }
-
 /**
  * Validation rules
  *
@@ -110,7 +72,12 @@ public $validate = array(
 	);
 
 // The Associations below have been created with all possible keys, those that are not needed can be removed
-
+/**
+ * [$actsAs description]
+ * @var array
+ */
+//public $actsAs = array('Acl' => array('type' => 'requester'));
+// public $actsAs = array('Acl' => array('type' => 'requester', 'enabled' => false));
 /**
  * belongsTo associations
  *
@@ -146,5 +113,38 @@ public $validate = array(
 			'counterQuery' => ''
 		)
 	);
+/**
+ * [parentNode description]
+ * @return [type] [description]
+ */
+// public function parentNode() {
+// 	if (!$this->id && empty($this->data)) {
+// 		return null;
+// 	}
+// 	if (isset($this->data['User']['group_id'])) {
+// 		$groupId = $this->data['User']['group_id'];
+// 	} else {
+// 		$groupId = $this->field('group_id');
+// 	}
+// 	if (!$groupId) {
+// 		return null;
+// 	}
+// 	return array('Group' => array('id' => $groupId));
+// }
+
+// public function bindNode($user) {
+//     return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
+// }
+
+// /**
+//  * [beforeFilter description]
+//  * @return [type] [description]
+//  */
+// public function beforeFilter() {
+//     parent::beforeFilter();
+//     // Pour CakePHP 2.1 et supérieurs
+//     $this->Auth->allow();
+// }
+
 
 }

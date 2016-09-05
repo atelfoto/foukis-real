@@ -1,0 +1,934 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: Console/Templates/admin/views/form.ctp:30
+msgid "contenu"
+msgstr ""
+
+#: Console/Templates/admin/views/form.ctp:33
+msgid "publication"
+msgstr ""
+
+#: Console/Templates/admin/views/index.ctp:23;113
+#: Console/Templates/public/views/index.ctp:23;113
+msgid "Help"
+msgstr ""
+
+#: Console/Templates/admin/views/index.ctp:119
+#: Console/Templates/public/views/index.ctp:119
+#: View/Groups/add.ctp:21;39
+#: View/Groups/edit.ctp:21;46
+#: View/Users/add.ctp:23;80
+#: View/Users/admin_add.ctp:23;80
+#: View/Users/admin_edit.ctp:29;98
+#: View/Users/edit.ctp:29;98
+msgid "Closed"
+msgstr ""
+
+#: Controller/GroupsController.php:38;72;97
+msgid "Invalid group"
+msgstr ""
+
+#: Controller/GroupsController.php:54;76
+msgid "The group has been saved."
+msgstr ""
+
+#: Controller/GroupsController.php:57;79
+msgid "The group could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/GroupsController.php:101
+msgid "The group has been deleted."
+msgstr ""
+
+#: Controller/GroupsController.php:103
+msgid "The group could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/PostsController.php:56;63
+msgid "No pages were found for this ID"
+msgstr ""
+
+#: Controller/PostsController.php:93;128;155
+msgid "Invalid post"
+msgstr ""
+
+#: Controller/PostsController.php:109;132
+msgid "The post has been saved."
+msgstr ""
+
+#: Controller/PostsController.php:112;135
+msgid "The post could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/PostsController.php:159
+msgid "The post has been deleted."
+msgstr ""
+
+#: Controller/PostsController.php:161
+msgid "The post could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:28
+msgid "Votre nom d'user ou mot de passe sont incorrects."
+msgstr ""
+
+#: Controller/UsersController.php:56;90;117;149;185;213
+msgid "Invalid user"
+msgstr ""
+
+#: Controller/UsersController.php:71;94;165;189
+msgid "The user has been saved."
+msgstr ""
+
+#: Controller/UsersController.php:74;97;168;192
+msgid "The user could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/UsersController.php:121;217
+msgid "The user has been deleted."
+msgstr ""
+
+#: Controller/UsersController.php:123;219
+msgid "The user could not be deleted. Please, try again."
+msgstr ""
+
+#: Plugin/AclExtras/Console/Command/AclExtrasShell.php:80
+msgid "Plugin to process"
+msgstr ""
+
+#: Plugin/AclExtras/Console/Command/AclExtrasShell.php:83
+msgid "Better manage, and easily synchronize you application's ACO tree"
+msgstr ""
+
+#: Plugin/AclExtras/Console/Command/AclExtrasShell.php:88
+msgid "Add new ACOs for new controllers and actions. Does not remove nodes from the ACO table."
+msgstr ""
+
+#: Plugin/AclExtras/Console/Command/AclExtrasShell.php:93
+msgid "Perform a full sync on the ACO table.Will create new ACOs or missing controllers and actions.Will also remove orphaned entries that no longer have a matching controller/action"
+msgstr ""
+
+#: Plugin/AclExtras/Console/Command/AclExtrasShell.php:97
+msgid "Verify the tree structure of either your Aco or Aro Trees"
+msgstr ""
+
+#: Plugin/AclExtras/Console/Command/AclExtrasShell.php:102
+msgid "The type of tree to verify"
+msgstr ""
+
+#: Plugin/AclExtras/Console/Command/AclExtrasShell.php:108
+msgid "Recover a corrupted Tree"
+msgstr ""
+
+#: Plugin/AclExtras/Console/Command/AclExtrasShell.php:113
+msgid "The type of tree to recover"
+msgstr ""
+
+#: Plugin/AclExtras/Lib/AclExtras.php:123
+msgid "<error>Plugin %s not found or not activated</error>"
+msgstr ""
+
+#: Plugin/AclExtras/Lib/AclExtras.php:136
+msgid "<success>Aco Update Complete</success>"
+msgstr ""
+
+#: Plugin/AclExtras/Lib/AclExtras.php:181
+msgid "Deleted %s and all children"
+msgstr ""
+
+#: Plugin/AclExtras/Lib/AclExtras.php:222
+msgid "Created Aco node: <success>%s</success>"
+msgstr ""
+
+#: Plugin/AclExtras/Lib/AclExtras.php:275
+msgid "Unable to get methods for \"%s\""
+msgstr ""
+
+#: Plugin/AclExtras/Lib/AclExtras.php:296
+msgid "Deleted Aco node: <warning>%s</warning>"
+msgstr ""
+
+#: Plugin/AclExtras/Lib/AclExtras.php:315
+msgid "<success>Tree is valid and strong</success>"
+msgstr ""
+
+#: Plugin/AclExtras/Lib/AclExtras.php:333
+msgid "Tree has been recovered, or tree did not need recovery."
+msgstr ""
+
+#: Plugin/AclExtras/Lib/AclExtras.php:335
+msgid "<error>Tree recovery failed.</error>"
+msgstr ""
+
+#: View/Elements/footer-home.ctp:7
+msgid "residential"
+msgstr ""
+
+#: View/Elements/footer-home.ctp:15
+msgid "land"
+msgstr ""
+
+#: View/Elements/footer-home.ctp:23
+msgid "business premises"
+msgstr ""
+
+#: View/Elements/footer-home.ctp:31
+msgid "businesses"
+msgstr ""
+
+#: View/Elements/footer-home.ctp:39
+msgid "property"
+msgstr ""
+
+#: View/Elements/menu.ctp:7
+msgid "Offerings"
+msgstr ""
+
+#: View/Elements/pagination-counter.ctp:2
+msgid "Page {:page} of {:pages}, showing {:current} records out of {:count} total,\n\t\t\t\tstarting on record {:start}, ending on {:end}"
+msgstr ""
+
+#: View/Elements/pagination.ctp:3
+#: View/Posts/admin_index.ctp:47
+#: View/Posts/index.ctp:49
+#: View/Users2/admin_index.ctp:57
+#: View/Users2/index.ctp:57
+msgid "previous"
+msgstr ""
+
+#: View/Elements/pagination.ctp:5
+#: View/Posts/admin_index.ctp:49
+#: View/Posts/index.ctp:51
+#: View/Users2/admin_index.ctp:59
+#: View/Users2/index.ctp:59
+msgid "next"
+msgstr ""
+
+#: View/Elements/users/forgot.ctp:3
+msgid "Password Reminder"
+msgstr ""
+
+#: View/Elements/users/forgot.ctp:7
+msgid "To change your password please fill in the fields below your email address."
+msgstr ""
+
+#: View/Elements/users/forgot.ctp:9
+msgid "An email will be sent with the information needed to create your new password"
+msgstr ""
+
+#: View/Elements/users/forgot.ctp:11
+msgid "Your Mail"
+msgstr ""
+
+#: View/Elements/users/forgot.ctp:12
+msgid "Your Mail :"
+msgstr ""
+
+#: View/Elements/users/forgot.ctp:14
+#: View/Posts/admin_add.ctp:21
+#: View/Posts/admin_edit.ctp:15
+#: View/Users2/add.ctp:19
+#: View/Users2/admin_add.ctp:19
+#: View/Users2/admin_edit.ctp:20
+#: View/Users2/edit.ctp:20
+msgid "Submit"
+msgstr ""
+
+#: View/Elements/users/login.ctp:3;19
+msgid "Login"
+msgstr ""
+
+#: View/Elements/users/login.ctp:7
+#: View/Groups/view.ctp:78
+#: View/Users/add.ctp:37
+#: View/Users/admin_add.ctp:37
+#: View/Users/admin_edit.ctp:48
+#: View/Users/admin_view.ctp:50
+#: View/Users/edit.ctp:48
+#: View/Users/view.ctp:50
+#: View/Users2/admin_view.ctp:14
+#: View/Users2/view.ctp:14
+msgid "Username"
+msgstr ""
+
+#: View/Elements/users/login.ctp:8
+msgid "Username :"
+msgstr ""
+
+#: View/Elements/users/login.ctp:9
+#: View/Groups/view.ctp:80
+#: View/Users/add.ctp:45
+#: View/Users/admin_add.ctp:45
+#: View/Users/admin_edit.ctp:56
+#: View/Users/admin_view.ctp:64
+#: View/Users/edit.ctp:56
+#: View/Users/view.ctp:64
+#: View/Users2/admin_view.ctp:24
+#: View/Users2/view.ctp:24
+msgid "Password"
+msgstr ""
+
+#: View/Elements/users/login.ctp:10
+msgid "Password :"
+msgstr ""
+
+#: View/Elements/users/login.ctp:12
+msgid "Remember me"
+msgstr ""
+
+#: View/Elements/users/login.ctp:15
+msgid "Forgot password?"
+msgstr ""
+
+#: View/Elements/users/login.ctp:20
+msgid "Reset"
+msgstr ""
+
+#: View/Groups/add.ctp:1;2
+#: View/Groups/edit.ctp:1;2
+msgid "group"
+msgstr ""
+
+#: View/Groups/add.ctp:6
+msgid "Add Group"
+msgstr ""
+
+#: View/Groups/add.ctp:17;38
+#: View/Groups/edit.ctp:17;45
+#: View/Users/add.ctp:20;79
+#: View/Users/admin_add.ctp:20;79
+#: View/Users/admin_edit.ctp:25;97
+#: View/Users/edit.ctp:25;97
+msgid "publish"
+msgstr ""
+
+#: View/Groups/add.ctp:32
+#: View/Groups/edit.ctp:36
+#: View/Groups/view.ctp:41;77
+#: View/Posts/admin_view.ctp:9
+#: View/Users/add.ctp:33
+#: View/Users/admin_add.ctp:33
+#: View/Users/admin_edit.ctp:44
+#: View/Users/admin_view.ctp:43;156
+#: View/Users/edit.ctp:44
+#: View/Users/view.ctp:43;156
+#: View/Users2/admin_view.ctp:9;95;150
+#: View/Users2/view.ctp:9;95;150
+msgid "Name"
+msgstr ""
+
+#: View/Groups/edit.ctp:6
+msgid "Edit Group"
+msgstr ""
+
+#: View/Groups/edit.ctp:32
+#: View/Groups/view.ctp:34;76
+#: View/Posts/admin_view.ctp:4
+#: View/Users/admin_edit.ctp:40
+#: View/Users/admin_view.ctp:36;155
+#: View/Users/edit.ctp:40
+#: View/Users/view.ctp:36;155
+#: View/Users2/admin_view.ctp:4;94;149
+#: View/Users2/view.ctp:4;94;149
+msgid "Id"
+msgstr ""
+
+#: View/Groups/index.ctp:1;2;5
+msgid "Groups"
+msgstr ""
+
+#: View/Groups/index.ctp:12
+msgid "Add"
+msgstr ""
+
+#: View/Groups/index.ctp:12
+#: View/Groups/view.ctp:5
+#: View/Users/admin_view.ctp:71
+#: View/Users/view.ctp:71
+msgid "Group"
+msgstr ""
+
+#: View/Groups/index.ctp:68
+#: View/Users/admin_index.ctp:86
+#: View/Users/index.ctp:88
+msgid "Remove Post"
+msgstr ""
+
+#: View/Groups/index.ctp:71
+#: View/Users/admin_index.ctp:89
+#: View/Users/index.ctp:91
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: View/Groups/index.ctp:72
+#: View/Users/admin_index.ctp:90
+#: View/Users/index.ctp:92
+msgid "of your Articles"
+msgstr ""
+
+#: View/Groups/index.ctp:77
+#: View/Users/admin_index.ctp:95
+#: View/Users/index.ctp:97
+msgid "Cancel"
+msgstr ""
+
+#: View/Groups/index.ctp:78
+#: View/Posts/admin_edit.ctp:21
+#: View/Posts/admin_index.ctp:33
+#: View/Posts/index.ctp:35
+#: View/Users/admin_index.ctp:98
+#: View/Users/index.ctp:98
+#: View/Users2/admin_edit.ctp:26
+#: View/Users2/admin_index.ctp:43
+#: View/Users2/admin_view.ctp:131;186
+#: View/Users2/edit.ctp:26
+#: View/Users2/index.ctp:43
+#: View/Users2/view.ctp:131;186
+msgid "Delete"
+msgstr ""
+
+#: View/Groups/view.ctp:18
+msgid "<span class=\"glyphicon glyphicon-edit\"></span>&nbsp&nbsp;Edit Group"
+msgstr ""
+
+#: View/Groups/view.ctp:19
+msgid "<span class=\"glyphicon glyphicon-remove\"></span>&nbsp;&nbsp;Delete Group"
+msgstr ""
+
+#: View/Groups/view.ctp:19;115
+#: View/Posts/admin_edit.ctp:21
+#: View/Posts/admin_index.ctp:33
+#: View/Posts/admin_view.ctp:55
+#: View/Posts/index.ctp:35
+#: View/Users/admin_view.ctp:19;182
+#: View/Users/view.ctp:19;182
+#: View/Users2/admin_edit.ctp:26
+#: View/Users2/admin_index.ctp:43
+#: View/Users2/admin_view.ctp:80;131;186
+#: View/Users2/edit.ctp:26
+#: View/Users2/index.ctp:43
+#: View/Users2/view.ctp:80;131;186
+msgid "Are you sure you want to delete # %s?"
+msgstr ""
+
+#: View/Groups/view.ctp:20
+#: View/Users/admin_view.ctp:22
+#: View/Users/view.ctp:22
+msgid "<span class=\"glyphicon glyphicon-list\"></span>&nbsp&nbsp;List Groups"
+msgstr ""
+
+#: View/Groups/view.ctp:21
+#: View/Users/admin_view.ctp:23
+#: View/Users/view.ctp:23
+msgid "<span class=\"glyphicon glyphicon-plus\"></span>&nbsp&nbsp;New Group"
+msgstr ""
+
+#: View/Groups/view.ctp:22
+#: View/Users/admin_view.ctp:20
+#: View/Users/view.ctp:20
+msgid "<span class=\"glyphicon glyphicon-list\"></span>&nbsp&nbsp;List Users"
+msgstr ""
+
+#: View/Groups/view.ctp:23
+#: View/Users/admin_view.ctp:21
+#: View/Users/view.ctp:21
+msgid "<span class=\"glyphicon glyphicon-plus\"></span>&nbsp&nbsp;New User"
+msgstr ""
+
+#: View/Groups/view.ctp:48;86
+#: View/Posts/admin_view.ctp:29
+#: View/Users/admin_view.ctp:106;160
+#: View/Users/view.ctp:106;160
+#: View/Users2/admin_view.ctp:49;105;160
+#: View/Users2/view.ctp:49;105;160
+msgid "Created"
+msgstr ""
+
+#: View/Groups/view.ctp:55;87
+#: View/Posts/admin_view.ctp:34
+#: View/Users/admin_view.ctp:113;161
+#: View/Users/view.ctp:113;161
+#: View/Users2/admin_view.ctp:54
+#: View/Users2/view.ctp:54
+msgid "Modified"
+msgstr ""
+
+#: View/Groups/view.ctp:71
+msgid "Related Users"
+msgstr ""
+
+#: View/Groups/view.ctp:79
+#: View/Users/add.ctp:41
+#: View/Users/admin_add.ctp:41
+#: View/Users/admin_edit.ctp:52
+#: View/Users/admin_view.ctp:57
+#: View/Users/edit.ctp:52
+#: View/Users/view.ctp:57
+#: View/Users2/admin_view.ctp:19
+#: View/Users2/view.ctp:19
+msgid "Mail"
+msgstr ""
+
+#: View/Groups/view.ctp:81
+#: View/Users/add.ctp:49
+#: View/Users/admin_add.ctp:49
+#: View/Users/admin_edit.ctp:60
+#: View/Users/edit.ctp:60
+msgid "Group Id"
+msgstr ""
+
+#: View/Groups/view.ctp:82
+#: View/Users/add.ctp:53
+#: View/Users/admin_add.ctp:53
+#: View/Users/admin_edit.ctp:64
+#: View/Users/admin_view.ctp:78
+#: View/Users/edit.ctp:64
+#: View/Users/view.ctp:78
+#: View/Users2/admin_view.ctp:29
+#: View/Users2/view.ctp:29
+msgid "Firstname"
+msgstr ""
+
+#: View/Groups/view.ctp:83
+#: View/Users/add.ctp:57
+#: View/Users/admin_add.ctp:57
+#: View/Users/admin_edit.ctp:68
+#: View/Users/admin_view.ctp:85
+#: View/Users/edit.ctp:68
+#: View/Users/view.ctp:85
+#: View/Users2/admin_view.ctp:34
+#: View/Users2/view.ctp:34
+msgid "Lastname"
+msgstr ""
+
+#: View/Groups/view.ctp:84
+#: View/Users/admin_edit.ctp:72
+#: View/Users/admin_view.ctp:92
+#: View/Users/edit.ctp:72
+#: View/Users/view.ctp:92
+#: View/Users2/admin_view.ctp:39
+#: View/Users2/view.ctp:39
+msgid "Active"
+msgstr ""
+
+#: View/Groups/view.ctp:85
+#: View/Users/add.ctp:61
+#: View/Users/admin_add.ctp:61
+#: View/Users/admin_edit.ctp:76
+#: View/Users/admin_view.ctp:99
+#: View/Users/edit.ctp:76
+#: View/Users/view.ctp:99
+#: View/Users2/admin_view.ctp:44
+#: View/Users2/view.ctp:44
+msgid "Avatar"
+msgstr ""
+
+#: View/Groups/view.ctp:88
+#: View/Users/add.ctp:65
+#: View/Users/admin_add.ctp:65
+#: View/Users/admin_edit.ctp:80
+#: View/Users/admin_view.ctp:120
+#: View/Users/edit.ctp:80
+#: View/Users/view.ctp:120
+#: View/Users2/admin_view.ctp:59
+#: View/Users2/view.ctp:59
+msgid "Role"
+msgstr ""
+
+#: View/Groups/view.ctp:89
+#: View/Users/add.ctp:69
+#: View/Users/admin_add.ctp:69
+#: View/Users/admin_edit.ctp:84
+#: View/Users/admin_view.ctp:127
+#: View/Users/edit.ctp:84
+#: View/Users/view.ctp:127
+#: View/Users2/admin_view.ctp:64
+#: View/Users2/view.ctp:64
+msgid "Token"
+msgstr ""
+
+#: View/Groups/view.ctp:90
+#: View/Users/add.ctp:73
+#: View/Users/admin_add.ctp:73
+#: View/Users/admin_edit.ctp:88
+#: View/Users/admin_view.ctp:134
+#: View/Users/edit.ctp:88
+#: View/Users/view.ctp:134
+#: View/Users2/admin_view.ctp:69
+#: View/Users2/view.ctp:69
+msgid "Lastlogin"
+msgstr ""
+
+#: View/Groups/view.ctp:113
+#: View/Users/admin_view.ctp:180
+#: View/Users/view.ctp:180
+msgid "<span class=\"glyphicon glyphicon-search\"></span>"
+msgstr ""
+
+#: View/Groups/view.ctp:114
+#: View/Users/admin_view.ctp:181
+#: View/Users/view.ctp:181
+msgid "<span class=\"glyphicon glyphicon-edit\"></span>"
+msgstr ""
+
+#: View/Groups/view.ctp:115
+#: View/Users/admin_view.ctp:182
+#: View/Users/view.ctp:182
+msgid "<span class=\"glyphicon glyphicon-remove\"></span>"
+msgstr ""
+
+#: View/Groups/view.ctp:124
+msgid "<span class=\"glyphicon glyphicon-plus\"></span>&nbsp;&nbsp;New User"
+msgstr ""
+
+#: View/Layouts/admin.ctp:43
+#: View/Layouts/default.OLD.ctp:44
+#: View/Layouts/default.ctp:45
+msgid "account"
+msgstr ""
+
+#: View/Layouts/home.ctp:67
+msgid "Real Estate in Greece"
+msgstr ""
+
+#: View/Layouts/home.ctp:76
+msgid "home"
+msgstr ""
+
+#: View/Posts/admin_add.ctp:1;5
+msgid "Admin Add Post"
+msgstr ""
+
+#: View/Posts/admin_add.ctp:9
+msgid "name"
+msgstr ""
+
+#: View/Posts/admin_add.ctp:26
+#: View/Posts/admin_edit.ctp:18
+#: View/Posts/admin_index.ctp:14;54
+#: View/Posts/admin_view.ctp:52
+#: View/Posts/index.ctp:15;56
+#: View/Users2/add.ctp:22
+#: View/Users2/admin_add.ctp:22
+#: View/Users2/admin_edit.ctp:23
+#: View/Users2/admin_index.ctp:20;64
+#: View/Users2/admin_view.ctp:77;109;164
+#: View/Users2/edit.ctp:23
+#: View/Users2/index.ctp:20;64
+#: View/Users2/view.ctp:77;109;164
+msgid "Actions"
+msgstr ""
+
+#: View/Posts/admin_add.ctp:29
+#: View/Posts/admin_edit.ctp:22
+#: View/Posts/admin_view.ctp:56
+#: View/Users2/add.ctp:28
+#: View/Users2/admin_add.ctp:28
+#: View/Users2/admin_edit.ctp:30
+#: View/Users2/admin_index.ctp:69
+#: View/Users2/admin_view.ctp:85
+#: View/Users2/edit.ctp:30
+#: View/Users2/index.ctp:69
+#: View/Users2/view.ctp:85
+msgid "List Posts"
+msgstr ""
+
+#: View/Posts/admin_add.ctp:30
+#: View/Posts/admin_edit.ctp:23
+#: View/Posts/admin_index.ctp:57
+#: View/Posts/admin_view.ctp:58
+#: View/Posts/index.ctp:59
+#: View/Users2/add.ctp:25
+#: View/Users2/admin_add.ctp:25
+#: View/Users2/admin_edit.ctp:27
+#: View/Users2/admin_view.ctp:81
+#: View/Users2/edit.ctp:27
+#: View/Users2/view.ctp:81
+msgid "List Users"
+msgstr ""
+
+#: View/Posts/admin_add.ctp:31
+#: View/Posts/admin_edit.ctp:24
+#: View/Posts/admin_index.ctp:58
+#: View/Posts/admin_view.ctp:59
+#: View/Posts/index.ctp:60
+#: View/Users2/admin_index.ctp:66
+#: View/Users2/admin_view.ctp:82
+#: View/Users2/index.ctp:66
+#: View/Users2/view.ctp:82
+msgid "New User"
+msgstr ""
+
+#: View/Posts/admin_edit.ctp:4
+msgid "Admin Edit Post"
+msgstr ""
+
+#: View/Posts/admin_index.ctp:2
+#: View/Posts/index.ctp:2
+msgid "Posts"
+msgstr ""
+
+#: View/Posts/admin_index.ctp:31
+#: View/Posts/index.ctp:33
+#: View/Users2/admin_index.ctp:41
+#: View/Users2/admin_view.ctp:129;184
+#: View/Users2/index.ctp:41
+#: View/Users2/view.ctp:129;184
+msgid "View"
+msgstr ""
+
+#: View/Posts/admin_index.ctp:32
+#: View/Posts/index.ctp:34
+#: View/Users2/admin_index.ctp:42
+#: View/Users2/admin_view.ctp:130;185
+#: View/Users2/index.ctp:42
+#: View/Users2/view.ctp:130;185
+msgid "Edit"
+msgstr ""
+
+#: View/Posts/admin_index.ctp:42
+#: View/Posts/index.ctp:44
+#: View/Users2/admin_index.ctp:52
+#: View/Users2/index.ctp:52
+msgid "Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}"
+msgstr ""
+
+#: View/Posts/admin_index.ctp:56
+#: View/Posts/admin_view.ctp:57
+#: View/Posts/index.ctp:58
+#: View/Users2/add.ctp:29
+#: View/Users2/admin_add.ctp:29
+#: View/Users2/admin_edit.ctp:31
+#: View/Users2/admin_index.ctp:70
+#: View/Users2/admin_view.ctp:86;195
+#: View/Users2/edit.ctp:31
+#: View/Users2/index.ctp:70
+#: View/Users2/view.ctp:86;195
+msgid "New Post"
+msgstr ""
+
+#: View/Posts/admin_view.ctp:2
+msgid "Post"
+msgstr ""
+
+#: View/Posts/admin_view.ctp:14
+#: View/Users/admin_view.ctp:157
+#: View/Users/view.ctp:157
+#: View/Users2/admin_view.ctp:96;151
+#: View/Users2/view.ctp:96;151
+msgid "Slug"
+msgstr ""
+
+#: View/Posts/admin_view.ctp:19
+#: View/Users/admin_view.ctp:158
+#: View/Users/view.ctp:158
+#: View/Users2/admin_view.ctp:104;159
+#: View/Users2/view.ctp:104;159
+msgid "Content"
+msgstr ""
+
+#: View/Posts/admin_view.ctp:24
+#: View/Users/admin_view.ctp:159
+#: View/Users/view.ctp:159
+#: View/Users2/admin_view.ctp:106;161
+#: View/Users2/view.ctp:106;161
+msgid "Type"
+msgstr ""
+
+#: View/Posts/admin_view.ctp:39
+#: View/Users/admin_view.ctp:162
+#: View/Users/view.ctp:162
+#: View/Users2/admin_view.ctp:107;162
+#: View/Users2/view.ctp:107;162
+msgid "Online"
+msgstr ""
+
+#: View/Posts/admin_view.ctp:44
+#: View/Users/admin_view.ctp:5
+#: View/Users/view.ctp:5
+#: View/Users2/admin_view.ctp:2
+#: View/Users2/view.ctp:2
+msgid "User"
+msgstr ""
+
+#: View/Posts/admin_view.ctp:54
+msgid "Edit Post"
+msgstr ""
+
+#: View/Posts/admin_view.ctp:55
+msgid "Delete Post"
+msgstr ""
+
+#: View/Users/add.ctp:1;2
+#: View/Users/admin_add.ctp:1;2
+#: View/Users/admin_edit.ctp:1;2
+#: View/Users/edit.ctp:1;2
+msgid "user"
+msgstr ""
+
+#: View/Users/add.ctp:6
+#: View/Users/admin_add.ctp:6
+#: View/Users2/add.ctp:4
+msgid "Add User"
+msgstr ""
+
+#: View/Users/admin_edit.ctp:6
+#: View/Users2/admin_edit.ctp:4
+msgid "Admin Edit User"
+msgstr ""
+
+#: View/Users/admin_index.ctp:1;2;5
+#: View/Users/index.ctp:1;2;5
+#: View/Users2/admin_index.ctp:2
+#: View/Users2/index.ctp:2
+msgid "Users"
+msgstr ""
+
+#: View/Users/admin_index.ctp:12
+msgid "Add article"
+msgstr ""
+
+#: View/Users/admin_view.ctp:18
+#: View/Users/view.ctp:18
+msgid "<span class=\"glyphicon glyphicon-edit\"></span>&nbsp&nbsp;Edit User"
+msgstr ""
+
+#: View/Users/admin_view.ctp:19
+#: View/Users/view.ctp:19
+msgid "<span class=\"glyphicon glyphicon-remove\"></span>&nbsp;&nbsp;Delete User"
+msgstr ""
+
+#: View/Users/admin_view.ctp:24
+#: View/Users/view.ctp:24
+msgid "<span class=\"glyphicon glyphicon-list\"></span>&nbsp&nbsp;List Posts"
+msgstr ""
+
+#: View/Users/admin_view.ctp:25
+#: View/Users/view.ctp:25
+msgid "<span class=\"glyphicon glyphicon-plus\"></span>&nbsp&nbsp;New Post"
+msgstr ""
+
+#: View/Users/admin_view.ctp:150
+#: View/Users/view.ctp:150
+#: View/Users2/admin_view.ctp:145
+#: View/Users2/view.ctp:145
+msgid "Related Posts"
+msgstr ""
+
+#: View/Users/admin_view.ctp:163
+#: View/Users/view.ctp:163
+#: View/Users2/admin_view.ctp:108;163
+#: View/Users2/view.ctp:108;163
+msgid "User Id"
+msgstr ""
+
+#: View/Users/admin_view.ctp:191
+#: View/Users/view.ctp:191
+msgid "<span class=\"glyphicon glyphicon-plus\"></span>&nbsp;&nbsp;New Post"
+msgstr ""
+
+#: View/Users/edit.ctp:6
+#: View/Users2/admin_view.ctp:79
+#: View/Users2/edit.ctp:4
+#: View/Users2/view.ctp:79
+msgid "Edit User"
+msgstr ""
+
+#: View/Users/index.ctp:12
+msgid "Add user"
+msgstr ""
+
+#: View/Users2/add.ctp:26
+#: View/Users2/admin_add.ctp:26
+#: View/Users2/admin_edit.ctp:28
+#: View/Users2/admin_index.ctp:67
+#: View/Users2/admin_view.ctp:83
+#: View/Users2/edit.ctp:28
+#: View/Users2/index.ctp:67
+#: View/Users2/view.ctp:83
+msgid "List Messages"
+msgstr ""
+
+#: View/Users2/add.ctp:27
+#: View/Users2/admin_add.ctp:27
+#: View/Users2/admin_edit.ctp:29
+#: View/Users2/admin_index.ctp:68
+#: View/Users2/admin_view.ctp:84;140
+#: View/Users2/edit.ctp:29
+#: View/Users2/index.ctp:68
+#: View/Users2/view.ctp:84;140
+msgid "New Message"
+msgstr ""
+
+#: View/Users2/admin_add.ctp:4
+msgid "Admin Add User"
+msgstr ""
+
+#: View/Users2/admin_view.ctp:80
+#: View/Users2/view.ctp:80
+msgid "Delete User"
+msgstr ""
+
+#: View/Users2/admin_view.ctp:90
+#: View/Users2/view.ctp:90
+msgid "Related Messages"
+msgstr ""
+
+#: View/Users2/admin_view.ctp:97;152
+#: View/Users2/view.ctp:97;152
+msgid "Photo Dir"
+msgstr ""
+
+#: View/Users2/admin_view.ctp:98;153
+#: View/Users2/view.ctp:98;153
+msgid "Photo Type"
+msgstr ""
+
+#: View/Users2/admin_view.ctp:99;154
+#: View/Users2/view.ctp:99;154
+msgid "Photo Size"
+msgstr ""
+
+#: View/Users2/admin_view.ctp:100;155
+#: View/Users2/view.ctp:100;155
+msgid "Resume Dir"
+msgstr ""
+
+#: View/Users2/admin_view.ctp:101;156
+#: View/Users2/view.ctp:101;156
+msgid "Resume Type"
+msgstr ""
+
+#: View/Users2/admin_view.ctp:102;157
+#: View/Users2/view.ctp:102;157
+msgid "Resume Size"
+msgstr ""
+
+#: View/Users2/admin_view.ctp:103;158
+#: View/Users2/view.ctp:103;158
+msgid "Photo"
+msgstr ""
+
+#: Model/Group.php:validation for field name
+#: Model/Post.php:validation for field name
+#: Model/User.php:validation for field name;validation for field username
+msgid "notBlank"
+msgstr ""
+
+#: Model/User.php:validation for field mail
+msgid "email"
+msgstr ""
+

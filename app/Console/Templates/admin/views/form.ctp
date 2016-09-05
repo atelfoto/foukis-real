@@ -23,7 +23,7 @@
 			<div class="well">
 	<?php 		echo "\t\t\t<?php echo \$this->Form->create('{$modelClass}'); ?>\n"; ?>
 				<div class="tabpanel">
-					<nav class="navbar navbar-default">
+					<nav class="navbar">
 				    	<div class="collapse navbar-collapse">
 							<ul class="nav navbar-nav" role="tablist">
 						 		<li role="presentation" class="active">

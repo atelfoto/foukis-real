@@ -30,10 +30,10 @@ App::uses('AppController', 'Controller');
  */
 class PagesController extends AppController {
 
-public function beforeFilter() {
-    parent::beforeFilter();
-    $this->Auth->allow('index', 'view');
-}
+// public function beforeFilter() {
+//     parent::beforeFilter();
+//     $this->Auth->allow('index', 'view');
+// }
 /**
  * This controller does not use a model
  *

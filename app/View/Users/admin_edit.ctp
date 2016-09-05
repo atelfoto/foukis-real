@@ -10,17 +10,12 @@
 			<div class="well">
 				<?php echo $this->Form->create('User'); ?>
 				<div class="tabpanel">
-					<nav class="navbar navbar-default">
+					<nav class="navbar">
 				    	<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav" role="tablist">
-						 		<li role="presentation" class="active">
-						 			<a href="#contenu" role="tab" data-toggle="tab" aria-controls="contenu">contenu</a>
-						 		</li>
-						 		<li role="presentation">
-						 			<a href="#publication" role="tab" data-toggle="tab" aria-controls="publication">publication</a>
-						 		</li>
-							</ul>
 							<ul class="nav navbar-nav navbar-right">
+								<li>
+									<?php echo $this->Form->input('active', array('label' =>false));?>
+								</li>
 								<li >
 									<?php echo $this->Form->button('<i class="fa fa-check fa-lg" style="color:#fff;">&nbsp;</i>'.__('publish'),
 							 array('class' => 'btn btn-success btn-lg')); ?>
@@ -56,10 +51,9 @@
 							 'placeholder' => __('Password')));?>
 							</div>
 							<div class="form-group">
-								<?php echo $this->Form->input('group_id', array('class' => 'form-control',
-							 'placeholder' => __('Group Id')));?>
+								<?php echo $this->Form->input('group_id', array('class' => 'form-control','placeholder' => __('Group Id')));?>
 							</div>
-							<div class="form-group">
+							<!-- 	<div class="form-group">
 								<?php echo $this->Form->input('firstname', array('class' => 'form-control',
 							 'placeholder' => __('Firstname')));?>
 							</div>
@@ -86,10 +80,7 @@
 							<div class="form-group">
 								<?php echo $this->Form->input('lastlogin', array('class' => 'form-control',
 							 'placeholder' => __('Lastlogin')));?>
-							</div>
-					  	</div>
-					  	<div class="tab-pane fade" role="tabpanel" id="publication">
-
+							</div> -->
 					  	</div>
 					</div>
 				</div>
@@ -115,120 +106,11 @@ $('#myTab a').click(function (e) {
 });
 //pour les toogle
   $(function() {
-    $('#UserOnline').bootstrapToggle();
-  });
-//pour le textarea
-tinyMCE.init({
-	selector: "#UserContent",
-	height:'500',
-    elements:"contenu",
-	entity_encoding : "raw",
-	encoding: "UTF-8",
-	theme: "modern",
-	language :"fr_FR",
-  	skin: "lightgray-gradient",
-  	browser_spellcheck: true,
-  	elementpath: true,
-    media_live_embeds: true,
-    plugin_preview_width: 1170,
-    paste_remove_styles : true,
-    visualblocks_default_state: true,
-    visual_table_class: 'table table-striped',
-    relative_urls: false,
-    spellchecker_languages : "English=en,French=fr",
-    code_dialog_height: 550,
-  	code_dialog_width: 900,
-  	fontsize_formats: '8pt 10pt 12pt 14pt 18pt 24pt 36pt',
-
-    image_advtab: true,
-	resize: "none",
-	// mode:"exact",
-
-	plugins: [
-		"advlist autolink lists link image charmap  preview hr anchor pagebreak",
-		"searchreplace wordcount visualblocks code ",
-		"media nonbreaking save table contextmenu ",
-		"template paste textcolor spellchecker emmet"
-		],
-
-	toolbar1: " undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link unlink anchor ",
-	toolbar2: " preview code | forecolor backcolor | spellchecker media image |  visualblocks hr bootstrap fontsizeselect template",
-
- table_class_list: [
-    {title: 'None', value: ''},
-    {title: 'table-striped', value: 'table table-striped'},
-    {title: 'table-hover', value: 'table table-hover'},
-    {title: 'table-hover', value: 'table table-bordered'},
-    {title: 'table-condensed', value: 'table table-condensed'}
-  ],
-  table_appearance_options: false,
-    image_explorer :'<?php echo $this->Html->url(array('controller'=>'medias','action'=>'index', $this->request->data['User']['id'])); ?>',
-    image_edit :'<?= $this->Html->url(array('controller'=>'medias','action'=>'show')); ?>',
-    content_css : '<?= $this->Html->url('/css/wysiwyg.css'); ?>',
-    table_appearance_options: false,
-    // table_grid: false,
-setup: function(editor) {
-    editor.addButton('bootstrap', {
-      type: 'menubutton',
-      text: 'bootstrap',
-      icon: false,
-      menu: [{
-        text: 'table',
-        onclick: function() {
-          editor.insertContent('<div class="table-responsive">insert table</div><div></div>');
-        }
-      },{
-        text: 'panel',
-        onclick: function() {
-          editor.insertContent('<div class="panel panel-default"><div class="panel-heading">heading</div><div class="panel-body">content</div><div class="panel-footer">footer</div></div>');
-        }
-      },{
-      	text: 'video',
-      	onclick: function(){
-      	editor.insertContent('<div class="embed-responsive embed-responsive-16by9"><iframe src="" width="640" height="360" ></iframe></div><div><p>&nbsp;</p></div>');
-      	}
-      }]
+    $('#UserActive').bootstrapToggle({
+    size:'large',
+    onstyle:'primary',
+    offstyle:'danger',
     });
-  },
-  	table_class_list: [
-    {title: 'None', value: ''},
-    {title: 'table-striped', value: 'table table-striped'},
-    {title: 'table-hover', value: 'table table-hover'},
-    {title: 'table-bordered', value: 'table table-bordered'},
-    {title: 'table-condensed', value: 'table table-condensed'}
-  ],
-templates: [
- {title: 'panel-tableau',
-  content: '<div class="panel panel-default"><div class="panel-heading"><h3>insert</h3></div>&nbsp;<div class="panel-footer">footer</div></div>'},
- {title: 'table',
-  content: '<div class="table-responsive">insert table</div><div>suite</div>'},
- {title: 'video',
- "description": "description de mon template",
-  content: '<div class="embed-responsive embed-responsive-16by9"><iframe src="" width="640" height="360" ></iframe></div><div><p>insert</p></div>'},
- {title: 'test',
- "description": "description de mon templatetest",
- "url": "/development.html"},
-    ],
-template_popup_height: 500,
-template_popup_width: 900,
-});
+  });
 
-function send_to_editor(content){
-	var ed = tinyMCE.activeEditor;
-	ed.execCommand('mceInsertContent',false,content);
-};
-
-//pour les meta description
-$(document).ready(function(e) {
-  $('#metadescription').keyup(function() {
-    var nombreCaractere = $(this).val().length;
-    var nombreMots = jQuery.trim($(this).val()).split(' ').length;
-    if($(this).val() === '') {
-     	nombreMots = 0;
-    }
-    var msg = ' ' + nombreMots + ' mot(s) | ' + nombreCaractere + ' Caractere(s) / 160';
-    $('#compteur').text(msg);
-    if (nombreCaractere > 160) { $('#compteur').addClass("mauvais"); } else { $('#compteur').removeClass("mauvais"); }
-  })
-});
 <?= $this->Html->scriptEnd(); ?>

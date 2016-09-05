@@ -21,10 +21,10 @@ public $components = array('Paginator', 'Flash', 'Session');
  * [beforeFilter description]
  * @return [type] [description]
  */
-public function beforeFilter() {
-    parent::beforeFilter();
-    $this->Auth->allow('index', 'view');
-}
+// public function beforeFilter() {
+//     parent::beforeFilter();
+//     $this->Auth->allow('index', 'view');
+// }
 /**
  * [menu description]
  * @return [type] [description]

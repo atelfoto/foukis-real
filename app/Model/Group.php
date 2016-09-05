@@ -10,23 +10,23 @@ class Group extends AppModel {
  * [$actsAs description]
  * @var array
  */
-public $actsAs = array('Acl' => array('type' => 'requester'));
+// public $actsAs = array('Acl' => array('type' => 'requester'));
 /**
  * [parentNode description]
  * @return [type] [description]
  */
-public function parentNode() {
-        return null;
-    }
-/**
- * [beforeFilter description]
- * @return [type] [description]
- */
-public function beforeFilter() {
-    parent::beforeFilter();
-    // Pour CakePHP 2.1 et supérieurs
-    $this->Auth->allow();
-}
+// public function parentNode() {
+//         return null;
+//     }
+// /**
+//  * [beforeFilter description]
+//  * @return [type] [description]
+//  */
+// public function beforeFilter() {
+//     parent::beforeFilter();
+//     // Pour CakePHP 2.1 et supérieurs
+//     $this->Auth->allow();
+// }
 
 /**
  * Validation rules
