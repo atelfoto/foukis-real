@@ -28,7 +28,8 @@
 		<div class="panel table-responsive box-home">
 			<table  class="table table-bordered text-center table-striped">
 				<thead>
-					<tr class="info"><?php echo "\n\t\t\t\t\t\t" ?><?php foreach ($fields as $field): ?><th><?php echo "<?php echo \$this->Paginator->sort('{$field}'); ?>"; ?></th><?php echo "\n\t\t\t\t\t\t" ?><?php endforeach; ?><th colspan="3" class="actions"></th>
+					<tr class="info"><?php echo "\n\t\t\t\t\t\t" ?><?php foreach ($fields as $field): ?><th><?php echo "<?php echo \$this->Paginator->sort('{$field}'); ?>"; ?></th><?php echo "\n\t\t\t\t\t\t" ?><?php endforeach; ?><th>&nbsp;</th>
+					<th colspan="3" class="actions"></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -51,6 +52,20 @@
 							echo "\t\t\t\t\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
 						}
 					}
+					echo "\t\t\t\t\t\t<td>\n";
+					echo "\t\t\t\t\t\t\t<?php if(\${$singularVar}['{$modelClass}'][ 'online' ] == 0) {
+										echo \$this->Html->link('<span class=\"label label-danger\">'.__('Offline').'</span>',
+										array('action'=>'enable', \${$singularVar}['{$modelClass}']['id']),
+										array(\"style\"=>\"text-decoration:none;\",\"data-toggle\"=>\"tooltip\",\"data-placement\"=>\"bottom\",
+											 \"title\"=>__('Enable this {$modelClass}'),'escape'=>false));
+										}else{
+											echo \$this->Html->link('<span class=\"label label-success\">'.__('In line').'</span>',
+											array('action'=>'disable', \${$singularVar}['{$modelClass}']['id']),
+											array(\"style\"=>\"text-decoration:none;\",\"data-toggle\"=>\"tooltip\",\"data-placement\"=>\"bottom\",
+												\"title\"=>__('Disable this {$modelClass}'),'escape'=>false));
+												}
+										?>\n";
+					echo "\t\t\t\t\t\t</td>\n";
 					echo "\t\t\t\t\t\t<td class=\"actions\">\n";
 					echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link('<span class=\"fa fa-eye\"></span>',
 					 array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class'=>'btn btn-default','escape' => false)); ?>\n";

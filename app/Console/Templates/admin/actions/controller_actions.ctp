@@ -124,7 +124,54 @@
 		endif;
 	?>
 	}
-
+/**
+ * <?php echo $admin ?>enable method
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+public function <?php echo $admin; ?>enable($id=null) {
+	$<?php echo strtolower($singularHumanName); ?> = $this-><?php echo $currentModelName; ?>->read(null,$id);
+	if (!$id && empty($<?php echo strtolower($singularHumanName); ?>)) {
+		$this->Flash->error(__('You must provide a valid ID number to enable a user.',true),array('class'=>'danger','type'=>'sign'));
+		$this->redirect(array('action'=>'index'));
+	}
+	if (!empty($<?php echo strtolower($singularHumanName); ?>)) {
+		$<?php echo strtolower($singularHumanName); ?>['<?php echo $currentModelName; ?>']['online'] = 1;
+		if ($this-><?php echo $currentModelName; ?>->save($<?php echo strtolower($singularHumanName); ?>)) {
+			$this->Flash->success(__('User ID %s has been published.',h($id)));
+		} else {
+			$this->Flash->error(__('User ID %s was not saved.',h($id)),array('class'=>'danger','type'=>'sign'));
+		}
+		$this->redirect(array('action'=>'index'));
+	} else {
+		$this->Flash->error(__('No user by that ID was found.',true),array('class'=>'danger','type'=>'sign'));
+		$this->redirect(array('action'=>'index'));
+	}
+}
+/**
+ * <?php echo $admin ?>disable method
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+public function <?php echo $admin; ?>disable($id=null) {
+	$<?php echo strtolower($singularHumanName); ?> = $this-><?php echo $currentModelName; ?>->read(null,$id);
+	if (!$id && empty($<?php echo strtolower($singularHumanName); ?>)) {
+		$this->Flash->error(__('You must provide a valid ID number to enable a user.',true),array('class'=>'danger','type'=>'sign'));
+		$this->redirect(array('action'=>'index'));
+	}
+	if (!empty($<?php echo strtolower($singularHumanName); ?>)) {
+		$<?php echo strtolower($singularHumanName); ?>['<?php echo $currentModelName; ?>']['online'] = 0;
+		if ($this-><?php echo $currentModelName; ?>->save($<?php echo strtolower($singularHumanName); ?>)) {
+			$this->Flash->success(__('User ID %s has been published.',h($id)));
+		} else {
+			$this->Flash->error(__('User ID %s was not saved.',h($id)),array('class'=>'danger','type'=>'sign'));
+		}
+		$this->redirect(array('action'=>'index'));
+	} else {
+		$this->Flash->error(__('No user by that ID was found.',true),array('class'=>'danger','type'=>'sign'));
+		$this->redirect(array('action'=>'index'));
+	}
+}
 /**
  * <?php echo $admin ?>delete method
  *

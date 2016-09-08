@@ -42,8 +42,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<nav class="menu" >
 					<?php echo $this->Html->link("accueil", array('controller' => 'pages', 'action' => 'index')); ?>
 					<?php echo $this->element("menu") ?>
+					<li>
 					<a href="<?php echo $this->Html->url(array('controller' => 'users', 'action' => 'account', "admin"=>true)); ?>"><?php echo __('account'); ?>
-					</a>
+					</a></li>
 				</nav>
 				<nav  style="float:right;witdh:50%;">
 					<ul class="flag" style="float:right;witdh:50%;">

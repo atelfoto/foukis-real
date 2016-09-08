@@ -14,7 +14,8 @@ module.exports=function(grunt){
             dist: {
                 files: {
                     'app/webroot/js/home.min.js': ["vendors/js/jquery.min.js","vendors/js/*.js",'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js'],
-                    'app/webroot/js/bootstrap-toggle.js': ["bower_components/bootstrap-toggle/js/bootstrap-toggle.js"]
+                    'app/webroot/js/admin.min.js': ["bower_components/bootstrap-toggle/js/bootstrap-toggle.js"]
+                    //'app/webroot/js/admin.min.js': ["bower_components/bootstrap-toggle/js/bootstrap-toggle.js","node_modules/datatables.net/js/jquery.dataTables.js"]
 
                 }
             }
@@ -42,7 +43,7 @@ module.exports=function(grunt){
             target: {
                 files: {
                     'app/webroot/css/styles.min.css': ['vendors/css/styles.css'],
-                    'app/webroot/css/admin.min.css': ['vendors/css/admin.css'],
+                    'app/webroot/css/admin.min.css': ['vendors/css/admin.css','node_modules/datatables.net-dt/css/jquery.dataTables.css'],
                     'app/webroot/css/bootstrap-toggle.min.css': ["bootstrap-toggle/css/bootstrap-toggle.css"]
                 }
             }

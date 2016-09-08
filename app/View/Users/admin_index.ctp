@@ -11,8 +11,9 @@
 			</button>
 				<?php echo $this->Html->link("<i class='fa fa-plus'></i>". __("Add article"),array('action'=>'add'),
 				array('class' =>"btn btn-success ",'escape'=>false)); ?>
-		</div>		<div class="panel table-responsive box-home">
-			<table  class="table table-bordered text-center table-striped display">
+		</div>
+		<div class="panel table-responsive box-home">
+			<table id="exemple"  class="table table-bordered text-center table-striped display">
 				<thead>
 					<tr class="info">
 						<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -117,8 +118,5 @@
 		</div><!-- /.modal-aide-content -->
 	</div><!-- /.modal-aide-dialog -->
 </div><!-- /.modal-aide -->
-<?php $this->Html->scriptStart(array('inline'=>false)); ?>
-	$(document).ready(function() {
-    	$('table.display').DataTable();
-    } );
-<?php $this->Html->scriptEnd(); ?>
+<?php  $this->Html->script(array("admin.min"), array('inline'=>false)); ?>
+

@@ -35,15 +35,18 @@
 							</ul>
 	<?php
 							echo "\t\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">\n";
-							echo "\t\t\t\t\t\t\t\t<li >\n";
+							echo "\t\t\t\t\t\t\t\t<li>\n";
+							echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Form->input('online', array('label' => false)); ?>\n";
+							echo "\t\t\t\t\t\t\t\t</li>\n";
+							echo "\t\t\t\t\t\t\t\t<li>\n";
 							echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Form->button('<i class=\"fa fa-check fa-lg\" style=\"color:#fff;\">&nbsp;</i>'.__('publish'),
 							 array('class' => 'btn btn-success btn-lg')); ?>\n";
-							echo "\t\t\t\t\t\t\t\t</li >\n";
-							echo "\t\t\t\t\t\t\t\t<li >\n";
+							echo "\t\t\t\t\t\t\t\t</li>\n";
+							echo "\t\t\t\t\t\t\t\t<li>\n";
 							echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->html->link('<i class=\"fa fa-times-circle fa-lg\" style=\"color:#f00;\">&nbsp;</i>'.__('Closed'),
 							array('controller'=>'{$pluralVar}','action'=>'index'),
 							array('class' => 'btn btn-default','type'=>'button','escape'=>false)); ?>\n";
-							echo "\t\t\t\t\t\t\t\t</li >\n";
+							echo "\t\t\t\t\t\t\t\t</li>\n";
 							echo "\t\t\t\t\t\t\t</ul>\n";
 							echo "\t\t\t\t\t\t</div>\n";
 							echo "\t\t\t\t\t</nav>\n";
@@ -89,7 +92,6 @@
 		</div>
 	</div><!-- end containers -->
 </div>
-<?php echo "<?php echo \$this->Html->css(array('bootstrap-toggle'),array('inline'=>false)); ?>\n"; ?>
 <?php echo "<?php  echo \$this->Html->script(array('tinymce/tinymce.min','bootstrap-toggle'),array('inline'=>false)); ?>\n"; ?>
 <?php echo "
 <?php echo  \$this->Html->scriptStart(array('inline'=>false)); ?>
