@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7928e27d004ecce6e8152d502154432f",
-    "content-hash": "7a338e5119e9f86673204e3358b82505",
+    "hash": "3d258a6ca09ef1989fd63215dc3338fe",
+    "content-hash": "e52f70cea1e475ccf2e7127a7b665fea",
     "packages": [
         {
             "name": "cakephp/localized",
@@ -54,20 +54,20 @@
         },
         {
             "name": "composer/installers",
-            "version": "v1.0.22",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
+                "reference": "d78064c68299743e0161004f2de3a0204e33b804"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
-                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "url": "https://api.github.com/repos/composer/installers/zipball/d78064c68299743e0161004f2de3a0204e33b804",
+                "reference": "d78064c68299743e0161004f2de3a0204e33b804",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "1.0.0"
+                "composer-plugin-api": "^1.0"
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
@@ -85,8 +85,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Composer\\Installers\\": "src/"
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -101,28 +101,35 @@
                 }
             ],
             "description": "A multi-framework Composer library installer",
-            "homepage": "http://composer.github.com/installers/",
+            "homepage": "https://composer.github.io/installers/",
             "keywords": [
                 "Craft",
                 "Dolibarr",
                 "Hurad",
+                "ImageCMS",
                 "MODX Evo",
+                "Mautic",
                 "OXID",
+                "Plentymarkets",
+                "RadPHP",
                 "SMF",
                 "Thelia",
                 "WolfCMS",
                 "agl",
                 "aimeos",
                 "annotatecms",
+                "attogram",
                 "bitrix",
                 "cakephp",
                 "chef",
+                "cockpit",
                 "codeigniter",
                 "concrete5",
                 "croogo",
                 "dokuwiki",
                 "drupal",
                 "elgg",
+                "expressionengine",
                 "fuelphp",
                 "grav",
                 "installer",
@@ -139,38 +146,81 @@
                 "piwik",
                 "ppi",
                 "puppet",
+                "reindex",
                 "roundcube",
                 "shopware",
                 "silverstripe",
                 "symfony",
                 "typo3",
                 "wordpress",
+                "yawik",
                 "zend",
                 "zikula"
             ],
-            "time": "2015-10-29 23:28:48"
+            "time": "2016-08-13 20:53:52"
+        },
+        {
+            "name": "slywalker/boost_cake",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/slywalker/cakephp-plugin-boost_cake.git",
+                "reference": "bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/slywalker/cakephp-plugin-boost_cake/zipball/bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e",
+                "reference": "bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "twbs/bootstrap": "Bootstrap framework"
+            },
+            "type": "cakephp-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Yasuo Harada",
+                    "email": "slywalker.net@gmail.com"
+                }
+            ],
+            "description": "BoostCake is a plugin for CakePHP using Bootstrap",
+            "homepage": "http://slywalker.github.io/cakephp-plugin-boost_cake/",
+            "keywords": [
+                "bootstrap",
+                "cakephp",
+                "twitter"
+            ],
+            "time": "2014-11-07 10:36:43"
         }
     ],
     "packages-dev": [
         {
             "name": "cakephp/cakephp-codesniffer",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cakephp/cakephp-codesniffer.git",
-                "reference": "e137baba93d812413a246060f3fb0c0ebeb470a7"
+                "reference": "4d39c519966f071fa52e63623cbb74f84d7beb99"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cakephp/cakephp-codesniffer/zipball/e137baba93d812413a246060f3fb0c0ebeb470a7",
-                "reference": "e137baba93d812413a246060f3fb0c0ebeb470a7",
+                "url": "https://api.github.com/repos/cakephp/cakephp-codesniffer/zipball/4d39c519966f071fa52e63623cbb74f84d7beb99",
+                "reference": "4d39c519966f071fa52e63623cbb74f84d7beb99",
                 "shasum": ""
             },
             "require": {
-                "squizlabs/php_codesniffer": "~1.4"
+                "squizlabs/php_codesniffer": "^1.4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.1.*"
+                "phpunit/phpunit": "^4.1.0"
             },
             "type": "library",
             "notification-url": "https://packagist.org/downloads/",
@@ -189,7 +239,7 @@
                 "codesniffer",
                 "framework"
             ],
-            "time": "2014-12-22 02:40:50"
+            "time": "2015-09-25 21:59:23"
         },
         {
             "name": "cakephp/debug_kit",
@@ -391,20 +441,23 @@
         },
         {
             "name": "phpunit/php-timer",
-            "version": "1.0.7",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-timer.git",
-                "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b"
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
-                "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/38e9124049cf1a164f1e4537caf19c99bf1eb260",
+                "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4|~5"
             },
             "type": "library",
             "autoload": {
@@ -428,7 +481,7 @@
             "keywords": [
                 "timer"
             ],
-            "time": "2015-06-21 08:01:12"
+            "time": "2016-05-12 18:03:57"
         },
         {
             "name": "phpunit/php-token-stream",
@@ -679,16 +732,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v2.8.1",
+            "version": "v2.8.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "ac84cbb98b68a6abbc9f5149eb96ccc7b07b8966"
+                "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/ac84cbb98b68a6abbc9f5149eb96ccc7b07b8966",
-                "reference": "ac84cbb98b68a6abbc9f5149eb96ccc7b07b8966",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
+                "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
                 "shasum": ""
             },
             "require": {
@@ -724,7 +777,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-26 13:37:56"
+            "time": "2016-09-02 01:57:56"
         }
     ],
     "aliases": [],

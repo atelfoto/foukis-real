@@ -1,152 +1,5 @@
 [
     {
-        "name": "composer/installers",
-        "version": "v1.0.22",
-        "version_normalized": "1.0.22.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/composer/installers.git",
-            "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
-            "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
-            "shasum": ""
-        },
-        "require": {
-            "composer-plugin-api": "1.0.0"
-        },
-        "replace": {
-            "roundcube/plugin-installer": "*",
-            "shama/baton": "*"
-        },
-        "require-dev": {
-            "composer/composer": "1.0.*@dev",
-            "phpunit/phpunit": "4.1.*"
-        },
-        "time": "2015-10-29 23:28:48",
-        "type": "composer-plugin",
-        "extra": {
-            "class": "Composer\\Installers\\Plugin",
-            "branch-alias": {
-                "dev-master": "1.0-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-0": {
-                "Composer\\Installers\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Kyle Robinson Young",
-                "email": "kyle@dontkry.com",
-                "homepage": "https://github.com/shama"
-            }
-        ],
-        "description": "A multi-framework Composer library installer",
-        "homepage": "http://composer.github.com/installers/",
-        "keywords": [
-            "Craft",
-            "Dolibarr",
-            "Hurad",
-            "MODX Evo",
-            "OXID",
-            "SMF",
-            "Thelia",
-            "WolfCMS",
-            "agl",
-            "aimeos",
-            "annotatecms",
-            "bitrix",
-            "cakephp",
-            "chef",
-            "codeigniter",
-            "concrete5",
-            "croogo",
-            "dokuwiki",
-            "drupal",
-            "elgg",
-            "fuelphp",
-            "grav",
-            "installer",
-            "joomla",
-            "kohana",
-            "laravel",
-            "lithium",
-            "magento",
-            "mako",
-            "mediawiki",
-            "modulework",
-            "moodle",
-            "phpbb",
-            "piwik",
-            "ppi",
-            "puppet",
-            "roundcube",
-            "shopware",
-            "silverstripe",
-            "symfony",
-            "typo3",
-            "wordpress",
-            "zend",
-            "zikula"
-        ]
-    },
-    {
-        "name": "cakephp/localized",
-        "version": "2.4.0",
-        "version_normalized": "2.4.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/cakephp/localized.git",
-            "reference": "c092f5298d769b1d2f0dd55cbd7a9a39adc18cd2"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/cakephp/localized/zipball/c092f5298d769b1d2f0dd55cbd7a9a39adc18cd2",
-            "reference": "c092f5298d769b1d2f0dd55cbd7a9a39adc18cd2",
-            "shasum": ""
-        },
-        "require": {
-            "composer/installers": "*",
-            "php": ">=5.3"
-        },
-        "time": "2014-12-01 19:14:06",
-        "type": "cakephp-plugin",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.3.x-dev"
-            },
-            "installer-name": "Localized"
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "CakePHP Community",
-                "homepage": "https://github.com/cakephp/localized/graphs/contributors"
-            }
-        ],
-        "description": "CakePHP Localized Plugin",
-        "homepage": "https://github.com/cakephp/localized",
-        "keywords": [
-            "cakephp",
-            "i18n",
-            "l10n",
-            "localized"
-        ]
-    },
-    {
         "name": "squizlabs/php_codesniffer",
         "version": "1.5.6",
         "version_normalized": "1.5.6.0",
@@ -222,98 +75,6 @@
             "phpcs",
             "standards"
         ]
-    },
-    {
-        "name": "cakephp/cakephp-codesniffer",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/cakephp/cakephp-codesniffer.git",
-            "reference": "e137baba93d812413a246060f3fb0c0ebeb470a7"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/cakephp/cakephp-codesniffer/zipball/e137baba93d812413a246060f3fb0c0ebeb470a7",
-            "reference": "e137baba93d812413a246060f3fb0c0ebeb470a7",
-            "shasum": ""
-        },
-        "require": {
-            "squizlabs/php_codesniffer": "~1.4"
-        },
-        "require-dev": {
-            "phpunit/phpunit": "4.1.*"
-        },
-        "time": "2014-12-22 02:40:50",
-        "type": "library",
-        "installation-source": "dist",
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "CakePHP Community",
-                "homepage": "https://github.com/cakephp/cakephp-codesniffer/graphs/contributors"
-            }
-        ],
-        "description": "CakePHP CodeSniffer Standards",
-        "homepage": "http://cakephp.org",
-        "keywords": [
-            "codesniffer",
-            "framework"
-        ]
-    },
-    {
-        "name": "symfony/yaml",
-        "version": "v2.8.1",
-        "version_normalized": "2.8.1.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/symfony/yaml.git",
-            "reference": "ac84cbb98b68a6abbc9f5149eb96ccc7b07b8966"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/symfony/yaml/zipball/ac84cbb98b68a6abbc9f5149eb96ccc7b07b8966",
-            "reference": "ac84cbb98b68a6abbc9f5149eb96ccc7b07b8966",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.9"
-        },
-        "time": "2015-12-26 13:37:56",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "2.8-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "Symfony\\Component\\Yaml\\": ""
-            },
-            "exclude-from-classmap": [
-                "/Tests/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Fabien Potencier",
-                "email": "fabien@symfony.com"
-            },
-            {
-                "name": "Symfony Community",
-                "homepage": "https://symfony.com/contributors"
-            }
-        ],
-        "description": "Symfony Yaml Component",
-        "homepage": "https://symfony.com"
     },
     {
         "name": "phpunit/php-text-template",
@@ -407,49 +168,6 @@
         "keywords": [
             "mock",
             "xunit"
-        ]
-    },
-    {
-        "name": "phpunit/php-timer",
-        "version": "1.0.7",
-        "version_normalized": "1.0.7.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/sebastianbergmann/php-timer.git",
-            "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
-            "reference": "3e82f4e9fc92665fafd9157568e4dcb01d014e5b",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.3.3"
-        },
-        "time": "2015-06-21 08:01:12",
-        "type": "library",
-        "installation-source": "dist",
-        "autoload": {
-            "classmap": [
-                "src/"
-            ]
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "BSD-3-Clause"
-        ],
-        "authors": [
-            {
-                "name": "Sebastian Bergmann",
-                "email": "sb@sebastian-bergmann.de",
-                "role": "lead"
-            }
-        ],
-        "description": "Utility class for timing",
-        "homepage": "https://github.com/sebastianbergmann/php-timer/",
-        "keywords": [
-            "timer"
         ]
     },
     {
@@ -689,6 +407,343 @@
             "phpunit",
             "testing",
             "xunit"
+        ]
+    },
+    {
+        "name": "composer/installers",
+        "version": "v1.2.0",
+        "version_normalized": "1.2.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/installers.git",
+            "reference": "d78064c68299743e0161004f2de3a0204e33b804"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/installers/zipball/d78064c68299743e0161004f2de3a0204e33b804",
+            "reference": "d78064c68299743e0161004f2de3a0204e33b804",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
+        },
+        "replace": {
+            "roundcube/plugin-installer": "*",
+            "shama/baton": "*"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "4.1.*"
+        },
+        "time": "2016-08-13 20:53:52",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "Composer\\Installers\\Plugin",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Composer\\Installers\\": "src/Composer/Installers"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama"
+            }
+        ],
+        "description": "A multi-framework Composer library installer",
+        "homepage": "https://composer.github.io/installers/",
+        "keywords": [
+            "Craft",
+            "Dolibarr",
+            "Hurad",
+            "ImageCMS",
+            "MODX Evo",
+            "Mautic",
+            "OXID",
+            "Plentymarkets",
+            "RadPHP",
+            "SMF",
+            "Thelia",
+            "WolfCMS",
+            "agl",
+            "aimeos",
+            "annotatecms",
+            "attogram",
+            "bitrix",
+            "cakephp",
+            "chef",
+            "cockpit",
+            "codeigniter",
+            "concrete5",
+            "croogo",
+            "dokuwiki",
+            "drupal",
+            "elgg",
+            "expressionengine",
+            "fuelphp",
+            "grav",
+            "installer",
+            "joomla",
+            "kohana",
+            "laravel",
+            "lithium",
+            "magento",
+            "mako",
+            "mediawiki",
+            "modulework",
+            "moodle",
+            "phpbb",
+            "piwik",
+            "ppi",
+            "puppet",
+            "reindex",
+            "roundcube",
+            "shopware",
+            "silverstripe",
+            "symfony",
+            "typo3",
+            "wordpress",
+            "yawik",
+            "zend",
+            "zikula"
+        ]
+    },
+    {
+        "name": "cakephp/cakephp-codesniffer",
+        "version": "1.0.1",
+        "version_normalized": "1.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/cakephp-codesniffer.git",
+            "reference": "4d39c519966f071fa52e63623cbb74f84d7beb99"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/cakephp-codesniffer/zipball/4d39c519966f071fa52e63623cbb74f84d7beb99",
+            "reference": "4d39c519966f071fa52e63623cbb74f84d7beb99",
+            "shasum": ""
+        },
+        "require": {
+            "squizlabs/php_codesniffer": "^1.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.1.0"
+        },
+        "time": "2015-09-25 21:59:23",
+        "type": "library",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/cakephp-codesniffer/graphs/contributors"
+            }
+        ],
+        "description": "CakePHP CodeSniffer Standards",
+        "homepage": "http://cakephp.org",
+        "keywords": [
+            "codesniffer",
+            "framework"
+        ]
+    },
+    {
+        "name": "phpunit/php-timer",
+        "version": "1.0.8",
+        "version_normalized": "1.0.8.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/sebastianbergmann/php-timer.git",
+            "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/sebastianbergmann/php-timer/zipball/38e9124049cf1a164f1e4537caf19c99bf1eb260",
+            "reference": "38e9124049cf1a164f1e4537caf19c99bf1eb260",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.3"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4|~5"
+        },
+        "time": "2016-05-12 18:03:57",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "BSD-3-Clause"
+        ],
+        "authors": [
+            {
+                "name": "Sebastian Bergmann",
+                "email": "sb@sebastian-bergmann.de",
+                "role": "lead"
+            }
+        ],
+        "description": "Utility class for timing",
+        "homepage": "https://github.com/sebastianbergmann/php-timer/",
+        "keywords": [
+            "timer"
+        ]
+    },
+    {
+        "name": "symfony/yaml",
+        "version": "v2.8.11",
+        "version_normalized": "2.8.11.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/symfony/yaml.git",
+            "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/symfony/yaml/zipball/e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
+            "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.9"
+        },
+        "time": "2016-09-02 01:57:56",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.8-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Symfony\\Component\\Yaml\\": ""
+            },
+            "exclude-from-classmap": [
+                "/Tests/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            },
+            {
+                "name": "Symfony Community",
+                "homepage": "https://symfony.com/contributors"
+            }
+        ],
+        "description": "Symfony Yaml Component",
+        "homepage": "https://symfony.com"
+    },
+    {
+        "name": "cakephp/localized",
+        "version": "2.4.0",
+        "version_normalized": "2.4.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/cakephp/localized.git",
+            "reference": "c092f5298d769b1d2f0dd55cbd7a9a39adc18cd2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/cakephp/localized/zipball/c092f5298d769b1d2f0dd55cbd7a9a39adc18cd2",
+            "reference": "c092f5298d769b1d2f0dd55cbd7a9a39adc18cd2",
+            "shasum": ""
+        },
+        "require": {
+            "composer/installers": "*",
+            "php": ">=5.3"
+        },
+        "time": "2014-12-01 19:14:06",
+        "type": "cakephp-plugin",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.3.x-dev"
+            },
+            "installer-name": "Localized"
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "CakePHP Community",
+                "homepage": "https://github.com/cakephp/localized/graphs/contributors"
+            }
+        ],
+        "description": "CakePHP Localized Plugin",
+        "homepage": "https://github.com/cakephp/localized",
+        "keywords": [
+            "cakephp",
+            "i18n",
+            "l10n",
+            "localized"
+        ]
+    },
+    {
+        "name": "slywalker/boost_cake",
+        "version": "1.0.6",
+        "version_normalized": "1.0.6.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/slywalker/cakephp-plugin-boost_cake.git",
+            "reference": "bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/slywalker/cakephp-plugin-boost_cake/zipball/bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e",
+            "reference": "bb1fa0d96b2c2c8fad7b0ccfab2ca2f231f66c3e",
+            "shasum": ""
+        },
+        "require": {
+            "composer/installers": "*",
+            "php": ">=5.3.0"
+        },
+        "suggest": {
+            "twbs/bootstrap": "Bootstrap framework"
+        },
+        "time": "2014-11-07 10:36:43",
+        "type": "cakephp-plugin",
+        "installation-source": "dist",
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Yasuo Harada",
+                "email": "slywalker.net@gmail.com"
+            }
+        ],
+        "description": "BoostCake is a plugin for CakePHP using Bootstrap",
+        "homepage": "http://slywalker.github.io/cakephp-plugin-boost_cake/",
+        "keywords": [
+            "bootstrap",
+            "cakephp",
+            "twitter"
         ]
     },
     {
