@@ -28,8 +28,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-		echo $this->Html->css('styles.min');
 		echo $this->fetch('meta');
+		echo $this->Html->css('styles.min');
 		echo $this->fetch('css');
 	?>
 </head>
@@ -42,9 +42,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<nav class="menu" >
 					<ul class="nav">
 						<li <?php if ($this->request->controller =='pages' && $this->request->action =='index' ):?> class="active"<?php endif; ?>>
-							<?php echo $this->Html->link('<span class="icon-home-1"  aria-hidden="true"></span>' , array('controller' => 'pages', 'action' => 'index'),array('escape'=>false,'class'=>'home')); ?>
+							<?php echo $this->Html->link('<span class="icon-home-1"  aria-hidden="true"></span>' ,
+							 array('controller' => 'pages', 'action' => 'index'),
+							 array('escape'=>false,'class'=>'home')
+							 );
+							echo "\n";
+							//echo "\n</li>"
+							 ?>
 						</li>
-							<?php echo $this->element("menu") ?>
+						<?php echo $this->element("menu"); ?>
 					</ul>
 				</nav>
 				<nav  style="float:right;witdh:50%;">

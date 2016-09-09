@@ -38,7 +38,7 @@
 \$this->Html->addCrumb( \${$singularVar}['{$singularHumanName }']['name']);  ?>\n"; ?>
 <div class="container container-">
 	<div class=" page-content">
-		<h2> <?php echo "<?php echo __('{$singularHumanName}'); ?>"; ?></h2>
+		<h2> <?php echo "<?php echo \${$singularVar}['{$singularHumanName }']['name'] ?>"; ?></h2>
 		 <?php echo "<?php echo \${$singularVar}['{$singularHumanName }']['content'] ?>"; ?>
 
 	</div>

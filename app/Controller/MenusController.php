@@ -13,7 +13,6 @@ class MenusController extends AppController {
 	* contact
 	**/
 	public function contact(){
-
 	$this->layout = "home";
 
 	}
@@ -33,6 +32,17 @@ class MenusController extends AppController {
 	public $components = array('Paginator', 'Flash', 'Session');
 
 /**
+ * index method pour tester
+ *
+ * @return void
+ */
+	public function index() {
+		$this->layout='home';
+		$this->Menu->recursive = 0;
+		$this->set('menus', $this->Paginator->paginate());
+	}
+
+/**
  * admin_index method
  *
  * @return void
@@ -48,13 +58,19 @@ class MenusController extends AppController {
  * @param string $id
  * @return void
  */
-	public function view($id = null) {
-		$this->layout='admin';
-		if (!$this->Menu->exists($id)) {
-			throw new NotFoundException(__('Invalid menu'));
-		}
-		$options = array('conditions' => array('Menu.' . $this->Menu->primaryKey => $id));
-		$this->set('menu', $this->Menu->find('first', $options));
+
+	public function view($slug) {
+		$this->layout='home';
+	    if(empty($slug)) {
+	        throw new NotFoundException();
+	    }
+	    $menu = $this->Menu->find('first', array(
+	        'conditions' => array('Menu.slug' => $slug),
+	    ));
+	    if(!$menu){
+	        throw new NotFoundException();
+	    }
+	    $this->set(compact('menu'));
 	}
 /**
  * admin_view method

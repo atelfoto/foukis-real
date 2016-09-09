@@ -1,6 +1,6 @@
-<h1>contact</h1>
+<!-- <h1>contact</h1> -->
 <div class="box">
-<?php echo $this->Form->create('BoostCake', array(
+<?php echo $this->Form->create(false, array(
 	'novalidate' => true,
 	'inputDefaults' => array(
 		'div' => 'form-group',

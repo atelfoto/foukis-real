@@ -82,43 +82,6 @@
 		</div>
 	</div>
 </div><!-- end containing of content -->
-<?php echo "<?php foreach (\${$pluralVar}  as \$k => \$v): \$v = current(\$v);?>" ?><!-- modal supprimer -->
-<div class="modal fade" id="Modal<?php echo "<?= \$v['id']; ?>" ?>">
-	<div class="modal-dialog ">
-		<div class="modal-content">
-			<div class="modal-header panel-default">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="tooltip" data-placement="left" title=" <?php echo _(' Press Esc to close'); ?>">&times;</button>
-				<h4 ><?php echo "<?php echo __('Remove Post') ?>" ?></h4>
-			</div>
-			<div class="modal-body">
-				<p> <?php echo "<?php echo __('Are you sure you want to delete'); ?>" ?> <b style="color:#f00;">&nbsp;<?php echo "<?php echo \$v['name'];?> " ?>&nbsp;</b>
-					<?php echo "<?php echo __('of your Articles') ?>";
-					echo "\n\t\t\t\t\t<span class=\"label-uname strong\"></span> ? \n"; ?>
-				</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo "<?php echo __('Cancel') ?>" ?></button>
-					<?php echo "<?php  echo \$this->Form->postLink(__('Delete'),array('action' => 'delete',	\$v['id']),
-							array('class' => 'btn btn-danger delete-user-link')) ?>";
-				echo "\n\t\t\t</div>";
-				echo "\n\t\t</div><!-- /.modal-content -->";
-				echo "\n\t</div><!-- /.modal-dialog -->\n" ?>
-</div><!-- /.modal -->
-<?php echo "<?php endforeach ?>" ?><!-- fin modal supprimer -->
-<div class="modal fade" id="ModalAide"> <!-- modal Aide -->
-	<div class="modal-dialog ">
-		<div class="modal-content">
-			<div class="modal-header panel-default">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-remove-sign" style="color:#f00;"></i></button>
-					<h4 id="myModalLabel"><?= __('Help') ?></h4>
-			</div>
-			<div class="modal-body">
-				<p></p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal"><?php echo __('Closed') ?></button>
-			</div>
-		</div><!-- /.modal-aide-content -->
-	</div><!-- /.modal-aide-dialog -->
-</div><!-- /.modal-aide -->
+
+
 
