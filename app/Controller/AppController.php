@@ -31,6 +31,18 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
+	/**
+	 * beforeFilter callback
+	 *
+	 * @return void
+	 */
+	public function beforeFilter() {
+		parent::beforeFilter();
+		if(isset($this->request->params['prefix']) && $this->request->params['prefix']=='admin'){
+			$this->layout = 'admin';
+		}
+	}
+
 /**
  * [$components description]
  * @var array
