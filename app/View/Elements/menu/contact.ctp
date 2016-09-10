@@ -12,19 +12,27 @@
 	),
 	'class' => 'well form-horizontal'
 )); ?>
+	<?php echo  $this->Form->input("name", array(
+	'placeholder'=>__('name'))); ?>
 	<?php echo $this->Form->input('email', array(
 		'placeholder' => 'Email'
 	)); ?>
-	<?php echo $this->Form->input('password', array(
-		'placeholder' => 'Password'
+	<?php echo  $this->Form->input("phone", array(
+	'placeholder'=>__('phone'))); ?>
+	<?php echo  $this->Form->input("subject", array(
+	'placeholder'=>__('subject'))); ?>
+	<?php echo  $this->Form->input("description", array(
+	"placeholder"=>__('description'))); ?>
+	<?php echo  $this->Form->input("message", array(
+	'placeholder'=>__('Enter your message...'),
+	'type'=>'textarea',
+	'style'=>'width:100%'
 	)); ?>
-	<?php echo $this->Form->input('remember', array(
-		'wrapInput' => 'col col-md-9 col-md-offset-3',
-		'label' => 'Remember me',
-		'class' => false
-	)); ?>
+	<?= $this->Form->input('website', array(
+	'class'=>'website ')); ?>
 	<div class="button text-right">
-	<?php echo $this->Form->button("submit", array('class'=>"btn btn-primary")); ?>
+	<?php echo $this->Form->button("submit", array(
+	'class'=>"btn btn-primary")); ?>
 		<?php // echo $this->Form->submit('Sign in', array(
 			//'div' => 'col col-md-9 col-md-offset-3',
 			// 'class' => 'btn btn-primary'
