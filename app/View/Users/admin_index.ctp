@@ -1,18 +1,19 @@
 <?php echo $this->assign('title', __('Users')); ?>
  <?php $this->Html->addCrumb(__('Users')); ?>
- <div class="users index row">
-	<div class="col-md-12 page-header">
-		<h2><i class="fa fa-book"></i>&nbsp;<?php echo __('Users'); ?></h2>
-	</div>
-	<div class="col-md-12">
-		<div class="text-right" style='margin-bottom:10px;'>
-			<button class="btn " data-toggle="modal" data-target="#ModalAide">
-			<i class="fa fa-question-circle">&nbsp;Help</i>
-			</button>
-				<?php echo $this->Html->link("<i class='fa fa-plus'></i>". __("Add article"),array('action'=>'add'),
-				array('class' =>"btn btn-success ",'escape'=>false)); ?>
+ <div class="users  row">
+ 	<div class="col-xs-12">
+ 	<div class="box box-primary">
+		<div class="box-header">
+			<h3 class="box-title"><i class="fa fa-book"></i>&nbsp;<?php echo __('Users'); ?></h3>
+			<div class="box-tools pull-right">
+				<button class="btn btn-sm" data-toggle="modal" data-target="#ModalAide">
+					<i class="fa fa-question-circle">&nbsp;Help</i>
+				</button>
+				<?php echo $this->Html->link("<i class='fa fa-plus'></i>". __(" Add"),array('action'=>'add'),
+				array('class' =>"btn btn-success btn-sm",'escape'=>false)); ?>
+			</div>
 		</div>
-		<div class="panel table-responsive box-home">
+		<div class="panel table-responsive box-body">
 			<table id="exemple"  class="table table-bordered text-center table-striped display">
 				<thead>
 					<tr class="info">
@@ -67,11 +68,11 @@
 							 ); ?>
 						</td>
 					</tr>
-				<?php endforeach; ?>
+					<?php endforeach; ?>
 				</tbody>
 			</table>
 		</div>
-		<div class="col col-md-12 text-center">
+		<div class="text-center box-footer">
 			<?php echo $this->element('pagination'); ?>
 			<?php  echo $this->element("pagination-counter"); ?>
 		</div>

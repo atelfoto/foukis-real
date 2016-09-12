@@ -142,11 +142,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				<?php echo $this->fetch('content'); ?>
 			</section>
 		</div>
-		<footer class="main-footer">
+		<footer class="main-footer text-center">
 			<div class="pull-right hidden-xs">
 				<b>Version</b> <?php echo $cakeVersion; ?>
 			</div>
-			<strong>Copyright &copy; 2014-<?php echo date('Y'); ?> <a href=""><?php echo env('HTTP_HOST'); ?></a>.</strong> All rights reserved.
+			<strong>Copyright &copy; 2007-<?php echo date('Y'); ?> <a href=""><?php echo env('HTTP_HOST'); ?></a>.</strong> All rights reserved.
 		</footer>
 	</div>
 	<?php echo  $this->Html->script(array('admin.min'));

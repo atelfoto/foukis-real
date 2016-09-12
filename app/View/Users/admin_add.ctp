@@ -2,15 +2,17 @@
  <?php $this->Html->addCrumb(__('user'),array('controller'=>'users','action'=>'index','admin'=>true)); ?></li>
  <?php $this->Html->addCrumb(__('edit') ); ?>
 <div class="users box box-primary">
+	<?php echo $this->Form->create('User'); ?>
 	<div class="box-header with-border">
-		<h3><i class="fa fa-book"></i>&nbsp;<?php echo __('Add User'); ?></h3>
-		<?php echo $this->Form->create('User'); ?>
-		<div class="box-tools pull-right"><?php echo $this->Form->input('active', array('label' =>false));?>
+		<h3 class="box-title"><i class="fa fa-book"></i>&nbsp;<?php echo __('Add User'); ?></h3>
+
+		<div class="box-tools pull-right">
 			<?php echo $this->Form->button('<i class="fa fa-check " style="color:#fff;">&nbsp;</i>'.__('publish'),
 									array('class' => 'btn btn-success btn-sm')); ?>
 			<?php echo $this->html->link('<i class="fa fa-times-circle fa-lg" style="color:#f00;">&nbsp;</i>'.__('Closed'),
 										array('controller'=>'users','action'=>'index'),
 									array('class' => 'btn btn-default btn-sm','role'=>'button','escape'=>false)); ?>
+			<?php  echo $this->Form->input('active', array('label' =>false));?>
 		</div>
 	</div>
 	<div class="box-body">
@@ -66,7 +68,7 @@
 					</div>
 				</div>
 				<div class="text-right box-footer" style="margin-top:10px;">
-					<?php echo $this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-primary')); ?>
+					<?php echo $this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-success')); ?>
 					<?php echo $this->html->link('<i class="fa fa-times-circle fa-lg" style="color:#f00;">&nbsp;</i>'.__('Closed'),
 					array('controller'=>'users','action'=>'index'),
 					array('class' => 'btn btn-default','escape'=>false)); ?>
