@@ -1,4 +1,4 @@
-<div class="box">
+<div class="">
 <?php echo $this->Form->create(false, array(
 	'novalidate' => true,
 	'inputDefaults' => array(
@@ -20,27 +20,30 @@
 	'placeholder'=>__('phone'))); ?>
 	<?php echo  $this->Form->input("property_id", array(
 	'placeholder'=>__('property type'),
+	'empty'=>__('property type'),
 	'class'=>"form-control")); ?>
 	<?php echo  $this->Form->input("size", array(
-		"placholder"=>__('size'),
+		"placeholder"=>__('size'),
 		'type'=>'number'
 	)); ?>
-	<?php echo $this->Form->year("year", "1900",date('Y'), array(
-	"placeholder"=>__('year'),
+	<div class="form-group">
+	<label for="year" class="control-label"> <?php echo __('year') ?></label>
+	<?php echo $this->Form->year("year", "1900",date('Y'),
+	 array(
+	"empty"=>__('year'),
 	"class"=>__('form-control'))); ?>
+	</div>
 	<?php echo  $this->Form->input('price', array(
 	'placeholder'=>__('price'),
 	"class"=>'form-control'
 	)); ?>
-		<?php echo  $this->Form->input("address", array(
+	<?php echo  $this->Form->input("address", array(
 	'placeholder'=>__('Enter your address...'),
 	'type'=>'textarea',
-	'style'=>'width:100%'
 	)); ?>
 	<?php echo  $this->Form->input("message", array(
 	'placeholder'=>__('Enter your message...'),
 	'type'=>'textarea',
-	'style'=>'width:100%'
 	)); ?>
 	<div class="button text-right">
 	<?php echo $this->Form->button("submit", array(

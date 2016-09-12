@@ -4,11 +4,11 @@
  	<?= $this->Html->link($v['name'], $v['link']); ?><?php  echo "\n\t\t\t\t\t\t" ?>
 </li><?php  echo "\n\t\t\t\t\t\t" ?>
 <?php endforeach ?>
-<li <?php if($this->request->action =='offerings'):?> class="active"<?php endif; ?>>
+<li <?php if($this->request->slug =='offerings'):?> class="active"<?php endif; ?>>
 							<?php echo $this->Html->link(__('offerings'), array('controller' => 'menus', 'action' => 'offerings'));
 							echo "\n"; ?>
 						</li>
-						<li <?php if($this->request->action =='contact'):?> class="active"<?php endif; ?>>
+						<li <?php if($this->request->slug =='contact'):?> class="active"<?php endif; ?>>
 							<?php echo $this->Html->link(_('contact us'), array('controller' => 'menus', 'action' => 'contact'));
 							echo "\n"; ?>
 						</li>

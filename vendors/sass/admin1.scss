@@ -1,0 +1,111 @@
+@charset 'utf-8';
+@import "compass";
+@import "susy";
+@import "compass/layout.scss";
+@import "compass/reset";
+@import "breakpoint";
+@import "utils/variables";
+@import "layout/input";
+@import "components/buttons";
+
+$susy:(
+    container:960px,
+    columns:12,
+    gutters: 10px/100px,
+    gutter-position: inside-static,
+    column-width:100px,
+    // debug:(
+    //     image:show,
+    //     )
+    );
+$desktop:(
+    gutters : 30px/100px,
+);
+
+//@include layout($desktop);
+
+@include sticky-footer(50px, "#container", "#container_footer", "#footer");
+html,body{
+	font-family: $typo-titre;
+	font-size: 16px;
+	line-height: 1.4;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+.container{
+	margin: 0 20px;
+
+	//@include container;
+	//@include clearfix;
+}
+
+.deux-column {
+  @include column-count(2);
+  //width: 300px;
+  margin-bottom: 20px;
+}
+.site-content{
+	height: 100%;
+	padding-top: 66px;
+}
+
+// $HEADER
+.header{
+	position: fixed;
+	left: 0;
+	right: 0;
+	height: 66px;
+	line-height: 66px;
+	color: #fff;
+	background-color: $couleur-bg;
+}
+.header__logo{
+	font-weight: bold;
+	padding: 0 25px;
+	float: left;
+}
+
+// $MENU
+.menu{
+	float: left;
+	height: 66px;
+	a{
+		padding: 010px;
+	}
+	a:hover{
+		//color: #c6ff00;
+		color: $couleur-dark;
+	}
+}
+
+#container{
+	margin: 0 20px;
+
+	@include container;
+	@include clearfix;
+
+}
+
+ // $footer
+ footer{
+ 	background:rgba(0, 0, 0, 0.64);
+ 	bottom:0px;
+ 	margin-bottom: 0;
+ 	text-align:center;
+ 	p{
+ 		padding: 5px;
+ 		font-size: .8em;
+ 		font-weight: 400;
+ 		font-style: italic;
+ 	}
+ }
+/*------------------------------------*\
+    $RESPONSIVE
+\*------------------------------------*/
+@import "responsive";

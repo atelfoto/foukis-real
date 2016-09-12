@@ -2,19 +2,21 @@
 @import "admin/bootstrap-variables";
 @import "bootstrap";
 @import "compass";
-
-@import "admin/_AdminLTE";
-@import "bootstrap-toggle.scss";
+@import "font-awesome-compass";
+@import "font-awesome";
+@import "admin/adminLTE";
+@import "admin/skin-blue";
+@import "bootstrap-toggle";
 //travailler avec les sprites
 $icones-layout:smart;
 $icones-sprite-dimensions:true;
 @import "icones/*.png";
 
 /* TYPO*/
-@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+//@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
 //font-family: 'Shadows Into Light', cursive;
-@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
-@import url('http://fonts.googleapis.com/css?family=Actor|PT+Sans');
+//@import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css');
+//@import url('http://fonts.googleapis.com/css?family=Actor|PT+Sans');
 //$typo-titre: 'Shadows Into Light', cursive;
 //$font-family-sans-serif:  "Actor", Helvetica, Arial, sans-serif;
 //$font-family-sans-serif:  'Shadows Into Light', cursive;
@@ -86,6 +88,10 @@ display: inline;
 }
 .input.checkbox{
 	margin:0px!important;
+}
+
+.mauvais{
+	color:#f00;
 }
 
 

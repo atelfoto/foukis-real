@@ -14,7 +14,7 @@ module.exports=function(grunt){
             dist: {
                 files: {
                     'app/webroot/js/home.min.js': ["vendors/js/jquery.min.js","vendors/js/*.js",'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js'],
-                    'app/webroot/js/admin.min.js': ["bower_components/bootstrap-toggle/js/bootstrap-toggle.js"]
+                    'app/webroot/js/admin.min.js': ["vendors/js/jquery.min.js",'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',"bower_components/bootstrap-toggle/js/bootstrap-toggle.js","vendors/js/admin/app.min.js"]
                     //'app/webroot/js/admin.min.js': ["bower_components/bootstrap-toggle/js/bootstrap-toggle.js","node_modules/datatables.net/js/jquery.dataTables.js"]
 
                 }
@@ -44,7 +44,8 @@ module.exports=function(grunt){
                 files: {
                     'app/webroot/css/styles.min.css': ['vendors/css/styles.css'],
                     'app/webroot/css/admin.min.css': ['vendors/css/admin.css','node_modules/datatables.net-dt/css/jquery.dataTables.css'],
-                    'app/webroot/css/bootstrap-toggle.min.css': ["bootstrap-toggle/css/bootstrap-toggle.css"]
+                    'app/webroot/css/admin1.min.css': ["vendors/css/admin1.css"],
+                    'app/webroot/css/wysiwyg.css': ["vendors/css/wysiwyg.css"]
                 }
             }
         },
@@ -79,7 +80,7 @@ module.exports=function(grunt){
         		tasks:['cssmin']
         	},
         	js:{
-        		files:['vendors/js/*.js','!vendors/js/min.js'],
+        		files:['vendors/js/*.js','!vendors/js/*.min.js'],
         		tasks:['jshint','uglify'],
                 options: { spawn: false }
         	},

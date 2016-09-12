@@ -70,7 +70,8 @@
 					  	<div class="tab-pane fade" role="tabpanel" id="publication">
 							<div class="form-group">
 								<?php echo $this->Form->input('description', array('class' => 'form-control',
-							 'placeholder' => __('Description')));?>
+								'placeholder' => __('Description')));?>
+								<p id="compteur" class="text-right"><i>0 mots - 0 Caractere / 250</i></p>
 							</div>
 							<div class="form-group">
 								<?php echo $this->Form->input('robots', array('class' => 'form-control',
@@ -213,7 +214,7 @@ function send_to_editor(content){
 
 //pour les meta description
 $(document).ready(function(e) {
-  $('#metadescription').keyup(function() {
+  $('#MenuDescription').keyup(function() {
     var nombreCaractere = $(this).val().length;
     var nombreMots = jQuery.trim($(this).val()).split(' ').length;
     if($(this).val() === '') {

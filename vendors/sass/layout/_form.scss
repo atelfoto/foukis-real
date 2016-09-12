@@ -1,0 +1,26 @@
+#website{
+	visibility: hidden;
+}
+.form-group{
+	.control-label{
+		width: 25%;
+		float: left;
+		padding-right: 10px;
+	}
+	.form-control{
+		width: 75%;
+
+	}
+}
+
+@media only screen and(max-width: 750px){
+	.form-group{
+		.control-label{
+			display: none;
+		}
+		.form-control{
+			width: 100%;
+		}
+	}
+
+}

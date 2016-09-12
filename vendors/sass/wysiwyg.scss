@@ -1,0 +1,188 @@
+//@import "bootstrap/responsive-embed";
+@import "compass";
+// @include font-face('Lora',
+//     font-files('lora/Lora-Regular.woff',woff,
+//        // 'lora/lora-regular-webfont.woff',woff,
+//         'lora/Lora-Regular.ttf',truetype,
+//         'lora/Lora-Regular.svg#lora',svg),
+//         'lora/Lora-Regular.eot',normal,normal);
+@include font-face('Lora',
+    font-files('font-lora/lora-regular.woff',woff,
+        'font-lora/lora-regular-webfont.woff2',woff2,
+        'font-lora/lora-regular.ttf',truetype,
+        'font-lora/lora-regular.svg#lora',svg),
+        'font-lora/lora-regular.eot',normal,normal);
+// @include font-face('Lora',
+//     font-files('lora/lora-regular-webfont.woff',woff,
+//        // 'lora/lora-regular-webfont.woff',woff,
+//         'lora/lora-regular-webfont.ttf',truetype,
+//         'lora/lora-regular-webfont.svg#lora',svg),
+//         'lora/lora-regular-webfont.eot',normal,normal);
+// @font-face{
+// 	font-family: 'MyWebFont';
+// 	src: url('WebFont.eot');
+// 	src: url('WebFont.eot?#iefix') format('embedded-opentype'),
+// 	     url('WebFont.woff') format('woff'),
+// 	     url('WebFont.ttf') format('truetype'),
+// 	     url('WebFont.svg#webfont') format('svg');
+// }
+// @import "bootstrap/variables";
+// @import "bootstrap/mixins";
+// @import "bootstrap/tables";
+// @import "bootstrap/panels";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/variables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/tables";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/panels";
+//@import "bootstrap/grid";
+
+// #tinymce.mce-content-body{
+// 	width: 960px!important;
+// }
+.alignLeft{ float:left;margin-right: 10px;margin-bottom: 10px;}
+.alignRight{ float:right;margin-left: 10px;margin-bottom: 10px;}
+.alignCenter{ display: block; margin: 0 auto;}
+#page-header{display:none;}
+.maclass{margin-right:10px;}
+#MediaAdminShowForm > div:nth-child(4) > div{float: right;}
+
+// .page-content >
+.panel.panel-default .panel-heading h3{
+	text-align: center;
+	letter-spacing: 10px;
+	word-spacing: 10px;
+	margin-top: 0px;
+	font-weight: 700;
+	color: #222;
+	font-size: 24px;
+	line-height: 1.1em ;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+// .col-md-6{
+// 	width: 40%;
+// 	margin-left:1%;
+// 	margin-right: 1%;
+
+// }
+h2{
+	color:#222222;
+	line-height: 1.1em;
+	font-family: "Lora";
+	//font-size: 30.8!important;
+	font-weight: 700;
+	text-transform: capitalize;
+	padding-bottom: 9px;
+  	margin: 40px 0 20px;
+  	border-bottom: 1px solid #eeeeee;
+    font-size: 2.2em!important;
+    width: 100%;
+}
+
+h3{
+	font-size: 24px;
+	font-family: "Lora";
+	line-height: 1.1em;
+	font-weight: 500;
+
+}
+hr{
+	display: block;
+	clear: both;
+	border: 0;
+}
+p{
+	font-family: "Lora";
+	font-size: 16.8px;
+	line-height: 1.79em;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+// p:first-letter{
+// 	font:small-caps bold;
+// 	float:left;
+// 	font-size: 3em;
+// 	line-height: 1;
+// 	margin-right: .2em;
+// 	padding-bottom: 0.1em;
+// 	margin-top:0.1em;
+// }
+strong{
+	font-weight: 700;
+	line-height: 1.43em;
+	font-size: 16.8px;
+}
+ul{
+	li{
+		font-family: "Lora";
+		font-size: 14px;
+		line-height: 1.79em;
+		text-transform: capitalize;
+		text-align: left;
+	}
+
+}
+.embed-responsive {
+    text-align: center;
+}
+
+.img-thumbnail {
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+}
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.page-header {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+// .embed-responsive {
+//     position: relative;
+//     display: block;
+//     height: 0;
+//     padding: 0;
+//     overflow: hidden;
+// }
+.page-content{
+	margin-bottom: 50px;
+}
+//page  chasse au tresor
+#parchemin p{
+	line-height: 3em;
+	margin-top:50px;
+}
+#vitefait{
+	text-align: center;
+	letter-spacing: 10px;
+	word-spacing: 10px;
+	font-size: 25px;
+	margin-top: 100px;
+	margin-bottom: 100px;
+	color: #777777
+}
+@mixin tableau-tresor{
+	text-align: center;
+	letter-spacing: 10px;
+	word-spacing: 10px;
+	margin-top:0;
+	font-weight: 700;
+    color: #222;
+
+}
+h3#headhoraire{
+	@include tableau-tresor;
+}

@@ -27,7 +27,6 @@ $this->Html->addCrumb( $menu['Menu']['name']);  ?>
 		<?php else: ?>
 			<?php echo $menu['Menu']['content'] ?>
 		<?php endif ?>
-
 	</div>
 	<hr class="style-two">
 </div>

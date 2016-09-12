@@ -211,7 +211,7 @@ function send_to_editor(content){
 
 //pour les meta description
 $(document).ready(function(e) {
-  $('#metadescription').keyup(function() {
+  $('#{$modelClass}description').keyup(function() {
     var nombreCaractere = $(this).val().length;
     var nombreMots = jQuery.trim($(this).val()).split(' ').length;
     if($(this).val() === '') {
