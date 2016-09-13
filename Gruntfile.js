@@ -45,7 +45,8 @@ module.exports=function(grunt){
                     'app/webroot/css/styles.min.css': ['vendors/css/styles.css'],
                     'app/webroot/css/admin.min.css': ['vendors/css/admin.css','node_modules/datatables.net-dt/css/jquery.dataTables.css'],
                     'app/webroot/css/admin1.min.css': ["vendors/css/admin1.css"],
-                    'app/webroot/css/wysiwyg.css': ["vendors/css/wysiwyg.css"]
+                    'app/webroot/css/wysiwyg.css': ["vendors/css/wysiwyg.css"],
+                    'app/webroot/css/AdminLTE.min.css': ["vendors/css/AdminLTE.css"]
                 }
             }
         },

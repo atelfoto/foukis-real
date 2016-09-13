@@ -29,7 +29,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	<?php
 		echo $this->Html->meta('icon');
 		echo $this->Html->meta(array('name' => 'robots', 'content' => 'no index, no follow'));
-		echo $this->Html->css('admin.min');
+		echo $this->Html->css('AdminLTE.min');
+		//echo $this->Html->css('admin.min');
 		echo $this->fetch('css');
 	?>
 </head>

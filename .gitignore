@@ -2,6 +2,7 @@
 #################################################
 /app/Config/database.php
 /app/tmp
+/app/webroot/js/tinymce
 /lib/Cake/Console/Templates/skel/tmp/
 vendors/sass/.sass-cache/
 /app/webroot/css/admin.min.css

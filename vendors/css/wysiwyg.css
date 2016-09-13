@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Lora";
   src: url('../fonts/font-lora/lora-regular.eot');
-  src: url('../fonts/font-lora/lora-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/font-lora/lora-regular.woff') format('woff'), url('../fonts/font-lora/lora-regular-webfont.woff2') format('woff2'), url('../fonts/font-lora/lora-regular.ttf') format('truetype'), url('../fonts/font-lora/lora-regular.svg#lora') format('svg');
+  src: url('../fonts/font-lora/lora-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/font-lora/lora-regular.woff') format('woff'), url('../fonts/font-lora/lora-regular.ttf') format('truetype'), url('../fonts/font-lora/lora-regular.svg#lora') format('svg');
   font-weight: normal;
   font-style: normal; }
 table {

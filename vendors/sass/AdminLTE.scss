@@ -1,0 +1,98 @@
+/*!
+ *   AdminLTE v2.3.2
+ *   Author: Almsaeed Studio
+ *	 Website: Almsaeed Studio <http://almsaeedstudio.com>
+ *   License: Open source - MIT
+ *           Please visit http://opensource.org/licenses/MIT for more information
+!*/
+//google fonts
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
+@import "compass";
+@import "font-awesome-compass";
+@import "font-awesome";
+@import "admin/bootstrap/_bootstrap.scss";
+// //MISC
+// //----
+@import "admin/misc/variables";
+@import "admin/misc/core";
+@import "admin/misc/mixins";
+@import "admin/misc/miscellaneous";
+// //COMPONENTS
+// //-----------
+@import "admin/components/header";
+@import "admin/components/sidebar";
+@import "admin/components/sidebar-mini";
+@import "admin/components/control-sidebar";
+@import "admin/components/dropdown";
+@import "admin/components/forms";
+//@import "admin/components/progress-bars";
+@import "admin/components/small-box";
+@import "admin/components/boxes";
+@import "admin/components/info-box";
+//@import "admin/components/timeline";
+@import "admin/components/buttons";
+@import "admin/components/callout";
+@import "admin/components/alerts";
+@import "admin/components/navs";
+@import "admin/components/products";
+@import "admin/components/table";
+@import "admin/components/labels";
+//@import "admin/components/direct-chat";
+@import "admin/components/users-list";
+//@import "admin/components/carousel";
+@import "admin/components/modal";
+//@import "admin/components/social-widgets";
+// //PAGES
+// //------
+@import "admin/pages/mailbox";
+//@import "admin/pages/lockscreen";
+//@import "admin/pages/login_and_register";
+//@import "admin/pages/404_500_errors";
+//@import "admin/pages/invoice";
+//@import "admin/pages/profile";
+// //Plugins
+// //--------
+//@import "admin/plugins/bootstrap-social";
+//@import "admin/plugins/fullcalendar";
+//@import "admin/plugins/select2";
+// //Miscellaneous
+// //-------------
+// @import "miscellaneous.less";
+//@import "admin/misc/print";
+//@import "admin/skins/all-skins";
+@import "admin/skin-blue";
+@import "bootstrap-toggle";
+
+.mauvais{
+	color:#f00;
+}
+
+#busy-indicator { display:none; }// indicateur de rechargement ajax
+#blogmaster {
+	min-height: 700px;
+		p:first-letter{
+			text-transform: capitalize;
+		}
+}
+
+
+
+.panel-body form fieldset .button{
+	margin-top: 10px;
+}
+
+th a.asc:after {
+	content: ' ';
+}
+th a.desc:after {
+	content: ' *';
+}
+
+form .input .required label:after{
+	color: #E32;
+content: '*';
+display: inline;
+}
+.input.checkbox{
+	margin:0px!important;
+}
