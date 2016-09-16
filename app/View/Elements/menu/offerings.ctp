@@ -2,10 +2,13 @@
 <?php echo $this->Form->create(false, array(
 	'novalidate' => true,
 	'inputDefaults' => array(
+
 		'div' => 'form-group',
 		'label' => array(
 			'class' => 'col col-md-3 control-label'
 		),
+		"between"=>'<div class="input-group"><div class="input-group-addon">$</div>',
+		"after"=>'</div>',
 		'wrapInput' => 'col col-md-9',
 		'class' => 'form-control'
 	),
@@ -18,7 +21,7 @@
 	)); ?>
 	<?php echo  $this->Form->input("phone", array(
 	'placeholder'=>__('phone'))); ?>
-	<?php echo  $this->Form->input("property_id", array(
+	<?php echo  $this->Form->input("Type.name", array(
 	'placeholder'=>__('property type'),
 	'empty'=>__('property type'),
 	'class'=>"form-control")); ?>
@@ -35,7 +38,8 @@
 	</div>
 	<?php echo  $this->Form->input('price', array(
 	'placeholder'=>__('price'),
-	"class"=>'form-control'
+	"class"=>'form-control',
+	'type'=>"number"
 	)); ?>
 	<?php echo  $this->Form->input("address", array(
 	'placeholder'=>__('Enter your address...'),

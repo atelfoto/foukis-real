@@ -423,7 +423,8 @@ input[type="checkbox"] {
 .has-warning {
   @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
 }
-.has-error {
+// ajout philippe
+.has-error, .error {
   @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
 }
 

@@ -4,7 +4,6 @@
         $('#home').toggleClass('with--sidebar');
     });
 
-
    $('#site-cache').click(function(e){
        $('body').removeClass('with--sidebar');
    });

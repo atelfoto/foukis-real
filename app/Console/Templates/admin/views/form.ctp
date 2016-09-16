@@ -1,7 +1,8 @@
 <?php
 /**
  *
- *description Ne pas oublié de de retirer les balise placeholder pour les input id select checkbox
+ *description Ne pas oublié  de retirer les balise placeholder pour les input id select et  checkbox
+ *remplacer par 'empty'=> __('choose') pour les  selects et retiter between et remplacer par 'after'=>false pour les textareas
  *
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
@@ -14,87 +15,88 @@
 <?php echo "<?php \$this->Html->addCrumb(__('$singularVar'),array('controller'=>'$pluralVar','action'=>'index','admin'=>true)); ?>\n ";
       echo "<?php \$this->Html->addCrumb('edit' ); ?>\n";?>
 <div class="<?php echo $pluralVar; ?> index row">
-	<div class="col-md-12 page-header">
-		<h2><i class="fa fa-book"></i>&nbsp;<?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?>
-		</h2>
+	<div class="col-sm-12 page-header">
+		<h3><i class="icon-<?php echo $singularVar; ?>"></i>&nbsp;<?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?>
+		</h3>
 	</div>
-	<div class="col-md-12 col-lg-10 col-lg-offset-1">
-		<div class=" box-home">
-			<div class="well">
-	<?php 		echo "\t\t\t<?php echo \$this->Form->create('{$modelClass}'); ?>\n"; ?>
-				<div class="tabpanel">
-					<nav class="navbar">
-				    	<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav" role="tablist">
-						 		<li role="presentation" class="active">
-						 			<a href="#contenu" role="tab" data-toggle="tab" aria-controls="contenu"><?php echo __('contenu') ?></a>
-						 		</li>
-						 		<li role="presentation">
-						 			<a href="#publication" role="tab" data-toggle="tab" aria-controls="publication"><?php echo __('publication') ?></a>
-						 		</li>
-							</ul>
+	<div class="col-sm-12">
+		<div class="box box-primary  with-border nav-tabs-custom">
+			<?php echo "<?php echo \$this->Form->create('{$modelClass}',array(
+				'novalidate'=>true,
+				'inputDefaults'=>array(
+				'div'=>'form-group',
+				'label'=>array('class'=>'control-label'),
+				'after'=>'</div>',
+				'error'=>array('attributes' => array('wrap' => 'span', 'class' => 'help-block text-danger')),
+				'class'=>'form-control'),
+				'class'=>'')); ?>\n"; ?>
+			<ul class="nav nav-tabs" role="tablist">
+		 		<li role="presentation" class="active">
+		 			<a href="#contenu" role="tab" data-toggle="tab" aria-controls="contenu"><?php echo __('contenu') ?></a>
+		 		</li>
+		 		<li role="presentation">
+		 			<a href="#publication" role="tab" data-toggle="tab" aria-controls="publication"><?php echo __('publication') ?></a>
+		 		</li>
 	<?php
-							echo "\t\t\t\t\t\t<ul class=\"nav navbar-nav navbar-right\">\n";
-							echo "\t\t\t\t\t\t\t\t<li>\n";
-							echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Form->input('online', array('label' => false)); ?>\n";
-							echo "\t\t\t\t\t\t\t\t</li>\n";
-							echo "\t\t\t\t\t\t\t\t<li>\n";
-							echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Form->button('<i class=\"fa fa-check fa-lg\" style=\"color:#fff;\">&nbsp;</i>'.__('publish'),
-							 array('class' => 'btn btn-success btn-lg')); ?>\n";
-							echo "\t\t\t\t\t\t\t\t</li>\n";
-							echo "\t\t\t\t\t\t\t\t<li>\n";
-							echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->html->link('<i class=\"fa fa-times-circle fa-lg\" style=\"color:#f00;\">&nbsp;</i>'.__('Closed'),
+			echo "\t\t\t<li class='pull-right'>\n";
+			echo "\t\t\t\t\t<?php echo \$this->html->link('<i class=\"icon-cancel-circled\" style=\"color:#f00;\">&nbsp;</i>'.__('Closed'),
 							array('controller'=>'{$pluralVar}','action'=>'index'),
-							array('class' => 'btn btn-default','type'=>'button','escape'=>false)); ?>\n";
-							echo "\t\t\t\t\t\t\t\t</li>\n";
-							echo "\t\t\t\t\t\t\t</ul>\n";
-							echo "\t\t\t\t\t\t</div>\n";
-							echo "\t\t\t\t\t</nav>\n";
-							echo "\t\t\t\t\t<div class=\"tab-content\">\n";
-							echo "\t\t\t\t\t\t<div class=\"tab-pane fade in active\" role=\"tabpanel\" id=\"contenu\">\n";
+							array('class' => 'btn btn-default','escape'=>false)); ?>\n";
+			echo "\t\t\t\t</li>\n";
+			echo "\t\t\t\t<li class='pull-right'>\n";
+			echo "\t\t\t\t\t<?php echo \$this->Form->button('<i class=\"icon-ok\" style=\"color:#fff;\">&nbsp;</i>'.__('publish'),
+			 				array('class' => 'btn btn-success btn-sm pull-right')); ?>\n";
+			echo "\t\t\t\t</li>\n";
+			echo "\t\t\t\t<li class='pull-right'>\n";
+			echo "\t\t\t\t\t<?php echo \$this->Form->input('online', array('label' => false,'div'=>array('class'=>'pull-right'),
+							'after'=>false)); ?>\n";
+			echo "\t\t\t\t</li>\n";
+			echo "\t\t\t</ul>\n";
+			echo "\t\t\t<div class=\"tab-content box-body\">\n";
+			echo "\t\t\t\t<div class=\"tab-pane fade in active\" role=\"tabpanel\" id=\"contenu\">\n";
 	?>
 <?php
 			foreach ($fields as $field) {
 				if (strpos($action, 'add') !== false && $field == $primaryKey) {
 					continue;
-				} elseif (!in_array($field, array('created', 'modified', 'updated'))) {
-							echo "\t\t\t\t\t\t\t<div class=\"form-group\">\n";
-							echo "\t\t\t\t\t\t\t\t<?php echo \$this->Form->input('{$field}', array('class' => 'form-control',
-							 'placeholder' => __('".Inflector::humanize($field)."')));?>\n";
-							echo "\t\t\t\t\t\t\t</div>\n";
+				} elseif (!in_array($field, array('created', 'modified', 'updated','online'))) {
+							echo "\t\t\t\t\t<?php echo \$this->Form->input('{$field}', array('class' => 'form-control',
+							 'placeholder' => __('".Inflector::humanize($field)."'),
+							 'between'=>'<div class=\"input-group\"><div class=\"input-group-addon\"><i class=\"icon-{$field}\"></i></div>'
+							 ));?>\n";
+							 if (in_array($field,array('description'))) {
+							 	echo "\t\t\t\t\t<p id='compteur' class='text-right'><i>0 mots - 0 Caractere / 250</i></p>\n";
+							 }
 				}
 			}
 			if (!empty($associations['hasAndBelongsToMany'])) {
 				foreach ($associations['hasAndBelongsToMany'] as $assocName => $assocData) {
-							echo "\t\t\t\t\t\t\t<div class=\"form-group\">\n";
+						//	echo "\t\t\t\t\t\t\t<div class=\"form-group\">\n";
 							echo "\t\t\t\t\t\t\t\t<?php echo \$this->Form->input('{$assocName}',
-							 array('class' => 'form-control', 'placeholder' => '".Inflector::humanize($field)."'));?>\n";
-							echo "\t\t\t\t\t\t\t</div>\n";
+							 array('class' => 'form-control 2', 'placeholder' => '".Inflector::humanize($field)."'));?>\n";
+						//	echo "\t\t\t\t\t\t\t</div>\n";
 				}
 			}
 	?>
-					  	</div>
-					  	<div class="tab-pane fade" role="tabpanel" id="publication">
-
-					  	</div>
-					</div>
 				</div>
-<?php
-					echo "\t\t\t\t<div class=\"text-right\" style=\"margin-top:10px;\">\n";
-					echo "\t\t\t\t\t<?php echo \$this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-primary')); ?>\n";
-					echo "\t\t\t\t\t<?php echo \$this->html->link('<i class=\"fa fa-times-circle fa-lg\" style=\"color:#f00;\">&nbsp;</i>'.__('Closed'),
-					array('controller'=>'{$pluralVar}','action'=>'index'),
-					array('class' => 'btn btn-default','escape'=>false)); ?>\n";
-					echo "\t\t\t\t</div>\n";
-				echo "\t\t\t\t<?php echo \$this->Form->end() ?>\n";
-	?>
+				<div class="tab-pane fade" role="tabpanel" id="publication">
+
+				</div>
 			</div>
+<?php
+					echo "\t\t\t<div class=\"text-right box-footer\" style=\"margin-top:10px;\">\n";
+					echo "\t\t\t\t<?php echo \$this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-primary')); ?>\n";
+					echo "\t\t\t\t<?php echo \$this->html->link('<i class=\"icon-cancel-circled\" style=\"color:#f00;\">&nbsp;</i>'.__('Closed'),
+						array('controller'=>'{$pluralVar}','action'=>'index'),
+						array('class' => 'btn btn-default','escape'=>false)); ?>\n";
+					echo "\t\t\t</div>\n";
+				echo "\t\t\t<?php echo \$this->Form->end() ?>\n";
+	?>
 		</div>
 	</div><!-- end containers -->
 </div>
-<?php echo "<?php  echo \$this->Html->script(array('tinymce/tinymce.min','bootstrap-toggle'),array('inline'=>false)); ?>\n"; ?>
-<?php echo "
-<?php echo  \$this->Html->scriptStart(array('inline'=>false)); ?>
+<?php echo "<?php  echo \$this->Html->script(array('tinymce/tinymce.min'),array('inline'=>false)); ?>\n"; ?>
+<?php echo "<?php echo  \$this->Html->scriptStart(array('inline'=>false)); ?>
 //pour les tabs
 $('#myTab a').click(function (e) {
   e.preventDefault()
@@ -103,7 +105,7 @@ $('#myTab a').click(function (e) {
 //pour les toogle
   $(function() {
     $('#{$modelClass}Online').bootstrapToggle({
-		size:'large',
+		size:'small',
 		onstyle: 'primary',
 		offstyle:'danger',
     });
@@ -211,7 +213,7 @@ function send_to_editor(content){
 
 //pour les meta description
 $(document).ready(function(e) {
-  $('#{$modelClass}description').keyup(function() {
+  $('#{$modelClass}Description').keyup(function() {
     var nombreCaractere = $(this).val().length;
     var nombreMots = jQuery.trim($(this).val()).split(' ').length;
     if($(this).val() === '') {

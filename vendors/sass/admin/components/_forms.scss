@@ -2,7 +2,7 @@
  * Component: Form
  * ---------------
  */
- 
+
 .form-control {
   @include border-radius($input-radius,$input-radius,$input-radius,$input-radius);
   box-shadow: none;
@@ -45,12 +45,12 @@
       box-shadow: none;
     }
   }
-
-  &.has-error {
+// &.error ajout philippe
+  &.has-error , &.error {
     label {
       color: $red;
     }
-    .form-control {
+    .form-control, .input-group-addon {
       border-color: $red;
       box-shadow: none;
     }

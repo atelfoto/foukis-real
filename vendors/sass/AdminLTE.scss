@@ -8,8 +8,9 @@
 //google fonts
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
 @import "compass";
-@import "font-awesome-compass";
-@import "font-awesome";
+//@import "font-awesome-compass";
+//@import "font-awesome";
+@import "admin/fonts/fontello/fontello";
 @import "admin/bootstrap/_bootstrap.scss";
 // //MISC
 // //----
@@ -62,9 +63,42 @@
 //@import "admin/skins/all-skins";
 @import "admin/skin-blue";
 @import "bootstrap-toggle";
+.test{
 
+}
 .mauvais{
 	color:#f00;
+}
+form .required label:after {
+	color: #e32;
+	content: ' *';
+	display:inline;
+}
+
+@media (min-width: 770px)  {
+	.box-body-offerings{// pour la page users admin_edit sur 2 colonnes
+		columns: 2 auto;
+		-moz-columns: 2 auto;
+		column-gap: 1.5em;
+		.form-group{
+			break-inside: avoid-column;
+			-moz-break-inside: avoid-column;
+		}
+	}
+
+	ul.nav.nav-tabs li.pull-right{
+		padding-right: 3px;
+		padding-top: 3px;
+
+	}
+
+}
+@media (max-width: 767px){// pour les mobiles a simplifier par la suite
+	.form-group{
+		label{
+			display:none!important;
+		}
+	}
 }
 
 #busy-indicator { display:none; }// indicateur de rechargement ajax

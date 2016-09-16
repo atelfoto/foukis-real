@@ -5,7 +5,7 @@ module.exports=function(grunt){
    grunt.loadNpmTasks('grunt-fontello');
     grunt.initConfig({
         jshint: {
-            all: ['vendors/js/*.js', '!vendors/js/*.min.js']
+            all: ['vendors/js/**.js', '!vendors/js/*.min.js']
         },
         uglify: {
             options:{
@@ -28,16 +28,29 @@ module.exports=function(grunt){
         	dist: {
         		options: {
         			config  : 'vendors/fonts/fontello/config.json',
-        			fonts   : 'vendors/fonts/fontello/',
+        			fonts   : 'vendors/fonts/fontello/fonts/',
         			styles  : 'vendors/sass/fonts/fontello/',
         		}
         	},
         	dev: {
         		options: {
         			config  : 'vendors/fonts/fontello/config.json',
-        			fonts   : 'app/webroot/fonts/fontello',
+        			fonts   : 'app/webroot/fonts/fontello/',
         		}
-        	}
+        	},
+        	admindist: {
+        		options: {
+        			config  : 'vendors/fonts/admin/fontello/config.json',
+        			fonts   : 'vendors/fonts/admin/fontello/fonts/',
+        			styles  : 'vendors/sass/admin/fonts/fontello/',
+        		}
+        	},
+        	admindev: {
+        		options: {
+        			config  : 'vendors/fonts/admin/fontello/config.json',
+        			fonts   : 'app/webroot/fonts/admin/fontello/',
+        		}
+        	},
         },
         cssmin: {
             target: {
@@ -72,7 +85,7 @@ module.exports=function(grunt){
         		livereload: true,
         	},
         	dist:{
-        		files:['vendors/sass/*.scss'],
+        		files:['vendors/sass/**/*.scss'],
         		tasks:["compass"],
         		options:{ spawn:false}
         	},

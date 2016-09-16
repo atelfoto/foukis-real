@@ -2,16 +2,17 @@
  <?php $this->Html->addCrumb(__('Posts')); ?>
  <div class="posts index row">
 	<div class="col-md-12 page-header">
-		<h2><i class="fa fa-book"></i>&nbsp;<?php echo __('Posts'); ?></h2>
+		<h3><i class="icon-doc-text-inv"></i>&nbsp;<?php echo __('Posts'); ?></h3>
 	</div>
 	<div class="col-md-12">
 		<div class="text-right" style='margin-bottom:10px;'>
 			<button class="btn " data-toggle="modal" data-target="#ModalAide">
-			<i class="fa fa-question-circle">&nbsp;Help</i>
+			<i class="icon-help-circled">&nbsp;Help</i>
 			</button>
-				<?php echo $this->Html->link("<i class='fa fa-plus'></i>". __("Add"),array('action'=>'add'),
+				<?php echo $this->Html->link("<i class='icon-plus'></i>". __("Add"),array('action'=>'add'),
 				array('class' =>"btn btn-success ",'escape'=>false)); ?>
-		</div>		<div class="panel table-responsive box-home">
+		</div>
+		<div class="panel table-responsive box-home">
 			<table  class="table table-bordered text-center table-striped">
 				<thead>
 					<tr class="info">
@@ -51,15 +52,15 @@
 						<td><?php echo $this->Html->link($post['User']['name'],
 									array('controller' => 'users', 'action' => 'view', $post['User']['id'])); ?></td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-eye"></span>',
+							<?php echo $this->Html->link('<span class="icon-eye"></span>',
 					 array('action' => 'view', $post['Post']['id']), array('class'=>'btn btn-default','escape' => false)); ?>
 						</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-pencil"></span>',
+							<?php echo $this->Html->link('<span class="icon-pencil"></span>',
 					 array('action' => 'edit', $post['Post']['id']), array('class'=>'btn btn-default','escape' => false)); ?>
 						</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-trash"></span>',
+							<?php echo $this->Html->link('<span class="icon-trash"></span>',
 								'#Modal'.$post['Post']['id'],
 									array('class'=>'btn btn-default btn-remove-modal',
 									'escape' => false,
@@ -76,7 +77,8 @@
 		</div>
 		<div class="col col-md-12 text-center">
 			<?php echo $this->element('pagination'); ?>
-			<?php  echo $this->element("pagination-counter"); ?>		</div>
+			<?php  echo $this->element("pagination-counter"); ?>
+		</div>
 	</div>
 </div><!-- end containing of content -->
 <?php foreach ($posts  as $k => $v): $v = current($v);?><!-- modal supprimer -->

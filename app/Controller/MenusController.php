@@ -22,6 +22,7 @@ class MenusController extends AppController {
 	**/
 	public function offerings(){
 		$this->layout='home';
+	//	$this->loadModel('Type');
 	}
 
 /**
@@ -59,7 +60,7 @@ class MenusController extends AppController {
  * @return void
  */
 
-	public function view($slug) {
+	public function view($slug=null) {
 		$this->layout='home';
 	    if(empty($slug)) {
 	        throw new NotFoundException();
@@ -70,6 +71,10 @@ class MenusController extends AppController {
 	    if(!$menu){
 	        throw new NotFoundException();
 	    }
+	    if($slug != $menu['Menu']['slug'] || $menu['Menu']['online'] != 1){
+			header("Status: 301 Moved Permanently", false, 301);
+			$this->redirect($this->referer());
+		}
 	    $this->set(compact('menu'));
 	}
 /**
@@ -99,7 +104,7 @@ class MenusController extends AppController {
 				$this->Flash->success(__('The menu has been saved.'),array('class' => 'alert alert-success'));
 				return $this->redirect(array('action' => 'index'));
 			} else {
-				$this->Flash->error(__('The menu could not be saved. Please, try again.'),array('class' => 'alert alert-danger'));
+				$this->Flash->error(__('The menu could not be saved. Please, try again.'));
 			}
 		}
 		$users = $this->Menu->User->find('list');

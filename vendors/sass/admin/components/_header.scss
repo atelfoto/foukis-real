@@ -70,9 +70,12 @@
     background-image: none;
     padding: $navbar-padding-vertical $navbar-padding-horizontal;
     //Add the fontawesome bars icon
-    font-family: fontAwesome;
+    //font-family: fontAwesome;
+    //Add the font fontello bars icon
+    font-family: fontello;
     &:before {
-      content: "\f0c9";
+     // content: "\f0c9"; //fontAwesome
+     content:"\f0c9";
     }
     &:hover {
       color: #fff;

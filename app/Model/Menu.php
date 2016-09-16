@@ -37,7 +37,7 @@ class Menu extends AppModel {
 	public $validate = array(
 		"name"=>array(
 			"reglename"=>array(
-				'rule'=>'notEmpty',
+				'rule'=>'notBlank',
 				'message' => "You must specify a title"
 			),
 			'unique'=>array(

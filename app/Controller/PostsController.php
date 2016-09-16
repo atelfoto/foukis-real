@@ -52,15 +52,17 @@ public function index(){
 **/
 public function view($slug=null){
 	$this->layout = "home";
-		if(!$slug)
-			throw new NotFoundException(__('No pages were found for this ID') ,'notif',array('class'=>'danger','type'=>'sign'));
+		if(!$slug){
+			throw new NotFoundException(__('No pages were found for this ID') ,array('class'=>'danger','type'=>'sign'));
+		}
 		$post = $this->Post->find('first',array(
 			'conditions'=>array('Post.slug'=>$slug	//'type'=>'post'
 				),
 			'recursive'=>0
 			));
-		if(empty($post))
-			throw new NotFoundException(__('No pages were found for this ID') ,'notif',array('class'=>'danger','type'=>'sign'));
+		if(empty($post)){
+			throw new NotFoundException(__('No pages were found for this ID') ,array('class'=>'danger','type'=>'sign'));
+		}
 		if($slug != $post['Post']['slug'])
 			$this->redirect($post['Post']['link'],301);
 		$name = $post['Post']['name'];

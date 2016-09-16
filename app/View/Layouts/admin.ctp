@@ -18,7 +18,7 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -63,12 +63,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 								</li>
 								<li class="user-footer">
 									<div class="pull-left">
-										<?= $this->Html->link('<i class="fa fa-user fa-fw"></i> '.__('Account'),
+										<?= $this->Html->link('<i class="icon-user fa-fw"></i> '.__('Account'),
 									 	array('controller' => 'users', 'action' => 'account'),
 									  	array("class"=>"btn btn-default btn-flat", 'escape'=>false)); ?>
 								 	</div>
 								 	<div class="pull-right">
-								 		<?php echo $this->Html->link('<i class="glyphicon glyphicon-new-window fa-fw"></i> '.__("Logout").'',
+								 		<?php echo $this->Html->link('<i class="icon-link-ext"></i> '.__("Logout").'',
 								 		array('controller' => 'users', 'action' => 'logout','admin'=>true),
 								 		array('escape'=>false,"class"=>"btn btn-default btn-flat")); ?>
 								 	</div>
@@ -80,7 +80,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 			</nav>
 		</header>
 		<aside class="main-sidebar">
-			<section class="sidebar">
+			<div class="sidebar">
     			<div class="user-panel">
     			  <div class="pull-left image">
     			  	<?php echo  $this->Html->image("avatars/gravatar_mini.jpg",
@@ -92,20 +92,20 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     			  <div class="pull-left info">
     			    <p>philippe</p>
     			    <!-- Status -->
-    			    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+    			    <a href="#"><i class="icon-circle text-success"></i> Online</a>
     			  </div>
     			</div>
     			<ul class="sidebar-menu">
     				<li class="header">header</li>
     				<li class="treeview <?php if ($this->request->controller =='menus'):?>active<?php endif; ?>">
-						<a href="#"><i class="fa fa-share-alt"></i><span><?= __('menus');?></span> <i class="fa fa-angle-left pull-right"></i></a>
+						<a href="#"><i class="icon-share"></i> <span><?= __('menus');?></span> <i class="icon-angle-left pull-right"></i></a>
 						<ul class="treeview-menu">
 							<li <?php if ($this->request->controller =='menus' && $this->request->action =='admin_index'):?> class="active"<?php endif; ?>>
-							<?php  echo $this->Html->link("<i class='fa fa-circle-o'></i>".__("menus manager"),
+							<?php  echo $this->Html->link("<i class='icon-circle-o'></i>".__("menus manager"),
 							array('controller' => 'menus', 'action' => 'index'),array('escape'=>false));?>
 							</li>
 							<li <?php if ($this->request->controller =='menus' && $this->request->action =='admin_edit'):?> class="active"<?php  endif; ?>>
-								<?= $this->Html->link("<i class='fa fa-circle-o'></i>".__("add new menu"),
+								<?= $this->Html->link("<i class='icon-circle-o'></i>".__("add new menu"),
 								array('controller' => 'menus', 'action' => 'add'),array('escape'=>false)); ?>
 							</li>
     					</ul>
@@ -123,10 +123,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 							</li>
     					</ul>
     				</li>
+    				<li class="treeview <?php if ($this->request->controller =='users'):?>active<?php endif; ?>">
+						<a href="#"><i class="fa fa-share-alt"></i><span><?= __('users');?></span> <i class="fa fa-angle-left pull-right"></i></a>
+						<ul class="treeview-menu">
+							<li <?php if ($this->request->controller =='users' && $this->request->action =='admin_index'):?> class="active"<?php endif; ?>>
+							<?php  echo $this->Html->link("<i class='fa fa-circle-o'></i>".__("users manager"),
+							array('controller' => 'users', 'action' => 'index'),array('escape'=>false));?>
+							</li>
+							<li <?php if ($this->request->controller =='users' && $this->request->action =='admin_edit'):?> class="active"<?php  endif; ?>>
+								<?= $this->Html->link("<i class='fa fa-circle-o'></i>".__("add"),
+								array('controller' => 'users', 'action' => 'add'),array('escape'=>false)); ?>
+							</li>
+    					</ul>
+    				</li>
     			</ul>
-			</section>
+			</div>
 		</aside>
-		<div class="content-wrapper">
+		<div class="content-wrapper"><?php echo $this->Flash->render(); ?>
 			<section class="content-header" >
 			    <h1>
 			    	<?php  echo $this->fetch('title'); ?>
@@ -134,12 +147,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
       			</h1>
     			<ol class="breadcrumb">
     			  <li>
-    			  	<?php echo $this->Html->getCrumbs(' </li> <li> ',array('text' => "<i class='fa fa-dashboard'></i>&nbsp;". __('Dashboard'),
-    			  	'url' => array('controller' => 'dashboards', 'action' => 'index',"admin"=>true),'escape' => false)); ?>
+    			  	<?php  echo $this->Html->getCrumbs(' </li> <li> ',array('text' => "<i class='icon-gauge'></i>&nbsp;". __('Dashboard'),
+    			  	'url' => array('controller' => 'dashboards', 'action' => 'index',"admin"=>true),'escape' => false)); ?></li>
     			</ol>
 			</section>
-			<section class="content" id="">
-				<?php echo $this->Flash->render(); ?>
+			<section class="content">
+
 				<?php echo $this->fetch('content'); ?>
 			</section>
 		</div>

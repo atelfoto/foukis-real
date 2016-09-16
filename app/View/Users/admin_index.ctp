@@ -4,12 +4,12 @@
  	<div class="col-xs-12">
  	<div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><i class="fa fa-book"></i>&nbsp;<?php echo __('Users'); ?></h3>
+			<h3 class="box-title"><i class="icon-users"></i>&nbsp;<?php echo __('Users'); ?></h3>
 			<div class="box-tools pull-right">
 				<button class="btn btn-sm" data-toggle="modal" data-target="#ModalAide">
-					<i class="fa fa-question-circle">&nbsp;Help</i>
+					<i class="icon-help-circled">&nbsp;Help</i>
 				</button>
-				<?php echo $this->Html->link("<i class='fa fa-plus'></i>". __(" Add"),array('action'=>'add'),
+				<?php echo $this->Html->link("<i class='icon-plus'></i>". __(" Add"),array('action'=>'add'),
 				array('class' =>"btn btn-success btn-sm",'escape'=>false)); ?>
 			</div>
 		</div>
@@ -22,13 +22,10 @@
 						<th><?php echo $this->Paginator->sort('username'); ?></th>
 						<th><?php echo $this->Paginator->sort('mail'); ?></th>
 						<th><?php echo $this->Paginator->sort('group_id'); ?></th>
-						<th><?php echo $this->Paginator->sort('firstname'); ?></th>
-						<th><?php echo $this->Paginator->sort('lastname'); ?></th>
-						<th><?php echo $this->Paginator->sort('active'); ?></th>
 						<th><?php echo $this->Paginator->sort('created'); ?></th>
-						<th><?php echo $this->Paginator->sort('modified'); ?></th><!--
-						<th><?php // echo $this->Paginator->sort('role'); ?></th> -->
+						<th><?php echo $this->Paginator->sort('modified'); ?></th>
 						<th><?php echo $this->Paginator->sort('lastlogin'); ?></th>
+						<th><?php echo $this->Paginator->sort('active'); ?></th>
 						<th colspan="3" class="actions"></th>
 					</tr>
 				</thead>
@@ -41,31 +38,47 @@
 						<td><?php echo h($user['User']['mail']); ?>&nbsp;</td>
 						<td><?php echo $this->Html->link($user['Group']['name'],
 						array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?></td>
-						<td><?php echo h($user['User']['firstname']); ?>&nbsp;</td>
-						<td><?php echo h($user['User']['lastname']); ?>&nbsp;</td>
-						<td><?php echo h($user['User']['active']); ?>&nbsp;</td>
 						<td><?php  echo $this->Time->format($user['User']['created'], '%A %e %B, %Y'); ?>&nbsp;</td>
-						<td><?php echo h($user['User']['modified']); ?>&nbsp;</td><!--
-						<td><?php // echo h($user['User']['role']); ?>&nbsp;</td> -->
+						<td><?php echo h($user['User']['modified']); ?>&nbsp;</td>
 						<td><?php echo h($user['User']['lastlogin']); ?>&nbsp;</td>
-						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-eye"></span>',
-					 array('action' => 'view', $user['User']['id']), array('class'=>'btn btn-default','escape' => false)); ?>
+						<td><?php if($user['User'][ 'active' ] == 0) {
+							echo $this->Html->link('<span class="label label-danger"><i class="icon-cancel-circled">'.__('Offline').'</i></span>',
+										array('action'=>'enable', $user['User']['id']),
+										array("style"=>"text-decoration:none;","data-toggle"=>"tooltip","data-placement"=>"bottom",
+											 "title"=>__('Enable this User'),'escape'=>false));
+										}else{
+											echo $this->Html->link('<span class="label label-success"><i class="icon-ok">'.__('In line').'</i></span>',
+											array('action'=>'disable', $user['User']['id']),
+											array("style"=>"text-decoration:none;","data-toggle"=>"tooltip","data-placement"=>"bottom",
+												"title"=>__('Disable this User'),'escape'=>false));
+												}
+								?>
 						</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-pencil"></span>',
-					 array('action' => 'edit', $user['User']['id']), array('class'=>'btn btn-default','escape' => false)); ?>
+							<?php echo $this->Html->link('<span class="icon-eye"></span>',
+							array('action' => 'view', $user['User']['id']),
+							array('class'=>'btn btn-default','escape' => false,
+							"data-title"=>__('view').' '.$user['User']['name'],'data-toggle'=>"tooltip","data-placement"=>"bottom")); ?>
 						</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-trash"></span>',
-								'#Modal'.$user['User']['id'],
+							<?php echo $this->Html->link('<span class="icon-pencil"></span>',
+							array('action' => 'edit', $user['User']['id']),
+							array('class'=>'btn btn-default','escape' => false,
+							"data-title"=>__('edit').' '.$user['User']['name'],'data-toggle'=>"tooltip","data-placement"=>"bottom")); ?>
+						</td>
+						<td class="actions">
+							<p data-placement="bottom" data-toggle="tooltip" title="<?= __('delete').' '.$user['User']['name']; ?>" class="text-center">
+							<?php echo $this->Html->link('<span class="icon-trash"></span>',$user['User']['id'],
 									array('class'=>'btn btn-default btn-remove-modal',
 									'escape' => false,
 									'data-toggle' =>'modal',
 									'role'=>'button',
+									"data-target"=>"#delete".$user['User']['id'],
+									"data-title"=> __('delete'),
 									'data-uid'=>$user['User']['id']
 									)
 							 ); ?>
+							</p>
 						</td>
 					</tr>
 					<?php endforeach; ?>
@@ -79,16 +92,16 @@
 	</div>
 </div><!-- end containing of content -->
 <?php foreach ($users  as $k => $v): $v = current($v);?><!-- modal supprimer -->
-<div class="modal fade" id="Modal<?= $v['id']; ?>">
+<div class="modal fade" id="delete<?= $v['id']; ?>">
 	<div class="modal-dialog ">
 		<div class="modal-content">
 			<div class="modal-header panel-default">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="  Press Esc to close">&times;</button>
-				<h4 ><?php echo __('Remove Post') ?></h4>
+				<h4 ><?php echo __('Remove User') ?></h4>
 			</div>
 			<div class="modal-body">
 				<p> <?php echo __('Are you sure you want to delete'); ?> <b style="color:#f00;">&nbsp;<?php echo $v['name'];?> &nbsp;</b>
-					<?php echo __('of your Articles') ?>
+					<?php echo __('of your') ?>
 					<span class="label-uname strong"></span> ?
 				</p>
 			</div>

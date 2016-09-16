@@ -15,16 +15,16 @@
 <?php echo "<?php \$this->Html->addCrumb(__('$pluralHumanName')); ?>\n "; ?>
 <div class="<?php echo $pluralVar; ?> index row">
 	<div class="col-md-12 page-header">
-		<h2><i class="fa fa-book"></i>&nbsp;<?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>
+		<h2><i class="icon-<?php echo $singularVar; ?>"></i>&nbsp;<?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>
 	</div>
 	<div class="col-md-12">
 		<div class="text-right" style='margin-bottom:10px;'>
 			<button class="btn " data-toggle="modal" data-target="#ModalAide">
-			<i class="fa fa-question-circle">&nbsp;<?= __('Help'); ?></i>
+			<i class="icon-help-circled">&nbsp;<?= __('Help'); ?></i>
 			</button>
-				<?php echo "<?php echo \$this->Html->link(\"<i class='fa fa-plus'></i>\". __(\"Add\"),array('action'=>'add'),
+				<?php echo "<?php echo \$this->Html->link(\"<i class='icon-plus'></i>\". __(\"Add\"),array('action'=>'add'),
 				array('class' =>\"btn btn-success \",'escape'=>false)); ?>\n";
-				echo"\t\t</div>"; ?>
+				echo"\t\t</div>\n"; ?>
 		<div class="panel table-responsive box-home">
 			<table  class="table table-bordered text-center table-striped">
 				<thead>
@@ -42,8 +42,8 @@
 							foreach ($associations['belongsTo'] as $alias => $details) {
 								if ($field === $details['foreignKey']) {
 									$isKey = true;
-									echo "\t\t\t\t\t\t\t\t<td>\n\t\t\t<?php echo \$this->Html->link(\${$singularVar}['{$alias}']['{$details['displayField']}'],
-									array('controller' => '{$details['controller']}', 'action' => 'view', \${$singularVar}['{$alias}']['{$details['primaryKey']}'])); ?>\n\t\t</td>\n";
+									echo "\t\t\t\t\t\t<td><?php echo \$this->Html->link(\${$singularVar}['{$alias}']['{$details['displayField']}'],
+									array('controller' => '{$details['controller']}', 'action' => 'view', \${$singularVar}['{$alias}']['{$details['primaryKey']}'])); ?></td>\n";
 									break;
 								}
 							}
@@ -52,35 +52,40 @@
 							echo "\t\t\t\t\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
 						}
 					}
-					echo "\t\t\t\t\t\t<td>\n";
-					echo "\t\t\t\t\t\t\t<?php if(\${$singularVar}['{$modelClass}'][ 'online' ] == 0) {
-										echo \$this->Html->link('<span class=\"label label-danger\">'.__('Offline').'</span>',
-										array('action'=>'enable', \${$singularVar}['{$modelClass}']['id']),
-										array(\"style\"=>\"text-decoration:none;\",\"data-toggle\"=>\"tooltip\",\"data-placement\"=>\"bottom\",
-											 \"title\"=>__('Enable this {$modelClass}'),'escape'=>false));
-										}else{
-											echo \$this->Html->link('<span class=\"label label-success\">'.__('In line').'</span>',
-											array('action'=>'disable', \${$singularVar}['{$modelClass}']['id']),
-											array(\"style\"=>\"text-decoration:none;\",\"data-toggle\"=>\"tooltip\",\"data-placement\"=>\"bottom\",
-												\"title\"=>__('Disable this {$modelClass}'),'escape'=>false));
-												}
-										?>\n";
+					echo "\t\t\t\t\t\t<td><?php if(\${$singularVar}['{$modelClass}'][ 'online' ] == 0) {
+						echo \$this->Html->link('<span class=\"label label-danger\">'.__('Offline').'</span>',
+						array('action'=>'enable', \${$singularVar}['{$modelClass}']['id']),
+						array(\"style\"=>\"text-decoration:none;\",\"data-toggle\"=>\"tooltip\",\"data-placement\"=>\"bottom\",
+						\"title\"=>__('Enable this {$modelClass}'),'escape'=>false));
+					}else{
+						echo \$this->Html->link('<span class=\"label label-success\">'.__('In line').'</span>',
+						array('action'=>'disable', \${$singularVar}['{$modelClass}']['id']),
+						array(\"style\"=>\"text-decoration:none;\",\"data-toggle\"=>\"tooltip\",\"data-placement\"=>\"bottom\",
+						\"title\"=>__('Disable this {$modelClass}'),'escape'=>false));
+					}
+					?>\n";
 					echo "\t\t\t\t\t\t</td>\n";
 					echo "\t\t\t\t\t\t<td class=\"actions\">\n";
-					echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link('<span class=\"fa fa-eye\"></span>',
-					 array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class'=>'btn btn-default','escape' => false)); ?>\n";
+					echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link('<span class=\"icon-eye\"></span>',
+					 array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']),
+					 array('class'=>'btn btn-default','escape' => false,
+					 'data-title'=>__('view').' '.\${$singularVar}['{$modelClass}']['name'],'data-toggle'=>'tooltip','data-placement'=>'bottom')); ?>\n";
 					echo "\t\t\t\t\t\t</td>\n";
 					echo "\t\t\t\t\t\t<td class=\"actions\">\n";
-					echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link('<span class=\"fa fa-pencil\"></span>',
-					 array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class'=>'btn btn-default','escape' => false)); ?>\n";
+					echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link('<span class=\"icon-pencil\"></span>',
+					 array('action' => 'edit',\${$singularVar}['{$modelClass}']['{$primaryKey}'] ),
+					 array('class'=>'btn btn-default','escape' => false,
+					  'data-title'=>__('edit').' '.\${$singularVar}['{$modelClass}']['name'],'data-toggle'=>'tooltip','data-placement'=>'bottom')); ?>\n";
 					echo "\t\t\t\t\t\t</td>\n";
 					echo "\t\t\t\t\t\t<td class=\"actions\">\n";
-					echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link('<span class=\"fa fa-trash\"></span>',
-								'#Modal'.\${$singularVar}['{$modelClass}']['{$primaryKey}'],
+					echo "\t\t\t\t\t\t\t<p data-placement='bottom' data-toggle='tooltip' title='<?= __('delete').' '.\${$singularVar}['{$modelClass}']['name'];?>' class='text-center'>\n";
+					echo "\t\t\t\t\t\t\t<?php echo \$this->Html->link('<span class=\"icon-trash\"></span>',\${$singularVar}['{$modelClass}']['{$primaryKey}'],
 									array('class'=>'btn btn-default btn-remove-modal',
 									'escape' => false,
 									'data-toggle' =>'modal',
 									'role'=>'button',
+									'data-target'=>'#delete'.\${$singularVar}['{$modelClass}']['{$primaryKey}'],
+									'data-title'=> __('delete'),
 									'data-uid'=>\${$singularVar}['{$modelClass}']['{$primaryKey}']
 									)
 							 ); ?>\n";
@@ -98,16 +103,16 @@
 	</div>
 </div><!-- end containing of content -->
 <?php echo "<?php foreach (\${$pluralVar}  as \$k => \$v): \$v = current(\$v);?>" ?><!-- modal supprimer -->
-<div class="modal fade" id="Modal<?php echo "<?= \$v['id']; ?>" ?>">
+<div class="modal fade" id="delete<?php echo "<?= \$v['id']; ?>" ?>">
 	<div class="modal-dialog ">
 		<div class="modal-content">
 			<div class="modal-header panel-default">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="tooltip" data-placement="left" title=" <?php echo _(' Press Esc to close'); ?>">&times;</button>
-				<h4 ><?php echo "<?php echo __('Remove Post') ?>" ?></h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="tooltip" data-placement="left" title=" <?php echo _('close'); ?>">&times;</button>
+				<h4 ><?php echo "<?php echo __('Remove') ;?>" ?></h4>
 			</div>
 			<div class="modal-body">
 				<p> <?php echo "<?php echo __('Are you sure you want to delete'); ?>" ?> <b style="color:#f00;">&nbsp;<?php echo "<?php echo \$v['name'];?> " ?>&nbsp;</b>
-					<?php echo "<?php echo __('of your Articles') ?>";
+					<?php echo "<?php echo __('of your').__({$pluralVar}) ; ?>";
 					echo "\n\t\t\t\t\t<span class=\"label-uname strong\"></span> ? \n"; ?>
 				</p>
 			</div>

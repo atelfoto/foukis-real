@@ -200,6 +200,55 @@ public function logout() {
 	}
 
 /**
+ * [admin_enable description]
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+public function admin_enable($id=null) {
+	$user = $this->User->read(null,$id);
+	if (!$id && empty($user)) {
+		$this->Flash->error(__('You must provide a valid ID number to enable a user.',true),array('class'=>'danger','type'=>'sign'));
+		$this->redirect(array('action'=>'index'));
+	}
+	if (!empty($user)) {
+		$user['User']['active'] = 1;
+		if ($this->User->save($user)) {
+			$this->Flash->success(__('User ID %s has been published.',h($id)));
+		} else {
+			$this->Flash->error(__('User ID %s was not saved.',h($id)),array('class'=>'danger','type'=>'sign'));
+		}
+		$this->redirect(array('action'=>'index'));
+	} else {
+		$this->Flash->error(__('No user by that ID was found.',true),array('class'=>'danger','type'=>'sign'));
+		$this->redirect(array('action'=>'index'));
+	}
+}
+/**
+ * [admin_disable description]
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+public function admin_disable($id=null) {
+	$user = $this->User->read(null,$id);
+	if (!$id && empty($user)) {
+		$this->Flash->error(__('You must provide a valid ID number to disable a user.',true),array('class'=>'danger','type'=>'sign'));
+		$this->redirect(array('action'=>'index'));
+	}
+	if (!empty($user)) {
+		$user['User']['active'] = 0;
+		if ($this->User->save($user)) {
+			$this->Flash->success(__('User ID %s has been disabled.', h($id)));
+		} else {
+			$this->Flash->error(__('User ID %s was not saved.',h($id)),array('class'=>'danger','type'=>'sign'));
+		}
+		$this->redirect(array('action'=>'index'));
+	} else {
+		$this->Flash->error(__('No User by that ID was found.',true),array('class'=>'danger','type'=>'sign'));
+		$this->redirect(array('action'=>'index'));
+	}
+}
+
+/**
  * admin_delete method
  *
  * @throws NotFoundException

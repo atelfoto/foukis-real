@@ -31,7 +31,7 @@
 								<li>
 									<?php echo $this->html->link('<i class="fa fa-times-circle fa-lg" style="color:#f00;">&nbsp;</i>'.__('Closed'),
 							array('controller'=>'posts','action'=>'index'),
-							array('class' => 'btn btn-default','type'=>'button','escape'=>false)); ?>
+							array('class' => 'btn btn-default','escape'=>false)); ?>
 								</li >
 							</ul>
 						</div>
@@ -56,7 +56,7 @@
 							</div>
 							<div class="form-group">
 								<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-							 'placeholder' => __('User Id')));?>
+							 'empty' => __('choose')));?>
 							</div>
 					  	</div>
 					  	<div class="tab-pane fade" role="tabpanel" id="publication">
@@ -88,7 +88,7 @@
 		</div>
 	</div><!-- end containers -->
 </div>
-<?php  echo $this->Html->script(array('tinymce/tinymce.min','bootstrap-toggle'),array('inline'=>false)); ?>
+<?php  echo $this->Html->script(array('tinymce/tinymce.min'),array('inline'=>false)); ?>
 
 <?php echo  $this->Html->scriptStart(array('inline'=>false)); ?>
 //pour les tabs
