@@ -9,8 +9,8 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic);
 @font-face {
   font-family: 'fontello';
-  src: url("../fonts/admin/fontello/fontello.eot?23715822");
-  src: url("../fonts/admin/fontello/fontello.eot?23715822#iefix") format("embedded-opentype"), url("../fonts/admin/fontello/fontello.woff?23715822") format("woff"), url("../fonts/admin/fontello/fontello.ttf?23715822") format("truetype"), url("../fonts/admin/fontello/fontello.svg?23715822#fontello") format("svg");
+  src: url("../fonts/admin/fontello/fontello.eot?57549549");
+  src: url("../fonts/admin/fontello/fontello.eot?57549549#iefix") format("embedded-opentype"), url("../fonts/admin/fontello/fontello.woff2?57549549") format("woff2"), url("../fonts/admin/fontello/fontello.woff?57549549") format("woff"), url("../fonts/admin/fontello/fontello.ttf?57549549") format("truetype"), url("../fonts/admin/fontello/fontello.svg?57549549#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 /* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
@@ -19,7 +19,7 @@
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: 'fontello';
-    src: url('../font/fontello.svg?23715822#fontello') format('svg');
+    src: url('../font/fontello.svg?57549549#fontello') format('svg');
   }
 }
 */
@@ -62,6 +62,10 @@
   content: '\2190'; }
 
 /* '←' */
+.icon-right-big:before {
+  content: '\2192'; }
+
+/* '→' */
 .icon-home:before {
   content: '\2302'; }
 
@@ -74,6 +78,14 @@
   content: '\2699'; }
 
 /* '⚙' */
+.icon-cog-alt:before {
+  content: '\26ef'; }
+
+/* '⛯' */
+.icon-edit:before {
+  content: '\270d'; }
+
+/* '✍' */
 .icon-pencil:before {
   content: '\270e'; }
 
@@ -82,6 +94,14 @@
   content: '\2716'; }
 
 /* '✖' */
+.icon-statuses:before {
+  content: '\e029'; }
+
+/* '' */
+.icon-person:before {
+  content: '\e066'; }
+
+/* '' */
 .icon-lock-filled:before {
   content: '\e097'; }
 
@@ -98,6 +118,10 @@
   content: '\e0f0'; }
 
 /* '' */
+.icon-types:before {
+  content: '\e0f4'; }
+
+/* '' */
 .icon-help-circled:before {
   content: '\e704'; }
 
@@ -106,7 +130,11 @@
   content: '\e70a'; }
 
 /* '' */
-.icon-camera-alt:before {
+.icon-offerings:before {
+  content: '\e70c'; }
+
+/* '' */
+.icon-medias:before {
   content: '\e70f'; }
 
 /* '' */
@@ -114,10 +142,34 @@
   content: '\e716'; }
 
 /* '' */
+.icon-contacts:before {
+  content: '\e722'; }
+
+/* '' */
+.icon-states:before {
+  content: '\e724'; }
+
+/* '' */
 .icon-trash-empty:before {
   content: '\e729'; }
 
 /* '' */
+.icon-posts:before {
+  content: '\e736'; }
+
+/* '' */
+.icon-login:before {
+  content: '\e740'; }
+
+/* '' */
+.icon-logout:before {
+  content: '\e741'; }
+
+/* '' */
+.icon-popup:before {
+  content: '\e74c'; }
+
+/* '' */
 .icon-zoom-in:before {
   content: '\e750'; }
 
@@ -134,14 +186,38 @@
   content: '\e801'; }
 
 /* '' */
+.icon-properties:before {
+  content: '\e802'; }
+
+/* '' */
+.icon-carrousels:before {
+  content: '\e803'; }
+
+/* '' */
+.icon-roadblock:before {
+  content: '\e833'; }
+
+/* '' */
 .icon-link-ext:before {
   content: '\f08e'; }
 
 /* '' */
+.icon-left-circled:before {
+  content: '\f0a8'; }
+
+/* '' */
 .icon-right-circled:before {
   content: '\f0a9'; }
 
 /* '' */
+.icon-up-circled:before {
+  content: '\f0aa'; }
+
+/* '' */
+.icon-down-circled:before {
+  content: '\f0ab'; }
+
+/* '' */
 .icon-resize-full-alt:before {
   content: '\f0b2'; }
 
@@ -162,10 +238,18 @@
   content: '\f0e4'; }
 
 /* '' */
-.icon-sitemap:before {
+.icon-sitemaps:before {
   content: '\f0e8'; }
 
 /* '' */
+.icon-building:before {
+  content: '\f0f7'; }
+
+/* '' */
+.icon-fighter-jet:before {
+  content: '\f0fb'; }
+
+/* '' */
 .icon-angle-left:before {
   content: '\f104'; }
 
@@ -174,6 +258,10 @@
   content: '\f107'; }
 
 /* '' */
+.icon-circle-empty:before {
+  content: '\f10c'; }
+
+/* '' */
 .icon-circle:before {
   content: '\f111'; }
 
@@ -198,6 +286,10 @@
   content: '\f12e'; }
 
 /* '' */
+.icon-rocket:before {
+  content: '\f135'; }
+
+/* '' */
 .icon-euro:before {
   content: '\f153'; }
 
@@ -210,6 +302,14 @@
   content: '\f1ac'; }
 
 /* '' */
+.icon-building-filled:before {
+  content: '\f1ad'; }
+
+/* '' */
+.icon-cab:before {
+  content: '\f1b9'; }
+
+/* '' */
 .icon-file-pdf:before {
   content: '\f1c1'; }
 
@@ -218,6 +318,10 @@
   content: '\f1c5'; }
 
 /* '' */
+.icon-sliders:before {
+  content: '\f1de'; }
+
+/* '' */
 .icon-share:before {
   content: '\f1e0'; }
 
@@ -230,6 +334,26 @@
   content: '\f1fa'; }
 
 /* '' */
+.icon-areas:before {
+  content: '\f1fe'; }
+
+/* '' */
+.icon-bus:before {
+  content: '\f207'; }
+
+/* '' */
+.icon-user-plus:before {
+  content: '\f234'; }
+
+/* '' */
+.icon-bed:before {
+  content: '\f236'; }
+
+/* '' */
+.icon-train:before {
+  content: '\f238'; }
+
+/* '' */
 .icon-question-circle-o:before {
   content: '\f29c'; }
 
@@ -246,10 +370,6 @@
   content: '👤'; }
 
 /* '\1f464' */
-.icon-name:before, .icon-user_id:before {
-  content: '👤'; }
-
-/* '\1f464' */
 .icon-users:before {
   content: '👥'; }
 
@@ -258,6 +378,10 @@
   content: '📅'; }
 
 /* '\1f4c5' */
+.icon-characteristics:before {
+  content: '📊'; }
+
+/* '\1f4ca' */
 .icon-attach:before {
   content: '📎'; }
 
@@ -270,6 +394,10 @@
   content: '📞'; }
 
 /* '\1f4de' */
+.icon-download:before {
+  content: '📥'; }
+
+/* '\1f4e5' */
 .icon-mobile:before {
   content: '📱'; }
 
@@ -278,7 +406,7 @@
   content: '📷'; }
 
 /* '\1f4f7' */
-.icon-key:before, .icon-keywords:before {
+.icon-key:before {
   content: '🔑'; }
 
 /* '\1f511' */
@@ -290,6 +418,22 @@
   content: '🔓'; }
 
 /* '\1f513' */
+.icon-links:before {
+  content: '🔗'; }
+
+/* '\1f517' */
+.icon-wrench:before {
+  content: '🔧'; }
+
+/* '\1f527' */
+.icon-clock:before {
+  content: '🕔'; }
+
+/* '\1f554' */
+.icon-block:before {
+  content: '🚫'; }
+
+/* '\1f6ab' */
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
