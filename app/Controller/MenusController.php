@@ -31,7 +31,19 @@ class MenusController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Flash', 'Session');
-
+/**
+ * [menu description]
+ * @return [type] [description]
+ */
+	public function admin_menu(){
+		$this->layout='admin';
+		$this->Menu->recursive = 0;
+		$menus = $this->Menu->find('all',array(
+		//	'conditions'=>array('type'=>'post','online'=>1),
+			'fields'    =>array('name',"id",'controller','icon')
+			));
+		return $menus;
+	}
 /**
  * index method pour tester
  *

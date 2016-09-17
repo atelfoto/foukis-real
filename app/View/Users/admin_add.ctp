@@ -26,9 +26,9 @@
 
 			<?php echo $this->Form->button('<i class="icon-ok " style="color:#fff;">&nbsp;</i>'.__('publish'),
 									array('class' => 'btn btn-success btn-sm')); ?>
-			<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('Closed'),
+			<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
 										array('controller'=>'users','action'=>'index'),
-									array('class' => 'btn btn-default btn-sm','role'=>'button','escape'=>false)); ?>
+									array('class' => 'btn btn-default btn-sm','escape'=>false)); ?>
 			<?php   echo $this->Form->input('active', array('label' =>false,"div"=>array('class'=>'pull-left'),'after'=>false));?>
 		</div>
 	</div>
@@ -59,9 +59,9 @@
 		<i class="icon-users"></i>
 		</div>',));?>
 	</div>
-	<div class="text-right box-footer" style="margin-top:10px;">
+	<div class="text-right box-footer">
 		<?php echo $this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-success')); ?>
-		<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('Closed'),
+		<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
 		array('controller'=>'users','action'=>'index'),
 		array('class' => 'btn btn-default','escape'=>false)); ?>
 	</div>

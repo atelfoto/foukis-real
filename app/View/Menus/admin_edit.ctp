@@ -47,8 +47,8 @@
 							 'placeholder' => __('Name')));?>
 							</div>
 							<div class="form-group">
-								<?php echo $this->Form->input('slug', array('class' => 'form-control',
-							 'placeholder' => __('Slug')));?>
+								<?php echo $this->Form->input('icon', array('class' => 'form-control',
+							 'placeholder' => __('icon')));?>
 							</div>
 							<div class="form-group">
 								<?php echo $this->Form->input('alias', array('class' => 'form-control',
@@ -95,7 +95,7 @@
 		</div>
 	</div><!-- end containers -->
 </div>
-<?php  echo $this->Html->script(array('tinymce/tinymce.min','bootstrap-toggle'),array('inline'=>false)); ?>
+<?php  echo $this->Html->script(array('tinymce/tinymce.min'),array('inline'=>false)); ?>
 
 <?php echo  $this->Html->scriptStart(array('inline'=>false)); ?>
 //pour les tabs

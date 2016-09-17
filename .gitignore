@@ -7,6 +7,7 @@
 vendors/sass/.sass-cache/
 /app/webroot/css/admin.min.css
 /app/webroot/css/styles.min.css
+/vendors/css/admin/
 /vendors/css/admin.css
 /vendors/css/styles.css
 /plugins

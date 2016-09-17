@@ -14,7 +14,7 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'Foukis: Admin');
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
@@ -45,6 +45,11 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				</a>
 				<div class="navbar-custom-menu">
 					<ul class="nav navbar-nav">
+						<li class="dropdown">
+							<a href="<?= $this->Html->url(array('controller' => 'helps', 'action' => 'index')); ?> " class="dropdown-toogle">
+								<i class="icon-help-circled"></i>	Aide
+							</a>
+						</li>
 						<li class="dropdown user user-menu">
 							<a href="#" class="dropdown-toogle" data-toogle="dropdown">
 								<?php echo  $this->Html->image("avatars/gravatar_mini.jpg", array('class'=>"user-image",'title'=>"avatar")); ?>
@@ -97,45 +102,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     			</div>
     			<ul class="sidebar-menu">
     				<li class="header">header</li>
-    				<li class="treeview <?php if ($this->request->controller =='menus'):?>active<?php endif; ?>">
-						<a href="#"><i class="icon-share"></i> <span><?= __('menus');?></span> <i class="icon-angle-left pull-right"></i></a>
-						<ul class="treeview-menu">
-							<li <?php if ($this->request->controller =='menus' && $this->request->action =='admin_index'):?> class="active"<?php endif; ?>>
-							<?php  echo $this->Html->link("<i class='icon-circle-o'></i>".__("menus manager"),
-							array('controller' => 'menus', 'action' => 'index'),array('escape'=>false));?>
-							</li>
-							<li <?php if ($this->request->controller =='menus' && $this->request->action =='admin_edit'):?> class="active"<?php  endif; ?>>
-								<?= $this->Html->link("<i class='icon-circle-o'></i>".__("add new menu"),
-								array('controller' => 'menus', 'action' => 'add'),array('escape'=>false)); ?>
-							</li>
-    					</ul>
-    				</li>
-    				<li class="treeview <?php if ($this->request->controller =='posts'):?>active<?php endif; ?>">
-						<a href="#"><i class="fa fa-share-alt"></i><span><?= __('posts');?></span> <i class="fa fa-angle-left pull-right"></i></a>
-						<ul class="treeview-menu">
-							<li <?php if ($this->request->controller =='posts' && $this->request->action =='admin_index'):?> class="active"<?php endif; ?>>
-							<?php  echo $this->Html->link("<i class='fa fa-circle-o'></i>".__("menus manager"),
-							array('controller' => 'posts', 'action' => 'index'),array('escape'=>false));?>
-							</li>
-							<li <?php if ($this->request->controller =='posts' && $this->request->action =='admin_edit'):?> class="active"<?php  endif; ?>>
-								<?= $this->Html->link("<i class='fa fa-circle-o'></i>".__("add new posts"),
-								array('controller' => 'posts', 'action' => 'add'),array('escape'=>false)); ?>
-							</li>
-    					</ul>
-    				</li>
-    				<li class="treeview <?php if ($this->request->controller =='users'):?>active<?php endif; ?>">
-						<a href="#"><i class="fa fa-share-alt"></i><span><?= __('users');?></span> <i class="fa fa-angle-left pull-right"></i></a>
-						<ul class="treeview-menu">
-							<li <?php if ($this->request->controller =='users' && $this->request->action =='admin_index'):?> class="active"<?php endif; ?>>
-							<?php  echo $this->Html->link("<i class='fa fa-circle-o'></i>".__("users manager"),
-							array('controller' => 'users', 'action' => 'index'),array('escape'=>false));?>
-							</li>
-							<li <?php if ($this->request->controller =='users' && $this->request->action =='admin_edit'):?> class="active"<?php  endif; ?>>
-								<?= $this->Html->link("<i class='fa fa-circle-o'></i>".__("add"),
-								array('controller' => 'users', 'action' => 'add'),array('escape'=>false)); ?>
-							</li>
-    					</ul>
-    				</li>
+    				<?php  echo $this->element("menu/admin/sidebar") ?>
     			</ul>
 			</div>
 		</aside>

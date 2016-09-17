@@ -39,7 +39,7 @@
 		 		</li>
 	<?php
 			echo "\t\t\t<li class='pull-right'>\n";
-			echo "\t\t\t\t\t<?php echo \$this->html->link('<i class=\"icon-cancel-circled\" style=\"color:#f00;\">&nbsp;</i>'.__('Closed'),
+			echo "\t\t\t\t\t<?php echo \$this->html->link('<i class=\"icon-cancel-circled\" style=\"color:#f00;\">&nbsp;</i>'.__('closed'),
 							array('controller'=>'{$pluralVar}','action'=>'index'),
 							array('class' => 'btn btn-default','escape'=>false)); ?>\n";
 			echo "\t\t\t\t</li>\n";
@@ -86,7 +86,7 @@
 <?php
 					echo "\t\t\t<div class=\"text-right box-footer\" style=\"margin-top:10px;\">\n";
 					echo "\t\t\t\t<?php echo \$this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-primary')); ?>\n";
-					echo "\t\t\t\t<?php echo \$this->html->link('<i class=\"icon-cancel-circled\" style=\"color:#f00;\">&nbsp;</i>'.__('Closed'),
+					echo "\t\t\t\t<?php echo \$this->html->link('<i class=\"icon-cancel-circled\" style=\"color:#f00;\">&nbsp;</i>'.__('closed'),
 						array('controller'=>'{$pluralVar}','action'=>'index'),
 						array('class' => 'btn btn-default','escape'=>false)); ?>\n";
 					echo "\t\t\t</div>\n";

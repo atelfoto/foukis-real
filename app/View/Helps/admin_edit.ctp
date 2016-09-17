@@ -20,9 +20,6 @@
 		 		<li role="presentation" class="active">
 		 			<a href="#contenu" role="tab" data-toggle="tab" aria-controls="contenu">contenu</a>
 		 		</li>
-		 		<li role="presentation">
-		 			<a href="#publication" role="tab" data-toggle="tab" aria-controls="publication">publication</a>
-		 		</li>
 				<li class='pull-right'>
 					<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('Closed'),
 							array('controller'=>'helps','action'=>'index'),
@@ -59,22 +56,6 @@
 							 'placeholder' => __('Content'),
 							 'after'=>false
 							 ));?>
-					<?php echo $this->Form->input('robots', array('class' => 'form-control',
-							 'placeholder' => __('Robots'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-robots"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('description', array('class' => 'form-control',
-							 'placeholder' => __('Description'),
-							 'after'=>false
-							 ));?>
-					<p id='compteur' class='text-right'><i>0 mots - 0 Caractere / 250</i></p>
-					<?php echo $this->Form->input('keywords', array('class' => 'form-control',
-							 'placeholder' => __('Keywords'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-keywords"></i></div>'
-							 ));?>
-				</div>
-				<div class="tab-pane fade" role="tabpanel" id="publication">
-
 				</div>
 			</div>
 			<div class="text-right box-footer" style="margin-top:10px;">
@@ -202,18 +183,4 @@ function send_to_editor(content){
 	var ed = tinyMCE.activeEditor;
 	ed.execCommand('mceInsertContent',false,content);
 };
-
-//pour les meta description
-$(document).ready(function(e) {
-  $('#HelpDescription').keyup(function() {
-    var nombreCaractere = $(this).val().length;
-    var nombreMots = jQuery.trim($(this).val()).split(' ').length;
-    if($(this).val() === '') {
-     	nombreMots = 0;
-    }
-    var msg = ' ' + nombreMots + ' mot(s) | ' + nombreCaractere + ' Caractere(s) / 160';
-    $('#compteur').text(msg);
-    if (nombreCaractere > 160) { $('#compteur').addClass("mauvais"); } else { $('#compteur').removeClass("mauvais"); }
-  })
-});
 <?= $this->Html->scriptEnd(); ?>

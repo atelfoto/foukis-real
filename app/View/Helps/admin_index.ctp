@@ -24,9 +24,6 @@
 						<th><?php echo $this->Paginator->sort('created'); ?></th>
 						<th><?php echo $this->Paginator->sort('modified'); ?></th>
 						<th><?php echo $this->Paginator->sort('online'); ?></th>
-						<th><?php echo $this->Paginator->sort('robots'); ?></th>
-						<th><?php echo $this->Paginator->sort('description'); ?></th>
-						<th><?php echo $this->Paginator->sort('keywords'); ?></th>
 						<th>&nbsp;</th>
 					<th colspan="3" class="actions"></th>
 					</tr>
@@ -36,16 +33,13 @@
 					<tr>
 						<td><?php echo h($help['Help']['id']); ?>&nbsp;</td>
 						<td><?php echo h($help['Help']['name']); ?>&nbsp;</td>
-						<td><?php echo h($help['Help']['slug']); ?>&nbsp;</td>
+						<td style="txt-transform:none"><a href="<?php echo $help['Help']['slug']; ?>" target="_blank"><?php echo h($help['Help']['slug']); ?></a>&nbsp;</td>
 						<td><?php echo $this->Html->link($help['User']['name'],
 									array('controller' => 'users', 'action' => 'view', $help['User']['id'])); ?></td>
-						<td><?php echo h($help['Help']['content']); ?>&nbsp;</td>
+						<!-- <td><?php // echo h($help['Help']['content']); ?>&nbsp;</td> -->
+						<td><?php  echo $this->Text->truncate(ltrim(strip_tags( $help['Help'] ['content'])),50,array('exact' =>false,'html'=> true)); ?>&nbsp;</td>
 						<td><?php echo h($help['Help']['created']); ?>&nbsp;</td>
 						<td><?php echo h($help['Help']['modified']); ?>&nbsp;</td>
-						<td><?php echo h($help['Help']['online']); ?>&nbsp;</td>
-						<td><?php echo h($help['Help']['robots']); ?>&nbsp;</td>
-						<td><?php echo h($help['Help']['description']); ?>&nbsp;</td>
-						<td><?php echo h($help['Help']['keywords']); ?>&nbsp;</td>
 						<td><?php if($help['Help'][ 'online' ] == 0) {
 						echo $this->Html->link('<span class="label label-danger">'.__('Offline').'</span>',
 						array('action'=>'enable', $help['Help']['id']),
@@ -91,7 +85,8 @@
 		</div>
 		<div class="col col-md-12 text-center">
 			<?php echo $this->element('pagination'); ?>
-			<?php  echo $this->element("pagination-counter"); ?>		</div>
+			<?php  echo $this->element("pagination-counter"); ?>
+		</div>
 	</div>
 </div><!-- end containing of content -->
 <?php foreach ($helps  as $k => $v): $v = current($v);?><!-- modal supprimer -->
@@ -105,7 +100,7 @@
 			<div class="modal-body">
 				<p> <?php echo __('Are you sure you want to delete'); ?> <b style="color:#f00;">&nbsp;<?php echo $v['name'];?> &nbsp;</b>
 					<?php echo __('of your').__(helps) ; ?>
-					<span class="label-uname strong"></span> ? 
+					<span class="label-uname strong"></span> ?
 				</p>
 			</div>
 			<div class="modal-footer">

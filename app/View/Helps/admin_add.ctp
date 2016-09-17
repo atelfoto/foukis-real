@@ -23,17 +23,17 @@
 		 		<li role="presentation">
 		 			<a href="#publication" role="tab" data-toggle="tab" aria-controls="publication">publication</a>
 		 		</li>
-				<li class='pull-right'>
-					<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('Closed'),
+				<li class='pull-right' >
+					<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
 							array('controller'=>'helps','action'=>'index'),
-							array('class' => 'btn btn-default','escape'=>false)); ?>
+							array('class' => 'btn btn-default','escape'=>false )); ?>
 				</li>
 				<li class='pull-right'>
 					<?php echo $this->Form->button('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('publish'),
 			 				array('class' => 'btn btn-success  pull-right')); ?>
 				</li>
 				<li class="pull-right">
-					<?php echo $this->Form->input('online', array('label' => false,'div'=>array('class'=>'pull-right'),
+					<?php echo $this->Form->input('online', array('label' => false,"style"=>"text-tranformation:capitalize;",'div'=>array('class'=>'pull-right'),
 							'after'=>false)); ?>
 				</li>
 			</ul>
