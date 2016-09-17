@@ -2,16 +2,17 @@
  <?php $this->Html->addCrumb(__('Areas')); ?>
  <div class="areas index row">
 	<div class="col-md-12 page-header">
-		<h2><i class="fa fa-book"></i>&nbsp;<?php echo __('Areas'); ?></h2>
+		<h2><i class="icon-areas"></i>&nbsp;<?php echo __('Areas'); ?></h2>
 	</div>
 	<div class="col-md-12">
 		<div class="text-right" style='margin-bottom:10px;'>
 			<button class="btn " data-toggle="modal" data-target="#ModalAide">
-			<i class="fa fa-question-circle">&nbsp;Help</i>
+			<i class="icon-help-circled">&nbsp;Help</i>
 			</button>
-				<?php echo $this->Html->link("<i class='fa fa-plus'></i>". __("Add"),array('action'=>'add'),
+				<?php echo $this->Html->link("<i class='icon-plus'></i>". __("Add"),array('action'=>'add'),
 				array('class' =>"btn btn-success ",'escape'=>false)); ?>
-		</div>		<div class="panel table-responsive box-home">
+		</div>
+		<div class="panel table-responsive box-home">
 			<table  class="table table-bordered text-center table-striped">
 				<thead>
 					<tr class="info">
@@ -30,35 +31,40 @@
 						<td><?php echo h($area['Area']['name']); ?>&nbsp;</td>
 						<td><?php echo h($area['Area']['value']); ?>&nbsp;</td>
 						<td><?php echo h($area['Area']['online']); ?>&nbsp;</td>
-						<td>
-							<?php if($area['Area'][ 'online' ] == 0) {
-										echo $this->Html->link('<span class="label label-danger">'.__('Offline').'</span>',
-										array('action'=>'enable', $area['Area']['id']),
-										array("style"=>"text-decoration:none;","data-toggle"=>"tooltip","data-placement"=>"bottom",
-											 "title"=>__('Enable this Area'),'escape'=>false));
-										}else{
-											echo $this->Html->link('<span class="label label-success">'.__('In line').'</span>',
-											array('action'=>'disable', $area['Area']['id']),
-											array("style"=>"text-decoration:none;","data-toggle"=>"tooltip","data-placement"=>"bottom",
-												"title"=>__('Disable this Area'),'escape'=>false));
-												}
-										?>
+						<td><?php if($area['Area'][ 'online' ] == 0) {
+						echo $this->Html->link('<span class="label label-danger">'.__('Offline').'</span>',
+						array('action'=>'enable', $area['Area']['id']),
+						array("style"=>"text-decoration:none;","data-toggle"=>"tooltip","data-placement"=>"bottom",
+						"title"=>__('Enable this Area'),'escape'=>false));
+					}else{
+						echo $this->Html->link('<span class="label label-success">'.__('In line').'</span>',
+						array('action'=>'disable', $area['Area']['id']),
+						array("style"=>"text-decoration:none;","data-toggle"=>"tooltip","data-placement"=>"bottom",
+						"title"=>__('Disable this Area'),'escape'=>false));
+					}
+					?>
 						</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-eye"></span>',
-					 array('action' => 'view', $area['Area']['id']), array('class'=>'btn btn-default','escape' => false)); ?>
+							<?php echo $this->Html->link('<span class="icon-eye"></span>',
+					 array('action' => 'view', $area['Area']['id']),
+					 array('class'=>'btn btn-default','escape' => false,
+					 'data-title'=>__('view').' '.$area['Area']['name'],'data-toggle'=>'tooltip','data-placement'=>'bottom')); ?>
 						</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-pencil"></span>',
-					 array('action' => 'edit', $area['Area']['id']), array('class'=>'btn btn-default','escape' => false)); ?>
+							<?php echo $this->Html->link('<span class="icon-pencil"></span>',
+					 array('action' => 'edit',$area['Area']['id'] ),
+					 array('class'=>'btn btn-default','escape' => false,
+					  'data-title'=>__('edit').' '.$area['Area']['name'],'data-toggle'=>'tooltip','data-placement'=>'bottom')); ?>
 						</td>
 						<td class="actions">
-							<?php echo $this->Html->link('<span class="fa fa-trash"></span>',
-								'#Modal'.$area['Area']['id'],
+							<p data-placement='bottom' data-toggle='tooltip' title='<?= __('delete').' '.$area['Area']['name'];?>' class='text-center'>
+							<?php echo $this->Html->link('<span class="icon-trash"></span>',$area['Area']['id'],
 									array('class'=>'btn btn-default btn-remove-modal',
 									'escape' => false,
 									'data-toggle' =>'modal',
 									'role'=>'button',
+									'data-target'=>'#delete'.$area['Area']['id'],
+									'data-title'=> __('delete'),
 									'data-uid'=>$area['Area']['id']
 									)
 							 ); ?>
@@ -74,16 +80,16 @@
 	</div>
 </div><!-- end containing of content -->
 <?php foreach ($areas  as $k => $v): $v = current($v);?><!-- modal supprimer -->
-<div class="modal fade" id="Modal<?= $v['id']; ?>">
+<div class="modal fade" id="delete<?= $v['id']; ?>">
 	<div class="modal-dialog ">
 		<div class="modal-content">
 			<div class="modal-header panel-default">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="tooltip" data-placement="left" title="  Press Esc to close">&times;</button>
-				<h4 ><?php echo __('Remove Post') ?></h4>
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-toggle="tooltip" data-placement="left" title=" close">&times;</button>
+				<h4 ><?php echo __('Remove') ;?></h4>
 			</div>
 			<div class="modal-body">
 				<p> <?php echo __('Are you sure you want to delete'); ?> <b style="color:#f00;">&nbsp;<?php echo $v['name'];?> &nbsp;</b>
-					<?php echo __('of your Articles') ?>
+					<?php echo __('of your').__('areas') ; ?>
 					<span class="label-uname strong"></span> ? 
 				</p>
 			</div>

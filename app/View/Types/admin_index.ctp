@@ -1,8 +1,8 @@
-<?php echo $this->assign('title', __('Helps')); ?>
- <?php $this->Html->addCrumb(__('Helps')); ?>
- <div class="helps index row">
+<?php echo $this->assign('title', __('Types')); ?>
+ <?php $this->Html->addCrumb(__('Types')); ?>
+ <div class="types index row">
 	<div class="col-md-12 page-header">
-		<h2><i class="icon-help"></i>&nbsp;<?php echo __('Helps'); ?></h2>
+		<h2><i class="icon-types"></i>&nbsp;<?php echo __('Types'); ?></h2>
 	</div>
 	<div class="col-md-12">
 		<div class="text-right" style='margin-bottom:10px;'>
@@ -18,61 +18,52 @@
 					<tr class="info">
 						<th><?php echo $this->Paginator->sort('id'); ?></th>
 						<th><?php echo $this->Paginator->sort('name'); ?></th>
-						<th><?php echo $this->Paginator->sort('slug'); ?></th>
-						<th><?php echo $this->Paginator->sort('user_id'); ?></th>
-						<th><?php echo $this->Paginator->sort('content'); ?></th>
-						<th><?php echo $this->Paginator->sort('created'); ?></th>
-						<th><?php echo $this->Paginator->sort('modified'); ?></th>
+						<th><?php echo $this->Paginator->sort('value'); ?></th>
 						<th><?php echo $this->Paginator->sort('online'); ?></th>
 					<th colspan="3" class="actions"></th>
 					</tr>
 				</thead>
 				<tbody>
-					<?php foreach ($helps as $help): ?>
+					<?php foreach ($types as $type): ?>
 					<tr>
-						<td><?php echo h($help['Help']['id']); ?>&nbsp;</td>
-						<td><?php echo h($help['Help']['name']); ?>&nbsp;</td>
-						<td style="txt-transform:none"><a href="<?php echo $help['Help']['slug']; ?>" target="_blank"><?php echo h($help['Help']['slug']); ?></a>&nbsp;</td>
-						<td><?php echo $this->Html->link($help['User']['name'],
-									array('controller' => 'users', 'action' => 'view', $help['User']['id'])); ?></td>
-						<td><?php  echo $this->Text->truncate(ltrim(strip_tags( $help['Help'] ['content'])),50,array('exact' =>false,'html'=> true)); ?>&nbsp;</td>
-						<td><?php echo h($help['Help']['created']); ?>&nbsp;</td>
-						<td><?php echo h($help['Help']['modified']); ?>&nbsp;</td>
-						<td><?php if($help['Help'][ 'online' ] == 0) {
+						<td><?php echo h($type['Type']['id']); ?>&nbsp;</td>
+						<td><?php echo h($type['Type']['name']); ?>&nbsp;</td>
+						<td><?php echo h($type['Type']['value']); ?>&nbsp;</td>
+						<td><?php if($type['Type'][ 'online' ] == 0) {
 						echo $this->Html->link('<span class="label label-danger">'.__('Offline').'</span>',
-						array('action'=>'enable', $help['Help']['id']),
+						array('action'=>'enable', $type['Type']['id']),
 						array("style"=>"text-decoration:none;","data-toggle"=>"tooltip","data-placement"=>"bottom",
-						"title"=>__('Enable this Help'),'escape'=>false));
+						"title"=>__('Enable this Type'),'escape'=>false));
 					}else{
 						echo $this->Html->link('<span class="label label-success">'.__('In line').'</span>',
-						array('action'=>'disable', $help['Help']['id']),
+						array('action'=>'disable', $type['Type']['id']),
 						array("style"=>"text-decoration:none;","data-toggle"=>"tooltip","data-placement"=>"bottom",
-						"title"=>__('Disable this Help'),'escape'=>false));
+						"title"=>__('Disable this Type'),'escape'=>false));
 					}
 					?>
 						</td>
 						<td class="actions">
 							<?php echo $this->Html->link('<span class="icon-eye"></span>',
-					 array('action' => 'view', $help['Help']['id']),
+					 array('action' => 'view', $type['Type']['id']),
 					 array('class'=>'btn btn-default','escape' => false,
-					 'data-title'=>__('view').' '.$help['Help']['name'],'data-toggle'=>'tooltip','data-placement'=>'bottom')); ?>
+					 'data-title'=>__('view').' '.$type['Type']['name'],'data-toggle'=>'tooltip','data-placement'=>'bottom')); ?>
 						</td>
 						<td class="actions">
 							<?php echo $this->Html->link('<span class="icon-pencil"></span>',
-					 array('action' => 'edit',$help['Help']['id'] ),
+					 array('action' => 'edit',$type['Type']['id'] ),
 					 array('class'=>'btn btn-default','escape' => false,
-					  'data-title'=>__('edit').' '.$help['Help']['name'],'data-toggle'=>'tooltip','data-placement'=>'bottom')); ?>
+					  'data-title'=>__('edit').' '.$type['Type']['name'],'data-toggle'=>'tooltip','data-placement'=>'bottom')); ?>
 						</td>
 						<td class="actions">
-							<p data-placement='bottom' data-toggle='tooltip' title='<?= __('delete').' '.$help['Help']['name'];?>' class='text-center'>
-							<?php echo $this->Html->link('<span class="icon-trash"></span>',$help['Help']['id'],
+							<p data-placement='bottom' data-toggle='tooltip' title='<?= __('delete').' '.$type['Type']['name'];?>' class='text-center'>
+							<?php echo $this->Html->link('<span class="icon-trash"></span>',$type['Type']['id'],
 									array('class'=>'btn btn-default btn-remove-modal',
 									'escape' => false,
 									'data-toggle' =>'modal',
 									'role'=>'button',
-									'data-target'=>'#delete'.$help['Help']['id'],
+									'data-target'=>'#delete'.$type['Type']['id'],
 									'data-title'=> __('delete'),
-									'data-uid'=>$help['Help']['id']
+									'data-uid'=>$type['Type']['id']
 									)
 							 ); ?>
 						</td>
@@ -83,11 +74,10 @@
 		</div>
 		<div class="col col-md-12 text-center">
 			<?php echo $this->element('pagination'); ?>
-			<?php  echo $this->element("pagination-counter"); ?>
-		</div>
+			<?php  echo $this->element("pagination-counter"); ?>		</div>
 	</div>
 </div><!-- end containing of content -->
-<?php foreach ($helps  as $k => $v): $v = current($v);?><!-- modal supprimer -->
+<?php foreach ($types  as $k => $v): $v = current($v);?><!-- modal supprimer -->
 <div class="modal fade" id="delete<?= $v['id']; ?>">
 	<div class="modal-dialog ">
 		<div class="modal-content">
@@ -97,7 +87,7 @@
 			</div>
 			<div class="modal-body">
 				<p> <?php echo __('Are you sure you want to delete'); ?> <b style="color:#f00;">&nbsp;<?php echo $v['name'];?> &nbsp;</b>
-					<?php echo __('of your').__("helps") ; ?>
+					<?php echo __('of your').__("types") ; ?>
 					<span class="label-uname strong"></span> ?
 				</p>
 			</div>

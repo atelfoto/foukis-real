@@ -1,10 +1,10 @@
 <?php
-App::uses('Type', 'Model');
+App::uses('Status', 'Model');
 
 /**
- * Type Test Case
+ * Status Test Case
  */
-class TypeTest extends CakeTestCase {
+class StatusTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -12,12 +12,12 @@ class TypeTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.type',
+		'app.status',
 		'app.property',
 		'app.state',
 		'app.area',
-		'app.status',
-		'app.characteristic',
+		'app.type',
+		'app.characteristics',
 		'app.user',
 		'app.group',
 		'app.post'
@@ -30,7 +30,7 @@ class TypeTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->Type = ClassRegistry::init('Type');
+		$this->Status = ClassRegistry::init('Status');
 	}
 
 /**
@@ -39,7 +39,7 @@ class TypeTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->Type);
+		unset($this->Status);
 
 		parent::tearDown();
 	}

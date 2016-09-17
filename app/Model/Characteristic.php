@@ -1,11 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Type Model
+ * Characteristic Model
  *
  * @property Property $Property
  */
-class Type extends AppModel {
+class Characteristic extends AppModel {
 
 /**
  * Display field
@@ -42,7 +42,7 @@ class Type extends AppModel {
 	public $hasMany = array(
 		'Property' => array(
 			'className' => 'Property',
-			'foreignKey' => 'type_id',
+			'foreignKey' => 'characteristic_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

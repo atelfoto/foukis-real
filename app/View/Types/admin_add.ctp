@@ -1,13 +1,13 @@
-<?php echo $this->assign('title', __('area')); ?>
- <?php $this->Html->addCrumb(__('area'),array('controller'=>'areas','action'=>'index','admin'=>true)); ?>
+<?php echo $this->assign('title', __('type')); ?>
+ <?php $this->Html->addCrumb(__('type'),array('controller'=>'types','action'=>'index','admin'=>true)); ?>
  <?php $this->Html->addCrumb('edit' ); ?>
-<div class="areas index row">
+<div class="types index row">
 	<div class="col-sm-12 page-header">
-		<h3><i class="icon-areas"></i>&nbsp;<?php echo __('Admin Edit Area'); ?>		</h3>
+		<h3><i class="icon-type"></i>&nbsp;<?php echo __('Admin Add Type'); ?>		</h3>
 	</div>
 	<div class="col-sm-12">
 		<div class="box box-primary  with-border nav-tabs-custom">
-			<?php echo $this->Form->create('Area',array(
+			<?php echo $this->Form->create('Type',array(
 				'novalidate'=>true,
 				'inputDefaults'=>array(
 				'div'=>'form-group',
@@ -25,7 +25,7 @@
 		 		</li>
 				<li class='pull-right'>
 					<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
-							array('controller'=>'areas','action'=>'index'),
+							array('controller'=>'types','action'=>'index'),
 							array('class' => 'btn btn-default','escape'=>false)); ?>
 				</li>
 				<li class='pull-right'>
@@ -39,10 +39,6 @@
 			</ul>
 			<div class="tab-content box-body">
 				<div class="tab-pane fade in active" role="tabpanel" id="contenu">
-					<?php echo $this->Form->input('id', array('class' => 'form-control',
-							 'placeholder' => __('Id'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-id"></i></div>'
-							 ));?>
 					<?php echo $this->Form->input('name', array('class' => 'form-control',
 							 'placeholder' => __('Name'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-name"></i></div>'
@@ -59,7 +55,7 @@
 			<div class="text-right box-footer" style="margin-top:10px;">
 				<?php echo $this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-primary')); ?>
 				<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
-						array('controller'=>'areas','action'=>'index'),
+						array('controller'=>'types','action'=>'index'),
 						array('class' => 'btn btn-default','escape'=>false)); ?>
 			</div>
 			<?php echo $this->Form->end() ?>
@@ -74,7 +70,7 @@ $('#myTab a').click(function (e) {
 });
 //pour les toogle
   $(function() {
-    $('#AreaOnline').bootstrapToggle({
+    $('#TypeOnline').bootstrapToggle({
 		size:'small',
 		onstyle: 'primary',
 		offstyle:'danger',

@@ -1,11 +1,11 @@
 <?php
 App::uses('AppModel', 'Model');
 /**
- * Type Model
+ * Status Model
  *
  * @property Property $Property
  */
-class Type extends AppModel {
+class Status extends AppModel {
 
 /**
  * Display field
@@ -42,7 +42,7 @@ class Type extends AppModel {
 	public $hasMany = array(
 		'Property' => array(
 			'className' => 'Property',
-			'foreignKey' => 'type_id',
+			'foreignKey' => 'status_id',
 			'dependent' => false,
 			'conditions' => '',
 			'fields' => '',

@@ -1,13 +1,13 @@
-<?php echo $this->assign('title', __('help')); ?>
- <?php $this->Html->addCrumb(__('help'),array('controller'=>'helps','action'=>'index','admin'=>true)); ?>
+<?php echo $this->assign('title', __('property')); ?>
+ <?php $this->Html->addCrumb(__('property'),array('controller'=>'properties','action'=>'index','admin'=>true)); ?>
  <?php $this->Html->addCrumb('edit' ); ?>
-<div class="helps index row">
+<div class="properties index row">
 	<div class="col-sm-12 page-header">
-		<h3><i class="icon-help"></i>&nbsp;<?php echo __('Admin Add Help'); ?>		</h3>
+		<h3><i class="icon-property"></i>&nbsp;<?php echo __('Admin Edit Property'); ?>		</h3>
 	</div>
 	<div class="col-sm-12">
 		<div class="box box-primary  with-border nav-tabs-custom">
-			<?php echo $this->Form->create('Help',array(
+			<?php echo $this->Form->create('Property',array(
 				'novalidate'=>true,
 				'inputDefaults'=>array(
 				'div'=>'form-group',
@@ -23,50 +23,93 @@
 		 		<li role="presentation">
 		 			<a href="#publication" role="tab" data-toggle="tab" aria-controls="publication">publication</a>
 		 		</li>
-				<li class='pull-right' >
+				<li class='pull-right'>
 					<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
-							array('controller'=>'helps','action'=>'index'),
-							array('class' => 'btn btn-default','escape'=>false )); ?>
+							array('controller'=>'properties','action'=>'index'),
+							array('class' => 'btn btn-default','escape'=>false)); ?>
 				</li>
 				<li class='pull-right'>
 					<?php echo $this->Form->button('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('publish'),
-			 				array('class' => 'btn btn-success  pull-right')); ?>
+			 				array('class' => 'btn btn-success btn-sm pull-right')); ?>
 				</li>
-				<li class="pull-right">
-					<?php echo $this->Form->input('online', array('label' => false,"style"=>"text-tranformation:capitalize;",'div'=>array('class'=>'pull-right'),
+				<li class='pull-right'>
+					<?php echo $this->Form->input('online', array('label' => false,'div'=>array('class'=>'pull-right'),
 							'after'=>false)); ?>
 				</li>
 			</ul>
 			<div class="tab-content box-body">
 				<div class="tab-pane fade in active" role="tabpanel" id="contenu">
+					<?php echo $this->Form->input('id', array('class' => 'form-control',
+							 'placeholder' => __('Id'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-id"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('id2', array('class' => 'form-control',
+							 'placeholder' => __('Id2'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-id2"></i></div>'
+							 ));?>
 					<?php echo $this->Form->input('name', array('class' => 'form-control',
 							 'placeholder' => __('Name'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-name"></i></div>'
 							 ));?>
-					<?php echo $this->Form->input('slug', array('class' => 'form-control',
-							 'placeholder' => __('Slug'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-slug"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-							 'empty' => __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
-							 ));?>
 					<?php echo $this->Form->input('content', array('class' => 'form-control',
 							 'placeholder' => __('Content'),
-							 'after'=>false
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-content"></i></div>'
 							 ));?>
-					<?php echo $this->Form->input('robots', array('class' => 'form-control',
-							 'placeholder' => __('Robots'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-robots"></i></div>'
+					<?php echo $this->Form->input('state_id', array('class' => 'form-control',
+							 'placeholder' => __('State Id'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-state_id"></i></div>'
 							 ));?>
-					<?php echo $this->Form->input('description', array('class' => 'form-control',
-							 'placeholder' => __('Description'),
-							 'after'=>false
+					<?php echo $this->Form->input('area_id', array('class' => 'form-control',
+							 'placeholder' => __('Area Id'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-area_id"></i></div>'
 							 ));?>
-					<p id='compteur' class='text-right'><i>0 mots - 0 Caractere / 250</i></p>
-					<?php echo $this->Form->input('keywords', array('class' => 'form-control',
-							 'placeholder' => __('Keywords'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-key"></i></div>'
+					<?php echo $this->Form->input('status_id', array('class' => 'form-control',
+							 'placeholder' => __('Status Id'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-status_id"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('type_id', array('class' => 'form-control',
+							 'placeholder' => __('Type Id'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-type_id"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('characteristics_id', array('class' => 'form-control',
+							 'placeholder' => __('Characteristics Id'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-characteristics_id"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('dateYear', array('class' => 'form-control',
+							 'placeholder' => __('DateYear'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-dateYear"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('bedrooms', array('class' => 'form-control',
+							 'placeholder' => __('Bedrooms'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-bedrooms"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('size', array('class' => 'form-control',
+							 'placeholder' => __('Size'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-size"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('level', array('class' => 'form-control',
+							 'placeholder' => __('Level'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-level"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('price', array('class' => 'form-control',
+							 'placeholder' => __('Price'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-price"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('media_id', array('class' => 'form-control',
+							 'placeholder' => __('Media Id'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-media_id"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('mediaQuantities', array('class' => 'form-control',
+							 'placeholder' => __('MediaQuantities'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-mediaQuantities"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('user_id', array('class' => 'form-control',
+							 'placeholder' => __('User Id'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user_id"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('modified_by', array('class' => 'form-control',
+							 'placeholder' => __('Modified By'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-modified_by"></i></div>'
 							 ));?>
 				</div>
 				<div class="tab-pane fade" role="tabpanel" id="publication">
@@ -75,8 +118,8 @@
 			</div>
 			<div class="text-right box-footer" style="margin-top:10px;">
 				<?php echo $this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-primary')); ?>
-				<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('Closed'),
-						array('controller'=>'helps','action'=>'index'),
+				<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
+						array('controller'=>'properties','action'=>'index'),
 						array('class' => 'btn btn-default','escape'=>false)); ?>
 			</div>
 			<?php echo $this->Form->end() ?>
@@ -92,15 +135,15 @@ $('#myTab a').click(function (e) {
 });
 //pour les toogle
   $(function() {
-    $('#HelpOnline').bootstrapToggle({
-		//size:'small',
+    $('#PropertyOnline').bootstrapToggle({
+		size:'small',
 		onstyle: 'primary',
 		offstyle:'danger',
     });
   });
 //pour le textarea
 tinyMCE.init({
-	selector: "#HelpContent",
+	selector: "#PropertyContent",
 	height:'500',
     elements:"contenu",
 	entity_encoding : "raw",
@@ -143,7 +186,7 @@ tinyMCE.init({
     {title: 'table-condensed', value: 'table table-condensed'}
   ],
   table_appearance_options: false,
-    image_explorer :'<?php // echo $this->Html->url(array('controller'=>'medias','action'=>'index', $this->request->data['Help']['id'])); ?>',
+    image_explorer :'<?php echo $this->Html->url(array('controller'=>'medias','action'=>'index', $this->request->data['Property']['id'])); ?>',
     image_edit :'<?= $this->Html->url(array('controller'=>'medias','action'=>'show')); ?>',
     content_css : '<?= $this->Html->url('/css/wysiwyg.css'); ?>',
     table_appearance_options: false,
@@ -201,7 +244,7 @@ function send_to_editor(content){
 
 //pour les meta description
 $(document).ready(function(e) {
-  $('#HelpDescription').keyup(function() {
+  $('#PropertyDescription').keyup(function() {
     var nombreCaractere = $(this).val().length;
     var nombreMots = jQuery.trim($(this).val()).split(' ').length;
     if($(this).val() === '') {

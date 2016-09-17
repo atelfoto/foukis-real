@@ -15,7 +15,7 @@
 <?php echo "<?php \$this->Html->addCrumb(__('$pluralHumanName')); ?>\n "; ?>
 <div class="<?php echo $pluralVar; ?> index row">
 	<div class="col-md-12 page-header">
-		<h2><i class="icon-<?php echo $singularVar; ?>"></i>&nbsp;<?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>
+		<h2><i class="icon-<?php echo $pluralVar; ?>"></i>&nbsp;<?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>
 	</div>
 	<div class="col-md-12">
 		<div class="text-right" style='margin-bottom:10px;'>
@@ -112,7 +112,7 @@
 			</div>
 			<div class="modal-body">
 				<p> <?php echo "<?php echo __('Are you sure you want to delete'); ?>" ?> <b style="color:#f00;">&nbsp;<?php echo "<?php echo \$v['name'];?> " ?>&nbsp;</b>
-					<?php echo "<?php echo __('of your').__({$pluralVar}) ; ?>";
+					<?php echo "<?php echo __('of your').__('{$pluralVar}') ; ?>";
 					echo "\n\t\t\t\t\t<span class=\"label-uname strong\"></span> ? \n"; ?>
 				</p>
 			</div>

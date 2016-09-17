@@ -16,7 +16,7 @@
       echo "<?php \$this->Html->addCrumb('edit' ); ?>\n";?>
 <div class="<?php echo $pluralVar; ?> index row">
 	<div class="col-sm-12 page-header">
-		<h3><i class="icon-<?php echo $singularVar; ?>"></i>&nbsp;<?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?>
+		<h3><i class="icon-<?php echo $pluralVar; ?>"></i>&nbsp;<?php printf("<?php echo __('%s %s'); ?>", Inflector::humanize($action), $singularHumanName); ?>
 		</h3>
 	</div>
 	<div class="col-sm-12">
@@ -95,6 +95,9 @@
 		</div>
 	</div><!-- end containers -->
 </div>
+<?php if (in_array($field,array('description','content'))): ?>
+
+
 <?php echo "<?php  echo \$this->Html->script(array('tinymce/tinymce.min'),array('inline'=>false)); ?>\n"; ?>
 <?php echo "<?php echo  \$this->Html->scriptStart(array('inline'=>false)); ?>
 //pour les tabs
@@ -225,3 +228,21 @@ $(document).ready(function(e) {
   })
 });
 <?= \$this->Html->scriptEnd(); ?>" ?>
+
+<?php else: ?>
+<?php echo "<?php echo  \$this->Html->scriptStart(array('inline'=>false)); ?>
+//pour les tabs
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+});
+//pour les toogle
+  $(function() {
+    $('#{$modelClass}Online').bootstrapToggle({
+		size:'small',
+		onstyle: 'primary',
+		offstyle:'danger',
+    });
+  });
+ <?= \$this->Html->scriptEnd(); ?>" ?>
+<?php endif ?>

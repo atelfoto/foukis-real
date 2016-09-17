@@ -90,7 +90,7 @@
 		</div>
 	</div><!-- end containers -->
 </div>
-<?php  echo $this->Html->script(array('tinymce/tinymce.min','bootstrap-toggle'),array('inline'=>false)); ?>
+<?php  echo $this->Html->script(array('tinymce/tinymce.min'),array('inline'=>false)); ?>
 
 <?php echo  $this->Html->scriptStart(array('inline'=>false)); ?>
 //pour les tabs
