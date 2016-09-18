@@ -96,14 +96,14 @@
 							 ));?>
 					<?php echo $this->Form->input('mediaQuantities', array('class' => 'form-control',
 							 'placeholder' => __('MediaQuantities'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-mediaQuantities"></i></div>'
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-carrousels"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('user_id', array('class' => 'form-control',
 							 'empty' => __('choose'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('modified_by', array('class' => 'form-control',
-							 'placeholder' => __('Modified By'),
+							 'placeholder' => __('Created by'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-modified_by"></i></div>'
 							 ));?>
 				</div>
@@ -121,7 +121,9 @@
 		</div>
 	</div><!-- end containers -->
 </div>
-<?php  echo $this->Html->script(array('tinymce/tinymce.min'),array('inline'=>false)); ?>
+<?php  echo $this->Html->script(array('tinymce/tinymce.min'
+//,"admin/bootstrap-datepicker",'admin/locales/bootstrap-datepicker.fr'
+),array('inline'=>false)); ?>
 <?php echo  $this->Html->scriptStart(array('inline'=>false)); ?>
 //pour les tabs
 $('#myTab a').click(function (e) {
@@ -137,16 +139,16 @@ $('#myTab a').click(function (e) {
     });
   });
 //datepicker
-// $('.input-group.date').datepicker({
-// 	format: "yyyy",
-// 	startDate: "1900/",
-// 	endDate: "today",
-// 	startView: 1,
-// 	minViewMode: 2,
-// 	clearBtn: true,
-// 	autoclose: true,
-// 	orientation: "bottom left"
-// });
+ $('.input-group.date').datepicker({
+ 	format: "yyyy",
+ 	startDate: "1900/",
+ 	endDate: "today",
+ 	startView: 1,
+ 	minViewMode: 2,
+ 	clearBtn: true,
+ 	autoclose: true,
+ 	orientation: "bottom left"
+ });
 //pour le textarea
 tinyMCE.init({
 	selector: "#PropertyContent",
