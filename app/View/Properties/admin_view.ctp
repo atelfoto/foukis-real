@@ -13,22 +13,26 @@
 					<div class="panel-heading">Actions</div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-									<li><?php echo $this->Html->link(__('<span class="icon-edit"></span>&nbsp&nbsp;Edit Property'), array('action' => 'edit', $property['Property']['id']), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Form->postLink(__('<span class="icon-remove"></span>&nbsp;&nbsp;Delete Property'), array('action' => 'delete', $property['Property']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $property['Property']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="icon-list"></span>&nbsp&nbsp;List Properties'), array('action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="icon-plus"></span>&nbsp&nbsp;New Property'), array('action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="icon-list"></span>&nbsp&nbsp;List States'), array('controller' => 'states', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp&nbsp;'.__('New State'), array('controller' => 'states', 'action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp&nbsp;'.__('List Areas'), array('controller' => 'areas', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp&nbsp;'.__('New Area'), array('controller' => 'areas', 'action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp&nbsp;'.__('List Statuses'), array('controller' => 'statuses', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp&nbsp;'.__('New Status'), array('controller' => 'statuses', 'action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp&nbsp;'.__('List Types'), array('controller' => 'types', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp&nbsp;'.__('New Type'), array('controller' => 'types', 'action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp&nbsp;'.__('List Characteristics'), array('controller' => 'characteristics', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp&nbsp;'.__('New Characteristics'), array('controller' => 'characteristics', 'action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp&nbsp;'.__('List Users'), array('controller' => 'users', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp&nbsp;'.__('New User'), array('controller' => 'users', 'action' => 'add'), array('escape' => false)); ?> </li>
+									<li><?php echo $this->Html->link('<span class="icon-edit"></span>&nbsp;&nbsp;'.__('Edit Property'),
+							 array('action' => 'edit', $property['Property']['id']), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Form->postLink('<span class="icon-cancel"></span>&nbsp;&nbsp;'.__('Delete Property'),
+								 array('action' => 'delete', $property['Property']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $property['Property']['id'])); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Properties'),
+								 array('action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'),
+								 array('action' => 'add'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List States'), array('controller' => 'states', 'action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New State'), array('controller' => 'states', 'action' => 'add'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Areas'), array('controller' => 'areas', 'action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Area'), array('controller' => 'areas', 'action' => 'add'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Statuses'), array('controller' => 'statuses', 'action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Status'), array('controller' => 'statuses', 'action' => 'add'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Types'), array('controller' => 'types', 'action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Type'), array('controller' => 'types', 'action' => 'add'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Characteristics'), array('controller' => 'characteristics', 'action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Characteristic'), array('controller' => 'characteristics', 'action' => 'add'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Users'), array('controller' => 'users', 'action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New User'), array('controller' => 'users', 'action' => 'add'), array('escape' => false)); ?> </li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -36,7 +40,7 @@
 		</div><!-- end col md 3 -->
 
 		<div class="col-md-9">
-			<table cellpadding="0" cellspacing="0" class="table table-striped">
+			<table  class="table table-striped">
 				<tbody>
 				<tr>
 		<th><?php echo __('Id'); ?></th>
@@ -95,9 +99,9 @@
 		</td>
 </tr>
 <tr>
-		<th><?php echo __('Characteristics'); ?></th>
+		<th><?php echo __('Characteristic'); ?></th>
 		<td>
-			<?php echo $this->Html->link($property['Characteristics']['name'], array('controller' => 'characteristics', 'action' => 'view', $property['Characteristics']['id'])); ?>
+			<?php echo $this->Html->link($property['Characteristic']['name'], array('controller' => 'characteristics', 'action' => 'view', $property['Characteristic']['id'])); ?>
 			&nbsp;
 		</td>
 </tr>

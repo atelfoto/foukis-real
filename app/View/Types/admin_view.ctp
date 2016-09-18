@@ -13,12 +13,16 @@
 					<div class="panel-heading">Actions</div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-									<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-edit"></span>&nbsp&nbsp;Edit Type'), array('action' => 'edit', $type['Type']['id']), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Form->postLink(__('<span class="glyphicon glyphicon-remove"></span>&nbsp;&nbsp;Delete Type'), array('action' => 'delete', $type['Type']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $type['Type']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp&nbsp;List Types'), array('action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp&nbsp;New Type'), array('action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-list"></span>&nbsp&nbsp;List Properties'), array('controller' => 'properties', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp&nbsp;New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false)); ?> </li>
+									<li><?php echo $this->Html->link('<span class="icon-edit"></span>&nbsp;&nbsp;'.__('Edit Type'),
+							 array('action' => 'edit', $type['Type']['id']), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Form->postLink('<span class="icon-cancel"></span>&nbsp;&nbsp;'.__('Delete Type'),
+								 array('action' => 'delete', $type['Type']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $type['Type']['id'])); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Types'),
+								 array('action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Type'),
+								 array('action' => 'add'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Properties'), array('controller' => 'properties', 'action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false)); ?> </li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -26,7 +30,7 @@
 		</div><!-- end col md 3 -->
 
 		<div class="col-md-9">
-			<table cellpadding="0" cellspacing="0" class="table table-striped">
+			<table  class="table table-striped">
 				<tbody>
 				<tr>
 		<th><?php echo __('Id'); ?></th>
@@ -68,7 +72,7 @@
 	<div class="col-md-12">
 	<h3><?php echo __('Related Properties'); ?></h3>
 	<?php if (!empty($type['Property'])): ?>
-	<table cellpadding = "0" cellspacing = "0" class="table table-striped">
+	<table  class="table table-striped">
 	<thead>
 	<tr>
 		<th><?php echo __('Id'); ?></th>
@@ -120,9 +124,9 @@
 			<td><?php echo $property['user_id']; ?></td>
 			<td><?php echo $property['modified_by']; ?></td>
 			<td class="actions">
-				<?php echo $this->Html->link(__('<span class="glyphicon glyphicon-search"></span>'), array('controller' => 'properties', 'action' => 'view', $property['id']), array('escape' => false)); ?>
-				<?php echo $this->Html->link(__('<span class="glyphicon glyphicon-edit"></span>'), array('controller' => 'properties', 'action' => 'edit', $property['id']), array('escape' => false)); ?>
-				<?php echo $this->Form->postLink(__('<span class="glyphicon glyphicon-remove"></span>'), array('controller' => 'properties', 'action' => 'delete', $property['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $property['id'])); ?>
+				<?php echo $this->Html->link('<span class="icon-search"></span>', array('controller' => 'properties', 'action' => 'view', $property['id']), array('escape' => false)); ?>
+				<?php echo $this->Html->link('<span class="icon-edit"></span>', array('controller' => 'properties', 'action' => 'edit', $property['id']), array('escape' => false)); ?>
+				<?php echo $this->Form->postLink('<span class="icon-cancel-circled"></span>', array('controller' => 'properties', 'action' => 'delete', $property['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $property['id'])); ?>
 			</td>
 		</tr>
 	<?php endforeach; ?>
@@ -131,6 +135,6 @@
 <?php endif; ?>
 
 	<div class="actions">
-		<?php echo $this->Html->link(__('<span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false, 'class' => 'btn btn-default')); ?>	</div>
+		<?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false, 'class' => 'btn btn-default')); ?>	</div>
 	</div><!-- end col md 12 -->
 </div>

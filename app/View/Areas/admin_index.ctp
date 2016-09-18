@@ -20,7 +20,6 @@
 						<th><?php echo $this->Paginator->sort('name'); ?></th>
 						<th><?php echo $this->Paginator->sort('value'); ?></th>
 						<th><?php echo $this->Paginator->sort('online'); ?></th>
-						<th>&nbsp;</th>
 					<th colspan="3" class="actions"></th>
 					</tr>
 				</thead>
@@ -30,7 +29,6 @@
 						<td><?php echo h($area['Area']['id']); ?>&nbsp;</td>
 						<td><?php echo h($area['Area']['name']); ?>&nbsp;</td>
 						<td><?php echo h($area['Area']['value']); ?>&nbsp;</td>
-						<td><?php echo h($area['Area']['online']); ?>&nbsp;</td>
 						<td><?php if($area['Area'][ 'online' ] == 0) {
 						echo $this->Html->link('<span class="label label-danger">'.__('Offline').'</span>',
 						array('action'=>'enable', $area['Area']['id']),
@@ -90,7 +88,7 @@
 			<div class="modal-body">
 				<p> <?php echo __('Are you sure you want to delete'); ?> <b style="color:#f00;">&nbsp;<?php echo $v['name'];?> &nbsp;</b>
 					<?php echo __('of your').__('areas') ; ?>
-					<span class="label-uname strong"></span> ? 
+					<span class="label-uname strong"></span> ?
 				</p>
 			</div>
 			<div class="modal-footer">
