@@ -30,7 +30,7 @@
 				</li>
 				<li class='pull-right'>
 					<?php echo $this->Form->button('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('publish'),
-			 				array('class' => 'btn btn-success btn-sm pull-right')); ?>
+			 				array('class' => 'btn btn-success  pull-right')); ?>
 				</li>
 				<li class='pull-right'>
 					<?php echo $this->Form->input('online', array('label' => false,'div'=>array('class'=>'pull-right'),
@@ -71,7 +71,7 @@ $('#myTab a').click(function (e) {
 //pour les toogle
   $(function() {
     $('#AreaOnline').bootstrapToggle({
-		size:'small',
+	//	size:'small',
 		onstyle: 'primary',
 		offstyle:'danger',
     });

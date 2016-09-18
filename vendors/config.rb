@@ -15,7 +15,7 @@ javascripts_dir = "js"
 # Vous pouvez choisir votre style de production favori ici (peut être passé
 # outre via la ligne d'instruction) :
 # output_style :expanded ou :nested ou :compact ou :compressed
-output_style = :nested
+output_style = :expanded
 relative_assets=true
-line_comments = false
+line_comments = true
 # dans le bath compass install compass pour installer

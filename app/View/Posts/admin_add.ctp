@@ -3,7 +3,7 @@
  <?php $this->Html->addCrumb('edit' ); ?>
 <div class="posts index row">
 	<div class="col-md-12 page-header">
-		<h2><i class="fa fa-book"></i>&nbsp;<?php echo __('Admin Add Post'); ?>		</h2>
+		<h3><i class="icon-posts"></i>&nbsp;<?php echo __('Admin Add Post'); ?></h3>
 	</div>
 	<div class="col-md-12 col-lg-10 col-lg-offset-1">
 		<div class=" box-home">

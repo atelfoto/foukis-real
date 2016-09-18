@@ -3,7 +3,7 @@
  <?php $this->Html->addCrumb('edit' ); ?>
 <div class="properties index row">
 	<div class="col-sm-12 page-header">
-		<h3><i class="icon-property"></i>&nbsp;<?php echo __('Admin Add Property'); ?>		</h3>
+		<h3><i class="icon-properties"></i>&nbsp;<?php echo __('Admin Add Property'); ?>		</h3>
 	</div>
 	<div class="col-sm-12">
 		<div class="box box-primary  with-border nav-tabs-custom">
@@ -30,7 +30,7 @@
 				</li>
 				<li class='pull-right'>
 					<?php echo $this->Form->button('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('publish'),
-			 				array('class' => 'btn btn-success btn-sm pull-right')); ?>
+			 				array('class' => 'btn btn-success  pull-right')); ?>
 				</li>
 				<li class='pull-right'>
 					<?php echo $this->Form->input('online', array('label' => false,'div'=>array('class'=>'pull-right'),
@@ -48,40 +48,39 @@
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-name"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('content', array('class' => 'form-control',
-							 'placeholder' => __('Content'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-content"></i></div>'
+							 "after"=>false
 							 ));?>
 					<?php echo $this->Form->input('state_id', array('class' => 'form-control',
-							 'placeholder' => __('State Id'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-state_id"></i></div>'
+							 'empty'=> __('choose'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-states"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('area_id', array('class' => 'form-control',
-							 'placeholder' => __('Area Id'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-area_id"></i></div>'
+							 'empty'=> __('choose'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-areas"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('status_id', array('class' => 'form-control',
-							 'placeholder' => __('Status Id'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-status_id"></i></div>'
+							 'empty'=> __('choose'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-statuses"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('type_id', array('class' => 'form-control',
-							 'placeholder' => __('Type Id'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-type_id"></i></div>'
+							 'empty'=> __('choose'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-types"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('characteristics_id', array('class' => 'form-control',
-							 'placeholder' => __('Characteristics Id'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-characteristics_id"></i></div>'
+							 'empty'=> __('choose'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-characteristics"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('dateYear', array('class' => 'form-control',
-							 'placeholder' => __('DateYear'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-dateYear"></i></div>'
+							 'placeholder' => __('DateYear'), "type"=>"text",
+							 'between'=>'<div class="input-group date"><div class="input-group-addon"><i class="icon-calendar"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('bedrooms', array('class' => 'form-control',
 							 'placeholder' => __('Bedrooms'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-bedrooms"></i></div>'
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-bed"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('size', array('class' => 'form-control',
 							 'placeholder' => __('Size'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-size"></i></div>'
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-sizes"><b>M²</b></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('level', array('class' => 'form-control',
 							 'placeholder' => __('Level'),
@@ -92,16 +91,16 @@
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-money"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('media_id', array('class' => 'form-control',
-							 'placeholder' => __('Media Id'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-media_id"></i></div>'
+							 'empty' => __('choose'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-medias"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('mediaQuantities', array('class' => 'form-control',
 							 'placeholder' => __('MediaQuantities'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-mediaQuantities"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-							 'placeholder' => __('User Id'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user_id"></i></div>'
+							 'empty' => __('choose'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
 							 ));?>
 					<?php echo $this->Form->input('modified_by', array('class' => 'form-control',
 							 'placeholder' => __('Modified By'),
@@ -132,11 +131,22 @@ $('#myTab a').click(function (e) {
 //pour les toogle
   $(function() {
     $('#PropertyOnline').bootstrapToggle({
-		size:'small',
+	//	size:'small',
 		onstyle: 'primary',
 		offstyle:'danger',
     });
   });
+//datepicker
+// $('.input-group.date').datepicker({
+// 	format: "yyyy",
+// 	startDate: "1900/",
+// 	endDate: "today",
+// 	startView: 1,
+// 	minViewMode: 2,
+// 	clearBtn: true,
+// 	autoclose: true,
+// 	orientation: "bottom left"
+// });
 //pour le textarea
 tinyMCE.init({
 	selector: "#PropertyContent",

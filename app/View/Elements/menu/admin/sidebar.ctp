@@ -9,10 +9,11 @@
 			<?php  echo $this->Html->link("<i class='icon-circle-empty'></i>".__("{$v['controller']} manager"),
 			array('controller' => $v['controller'], 'action' => 'index'),array('escape'=>false));?>
 			</li>
-			<li <?php if ($this->request->controller ==$v['controller'] && $this->request->action =='admin_edit'):?> class="active"<?php  endif; ?>>
+			<li <?php if ($this->request->controller ==$v['controller'] && $this->request->action =='admin_add'):?> class="active"<?php  endif; ?>>
 				<?= $this->Html->link("<i class='icon-circle-empty'></i>".__("add"),
 				array('controller' => $v['controller'], 'action' => 'add'),array('escape'=>false)); ?>
 			</li>
     	</ul>
     </li>
-<?php endforeach ?> <?php  ?>
+<?php endforeach ?>
+

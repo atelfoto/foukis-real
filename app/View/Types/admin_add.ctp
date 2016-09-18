@@ -3,7 +3,7 @@
  <?php $this->Html->addCrumb('edit' ); ?>
 <div class="types index row">
 	<div class="col-sm-12 page-header">
-		<h3><i class="icon-type"></i>&nbsp;<?php echo __('Admin Add Type'); ?>		</h3>
+		<h3><i class="icon-types"></i>&nbsp;<?php echo __('Admin Add Type'); ?>		</h3>
 	</div>
 	<div class="col-sm-12">
 		<div class="box box-primary  with-border nav-tabs-custom">
@@ -30,7 +30,7 @@
 				</li>
 				<li class='pull-right'>
 					<?php echo $this->Form->button('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('publish'),
-			 				array('class' => 'btn btn-success btn-sm pull-right')); ?>
+			 				array('class' => 'btn btn-success  pull-right')); ?>
 				</li>
 				<li class='pull-right'>
 					<?php echo $this->Form->input('online', array('label' => false,'div'=>array('class'=>'pull-right'),
@@ -71,7 +71,7 @@ $('#myTab a').click(function (e) {
 //pour les toogle
   $(function() {
     $('#TypeOnline').bootstrapToggle({
-		size:'small',
+	//	size:'small',
 		onstyle: 'primary',
 		offstyle:'danger',
     });

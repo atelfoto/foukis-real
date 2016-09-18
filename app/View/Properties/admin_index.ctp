@@ -33,11 +33,10 @@
 						<th><?php echo $this->Paginator->sort('online'); ?></th>
 						<th><?php echo $this->Paginator->sort('media_id'); ?></th>
 						<th><?php echo $this->Paginator->sort('mediaQuantities'); ?></th>
-						<th><?php echo $this->Paginator->sort('modified'); ?></th>
 						<th><?php echo $this->Paginator->sort('created'); ?></th>
+						<th><?php echo $this->Paginator->sort('modified'); ?></th>
 						<th><?php echo $this->Paginator->sort('user_id'); ?></th>
 						<th><?php echo $this->Paginator->sort('modified_by'); ?></th>
-						<th>&nbsp;</th>
 					<th colspan="3" class="actions"></th>
 					</tr>
 				</thead>
@@ -60,14 +59,16 @@
 									array('controller' => 'characteristics', 'action' => 'view', $property['Characteristic']['id'])); ?></td>
 						<td><?php echo h($property['Property']['dateYear']); ?>&nbsp;</td>
 						<td><?php echo h($property['Property']['bedrooms']); ?>&nbsp;</td>
-						<td><?php echo h($property['Property']['size']); ?>&nbsp;</td>
+
+						<td><?php echo $this->Number->format($property['Property']['size'],array('before'=>false,
+							'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?>&nbsp;</td>
 						<td><?php echo h($property['Property']['level']); ?>&nbsp;</td>
-						<td><?php echo h($property['Property']['price']); ?>&nbsp;</td>
-						<td><?php echo h($property['Property']['online']); ?>&nbsp;</td>
+						<td><?php echo  $this->Number->currency($property['Property']['price'],' €',
+						 array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?>&nbsp;</td>
 						<td><?php echo h($property['Property']['media_id']); ?>&nbsp;</td>
 						<td><?php echo h($property['Property']['mediaQuantities']); ?>&nbsp;</td>
-						<td><?php echo h($property['Property']['modified']); ?>&nbsp;</td>
-						<td><?php echo h($property['Property']['created']); ?>&nbsp;</td>
+						<td><?php echo $this->Time->format($property['Property']['created'], '%a %e %B, %Y '); ?>&nbsp;</td>
+						<td><?php echo $this->Time->format($property['Property']['modified'], '%a %e %B, %Y '); ?>&nbsp;</td>
 						<td><?php echo $this->Html->link($property['User']['name'],
 									array('controller' => 'users', 'action' => 'view', $property['User']['id'])); ?></td>
 						<td><?php echo h($property['Property']['modified_by']); ?>&nbsp;</td>
@@ -108,6 +109,7 @@
 									'data-uid'=>$property['Property']['id']
 									)
 							 ); ?>
+							 </p>
 						</td>
 					</tr>
 				<?php endforeach; ?>
@@ -150,7 +152,7 @@
 					<h4 id="myModalLabel">Help</h4>
 			</div>
 			<div class="modal-body">
-				<p></p>
+				<p>&nbsp;</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Closed</button>

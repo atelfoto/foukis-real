@@ -2,7 +2,10 @@
 /**
  *
  *description Ne pas oublié  de retirer les balise placeholder pour les input id select et  checkbox
- *remplacer par 'empty'=> __('choose') pour les  selects et retiter between et remplacer par 'after'=>false pour les textareas
+ *pour les  selects remplacer par :
+ *     'empty'=> __('choose'),
+ *pour les textareas retiter la ligne  between et remplacer par
+ *   'after'=>false
  *
  * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
@@ -45,7 +48,7 @@
 			echo "\t\t\t\t</li>\n";
 			echo "\t\t\t\t<li class='pull-right'>\n";
 			echo "\t\t\t\t\t<?php echo \$this->Form->button('<i class=\"icon-ok\" style=\"color:#fff;\">&nbsp;</i>'.__('publish'),
-			 				array('class' => 'btn btn-success btn-sm pull-right')); ?>\n";
+			 				array('class' => 'btn btn-success  pull-right')); ?>\n";
 			echo "\t\t\t\t</li>\n";
 			echo "\t\t\t\t<li class='pull-right'>\n";
 			echo "\t\t\t\t\t<?php echo \$this->Form->input('online', array('label' => false,'div'=>array('class'=>'pull-right'),
@@ -108,7 +111,7 @@ $('#myTab a').click(function (e) {
 //pour les toogle
   $(function() {
     $('#{$modelClass}Online').bootstrapToggle({
-		size:'small',
+	//	size:'small',
 		onstyle: 'primary',
 		offstyle:'danger',
     });

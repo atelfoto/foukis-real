@@ -2,7 +2,7 @@
  <?php $this->Html->addCrumb(__('Posts')); ?>
  <div class="posts index row">
 	<div class="col-md-12 page-header">
-		<h3><i class="icon-doc-text-inv"></i>&nbsp;<?php echo __('Posts'); ?></h3>
+		<h3><i class="icon-posts"></i>&nbsp;<?php echo __('Posts'); ?></h3>
 	</div>
 	<div class="col-md-12">
 		<div class="text-right" style='margin-bottom:10px;'>

@@ -89,6 +89,7 @@
 									'data-uid'=>\${$singularVar}['{$modelClass}']['{$primaryKey}']
 									)
 							 ); ?>\n";
+					echo "\t\t\t\t\t\t\t</p>\n";
 					echo "\t\t\t\t\t\t</td>\n";
 					echo "\t\t\t\t\t</tr>\n";
 					echo "\t\t\t\t<?php endforeach; ?>\n";
