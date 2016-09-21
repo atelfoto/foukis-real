@@ -1,0 +1,6 @@
+.pagination li:hover span.disabled {
+	 color: $pagination-disabled-color;
+      background-color: $pagination-disabled-bg;
+      border-color: $pagination-disabled-border;
+      cursor: $cursor-disabled !important;
+}

@@ -92,7 +92,7 @@
   .navbar .nav > li.user > a {
     > .fa,
     > .glyphicon,
-    > .ion {
+    > [class*=" icon-"] {
       margin-right: 5px;
     }
   }
@@ -169,12 +169,12 @@
       color: #444;
       text-decoration: none;
       display: inline-block;
-      > .fa, > .glyphicon, > .ion {
+      > .fa, > [class*=" icon-"], > .ion {
         margin-right: 5px;
       }
     }
     > li + li:before {
-      content: '>\00a0';
+      content: '/\00a0';
     }
   }
 

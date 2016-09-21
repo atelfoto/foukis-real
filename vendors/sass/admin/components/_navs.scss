@@ -20,7 +20,7 @@
     color: #444;
     > .fa,
     > .glyphicon,
-    > .ion {
+    > [class*=" icon-"] {
       margin-right: 5px;
     }
   }
@@ -148,7 +148,7 @@
       color: #444;
       > .fa,
       > .glyphicon,
-      > .ion {
+      > [class*=" icon-"] {
         margin-right: 5px;
       }
     }

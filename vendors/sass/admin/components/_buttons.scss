@@ -140,7 +140,7 @@
   background-color: #f4f4f4;
   font-size: 12px;
   //Icons within the btn
-  > .fa, > .glyphicon, > .ion {
+  > .fa, > .glyphicon, > [class*=" icon-"] {
     font-size: 20px;
     display: block;
   }

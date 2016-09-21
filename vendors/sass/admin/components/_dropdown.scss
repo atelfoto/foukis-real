@@ -12,7 +12,7 @@
   }
   > li > a > .glyphicon,
   > li > a > .fa,
-  > li > a > .ion {
+  > li > a > [class*=" icon-"] {
     margin-right: 10px;
   }
   > li > a:hover {
@@ -101,7 +101,7 @@
       // Icons inside the menu
       > .glyphicon,
       > .fa,
-      > .ion {
+      > [class*=" icon-"] {
         width: 20px;
       }
     }

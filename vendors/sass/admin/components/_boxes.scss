@@ -190,7 +190,7 @@
   //Icons and box title
   > .fa,
   > .glyphicon,
-  > .ion,
+  > [class*=" icon-"],
   .box-title {
     display: inline-block;
     font-size: 18px;
@@ -199,7 +199,7 @@
   }
   > .fa,
   > .glyphicon,
-  > .ion {
+  > [class*=" icon-"] {
     margin-right: 5px;
   }
   > .box-tools {
@@ -362,7 +362,7 @@
       float: right;
       color: $red;
       // icons
-      > .fa, > .glyphicon, > .ion {
+      > .fa, > .glyphicon, > [class*=" icon-"] {
         margin-right: 5px;
         cursor: pointer;
       }
