@@ -39,73 +39,77 @@
 			</ul>
 			<div class="tab-content box-body">
 				<div class="tab-pane fade in active" role="tabpanel" id="contenu">
-					<?php echo $this->Form->input('id2', array('class' => 'form-control',
-							 'placeholder' => __('Id2'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-id2"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('name', array('class' => 'form-control',
-							 'placeholder' => __('Name'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-name"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('content', array('class' => 'form-control',
-							 "after"=>false
-							 ));?>
-					<?php echo $this->Form->input('state_id', array('class' => 'form-control',
-							 'empty'=> __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-states"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('area_id', array('class' => 'form-control',
-							 'empty'=> __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-areas"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('status_id', array('class' => 'form-control',
-							 'empty'=> __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-statuses"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('type_id', array('class' => 'form-control',
-							 'empty'=> __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-types"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('characteristics_id', array('class' => 'form-control',
-							 'empty'=> __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-characteristics"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('dateYear', array('class' => 'form-control',
-							 'placeholder' => __('DateYear'), "type"=>"text",
-							 'between'=>'<div class="input-group date"><div class="input-group-addon"><i class="icon-calendar"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('bedrooms', array('class' => 'form-control',
-							 'placeholder' => __('Bedrooms'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-bed"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('size', array('class' => 'form-control',
-							 'placeholder' => __('Size'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-sizes"><b>M²</b></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('level', array('class' => 'form-control',
-							 'placeholder' => __('Level'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-level"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('price', array('class' => 'form-control',
-							 'placeholder' => __('Price'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-money"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('media_id', array('class' => 'form-control',
-							 'empty' => __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-medias"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('mediaQuantities', array('class' => 'form-control',
-							 'placeholder' => __('MediaQuantities'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-carrousels"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-							 'empty' => __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('modified_by', array('class' => 'form-control',
-							 'placeholder' => __('Created by'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-modified_by"></i></div>'
-							 ));?>
+					<div class="box-body-offerings">
+						<?php echo $this->Form->input('name', array('class' => 'form-control',
+								 'placeholder' => __('Name'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-name"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('id2', array('class' => 'form-control',
+								 'placeholder' => __('Id2'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-id2"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('Characteristic', array('class' => 'form-control',
+							'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-characteristics"></i></div>',
+								 "after"=>false, "data-placeholder"=>__('choose a characteristic ')
+								 ));?>
+						<?php echo $this->Form->input('state_id', array('class' => 'form-control',
+								 'empty'=> __('choose'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-states"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('area_id', array('class' => 'form-control',
+								 'empty'=> __('choose'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-areas"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('status_id', array('class' => 'form-control',
+								 'empty'=> __('choose'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-statuses"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('type_id', array('class' => 'form-control',
+								 'empty'=> __('choose'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-types"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('dateYear', array('class' => 'form-control',
+								 'placeholder' => __('DateYear'), "type"=>"text",
+								 'between'=>'<div class="input-group date"><div class="input-group-addon"><i class="icon-calendar"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('bedrooms', array('class' => 'form-control',
+								 'placeholder' => __('Bedrooms'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-bed"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('size', array('class' => 'form-control',
+								 'placeholder' => __('Size'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-sizes"><b>M²</b></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('level', array('class' => 'form-control',
+								 'placeholder' => __('Level'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-level"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('price', array('class' => 'form-control',
+								 'placeholder' => __('Price'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-money"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('media_id', array('class' => 'form-control',
+								 'empty' => __('choose'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-medias"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('mediaQuantities', array('class' => 'form-control',
+								 'placeholder' => __('MediaQuantities'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-carrousels"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('user_id', array('class' => 'form-control',
+								 'empty' => __('choose'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
+								 ));?>
+						<?php echo $this->Form->input('modified_by', array('class' => 'form-control',
+								 'placeholder' => __('Created by'),
+								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-modified_by"></i></div>'
+								 ));?>
+					</div>
+					<div>
+						<?php echo $this->Form->input('content', array('class' => 'form-control',
+								 "after"=>false
+								 ));?>
+					</div>
 				</div>
 				<div class="tab-pane fade" role="tabpanel" id="publication">
 
@@ -138,6 +142,10 @@ $('#myTab a').click(function (e) {
 		offstyle:'danger',
     });
   });
+ //chosen
+ $("#CharacteristicCharacteristic").chosen({
+ width: "99%"
+ });
 //datepicker
  $('.input-group.date').datepicker({
  	format: "yyyy",

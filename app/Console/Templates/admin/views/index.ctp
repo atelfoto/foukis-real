@@ -113,7 +113,7 @@
 			</div>
 			<div class="modal-body">
 				<p> <?php echo "<?php echo __('Are you sure you want to delete'); ?>" ?> <b style="color:#f00;">&nbsp;<?php echo "<?php echo \$v['name'];?> " ?>&nbsp;</b>
-					<?php echo "<?php echo __('of your').__('{$pluralVar}') ; ?>";
+					<?php echo "<?php echo __('of your').' '.__('{$pluralVar}') ; ?>";
 					echo "\n\t\t\t\t\t<span class=\"label-uname strong\"></span> ? \n"; ?>
 				</p>
 			</div>

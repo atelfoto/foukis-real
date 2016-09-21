@@ -4,6 +4,7 @@ App::uses('AppModel', 'Model');
  * Characteristic Model
  *
  * @property Property $Property
+ * @property Property $Property
  */
 class Characteristic extends AppModel {
 
@@ -23,7 +24,7 @@ class Characteristic extends AppModel {
 		'name' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
-				//'message' => 'Your custom message here',
+				'message' => 'This field can not stay empty',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
@@ -35,23 +36,23 @@ class Characteristic extends AppModel {
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
- * hasMany associations
+ * hasAndBelongsToMany associations
  *
  * @var array
  */
-	public $hasMany = array(
+	public $hasAndBelongsToMany = array(
 		'Property' => array(
 			'className' => 'Property',
+			'joinTable' => 'characteristics_properties',
 			'foreignKey' => 'characteristic_id',
-			'dependent' => false,
+			'associationForeignKey' => 'property_id',
+			'unique' => 'keepExisting',
 			'conditions' => '',
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
 			'offset' => '',
-			'exclusive' => '',
 			'finderQuery' => '',
-			'counterQuery' => ''
 		)
 	);
 

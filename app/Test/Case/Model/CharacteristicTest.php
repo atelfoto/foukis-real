@@ -12,7 +12,15 @@ class CharacteristicTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
-		'app.characteristic'
+		'app.characteristic',
+		'app.property',
+		'app.state',
+		'app.area',
+		'app.status',
+		'app.type',
+		'app.user',
+		'app.group',
+		'app.post'
 	);
 
 /**

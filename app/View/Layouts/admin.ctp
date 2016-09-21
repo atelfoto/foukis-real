@@ -27,12 +27,23 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		<?php echo $this->fetch('title'); ?>
 	</title>
 	<?php
-		echo $this->Html->meta('icon');
+		echo $this->Html->meta('favicon.ico','/admin2-favicon.ico', array('type' => 'icon'));
 		echo $this->Html->meta(array('name' => 'robots', 'content' => 'no index, no follow'));
 		echo $this->Html->css('AdminLTE.min');
 		//echo $this->Html->css('admin.min');
 		echo $this->fetch('css');
 	?>
+<style>
+th a:hover{
+text-decoration: none;
+}
+th a.desc:after	 {
+content: ' ⇣';
+}
+th a.asc:after	 {
+content: ' ⇡';
+}
+</style>
 </head>
 <body class="skin-blue">
 	<div  class="wrapper">
@@ -115,7 +126,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     			<ol class="breadcrumb">
     			  <li>
     			  	<?php  echo $this->Html->getCrumbs(' </li> <li> ',array('text' => "<i class='icon-gauge'></i>&nbsp;". __('Dashboard'),
-    			  	'url' => array('controller' => 'dashboards', 'action' => 'index',"admin"=>true),'escape' => false)); ?></li>
+    			  	'url' => array('controller' => 'menus', 'action' => 'dashboard',"admin"=>true),'escape' => false)); ?></li>
     			</ol>
 			</section>
 			<section class="content">

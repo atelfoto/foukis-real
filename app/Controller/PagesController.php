@@ -56,6 +56,7 @@ public function menu(){
  *	or MissingViewException in debug mode.
  */
 	public function display() {
+	$this->layout= 'home';
 		$path = func_get_args();
 
 		$count = count($path);

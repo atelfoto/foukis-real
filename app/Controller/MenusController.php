@@ -9,6 +9,13 @@ App::uses('AppController', 'Controller');
  * @property SessionComponent $Session
  */
 class MenusController extends AppController {
+
+	/**
+	* daschboard
+	**/
+	public function admin_dashboard(){
+
+	}
 	/**
 	* contact
 	**/

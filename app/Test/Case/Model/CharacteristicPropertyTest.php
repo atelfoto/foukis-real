@@ -1,10 +1,10 @@
 <?php
-App::uses('Property', 'Model');
+App::uses('CharacteristicProperty', 'Model');
 
 /**
- * Property Test Case
+ * CharacteristicProperty Test Case
  */
-class PropertyTest extends CakeTestCase {
+class CharacteristicPropertyTest extends CakeTestCase {
 
 /**
  * Fixtures
@@ -12,14 +12,13 @@ class PropertyTest extends CakeTestCase {
  * @var array
  */
 	public $fixtures = array(
+		'app.characteristic_property',
 		'app.property',
 		'app.state',
 		'app.area',
 		'app.status',
 		'app.type',
 		'app.characteristic',
-		'app.characteristics_property',
-		'app.media',
 		'app.user',
 		'app.group',
 		'app.post'
@@ -32,7 +31,7 @@ class PropertyTest extends CakeTestCase {
  */
 	public function setUp() {
 		parent::setUp();
-		$this->Property = ClassRegistry::init('Property');
+		$this->CharacteristicProperty = ClassRegistry::init('CharacteristicProperty');
 	}
 
 /**
@@ -41,7 +40,7 @@ class PropertyTest extends CakeTestCase {
  * @return void
  */
 	public function tearDown() {
-		unset($this->Property);
+		unset($this->CharacteristicProperty);
 
 		parent::tearDown();
 	}

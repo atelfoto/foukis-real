@@ -33,6 +33,8 @@
 		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Characteristic'), array('controller' => 'characteristics', 'action' => 'add'), array('escape' => false)); ?> </li>
 		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Users'), array('controller' => 'users', 'action' => 'index'), array('escape' => false)); ?> </li>
 		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New User'), array('controller' => 'users', 'action' => 'add'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Characteristic Properties'), array('controller' => 'characteristic_properties', 'action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Characteristic Property'), array('controller' => 'characteristic_properties', 'action' => 'add'), array('escape' => false)); ?> </li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
@@ -95,6 +97,20 @@
 		<th><?php echo __('Type'); ?></th>
 		<td>
 			<?php echo $this->Html->link($property['Type']['name'], array('controller' => 'types', 'action' => 'view', $property['Type']['id'])); ?>
+			&nbsp;
+		</td>
+</tr>
+<tr>
+		<th><?php echo __('Characteristic'); ?></th>
+		<td>
+			<?php echo $this->Html->link($property['Characteristic']['name'], array('controller' => 'characteristics', 'action' => 'view', $property['Characteristic']['id'])); ?>
+			&nbsp;
+		</td>
+</tr>
+<tr>
+		<th><?php echo __('Characteristic Property'); ?></th>
+		<td>
+			<?php echo $this->Html->link($property['CharacteristicProperty']['name'], array('controller' => 'characteristic_properties', 'action' => 'view', $property['CharacteristicProperty']['id'])); ?>
 			&nbsp;
 		</td>
 </tr>
@@ -190,39 +206,3 @@
 	</div>
 </div>
 
-<div class="related row">
-	<div class="col-md-12">
-	<h3><?php echo __('Related Characteristics'); ?></h3>
-	<?php if (!empty($property['Characteristic'])): ?>
-	<table  class="table table-striped">
-	<thead>
-	<tr>
-		<th><?php echo __('Id'); ?></th>
-		<th><?php echo __('Name'); ?></th>
-		<th><?php echo __('Value'); ?></th>
-		<th><?php echo __('Online'); ?></th>
-		<th class="actions"></th>
-	</tr>
-	</thead>
-	<tbody>
-	<?php foreach ($property['Characteristic'] as $characteristic): ?>
-		<tr>
-			<td><?php echo $characteristic['id']; ?></td>
-			<td><?php echo $characteristic['name']; ?></td>
-			<td><?php echo $characteristic['value']; ?></td>
-			<td><?php echo $characteristic['online']; ?></td>
-			<td class="actions">
-				<?php echo $this->Html->link('<span class="icon-search"></span>', array('controller' => 'characteristics', 'action' => 'view', $characteristic['id']), array('escape' => false)); ?>
-				<?php echo $this->Html->link('<span class="icon-edit"></span>', array('controller' => 'characteristics', 'action' => 'edit', $characteristic['id']), array('escape' => false)); ?>
-				<?php echo $this->Form->postLink('<span class="icon-cancel-circled"></span>', array('controller' => 'characteristics', 'action' => 'delete', $characteristic['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $characteristic['id'])); ?>
-			</td>
-		</tr>
-	<?php endforeach; ?>
-	</tbody>
-	</table>
-<?php endif; ?>
-
-	<div class="actions">
-		<?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Characteristic'), array('controller' => 'characteristics', 'action' => 'add'), array('escape' => false, 'class' => 'btn btn-default')); ?>	</div>
-	</div><!-- end col md 12 -->
-</div>

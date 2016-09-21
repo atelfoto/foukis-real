@@ -15,8 +15,12 @@ class PropertiesController extends AppController {
  *
  * @var array
  */
-	public $components = array('Paginator', 'Flash', 'Session');
-
+	public $components = array( 'Flash', 'Session');
+	// public $paginate = array(
+	// 	'limit'=> 10,
+	// 	'order' => array('Post.modified' => 'desc'),
+	// 	'paramType'=>'querystring'
+	// 	);
 /**
  * admin_index method
  *
@@ -24,7 +28,13 @@ class PropertiesController extends AppController {
  */
 	public function admin_index() {
 		$this->Property->recursive = 0;
-		$this->set('properties', $this->Paginator->paginate());
+		$this->paginate = array('Property'=>array(
+			"limite"=>10,
+			'order'=>array(
+				'Property.created'=>'desc')
+			));
+		$d["properties"] = $this->Paginate();
+		$this->set($d );
 	}
 
 /**

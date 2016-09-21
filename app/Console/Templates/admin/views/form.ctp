@@ -74,10 +74,8 @@
 			}
 			if (!empty($associations['hasAndBelongsToMany'])) {
 				foreach ($associations['hasAndBelongsToMany'] as $assocName => $assocData) {
-						//	echo "\t\t\t\t\t\t\t<div class=\"form-group\">\n";
-							echo "\t\t\t\t\t\t\t\t<?php echo \$this->Form->input('{$assocName}',
-							 array('class' => 'form-control 2', 'placeholder' => '".Inflector::humanize($field)."'));?>\n";
-						//	echo "\t\t\t\t\t\t\t</div>\n";
+							echo "\t\t\t\t\t<?php echo \$this->Form->input('{$assocName}',
+							 array('class' => 'form-control 2', 'after'=>false));?>\n";
 				}
 			}
 	?>
@@ -111,7 +109,7 @@ $('#myTab a').click(function (e) {
 //pour les toogle
   $(function() {
     $('#{$modelClass}Online').bootstrapToggle({
-	//	size:'small',
+	//	size:'',
 		onstyle: 'primary',
 		offstyle:'danger',
     });

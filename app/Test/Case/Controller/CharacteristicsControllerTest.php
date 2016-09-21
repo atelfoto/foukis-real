@@ -1,10 +1,10 @@
 <?php
-App::uses('PropertiesController', 'Controller');
+App::uses('CharacteristicsController', 'Controller');
 
 /**
- * PropertiesController Test Case
+ * CharacteristicsController Test Case
  */
-class PropertiesControllerTest extends ControllerTestCase {
+class CharacteristicsControllerTest extends ControllerTestCase {
 
 /**
  * Fixtures
@@ -12,12 +12,13 @@ class PropertiesControllerTest extends ControllerTestCase {
  * @var array
  */
 	public $fixtures = array(
+		'app.characteristic',
 		'app.property',
 		'app.state',
 		'app.area',
 		'app.status',
 		'app.type',
-		'app.characteristic',
+		'app.characteristics_property',
 		'app.user',
 		'app.group',
 		'app.post'
