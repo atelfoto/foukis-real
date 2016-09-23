@@ -32,17 +32,80 @@ h1.title{
 }
 
 h2.title{
-  	background-color: $bg-color;
-  	padding: 10px 10px;
+	background-color: $bg-color;
+	padding: 10px 10px;
+	margin-bottom: 0;
+	margin-top:0;
+	border-left: 2px solid #31708f;
+	border-right: 2px solid #31708f;
+	box-shadow: #fff 0 0 50px, #fff 0 0 30px 10px inset;
 }
-.content{
+ .content{
   	background: $bg-color;
+  	//background: #fff;
   	height: 100%;
-  	color:#fff;
-  	margin-top: 10px;
-  	margin-bottom: 50px;
+  	//color:#fff;
+  	color:#000;
+  	margin-top:0;
+  	padding-top: 10px;
+  	padding-bottom: 50px;
   	@include span(4 of 4);
+  	border-left: 2px solid #31708f;
+	border-right: 2px solid #31708f;
+	box-shadow: #fff 0 0 50px, #fff 0 0 30px 10px inset;
+  }
+
+  .content {
+  	ul.tri{
+  		display:flex;
+  		margin-bottom: 10px;
+  		li span.label{
+  			margin-left: 5px;
+  		}
+
+  	}
+  	.box-thumbnail{
+  		@include span(1 of 4);
+  		padding-left: 0px;
+  		padding-right: 0;
+
+  		.thumbnail{
+  			border: 2px #000 solid;
+  			@include border-radius(4px);
+  			margin-right: 10px;
+  			margin-bottom: 10px;
+  			box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
+  			h4{
+  				padding-left: 10px;
+  				padding-top: 3px;
+  				text-align: center;
+  				&.area{
+  					text-align: left;
+  				}
+  			}
+  			figure{
+  				margin-top: 15px;
+  				padding-left: 10px;
+  			}
+
+  			.caption-left{
+  				@include span(3 of 4);
+  			}
+  		}
+  	}
+  }
+ .paginations{
+ 	text-align: center;
+ 	@include span(4 of 4);
+ }
+
+ .pagination li:hover span.disabled {
+	 color: $pagination-disabled-color;
+      background-color: $pagination-disabled-bg;
+      border-color: $pagination-disabled-border;
+      cursor: $cursor-disabled !important;
 }
+
 %stretched {
 		//border: 3px solid $stretch-color;
 		@include border-radius(8px);

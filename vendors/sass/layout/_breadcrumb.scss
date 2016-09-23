@@ -1,8 +1,17 @@
 .breadcrumb{
 	margin-top: 100px;
+	margin-bottom: 0;
 	background: $bg-color;
-	color:#fff;
+	color:#000;
 	z-index: 1000;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+	border-top: 2px solid #31708f;
+  	border-left: 2px solid #31708f;
+	border-right: 2px solid #31708f;
+	box-shadow: #fff 0 0 50px, #fff 0 0 30px 10px inset;
 	// &:first-letter{
 	 	text-transform: capitalize;
 	// }

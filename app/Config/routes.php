@@ -29,7 +29,7 @@
 	//Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
 	Router::connect('/post/:slug',array('controller'=>'posts','action'=>'view'),array('pass'=>array('slug'),'slug'=>'[a-z0-9\-]+'));
 	Router::connect('/menus/:slug',array('controller'=>'menus','action'=>'view'),array('pass'=>array('slug'),'slug'=>'[a-z0-9\-]+'));
-	Router::connect('/offerings',array('controller'=>'menus','action'=>'offerings'));
+	Router::connect('/offerings',array('controller'=>'properties','action'=>'offerings'));
 	Router::connect('/contact',array('controller'=>'menus','action'=>'contact'));
 //	Router::connect('/:slug',array('controller'=>'posts','action'=>'view'),array('pass'=>array('slug'),'slug'=>'[a-z0-9\-]+'));
 /**

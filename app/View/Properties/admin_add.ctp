@@ -41,7 +41,7 @@
 				<div class="tab-pane fade in active" role="tabpanel" id="contenu">
 					<div class="box-body-offerings">
 						<?php echo $this->Form->input('name', array('class' => 'form-control',
-								 'placeholder' => __('Name'),
+								 'placeholder' => __('Name'),'autofocus',
 								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-name"></i></div>'
 								 ));?>
 						<?php echo $this->Form->input('id2', array('class' => 'form-control',
@@ -50,7 +50,6 @@
 								 ));?>
 						<?php echo $this->Form->input('Characteristic', array('class' => 'form-control',
 							'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-characteristics"></i></div>',
-								 "after"=>false, "data-placeholder"=>__('choose a characteristic ')
 								 ));?>
 						<?php echo $this->Form->input('state_id', array('class' => 'form-control',
 								 'empty'=> __('choose'),
@@ -105,7 +104,7 @@
 								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-modified_by"></i></div>'
 								 ));?>
 					</div>
-					<div>
+					<div class="clear-both">
 						<?php echo $this->Form->input('content', array('class' => 'form-control',
 								 "after"=>false
 								 ));?>

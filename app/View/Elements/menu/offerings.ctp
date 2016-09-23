@@ -1,15 +1,14 @@
-<div class="">
+<!-- <div class=""> -->
 <?php echo $this->Form->create(false, array(
 	'novalidate' => true,
 	'inputDefaults' => array(
-
 		'div' => 'form-group',
 		'label' => array(
-			'class' => 'col col-md-3 control-label'
+			'class' => 'control-label'
 		),
-		"between"=>'<div class="input-group"><div class="input-group-addon">$</div>',
-		"after"=>'</div>',
-		'wrapInput' => 'col col-md-9',
+		// "between"=>'<div class="input-group"><div class="input-group-addon">$</div>',
+		// "after"=>'</div>',
+		//'wrapInput' => 'col col-md-9',
 		'class' => 'form-control'
 	),
 	'class' => 'well form-horizontal'
@@ -21,8 +20,7 @@
 	)); ?>
 	<?php echo  $this->Form->input("phone", array(
 	'placeholder'=>__('phone'))); ?>
-	<?php echo  $this->Form->input("Type.name", array(
-	'placeholder'=>__('property type'),
+	<?php echo  $this->Form->input("Type_id", array(
 	'empty'=>__('property type'),
 	'class'=>"form-control")); ?>
 	<?php echo  $this->Form->input("size", array(
@@ -30,7 +28,7 @@
 		'type'=>'number'
 	)); ?>
 	<div class="form-group">
-	<label for="year" class="control-label"> <?php echo __('year') ?></label>
+	<label for="yearYear" class="control-label"> <?php echo __('year') ?></label>
 	<?php echo $this->Form->year("year", "1900",date('Y'),
 	 array(
 	"empty"=>__('year'),
@@ -58,6 +56,6 @@
 		//)); ?>
 	</div>
 <?php echo $this->Form->end(); ?>
-</div>
+<!-- </div> -->
 
 

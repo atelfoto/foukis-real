@@ -1,7 +1,7 @@
 <footer  id="footer">
 <ul class="stretch">
 	<li class='stretch-container'>
-	<a href="">
+	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'index')); ?>">
 		<div class='stretch-offset'>
 	<span class="icon-home-1" ></span>
 	<p><?php echo __('residential'); ?></p>
@@ -17,7 +17,7 @@
 	</a>
 	</li>
 	<li class='stretch-container'>
-	<a href="">
+	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'index')); ?>">
 		<div class='stretch-offset'>
 		<span class="icon-money" aria-hidden="true"></span>
 		<p><?php echo __('business premises') ?></p>

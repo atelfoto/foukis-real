@@ -16,11 +16,65 @@ class PropertiesController extends AppController {
  * @var array
  */
 	public $components = array( 'Flash', 'Session');
-	// public $paginate = array(
-	// 	'limit'=> 10,
-	// 	'order' => array('Post.modified' => 'desc'),
-	// 	'paramType'=>'querystring'
-	// 	);
+
+		public function offerings(){
+		$this->layout='home';
+		$types = $this->Property->Type->find('list');
+		$this->set(compact('types'));
+	}
+
+/**
+* index
+**/
+// public function index(){
+// 		$this->layout = 'home';
+// 		$this->Property->recursive = 0;
+// 		$name = $property['Property']['name'];
+// 		$this->set(array('name','properties', $this->paginate()));
+
+// }
+
+	public function index() {
+		$this->layout ='home';
+		$this->Property->recursive = 0;
+		$this->paginate = array('Property'=>array(
+			"limit"=>12,
+			'order'=>array(
+				'Property.created'=>'desc')
+			));
+		$d["properties"] = $this->Paginate();
+		$this->set($d );
+	}
+/**
+* view
+**/
+
+	public function view($id = null) {
+		$this->layout = 'home';
+		if (!$id) {
+			throw new NotFoundException(__('Invalid property'));
+		}
+		$property = $this->Property->find('first',array(
+			'conditions'=>array('Property.id'=>$id	//'type'=>'post'
+				),
+			'recursive'=>1
+			));
+		if (empty($property)) {
+			throw new NotFoundException("Error Processing Request", 1);
+
+		}
+		if($id !=$property['Property']['id']){
+			$this->redirect($post['Post']['link'],301);
+		}
+		$name = $property['Property']['name'];
+		$d['property'] = $property;
+		$this->set($d);
+		//$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
+		//$this->set('property', $this->Property->find('first', $options));
+		$this->set(compact('name'));
+
+	}
+
 /**
  * admin_index method
  *
@@ -29,7 +83,7 @@ class PropertiesController extends AppController {
 	public function admin_index() {
 		$this->Property->recursive = 0;
 		$this->paginate = array('Property'=>array(
-			"limite"=>10,
+			"limit"=>10,
 			'order'=>array(
 				'Property.created'=>'desc')
 			));

@@ -1,5 +1,5 @@
 <!-- <h1>contact</h1> -->
-<div class="">
+<!-- <div class=""> -->
 <?php echo $this->Form->create(false, array(
 	'novalidate' => true,
 	'inputDefaults' => array(
@@ -7,7 +7,7 @@
 		'label' => array(
 			'class' => 'control-label'
 		),
-		'wrapInput' => 'col col-md-9',
+	//	'wrapInput' => 'col col-md-9',
 		'class' => 'form-control'
 	),
 	'class' => 'well form-horizontal'
@@ -32,4 +32,4 @@
 	'class'=>"btn btn-primary")); ?>
 	</div>
 <?php echo $this->Form->end(); ?>
-</div>
+<!-- </div> -->

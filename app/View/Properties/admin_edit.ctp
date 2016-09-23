@@ -107,7 +107,7 @@
 								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-modified_by"></i></div>'
 								 ));?>
 					</div>
-					<div>
+					<div class="clear-both">
 					<?php echo $this->Form->input('content', array('class' => 'form-control',
 							 "after"=>false
 							 ));?>

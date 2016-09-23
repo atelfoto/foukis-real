@@ -63,8 +63,9 @@ public function view($slug=null){
 		if(empty($post)){
 			throw new NotFoundException(__('No pages were found for this ID') ,array('class'=>'danger','type'=>'sign'));
 		}
-		if($slug != $post['Post']['slug'])
+		if($slug != $post['Post']['slug']){
 			$this->redirect($post['Post']['link'],301);
+		}
 		$name = $post['Post']['name'];
 		$d['post'] = $post;
 		$this->set($d);

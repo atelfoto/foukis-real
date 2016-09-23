@@ -18,7 +18,7 @@ $cakeDescription = __d('cake_dev', 'Foukis Real Estate');
 $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -75,6 +75,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 					<!--nocache-->
 					<?php echo $this->Flash->render(); ?>
 					<!--/nocache-->
+					<?php if ($this->request->controller=='pages'): ?>
+
+					<?php else: ?>
+
 					<p class="breadcrumb ">
 						<?php   echo $this->Html->getCrumbs(' / ', array(
 							'text' => '<span class="icon-home-1"  aria-hidden="true"></span>' ,
@@ -84,6 +88,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 						);
 						?><?php // echo '/'. $this->fetch('title'); ?><?= isset($name) ? "<small>/".$name."</small>" : false ; ?>
 					</p>
+					<?php endif ?>
 					<div class="page-header" id="page-header">
 						<!-- <h2 class="title"><?php  echo $this->fetch('title'); ?> <?= isset($cat) ? "<small>".$cat."</small>" : false ; ?></h2> -->
 						<?= isset($name) ? '<h2 class="title">'. $name."</h2>" : false ; ?>
@@ -97,7 +102,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		</div>
 	</div><?php  echo $this->element('footer-home'); ?>
 	<?php echo  $this->Html->script(array('home.min'));
-	 echo  $this->Html->script(array('jquery.velocity.min'));
+	// echo  $this->Html->script(array('jquery.velocity.min'));
 	 echo  $this->Html->script(array('montest'));
 	echo $this->fetch('script');?>
 </body>

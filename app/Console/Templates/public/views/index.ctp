@@ -15,16 +15,16 @@
 <?php echo "<?php \$this->Html->addCrumb(__('$pluralHumanName')); ?>\n "; ?>
 <div class="<?php echo $pluralVar; ?> index row">
 	<div class="col-md-12 page-header">
-		<h2><i class="fa fa-book"></i>&nbsp;<?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>
+		<h2><i class="icon-<?php echo $pluralVar; ?>"></i>&nbsp;<?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>
 	</div>
 	<div class="col-md-12">
 		<div class="text-right" style='margin-bottom:10px;'>
 			<button class="btn " data-toggle="modal" data-target="#ModalAide">
 			<i class="fa fa-question-circle">&nbsp;<?= __('Help'); ?></i>
 			</button>
-				<?php echo "<?php echo \$this->Html->link(\"<i class='fa fa-plus'></i>\". __(\"Add article\"),array('action'=>'add'),
+				<?php echo "<?php echo \$this->Html->link(\"<i class='icon-plus'></i>\". __(\"Add article\"),array('action'=>'add'),
 				array('class' =>\"btn btn-success \",'escape'=>false)); ?>\n";
-				echo"\t\t</div>"; ?>
+				echo"\t\t</div>\n"; ?>
 		<div class="panel table-responsive box-home">
 			<table  class="table table-bordered text-center table-striped">
 				<thead>
@@ -48,7 +48,7 @@
 							}
 						}
 						if ($isKey !== true) {
-							echo "\t\t\t\t\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
+							echo "\t\t\t\t\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;toto</td>\n";
 						}
 					}
 					echo "\t\t\t\t\t\t<td class=\"actions\">\n";

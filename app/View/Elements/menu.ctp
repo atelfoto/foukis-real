@@ -5,7 +5,7 @@
 </li><?php  echo "\n\t\t\t\t\t\t" ?>
 <?php endforeach ?>
 <li <?php if($this->request->action =='offerings'):?> class="active"<?php endif; ?>>
-		<?php echo $this->Html->link(__('offerings'), array('controller' => 'menus', 'action' => 'offerings'));
+		<?php echo $this->Html->link(__('offerings'), array('controller' => 'properties', 'action' => 'offerings'));
 		echo "\n"; ?>
 </li>
 <li <?php if($this->request->action =='contact'):?> class="active"<?php endif; ?>>

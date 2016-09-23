@@ -17,9 +17,9 @@
 				<thead>
 					<tr class="info">
 						<th><?php echo $this->Paginator->sort('id'); ?></th>
-						<th><?php echo $this->Paginator->sort('id2'); ?></th>
+						<!-- <th><?php echo $this->Paginator->sort('id2'); ?></th> -->
 						<th><?php echo $this->Paginator->sort('name'); ?></th>
-						<th><?php echo $this->Paginator->sort('content'); ?></th>
+						<!-- <th><?php echo $this->Paginator->sort('content'); ?></th> -->
 						<th><?php echo $this->Paginator->sort('state_id'); ?></th>
 						<th><?php echo $this->Paginator->sort('area_id'); ?></th>
 						<th><?php echo $this->Paginator->sort('status_id'); ?></th>
@@ -30,11 +30,11 @@
 						<th><?php echo $this->Paginator->sort('size'); ?></th>
 						<th><?php echo $this->Paginator->sort('level'); ?></th>
 						<th><?php echo $this->Paginator->sort('price'); ?></th>
-						<th><?php echo $this->Paginator->sort('media_id'); ?></th>
+						<!-- <th><?php echo $this->Paginator->sort('media_id'); ?></th> -->
 						<th><?php echo $this->Paginator->sort('mediaQuantities'); ?></th>
-						<th><?php echo $this->Paginator->sort('created'); ?></th>
+						<!-- <th><?php echo $this->Paginator->sort('created'); ?></th> -->
 						<th><?php echo $this->Paginator->sort('modified'); ?></th>
-						<th><?php echo $this->Paginator->sort('user_id'); ?></th>
+						<!-- <th><?php echo $this->Paginator->sort('user_id'); ?></th> -->
 						<th><?php echo $this->Paginator->sort('modified_by'); ?></th>
 						<th><?php echo $this->Paginator->sort('online'); ?></th>
 					<th colspan="3" class="actions"></th>
@@ -44,9 +44,10 @@
 					<?php foreach ($properties as $property): ?>
 					<tr>
 						<td><?php echo h($property['Property']['id']); ?>&nbsp;</td>
-						<td><?php echo h($property['Property']['id2']); ?>&nbsp;</td>
+						<!-- <td><?php echo h($property['Property']['id2']); ?>&nbsp;</td> -->
 						<td><?php echo h($property['Property']['name']); ?>&nbsp;</td>
-						<td><?php  echo $this->Text->truncate(ltrim(strip_tags( $property['Property']['content'])),50,array('exact' =>false,'html'=> true)); ?>&nbsp;</td>
+						<!-- <td><?php  echo $this->Text->truncate(ltrim(strip_tags( $property['Property']['content'])),50,
+						array('exact' =>false,'html'=> true)); ?>&nbsp;</td> -->
 						<td><?php echo $this->Html->link($property['State']['name'],
 									array('controller' => 'states', 'action' => 'view', $property['State']['id'])); ?></td>
 						<td><?php echo $this->Html->link($property['Area']['name'],
@@ -57,18 +58,17 @@
 									array('controller' => 'types', 'action' => 'view', $property['Type']['id'])); ?></td>
 						<td><?php echo h($property['Property']['dateYear']); ?>&nbsp;</td>
 						<td><?php echo h($property['Property']['bedrooms']); ?>&nbsp;</td>
-
 						<td><?php echo $this->Number->format($property['Property']['size'],array('before'=>false,
 							'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?>&nbsp;</td>
 						<td><?php echo h($property['Property']['level']); ?>&nbsp;</td>
 						<td><?php echo  $this->Number->currency($property['Property']['price'],' €',
 						 array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?>&nbsp;</td>
-						<td><?php echo h($property['Property']['media_id']); ?>&nbsp;</td>
+						<!-- <td><?php echo h($property['Property']['media_id']); ?>&nbsp;</td> -->
 						<td><?php echo h($property['Property']['mediaQuantities']); ?>&nbsp;</td>
 						<td><?php echo $this->Time->format($property['Property']['created'], '%a %e %B, %Y '); ?>&nbsp;</td>
 						<td><?php echo $this->Time->format($property['Property']['modified'], '%a %e %B, %Y '); ?>&nbsp;</td>
-						<td><?php echo $this->Html->link($property['User']['name'],
-									array('controller' => 'users', 'action' => 'view', $property['User']['id'])); ?></td>
+						<!-- <td><?php echo $this->Html->link($property['User']['name'],
+									array('controller' => 'users', 'action' => 'view', $property['User']['id'])); ?></td> -->
 						<td><?php echo h($property['Property']['modified_by']); ?>&nbsp;</td>
 						<td><?php if($property['Property'][ 'online' ] == 0) {
 						echo $this->Html->link('<span class="label label-danger">'.__('Offline').'</span>',
@@ -116,7 +116,8 @@
 		</div>
 		<div class="col col-md-12 text-center">
 			<?php echo $this->element('pagination'); ?>
-			<?php  echo $this->element("pagination-counter"); ?>		</div>
+			<?php  echo $this->element("pagination-counter"); ?>
+		</div>
 	</div>
 </div><!-- end containing of content -->
 <?php foreach ($properties  as $k => $v): $v = current($v);?><!-- modal supprimer -->
