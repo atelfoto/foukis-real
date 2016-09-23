@@ -144,7 +144,7 @@ class PropertiesController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Property->save($this->request->data)) {
 				$this->Flash->success(__('The property has been saved.'), array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'download'));
 			} else {
 				$this->Flash->error(__('The property could not be saved. Please, try again.'), array('class' => 'alert alert-danger'));
 			}
@@ -160,6 +160,33 @@ class PropertiesController extends AppController {
 		$users = $this->Property->User->find('list');
 		$this->set(compact('states', 'areas', 'statuses', 'types', 'characteristics', 'users'));
 	}
+
+/**
+* admin_download
+**/
+// public function admin_download(){
+// 	$this->Property->create();
+
+// }
+
+ public function admin_download(){
+    if(!empty($this->request->data)){
+       /*  Start code for o Uploading images*/
+      foreach ($this->request->data as $result) {
+        $name = $result['name'];
+          if( !empty($name)){     // Check For Empty Values
+            $tmprary_name = $result['tmp_name'];
+            $temp = explode(".", $name);
+            $newfilename = uniqid(). '.' . end($temp);
+              if (move_uploaded_file($tmprary_name , $target_dir.$newfilename)) {
+                echo "The file ". basename( $name). " has been successfully uploaded.<BR/>";
+              }else {
+                   echo "Sorry, there was an error uploading your file.<br/>";
+              }
+          }
+      }
+    }
+  }
 /**
  * admin_enable method
  * @param  [type] $id [description]

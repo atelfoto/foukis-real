@@ -46,7 +46,7 @@
 //@import "admin/components/social-widgets";
 // //PAGES
 // //------
-@import "admin/pages/mailbox";
+//@import "admin/pages/mailbox";
 //@import "admin/pages/lockscreen";
 //@import "admin/pages/login_and_register";
 //@import "admin/pages/404_500_errors";
@@ -64,6 +64,9 @@
 //@import "admin/skins/all-skins";
 @import "admin/skin-blue";
 @import "bootstrap-toggle";
+@import "../../bower_components/bootstrap-fileinput/sass/fileinput";
+
+
 .test{
 
 }

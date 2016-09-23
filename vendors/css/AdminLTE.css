@@ -1441,7 +1441,7 @@ ol ol {
 }
 
 /* line 167, ../sass/admin/bootstrap/bootstrap/_type.scss */
-.list-unstyled, .chart-legend, .users-list, .mailbox-attachments {
+.list-unstyled, .chart-legend, .users-list {
   padding-left: 0;
   list-style: none;
 }
@@ -5985,9 +5985,8 @@ a.thumbnail.active {
   padding-right: 35px;
 }
 /* line 47, ../sass/admin/bootstrap/bootstrap/_alerts.scss */
-.alert-dismissable .close, .alert-dismissable .mailbox-attachment-close,
-.alert-dismissible .close,
-.alert-dismissible .mailbox-attachment-close {
+.alert-dismissable .close,
+.alert-dismissible .close {
   position: relative;
   top: -2px;
   right: -21px;
@@ -6891,7 +6890,7 @@ button.list-group-item-danger.active:focus {
 }
 
 /* line 6, ../sass/admin/bootstrap/bootstrap/_close.scss */
-.close, .mailbox-attachment-close {
+.close {
   float: right;
   font-size: 21px;
   font-weight: bold;
@@ -6902,7 +6901,7 @@ button.list-group-item-danger.active:focus {
   filter: alpha(opacity=20);
 }
 /* line 15, ../sass/admin/bootstrap/bootstrap/_close.scss */
-.close:hover, .mailbox-attachment-close:hover, .close:focus, .mailbox-attachment-close:focus {
+.close:hover, .close:focus {
   color: #000;
   text-decoration: none;
   cursor: pointer;
@@ -6911,7 +6910,7 @@ button.list-group-item-danger.active:focus {
 }
 
 /* line 30, ../sass/admin/bootstrap/bootstrap/_close.scss */
-button.close, button.mailbox-attachment-close {
+button.close {
   padding: 0;
   cursor: pointer;
   background: transparent;
@@ -7011,7 +7010,7 @@ button.close, button.mailbox-attachment-close {
 }
 
 /* line 85, ../sass/admin/bootstrap/bootstrap/_modals.scss */
-.modal-header .close, .modal-header .mailbox-attachment-close {
+.modal-header .close {
   margin-top: -2px;
 }
 
@@ -8394,7 +8393,7 @@ a:focus {
 }
 
 /* line 331, ../sass/admin/misc/_miscellaneous.scss */
-.list-unstyled, .chart-legend, .users-list, .mailbox-attachments {
+.list-unstyled, .chart-legend, .users-list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -11162,13 +11161,13 @@ a:focus {
   margin-right: 10px;
 }
 /* line 14, ../sass/admin/components/_alerts.scss */
-.alert .close, .alert .mailbox-attachment-close {
+.alert .close {
   color: #000;
   opacity: 0.2;
   filter: alpha(opacity=20);
 }
 /* line 17, ../sass/admin/components/_alerts.scss */
-.alert .close:hover, .alert .mailbox-attachment-close:hover {
+.alert .close:hover {
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
@@ -11689,102 +11688,6 @@ table.text-center, table.text-center td, table.text-center th {
 }
 
 /*
- * Page: Mailbox
- * -------------
- */
-/* line 6, ../sass/admin/pages/_mailbox.scss */
-.mailbox-messages > .table {
-  margin: 0;
-}
-
-/* line 11, ../sass/admin/pages/_mailbox.scss */
-.mailbox-controls {
-  padding: 5px;
-}
-/* line 13, ../sass/admin/pages/_mailbox.scss */
-.mailbox-controls.with-border {
-  border-bottom: 1px solid #f4f4f4;
-}
-
-/* line 18, ../sass/admin/pages/_mailbox.scss */
-.mailbox-read-info {
-  border-bottom: 1px solid #f4f4f4;
-  padding: 10px;
-}
-/* line 21, ../sass/admin/pages/_mailbox.scss */
-.mailbox-read-info h3 {
-  font-size: 20px;
-  margin: 0;
-}
-/* line 25, ../sass/admin/pages/_mailbox.scss */
-.mailbox-read-info h5 {
-  margin: 0;
-  padding: 5px 0 0 0;
-}
-
-/* line 31, ../sass/admin/pages/_mailbox.scss */
-.mailbox-read-time {
-  color: #999;
-  font-size: 13px;
-}
-
-/* line 36, ../sass/admin/pages/_mailbox.scss */
-.mailbox-read-message {
-  padding: 10px;
-}
-
-/* line 42, ../sass/admin/pages/_mailbox.scss */
-.mailbox-attachments li {
-  float: left;
-  width: 200px;
-  border: 1px solid #eee;
-  margin-bottom: 10px;
-  margin-right: 10px;
-}
-
-/* line 51, ../sass/admin/pages/_mailbox.scss */
-.mailbox-attachment-name {
-  font-weight: bold;
-  color: #666;
-}
-
-/* line 56, ../sass/admin/pages/_mailbox.scss */
-.mailbox-attachment-icon,
-.mailbox-attachment-info,
-.mailbox-attachment-size {
-  display: block;
-}
-
-/* line 62, ../sass/admin/pages/_mailbox.scss */
-.mailbox-attachment-info {
-  padding: 10px;
-  background: #f4f4f4;
-}
-
-/* line 67, ../sass/admin/pages/_mailbox.scss */
-.mailbox-attachment-size {
-  color: #999;
-  font-size: 12px;
-}
-
-/* line 72, ../sass/admin/pages/_mailbox.scss */
-.mailbox-attachment-icon {
-  text-align: center;
-  font-size: 65px;
-  color: #666;
-  padding: 20px 10px;
-}
-/* line 77, ../sass/admin/pages/_mailbox.scss */
-.mailbox-attachment-icon.has-img {
-  padding: 0;
-}
-/* line 79, ../sass/admin/pages/_mailbox.scss */
-.mailbox-attachment-icon.has-img > img {
-  max-width: 100%;
-  height: auto;
-}
-
-/*
  * Skin: Blue
  * ----------
  */
@@ -12151,12 +12054,428 @@ table.text-center, table.text-center td, table.text-center th {
   padding-left: 12px;
 }
 
-/* line 70, ../sass/AdminLTE.scss */
+/*!
+ * bootstrap-fileinput v4.3.3
+ * http://plugins.krajee.com/file-input
+ *
+ * Author: Kartik Visweswaran
+ * Copyright: 2014 - 2016, Kartik Visweswaran, Krajee.com
+ *
+ * Licensed under the BSD 3-Clause
+ * https://github.com/kartik-v/bootstrap-fileinput/blob/master/LICENSE.md
+ */
+/* line 14, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-loading {
+  top: 0;
+  right: 0;
+  width: 25px;
+  height: 25px;
+  font-size: 999px;
+  text-align: right;
+  color: #fff;
+  background: transparent url("'../../img/loading.gif") top left no-repeat;
+  border: none;
+}
+
+/* line 26, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-object {
+  margin: 0 0 -5px 0;
+  padding: 0;
+}
+
+/* line 31, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+/* line 35, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  text-align: right;
+  opacity: 0;
+  background: none repeat scroll 0 0 transparent;
+  cursor: inherit;
+  display: block;
+}
+
+/* line 49, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-caption-name {
+  display: inline-block;
+  overflow: hidden;
+  height: 20px;
+  word-break: break-all;
+}
+
+/* line 56, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.input-group-lg .file-caption-name {
+  height: 25px;
+}
+
+/* line 60, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog {
+  text-align: left;
+}
+
+/* line 64, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-error-message {
+  color: #a94442;
+  background-color: #f2dede;
+  margin: 5px;
+  border: 1px solid #ebccd1;
+  border-radius: 4px;
+  padding: 15px;
+}
+/* line 71, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-error-message pre, .file-error-message ul {
+  margin: 0;
+  text-align: left;
+}
+/* line 75, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-error-message pre {
+  margin: 5px 0;
+}
+
+/* line 80, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-caption-disabled {
+  background-color: #EEEEEE;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* line 86, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview {
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+/* line 94, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-frame {
+  position: relative;
+  display: table;
+  margin: 8px;
+  height: 160px;
+  border: 1px solid #ddd;
+  box-shadow: 1px 1px 5px 0 #a2958a;
+  padding: 6px;
+  float: left;
+  text-align: center;
+  vertical-align: middle;
+}
+/* line 105, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-frame:not(.file-preview-error):hover {
+  box-shadow: 3px 3px 5px 0 #333;
+}
+
+/* line 110, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-image {
+  vertical-align: middle;
+}
+
+/* line 114, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-text {
+  display: block;
+  color: #428bca;
+  border: 1px solid #ddd;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  outline: none;
+  padding: 8px;
+  resize: none;
+}
+
+/* line 124, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-html {
+  border: 1px solid #ddd;
+  padding: 8px;
+  overflow: auto;
+}
+
+/* line 130, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .file-preview-text {
+  font-size: 1.2em;
+}
+
+/* line 134, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-other {
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+/* line 143, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-other:hover {
+  opacity: 0.8;
+}
+
+/* line 148, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-actions, .file-other-error {
+  text-align: left;
+}
+
+/* line 152, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-other-icon {
+  font-size: 4.8em;
+}
+
+/* noinspection CssOverwrittenProperties */
+/* line 157, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .file-other-icon {
+  font-size: 8em;
+  font-size: 55vmin;
+}
+
+/* line 163, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-input-new .file-preview, .file-input-new .close, .file-input-new .glyphicon-file, .file-input-new .fileinput-remove-button, .file-input-new .fileinput-upload-button {
+  display: none;
+}
+
+/* line 169, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-input-ajax-new .fileinput-remove-button, .file-input-ajax-new .fileinput-upload-button {
+  display: none;
+}
+
+/* line 174, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-thumb-loading {
+  background: transparent url("'../../img/loading.gif") no-repeat scroll center center content-box !important;
+}
+
+/* line 178, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-actions {
+  margin-top: 15px;
+}
+
+/* line 182, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-footer-buttons {
+  float: right;
+}
+
+/* line 186, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-upload-indicator {
+  display: inline;
+  cursor: default;
+  opacity: 0.8;
+  width: 60%;
+}
+/* line 191, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-upload-indicator:hover {
+  font-weight: bold;
+  opacity: 1;
+}
+
+/* line 197, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-footer-caption {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 160px;
+  text-align: center;
+  padding-top: 4px;
+  font-size: 11px;
+  color: #777;
+  margin: 5px auto;
+}
+
+/* line 210, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-error {
+  opacity: 0.65;
+  box-shadow: none;
+}
+
+/* line 215, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-frame:not(.file-preview-error) .file-footer-caption:hover {
+  color: #000;
+}
+
+/* line 219, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-drop-zone {
+  border: 1px dashed #aaa;
+  border-radius: 4px;
+  height: 100%;
+  text-align: center;
+  vertical-align: middle;
+  margin: 12px 15px 12px 12px;
+  padding: 5px;
+}
+
+/* line 229, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-drop-zone-title {
+  color: #aaa;
+  font-size: 40px;
+  padding: 85px 10px;
+}
+
+/* line 235, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-highlighted {
+  border: 2px dashed #999 !important;
+  background-color: #f0f0f0;
+}
+
+/* line 240, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-uploading {
+  background: url("'../../img/loading-sm.gif") no-repeat center bottom 10px;
+  opacity: 0.65;
+}
+
+/* line 245, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-thumb-progress {
+  height: 10px;
+}
+/* line 247, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-thumb-progress .progress, .file-thumb-progress .progress-bar {
+  height: 10px;
+  font-size: 9px;
+  line-height: 10px;
+}
+
+/* line 254, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-thumbnail-footer {
+  position: relative;
+}
+
+/* line 258, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-thumb-progress {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  right: 0;
+}
+
+/* line 266, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-fullscreen.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+/* line 273, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-fullscreen .modal-dialog {
+  position: fixed;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+}
+/* line 280, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-fullscreen .modal-content {
+  border-radius: 0;
+  box-shadow: none;
+}
+/* line 284, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-fullscreen .modal-body {
+  overflow-y: auto;
+}
+
+/* line 290, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .modal-body {
+  position: relative !important;
+}
+/* line 293, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .btn-navigate {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  text-decoration: none;
+  outline: none;
+  opacity: 0.7;
+  top: 45%;
+  font-size: 4em;
+  color: #1c94c4;
+}
+/* line 305, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .floating-buttons {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+/* line 312, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.floating-buttons {
+  z-index: 3000;
+}
+/* line 314, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.floating-buttons .btn {
+  z-index: 3000;
+}
+
+/* line 319, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .kv-zoom-actions .btn, .floating-buttons .btn {
+  margin-left: 3px;
+}
+
+/* line 326, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .btn-navigate:not([disabled]):hover, .file-zoom-dialog .btn-navigate:not([disabled]):focus {
+  outline: none;
+  box-shadow: none;
+  opacity: 0.5;
+}
+/* line 332, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .btn-navigate[disabled] {
+  opacity: 0.3;
+}
+/* line 336, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .btn-prev {
+  left: 1px;
+}
+/* line 339, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-dialog .btn-next {
+  right: 1px;
+}
+
+/* line 344, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-drag-handle {
+  display: inline;
+  margin-right: 2px;
+  font-size: 16px;
+  cursor: move;
+  cursor: -webkit-grabbing;
+}
+/* line 350, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-drag-handle:hover {
+  opacity: 0.7;
+}
+
+/* line 355, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-zoom-content {
+  height: 480px;
+  text-align: center;
+}
+
+/* line 360, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-initial.sortable-chosen {
+  background-color: #d9edf7;
+}
+
+/* line 364, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.file-preview-frame.sortable-ghost {
+  background-color: #eee;
+}
+
+/* IE 10 fix */
+/* line 370, ../../bower_components/bootstrap-fileinput/sass/_fileinput.scss */
+.btn-file ::-ms-browse {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 73, ../sass/AdminLTE.scss */
 .mauvais {
   color: #f00;
 }
 
-/* line 73, ../sass/AdminLTE.scss */
+/* line 76, ../sass/AdminLTE.scss */
 form .required label:after {
   color: #e32;
   content: ' *';
@@ -12164,30 +12483,30 @@ form .required label:after {
 }
 
 @media (min-width: 770px) {
-  /* line 80, ../sass/AdminLTE.scss */
+  /* line 83, ../sass/AdminLTE.scss */
   .box-body-offerings {
     columns: 2 auto;
     -moz-columns: 2 auto;
     column-gap: 1.5em;
   }
-  /* line 84, ../sass/AdminLTE.scss */
+  /* line 87, ../sass/AdminLTE.scss */
   .box-body-offerings .form-group {
     break-inside: avoid-column;
     -moz-break-inside: avoid-column;
   }
 
-  /* line 90, ../sass/AdminLTE.scss */
+  /* line 93, ../sass/AdminLTE.scss */
   ul.nav.nav-tabs li.pull-right {
     padding-right: 3px;
     padding-top: 3px;
     text-transform: capitalize !important;
   }
-  /* line 94, ../sass/AdminLTE.scss */
+  /* line 97, ../sass/AdminLTE.scss */
   ul.nav.nav-tabs li.pull-right button {
     text-transform: capitalize !important;
   }
 
-  /* line 99, ../sass/AdminLTE.scss */
+  /* line 102, ../sass/AdminLTE.scss */
   .pull-right button, .pull-right a, .box-footer a, .box-footer .btn-success {
     margin-left: 3px;
     margin-right: 3px;
@@ -12195,48 +12514,48 @@ form .required label:after {
   }
 }
 @media (max-width: 767px) {
-  /* line 108, ../sass/AdminLTE.scss */
+  /* line 111, ../sass/AdminLTE.scss */
   .form-group label {
     display: none !important;
   }
 }
-/* line 114, ../sass/AdminLTE.scss */
+/* line 117, ../sass/AdminLTE.scss */
 #busy-indicator {
   display: none;
 }
 
-/* line 115, ../sass/AdminLTE.scss */
+/* line 118, ../sass/AdminLTE.scss */
 #blogmaster {
   min-height: 700px;
 }
-/* line 117, ../sass/AdminLTE.scss */
+/* line 120, ../sass/AdminLTE.scss */
 #blogmaster p:first-letter {
   text-transform: capitalize;
 }
 
-/* line 124, ../sass/AdminLTE.scss */
+/* line 127, ../sass/AdminLTE.scss */
 .panel-body form fieldset .button {
   margin-top: 10px;
 }
 
-/* line 128, ../sass/AdminLTE.scss */
+/* line 131, ../sass/AdminLTE.scss */
 th a.asc:after {
   content: ' ';
 }
 
-/* line 131, ../sass/AdminLTE.scss */
+/* line 134, ../sass/AdminLTE.scss */
 th a.desc:after {
   content: ' *';
 }
 
-/* line 135, ../sass/AdminLTE.scss */
+/* line 138, ../sass/AdminLTE.scss */
 form .input .required label:after {
   color: #E32;
   content: '*';
   display: inline;
 }
 
-/* line 140, ../sass/AdminLTE.scss */
+/* line 143, ../sass/AdminLTE.scss */
 .input.checkbox {
   margin: 0px !important;
 }
