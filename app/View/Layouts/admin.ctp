@@ -66,7 +66,7 @@ content: ' ⇡';
 								<?php echo  $this->Html->image("avatars/gravatar_mini.jpg", array('class'=>"user-image",'title'=>"avatar")); ?>
 								<span class="hidden-xs">philippe</span>
 							</a>
-							<ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+							<ul class="dropdown-menu" role="menu" >
 								<li class="user-header">
 									<?php echo  $this->Html->image("avatars/gravatar_thumb.jpg", array("class"=>"img-circle center-block", 'title'=>'avatar')); ?>
 									<!-- <img src="" alt=""> -->

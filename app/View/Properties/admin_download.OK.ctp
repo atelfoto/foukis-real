@@ -10,7 +10,7 @@
 			<div class=" box-body">
 				<?php echo $this->Form->create('Property', array('url'=>array('action'=>"download"),'type'=>'file','multiple')); ?>
 					<?php echo $this->Form->input('files.', array("after"=>false,'type' => 'file', 'label' => false,  'class' => 'file-loading', 'multiple','data-upload-url'=>"download"));  ?>
-				<?php echo  $this->Form->end(); ?>
+				<?php  $this->Form->end(); ?>
 			</div>
 		</div>
 	</div>
@@ -35,13 +35,13 @@ $("#PropertyFiles").fileinput({
     cancelIcon: '<i class="icon-block"></i>',
     msgValidationErrorIcon: '<i class="glyphicon glyphicon-exclamation-sign"></i> ',
 	allowedFileExtensions : ['jpg'],
-	uploadAsync : true ,
-	showUpload: true,
-	showCaption: true,
-	showBrowse : true ,
-    browseOnZoneClick : true,
-    minFileCount: 1,
-    MAXFILECOUNT: 3,
+	uploadAsync : false ,
+//	showUpload: true,
+//	showCaption: true,
+//	showBrowse : true ,
+//    browseOnZoneClick : true,
+//    minFileCount: 1,
+//    MAXFILECOUNT: 3,
 
 	class:'file-loading',
 	//browseClass: "btn btn-primary ",
