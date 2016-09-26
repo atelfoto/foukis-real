@@ -47,6 +47,7 @@ class AppController extends Controller {
 	 */
 	public function beforeFilter() {
 		parent::beforeFilter();
+		$this->layout = 'home';
 		if(isset($this->request->params['prefix']) && $this->request->params['prefix']=='admin'){
 			$this->layout = 'admin';
 		}

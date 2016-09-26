@@ -3,7 +3,7 @@
  <?php $this->Html->addCrumb('download' ); ?>
 <div class="properties index row">
 	<div class="col-sm-12 page-header">
-		<h3><i class="icon-upload"> <?= __('download'); ?></i></h3>
+		<h3><i class="icon-download"> <?= __('download'); ?></i></h3>
 	</div>
 	<div class="col-sm-12">
 		<div class="box box-primary with-border ">
