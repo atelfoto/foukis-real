@@ -192,6 +192,43 @@ class PropertiesController extends AppController {
 * admin_download
 **/
 public function admin_download($id=null){
+	if ($this->request->is('ajax')) {
+		$this->layout = false;
+		//	$this->set('ajax', 0);
+
+
+	if (!empty($this->request->data)) {
+		debug($this->request->data);
+		debug($this->request->data['Property']);
+		debug($this->request->data['Property']['files']);
+		//$tmp_name=$this->request->data['Property']['files'][0]['tmp_name'];//mauvais en unique
+		$uploadFolder = 'img/properties/';
+		debug($uploadFolder);
+		$image = $this->request->data['Property']['files'][0]['name'];// mauvais unique marche avec [0] en multiple
+		debug($image);
+		$uploadPath = WWW_ROOT. $uploadFolder;
+		debug($uploadPath);
+		if (!empty($this->request->data['Property']['files'][0]['tmp_name'])) {// mauvais unique marche avec [0] en multiple
+			debug($this->request->data['Property']['files'][0]['name']);// mauvais unique marche avec [0] en multiple
+			//die();
+			move_uploaded_file($this->request->data['Property']['file'][0]['name'], $uploadPath.'/'.$image);
+		}
+
+
+		if (move_uploaded_file($image['name'], $full_image_path)) {
+			$this->Flash->success(__('The property has been saved.'), array('class' => 'alert alert-success'));
+			//$this->Flash->success('File saved successfully',array('class' => 'alert alert-success'));
+			return $this->redirect(array('action' => 'index'));
+		}else {
+			$this->Flash->error(__('The property could not be saved. Please, try again.'), array('class' => 'alert alert-danger'));
+		//	$this->Flash->error('There was a problem uploading file. Please try again.', array('class' => 'alert alert-danger'));
+		}
+	}else{
+		//$this->Flash->error('Error uploading file.', array('class' => 'alert alert-danger'));
+	}
+
+}
+
 
 }
 /**

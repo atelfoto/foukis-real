@@ -11,10 +11,10 @@
 				<?php echo $this->Form->create('Property', array('url'=>array('action'=>"download"),'type'=>'file','multiple')); ?>
 					<?php echo $this->Form->input('files.', array('type' => 'file', 'label' => false,  'class' => 'file-loading', 'multiple','data-upload-url'=>"download"));  ?>
 						<div class="text-right box-footer" style="margin-top:10px;">
-							<?php echo $this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-primary')); ?>
+							<?php  echo $this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-primary')); ?>
 							<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
-									array('controller'=>'properties','action'=>'index'),
-									array('class' => 'btn btn-default','escape'=>false)); ?>
+								 array('controller'=>'properties','action'=>'index'),
+								 array('class' => 'btn btn-default','escape'=>false)); ?>
 						</div>
 				<?php  $this->Form->end(); ?>
 			</div>
