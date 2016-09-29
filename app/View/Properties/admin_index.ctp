@@ -24,19 +24,19 @@
 						<th><?php echo $this->Paginator->sort('area_id'); ?></th>
 						<th><?php echo $this->Paginator->sort('status_id'); ?></th>
 						<th><?php echo $this->Paginator->sort('type_id'); ?></th>
-						<!-- <th><?php echo $this->Paginator->sort('Characteristic'); ?></th> -->
+						<!-- <th><?php // echo $this->Paginator->sort('Characteristic'); ?></th> -->
 						<th><?php echo $this->Paginator->sort('dateYear'); ?></th>
 						<th><?php echo $this->Paginator->sort('bedrooms'); ?></th>
 						<th><?php echo $this->Paginator->sort('size'); ?></th>
 						<th><?php echo $this->Paginator->sort('level'); ?></th>
 						<th><?php echo $this->Paginator->sort('price'); ?></th>
-						<!-- <th><?php echo $this->Paginator->sort('media_id'); ?></th> -->
-						<th><?php echo $this->Paginator->sort('mediaQuantities'); ?></th>
-						<!-- <th><?php echo $this->Paginator->sort('created'); ?></th> -->
+						<!-- <th><?php // echo $this->Paginator->sort('media_id'); ?></th> -->
+						<th><?php  echo $this->Paginator->sort('created'); ?></th>
 						<th><?php echo $this->Paginator->sort('modified'); ?></th>
-						<!-- <th><?php echo $this->Paginator->sort('user_id'); ?></th> -->
-						<th><?php echo $this->Paginator->sort('modified_by'); ?></th>
+						<!-- <th><?php // echo $this->Paginator->sort('user_id'); ?></th> -->
+						<!-- <th><?php // echo $this->Paginator->sort('modified_by'); ?></th> -->
 						<th><?php echo $this->Paginator->sort('online'); ?></th>
+						<th><?php echo $this->Paginator->sort('mediaQuantities','photos'); ?></th>
 					<th colspan="3" class="actions"></th>
 					</tr>
 				</thead>
@@ -63,13 +63,12 @@
 						<td><?php echo h($property['Property']['level']); ?>&nbsp;</td>
 						<td><?php echo  $this->Number->currency($property['Property']['price'],' €',
 						 array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?>&nbsp;</td>
-						<!-- <td><?php echo h($property['Property']['media_id']); ?>&nbsp;</td> -->
-						<td><?php echo h($property['Property']['mediaQuantities']); ?>&nbsp;</td>
+						<!-- <td><?php // echo h($property['Property']['media_id']); ?>&nbsp;</td> -->
 						<td><?php echo $this->Time->format($property['Property']['created'], '%a %e %B, %Y '); ?>&nbsp;</td>
 						<td><?php echo $this->Time->format($property['Property']['modified'], '%a %e %B, %Y '); ?>&nbsp;</td>
-						<!-- <td><?php echo $this->Html->link($property['User']['name'],
-									array('controller' => 'users', 'action' => 'view', $property['User']['id'])); ?></td> -->
-						<td><?php echo h($property['Property']['modified_by']); ?>&nbsp;</td>
+						<!-- <td><?php // echo $this->Html->link($property['User']['name'],
+									// array('controller' => 'users', 'action' => 'view', $property['User']['id'])); ?></td> -->
+						<!-- <td><?php // echo h($property['Property']['modified_by']); ?>&nbsp;</td> -->
 						<td><?php if($property['Property'][ 'online' ] == 0) {
 						echo $this->Html->link('<span class="label label-danger">'.__('Offline').'</span>',
 						array('action'=>'enable', $property['Property']['id']),
@@ -83,6 +82,11 @@
 					}
 					?>
 						</td>
+						<td> <?php echo $this->Html->link(
+							'<span class="icon-picture">&nbsp;<small class="badge">'.h($property['Property']['mediaQuantities']).'</small></span>',
+						array( 'action' => 'download',$property['Property']['id']),
+						array('class'=>"btn btn-default",'escape'=>false)); ?>
+						<?php // echo h($property['Property']['mediaQuantities']); ?>&nbsp;</td>
 						<td class="actions">
 							<?php echo $this->Html->link('<span class="icon-eye"></span>',
 					 array('action' => 'view', $property['Property']['id']),

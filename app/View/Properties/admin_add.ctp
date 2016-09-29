@@ -44,10 +44,10 @@
 								 'placeholder' => __('Name'),'autofocus',
 								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-name"></i></div>'
 								 ));?>
-						<?php echo $this->Form->input('id2', array('class' => 'form-control',
-								 'placeholder' => __('Id2'),
-								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-id2"></i></div>'
-								 ));?>
+						<?php //  echo $this->Form->input('id2', array('class' => 'form-control',
+							//	 'placeholder' => __('Id2'),
+							//	 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-id2"></i></div>'
+							//	 ));?>
 						<?php echo $this->Form->input('Characteristic', array('class' => 'form-control',
 							'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-characteristics"></i></div>',
 								 ));?>
@@ -87,22 +87,22 @@
 								 'placeholder' => __('Price'),
 								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-money"></i></div>'
 								 ));?>
-						<?php echo $this->Form->input('media_id', array('class' => 'form-control',
-								 'empty' => __('choose'),
-								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-medias"></i></div>'
-								 ));?>
-						<?php echo $this->Form->input('mediaQuantities', array('class' => 'form-control',
-								 'placeholder' => __('MediaQuantities'),
-								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-carrousels"></i></div>'
-								 ));?>
-						<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-								 'empty' => __('choose'),
-								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
-								 ));?>
-						<?php echo $this->Form->input('modified_by', array('class' => 'form-control',
-								 'placeholder' => __('Created by'),
-								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-modified_by"></i></div>'
-								 ));?>
+						<?php // echo $this->Form->input('media_id', array('class' => 'form-control',
+							// 	 'empty' => __('choose'),
+							// 	 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-medias"></i></div>'
+							// 	 ));?>
+						<?php // echo $this->Form->input('mediaQuantities', array('class' => 'form-control',
+							//	 'placeholder' => __('MediaQuantities'),
+							//	 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-carrousels"></i></div>'
+							//	 ));?>
+						<?php // echo $this->Form->input('user_id', array('class' => 'form-control',
+							 //  'empty' => __('choose'),
+							 //  'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
+							 //  ));?>
+						<?php // echo $this->Form->input('modified_by', array('class' => 'form-control',
+							 //  'placeholder' => __('Created by'),
+							 //  'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-modified_by"></i></div>'
+							 //  ));?>
 					</div>
 					<div class="clear-both">
 						<?php echo $this->Form->input('content', array('class' => 'form-control',

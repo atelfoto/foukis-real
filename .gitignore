@@ -14,6 +14,8 @@ vendors/sass/.sass-cache/
 /build
 /dist
 /tags
+*.jpeg
+**/*.jpg
 node_modules/
 .sass-cache/
 *.mo

@@ -10,14 +10,16 @@ App::uses('AppController', 'Controller');
  */
 class PropertiesController extends AppController {
 
+	// public $viewClass = 'Json';
+
 /**
  * Components
  *
  * @var array
  */
-	public $components = array( 'Flash', 'Session','RequestHandler');
+	public $components = array( 'Flash','Session','RequestHandler',"Qimage");
 
-		public function offerings(){
+	public function offerings(){
 		$this->layout='home';
 		$types = $this->Property->Type->find('list');
 		$this->set(compact('types'));
@@ -144,7 +146,7 @@ class PropertiesController extends AppController {
 		if ($this->request->is(array('post', 'put'))) {
 			if ($this->Property->save($this->request->data)) {
 				$this->Flash->success(__('The property has been saved.'), array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'download',$id));
+				return $this->redirect(array('action' => "index"));
 			} else {
 				$this->Flash->error(__('The property could not be saved. Please, try again.'), array('class' => 'alert alert-danger'));
 			}
@@ -161,101 +163,38 @@ class PropertiesController extends AppController {
 		$this->set(compact('states', 'areas', 'statuses', 'types', 'characteristics', 'users'));
 	}
 
-/**
-* admin_download
-**/
-// public function admin_download(){
-// 	$this->Property->create();
 
-// }
-
-// public function admin_download(){
-// 	if(!empty($this->request->data)){
-// 		/*  Start code for o Uploading images*/
-// 		// debug($this->request->data);die();
-// 		foreach ($this->request->data as $result) {
-// 			$name = $result['name'];
-//           if( !empty($name)){     // Check For Empty Values
-//           	$tmprary_name = $result['tmp_name'];
-//           	$temp = explode(".", $name);
-//           	$newfilename = uniqid(). '.' . end($temp);
-//           	if (move_uploaded_file($tmprary_name , $target_dir.$newfilename)) {
-//           		echo "The file ". basename( $name). " has been successfully uploaded.<BR/>";
-//           	}else {
-//           		echo "Sorry, there was an error uploading your file.<br/>";
-//           	}
-//           }
-//       }
-//   }
-// }
 /**
 * admin_download
 **/
 public function admin_download($id=null){
-	// $this->loadModel('Property');
-	 if ($this->request->is('ajax')) {
-	//	$this->layout = false;
-		//	$this->set('ajax', 0);
- }
-		//$this->Session->write('mapage', $id);
-		//$mapage = $this->Session->read("mapage");
-	//	debug($mapage);
-		// $property = $this->Property->read(null,$id);
-		// debug($property);
 
+	// if ($this->request->is('ajax')) {
+	// }
 	if (!empty($this->request->data)) {
-
-	//	debug($mapage);
-	//	debug($property);
-
-	//	 debug($this->request->data);
-	//	 debug($this->request->data['Property']);
-	//	 debug($this->request->data['Property']['files']);
-		$tmp_name=$this->request->data['Property']['files'][0]['tmp_name'];//mauvais en unique
-
-
-			// $options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
-			// $this->request->data = $this->Property->find('first', $options);
-			// debug($options);
+		$this->set('_serialize', array('properties'));
+		//$this->layout='ajax';
 		$uploadFolder = 'img/properties/';
-
-	//	die();
-	//	 debug($uploadFolder);
-		$image = $this->request->data['Property']['files'][0]['name'];// mauvais unique marche avec [0] en multiple
-	//	 debug($image);
+		$imageName = $this->request->data['Property']['files'][0]['name'];
+		$extension =strtolower(pathinfo($this->request->data['Property']['files'][0]['name'],PATHINFO_EXTENSION));
 		$uploadPath = WWW_ROOT. $uploadFolder;
-	//	 debug($uploadPath);
-		if (!empty($this->request->data['Property']['files'][0]['tmp_name'])) {// mauvais unique marche avec [0] en multiple
-			debug($this->request->data['Property']['files'][0]['name']);// mauvais unique marche avec [0] en multiple
-	//		die();
-			move_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'],
-			 $uploadPath.'/'.$image);
-			$this->layout=false;
+		if (file_exists($uploadPath.'/'.$imageName)) {
+			$imageName = date('His') . $imageName;
+		}
+		if (!empty($this->request->data['Property']['files'][0]['tmp_name'])&&
+			in_array($extension,array('jpg','png','jpeg'))) {
+			move_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'], $uploadPath.'/'.$imageName);
 			$this->Flash->success(__('Files saved successfully'),array('class' => 'alert alert-success'));
-			//$this->redirect($this->referer());
 
-			// $this->autoRender = false;
-		//	 return $this->redirect(array('action' => 'index'));
+		}else  if (!empty($this->request->data['Property']['files'][0]['tmp_name'])) {
+				$this->Flash->error(__('There was a problem uploading file. Please try again.'));
 		}
-
-
-	 if (move_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'], $uploadPath.'/'.$image)) {
-		 	$this->Flash->success(__('The property has been saved.'), array('class' => 'alert alert-success'));
-		// 	//$this->Flash->success('File saved successfully',array('class' => 'alert alert-success'));
-		// 	return $this->redirect(array('action' => 'index'));
-		return;
-	 }
-		else {
-
-		//	$this->Flash->error('There was a problem uploading file. Please try again.', array('class' => 'alert alert-danger'));
-		}
-	}else{
-		//$this->Flash->error('Error uploading file.', array('class' => 'alert alert-danger'));
-	//	$this->Flash->error(__('The property could not be saved. Please, try again.'), array('class' => 'alert alert-danger'));
+		return true;
+		// echo json_encode();
 	}
-
-
-
+	$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id;
+			if(!file_exists($dir))
+				mkdir($dir, 0777);
 
 }
 /**

@@ -45,6 +45,14 @@ class Property extends AppModel {
 			// 	//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			// ),
 		),
+	    'Characteristic' => array(
+	        'rule' => array('multiple', array(
+	          //  'in'  => array('do', 'ré', 'mi', 'fa', 'sol', 'la', 'si'),
+	            'min' => 1,
+	        //    'max' => 3
+	        )),
+	        'message' => 'Merci de choisir une options'
+	    ),
 		'type_id' => array(
 			'notBlank' => array(
 				'rule' => array('notBlank'),
@@ -134,8 +142,8 @@ class Property extends AppModel {
 			// 	//'last' => false, // Stop validation after this rule
 			// 	//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			// ),
-			'money' => array(
-				'rule' => array('money'),
+		'money' => array(
+			'rule' => array('money'),
 				//'message' => 'Your custom message here',
 				//'allowEmpty' => false,
 				//'required' => false,

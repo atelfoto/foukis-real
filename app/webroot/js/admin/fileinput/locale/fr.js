@@ -36,7 +36,7 @@
         msgInvalidFileType: 'Type de document invalide pour "{name}". Seulement les documents de type "{types}" sont autorisés.',
         msgInvalidFileExtension: 'Extension invalide pour le fichier "{name}". Seules les extensions "{extensions}" sont autorisées.',
         msgUploadAborted: 'Le téléchargement du fichier a été interrompu',
-        msgUploadThreshold: 'Processing...',
+        msgUploadThreshold: 'En traitement...',
         msgValidationError: 'Erreur de validation',
         msgLoading: 'Transmission du fichier {index} sur {files}&hellip;',
         msgProgress: 'Transmission du fichier {index} sur {files} - {name} - {percent}% faits.',
@@ -49,7 +49,7 @@
         msgImageResizeError: "Impossible d'obtenir les dimensions de l'image à redimensionner.",
         msgImageResizeException: "Erreur lors du redimensionnement de l'image.<pre>{errors}</pre>",
         dropZoneTitle: 'Glissez et déposez les fichiers ici&hellip;',
-        dropZoneClickTitle: '<br>(or click to select {files})',
+        dropZoneClickTitle: '<br>(ou cliquez pour selectionner vos {files})',
         fileActionSettings: {
             removeTitle: 'Supprimer le fichier',
             uploadTitle: 'Télécharger un fichier',
