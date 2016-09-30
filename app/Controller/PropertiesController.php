@@ -168,12 +168,74 @@ class PropertiesController extends AppController {
 * admin_download
 **/
 public function admin_download($id=null){
-
-	// if ($this->request->is('ajax')) {
-	// }
+	$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
+		$this->set('property', $this->Property->find('first', $options));
+	$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id;
+			if(!file_exists($dir))
+				mkdir($dir, 0777);
+	$thumbs = $dir.DS.'thumbs';
+			if(!file_exists($thumbs))
+				mkdir($thumbs,0777);
+	$uploadFolder = 'img/properties/'.$id;
+	$uploadFolderThumbs = 'img/properties/'.$id.'/thumbs/';
 	if (!empty($this->request->data)) {
 		$this->set('_serialize', array('properties'));
-		//$this->layout='ajax';
+		$imageName = $this->request->data['Property']['files'][0]['name'];
+		$extension =strtolower(pathinfo($this->request->data['Property']['files'][0]['name'],PATHINFO_EXTENSION));
+		$uploadPath = WWW_ROOT. $uploadFolder;
+		$uploadPathThumbs = WWW_ROOT. $uploadFolderThumbs;
+		if (file_exists($uploadPath.'/'.$imageName)) {
+			$imageName = date('His') . $imageName;
+		}
+		if (!empty($this->request->data['Property']['files'][0]['tmp_name'])&&
+			in_array($extension,array('jpg','png','jpeg'))) {
+			move_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'], $uploadPath.'/'.$imageName);
+		//	$this->Qimage->watermark(array('file' => $uploadPath.'/'.$imageName));
+		//	$this->Qimage->crop(array('w' => 300,'h' => 200,'x' => 10,'y' => 10,
+		//		'file' =>  $uploadPath.'/'.$imageName,
+		//		'output' => $uploadPathThumbs
+		//		)
+		//	);
+			list($width, $height) =  getimagesize($uploadPath.'/'.$imageName);
+		//	debug($width);debug($height);
+			if ($width > $height) {
+		//	debug('ok');
+			$this->Qimage->resize(array(
+				'height' => 200,
+				'width' => 300,
+				'file' =>  $uploadPath.'/'.$imageName,
+				'output' => $uploadPathThumbs
+				)
+			);
+			}else{
+		//		debug("false");
+			$this->Qimage->resize(array(
+				'height' => 300,
+				'width' => 200,
+				'file' =>  $uploadPath.'/'.$imageName,
+				'output' => $uploadPathThumbs
+				)
+			);
+
+			}
+
+
+			$this->Qimage->watermark(array('file' => $uploadPath.'/'.$imageName));
+			$this->Flash->success(__('Files saved successfully'),array('class' => 'alert alert-success'));
+
+		}else  if (!empty($this->request->data['Property']['files'][0]['tmp_name'])) {
+				$this->Flash->error(__('There was a problem uploading file. Please try again.'));
+		}
+		return true;
+
+		// echo json_encode();
+	}
+
+}
+
+public function admin_upload($id=null){
+	if (!empty($this->request->data)) {
+		$this->set('_serialize', array('properties'));
 		$uploadFolder = 'img/properties/';
 		$imageName = $this->request->data['Property']['files'][0]['name'];
 		$extension =strtolower(pathinfo($this->request->data['Property']['files'][0]['name'],PATHINFO_EXTENSION));
@@ -195,7 +257,6 @@ public function admin_download($id=null){
 	$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id;
 			if(!file_exists($dir))
 				mkdir($dir, 0777);
-
 }
 /**
  * admin_enable method

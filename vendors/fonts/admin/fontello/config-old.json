@@ -188,7 +188,7 @@
     },
     {
       "uid": "4x5p6fnblkhqsj4ibuc724faotghuiaq",
-      "css": "password",
+      "css": "lock-filled",
       "code": 57495,
       "src": "typicons"
     },
@@ -439,6 +439,12 @@
       "src": "fontawesome"
     },
     {
+      "uid": "98d9c83c1ee7c2c25af784b518c522c5",
+      "css": "block",
+      "code": 128683,
+      "src": "fontawesome"
+    },
+    {
       "uid": "598a5f2bcf3521d1615de8e1881ccd17",
       "css": "clock",
       "code": 128340,
@@ -575,72 +581,6 @@
       "css": "statuses",
       "code": 57385,
       "src": "elusive"
-    },
-    {
-      "uid": "9dd9e835aebe1060ba7190ad2b2ed951",
-      "css": "search",
-      "code": 128269,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "5211af474d3a9848f67f945e2ccaf143",
-      "css": "cancel",
-      "code": 10005,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "48b87105bd38c20315f1b705b8c7b38c",
-      "css": "list",
-      "code": 59266,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "6f41d9b99564a01f1fde503b7f03bf1a",
-      "css": "h-sigh",
-      "code": 61693,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "beb43b8df442eac4b8d35f528d5ed5af",
-      "css": "hand-down",
-      "code": 9759,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "43ab845088317bd348dee1d975700c48",
-      "css": "ok-circled",
-      "code": 10004,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "c95735c17a10af81448c7fed98a04546",
-      "css": "folder-open",
-      "code": 128194,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "27b13eff5eb0ca15e01a6e65ffe6eeec",
-      "css": "sort-alt-down",
-      "code": 61793,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "0cd2582b8c93719d066ee0affd02ac78",
-      "css": "sort-alt-up",
-      "code": 61792,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "98d9c83c1ee7c2c25af784b518c522c5",
-      "css": "block",
-      "code": 128683,
-      "src": "fontawesome"
-    },
-    {
-      "uid": "178053298e3e5b03551d754d4b9acd8b",
-      "css": "doc-inv",
-      "code": 61787,
-      "src": "fontawesome"
     }
   ]
 }
