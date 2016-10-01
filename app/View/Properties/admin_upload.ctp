@@ -1,9 +1,9 @@
 <?php echo $this->assign('title', __('property')); ?>
  <?php $this->Html->addCrumb(__('property'),array('controller'=>'properties','action'=>'index','admin'=>true)); ?>
- <?php $this->Html->addCrumb('download' ); ?>
+ <?php $this->Html->addCrumb('upload' ); ?>
 <div class="properties index row">
 	<div class="col-sm-12 page-header">
-		<h3><i class="icon-download"> <?= __('download'); ?></i></h3>
+		<h3><i class="icon-download"> <?= __('upload'); ?></i></h3>
 	</div>
 	<div class="col-sm-12">
 		<div class="box box-primary with-border ">
@@ -15,7 +15,7 @@
 				</li>
 			</ul>
 			<div class=" box-body">
-				<?php echo $this->Form->create('Property', array('url'=>array('action'=>"download"),'type'=>'file')); ?>
+				<?php echo $this->Form->create('Property', array('url'=>array('action'=>"upload"),'type'=>'file')); ?>
 					<?php echo $this->Form->input('files.', array('type' => 'file', 'label' => false,  'class' => 'file', 'multiple'
 					,'data-upload-url'=>$property['Property']['id'],
 					));  ?>
@@ -53,11 +53,11 @@ $("#PropertyFiles").fileinput({
 	showBrowse : true ,
     browseOnZoneClick : true,
     minFileCount: 1,
-    maxFileCount:10,
+    maxFileCount:12,
     autoReplacs :true,
     showAjaxErrorDetails:true,
     resizeImage: true,
-    maxImageWidth: 900,
+    maxImageWidth: 720,
 	class:'file-loading',
 	//browseClass: "btn btn-primary ",
 });

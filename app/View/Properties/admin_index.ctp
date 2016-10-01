@@ -83,9 +83,10 @@
 					?>
 						</td>
 						<td> <?php echo $this->Html->link(
-							'<span class="icon-picture">&nbsp;<small class="badge">'.h($property['Property']['mediaQuantities']).'</small></span>',
-						array( 'action' => 'download',$property['Property']['id']),
-						array('class'=>"btn btn-default",'escape'=>false)); ?>
+							'<span class="icon-picture">&nbsp;<small class="badge bg-grey">'.h($property['Property']['mediaQuantities']).'</small></span>',
+						array( 'action' => 'upload',$property['Property']['id']),
+						array('class'=>"btn btn-default",'escape'=>false,
+						'data-title'=>__('view and upload pictures'),'data-toggle'=>'tooltip','data-placement'=>'bottom')); ?>
 						<?php // echo h($property['Property']['mediaQuantities']); ?>&nbsp;</td>
 						<td class="actions">
 							<?php echo $this->Html->link('<span class="icon-eye"></span>',

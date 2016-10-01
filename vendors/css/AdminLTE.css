@@ -342,7 +342,7 @@
 
 /* '' */
 /* line 108, ../sass/admin/fonts/fontello/_fontello.scss */
-.icon-menu:before {
+.icon-menus:before {
   content: '\f0c9';
 }
 
@@ -661,7 +661,7 @@
 /* '\1f512' */
 /* line 161, ../sass/admin/fonts/fontello/_fontello.scss */
 .icon-lock-open:before {
-  content: '🔓';
+  content: '\1f513';
 }
 
 /* '\1f513' */
@@ -689,6 +689,88 @@
 }
 
 /* '\1f6ab' */
+/*
+   Animation example, for spinners
+*/
+/* line 4, ../sass/admin/fonts/fontello/_animation.scss */
+.animate-spin {
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  display: inline-block;
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-o-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@-ms-keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
+@keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -13859,12 +13941,12 @@ table.text-center, table.text-center td, table.text-center th {
   height: 100%;
 }
 
-/* line 73, ../sass/AdminLTE.scss */
+/* line 74, ../sass/AdminLTE.scss */
 .mauvais {
   color: #f00;
 }
 
-/* line 76, ../sass/AdminLTE.scss */
+/* line 77, ../sass/AdminLTE.scss */
 form .required label:after {
   color: #e32;
   content: ' *';
@@ -13872,30 +13954,30 @@ form .required label:after {
 }
 
 @media (min-width: 770px) {
-  /* line 83, ../sass/AdminLTE.scss */
+  /* line 84, ../sass/AdminLTE.scss */
   .box-body-offerings {
     columns: 2 auto;
     -moz-columns: 2 auto;
     column-gap: 1.5em;
   }
-  /* line 87, ../sass/AdminLTE.scss */
+  /* line 88, ../sass/AdminLTE.scss */
   .box-body-offerings .form-group {
     break-inside: avoid-column;
     -moz-break-inside: avoid-column;
   }
 
-  /* line 93, ../sass/AdminLTE.scss */
+  /* line 94, ../sass/AdminLTE.scss */
   ul.nav.nav-tabs li.pull-right {
     padding-right: 3px;
     padding-top: 3px;
     text-transform: capitalize !important;
   }
-  /* line 97, ../sass/AdminLTE.scss */
+  /* line 98, ../sass/AdminLTE.scss */
   ul.nav.nav-tabs li.pull-right button {
     text-transform: capitalize !important;
   }
 
-  /* line 102, ../sass/AdminLTE.scss */
+  /* line 103, ../sass/AdminLTE.scss */
   .pull-right button, .pull-right a, .box-footer a, .box-footer .btn-success {
     margin-left: 3px;
     margin-right: 3px;
@@ -13903,48 +13985,48 @@ form .required label:after {
   }
 }
 @media (max-width: 767px) {
-  /* line 111, ../sass/AdminLTE.scss */
+  /* line 112, ../sass/AdminLTE.scss */
   .form-group label {
     display: none !important;
   }
 }
-/* line 117, ../sass/AdminLTE.scss */
+/* line 118, ../sass/AdminLTE.scss */
 #busy-indicator {
   display: none;
 }
 
-/* line 118, ../sass/AdminLTE.scss */
+/* line 119, ../sass/AdminLTE.scss */
 #blogmaster {
   min-height: 700px;
 }
-/* line 120, ../sass/AdminLTE.scss */
+/* line 121, ../sass/AdminLTE.scss */
 #blogmaster p:first-letter {
   text-transform: capitalize;
 }
 
-/* line 127, ../sass/AdminLTE.scss */
+/* line 128, ../sass/AdminLTE.scss */
 .panel-body form fieldset .button {
   margin-top: 10px;
 }
 
-/* line 131, ../sass/AdminLTE.scss */
+/* line 132, ../sass/AdminLTE.scss */
 th a.asc:after {
   content: ' ';
 }
 
-/* line 134, ../sass/AdminLTE.scss */
+/* line 135, ../sass/AdminLTE.scss */
 th a.desc:after {
   content: ' *';
 }
 
-/* line 138, ../sass/AdminLTE.scss */
+/* line 139, ../sass/AdminLTE.scss */
 form .input .required label:after {
   color: #E32;
   content: '*';
   display: inline;
 }
 
-/* line 143, ../sass/AdminLTE.scss */
+/* line 144, ../sass/AdminLTE.scss */
 .input.checkbox {
   margin: 0px !important;
 }

@@ -103,7 +103,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</div><?php  echo $this->element('footer-home'); ?>
 	<?php echo  $this->Html->script(array('home.min'));
 	// echo  $this->Html->script(array('jquery.velocity.min'));
-	 echo  $this->Html->script(array('montest'));
+	// echo  $this->Html->script(array('montest'));
 	echo $this->fetch('script');?>
 </body>
 </html>

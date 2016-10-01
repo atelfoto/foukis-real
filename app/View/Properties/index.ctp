@@ -25,7 +25,8 @@
 				 <?php endif ?>
 			</h4>
  			<figure>
- 				<img src="http://dummyimage.com/200x150/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image">
+ 				<!-- <img src="http://dummyimage.com/200x150/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image"> -->
+ 				<?php echo  $this->Html->image('properties/fond_thumb.jpg', $options = array("class"=>"img-thumbnail")); ?>
  			</figure>
  			<h4 class="area"><?php echo $property['Area']['name']; ?></h4>
  			<div class="caption-left">
@@ -37,7 +38,7 @@
 				</p>
  			</div>
  			<div class="caption-right">
- 				<?php echo $this->Html->link('<span class="icon-info"></span><br><p> <small>voir Détail</small></p>',
+ 				<?php echo $this->Html->link('<span class="icon-info"></span><br><p> <small>'.__("see details").'</small></p>',
  				 array('controller' => 'properties', 'action' => 'view',$property['Property']['id']),array('escape'=>false)); ?>
  			</div>
  		</div>

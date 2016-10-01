@@ -51,8 +51,9 @@ h2.title{
   	padding-bottom: 50px;
   	@include span(4 of 4);
   	border-left: 2px solid #31708f;
-	border-right: 2px solid #31708f;
-	box-shadow: #fff 0 0 50px, #fff 0 0 30px 10px inset;
+		border-right: 2px solid #31708f;
+		box-shadow: #fff 0 0 50px, #fff 0 0 30px 10px inset;
+		position: relative;
   }
 
   .content {
@@ -67,7 +68,8 @@ h2.title{
   	.box-thumbnail{
   		@include span(1 of 4);
   		padding-left: 0px;
-  		padding-right: 0;
+  		padding-right: 0px;
+  		position: relative;
 
   		.thumbnail{
   			border: 2px #000 solid;
@@ -75,6 +77,7 @@ h2.title{
   			margin-right: 10px;
   			margin-bottom: 10px;
   			box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
+  			position: relative;
   			h4{
   				padding-left: 10px;
   				padding-top: 3px;
@@ -85,11 +88,40 @@ h2.title{
   			}
   			figure{
   				margin-top: 15px;
-  				padding-left: 10px;
+  				margin-left: 10px;
+  				margin-right: 10px;
+  				border: 2px #000 solid;
+  				@include border-radius(6px);
+  				box-shadow: rgba(50,50,50, 0.75)  3px -5px 5px 0px inset;
+  				position: relative;
+  				z-index: 10;
+  				img{
+  				//	border: 1px #000 solid;
+  				//	@include border-radius(4px);
+  					z-index: -10;
+  					position: relative;
+  					width: 95%;
+  					left: 3px;
+  					// inset 3px -5px 5px 0px rgba(50, 50, 50, 0.75);
+  				//	 box-shadow: rgba(50,50,50, 0.75)  3px -5px 5px 0px inset;
+  					// box-shadow: rgba(0,0,0,0.5) 0 0 10px 5px;
+  					//box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
+  				}
   			}
 
   			.caption-left{
   				@include span(3 of 4);
+  				margin-right: 0px;
+  			}
+  			.caption-right{
+  				@include span(1 of 4);
+  			  margin: 0;
+  			  padding: 0 3px 0;
+  			  float: none;
+  			  //padding-right: 3px;
+  			  /* float: right; */
+  			  display: inline-block;
+  			  text-align: center;
   			}
   		}
   	}
