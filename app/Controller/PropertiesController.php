@@ -96,10 +96,10 @@ class PropertiesController extends AppController {
 		if (!$this->Property->exists($id)) {
 			throw new NotFoundException(__('Invalid property'));
 		}
-		if ($id != $property['Property']['id'] || $property['Property']['online'] != 1) {
-			 throw new NotFoundException("Error Processing Request", 1);
+		// if ($id != $property['Property']['id'] || $property['Property']['online'] != 1) {
+		// 	 throw new NotFoundException("Error Processing Request", 1);
 
-		}
+		// }
 		$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
 		$this->set('property', $this->Property->find('first', $options));
 	}
@@ -175,6 +175,7 @@ class PropertiesController extends AppController {
 		if (!empty($this->request->data)) {
 			$this->set('_serialize', array('properties'));
 			$imageName = $this->request->data['Property']['files'][0]['name'];
+			// $imageName = $this->request->data['Property']['files'][0]['name'];
 			$extension =strtolower(pathinfo($this->request->data['Property']['files'][0]['name'],PATHINFO_EXTENSION));
 			if (file_exists($dir.'/'.$imageName)) {
 				$imageName = date('His') . $imageName;
@@ -216,6 +217,15 @@ class PropertiesController extends AppController {
 			debug('ok');
 			die();
 		}
+	}
+
+	/**
+	* admin_rename
+	**/
+	public function admin_rename($id=null){
+		$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
+		$this->set('property', $this->Property->find('first', $options));
+
 	}
 
 /**

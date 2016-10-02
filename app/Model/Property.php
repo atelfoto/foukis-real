@@ -1,5 +1,8 @@
 <?php
 App::uses('AppModel', 'Model');
+
+App::uses('Folder', 'Utility');
+App::uses('File', 'Utility');
 /**
  * Property Model
  *
@@ -28,7 +31,6 @@ class Property extends AppModel {
  * @param $primary boolean
  * @return mixed
  */
-
    public function afterFind($results, $primary = false){
         foreach($results as $k=>$result){
             if(isset($result[$this->alias]['id'])){
@@ -40,7 +42,29 @@ class Property extends AppModel {
         }
         return $results;
     }
+/**
+ * [beforeDelete description]
+ * @param  boolean $cascade [description]
+ * @return [type]           [description]
+ */
+	public function beforeDelete($cascade = true){
+		$property = $this->read('Property.id');
+		$id =$property['Property']['id'];
+		$file = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
+		$fileThumbs = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS.'thumbs'.DS;
+		 foreach(glob($file.'*.jpg') as $v){
+		 	unlink($v);
+		 }
+		  foreach(glob($fileThumbs.'*.jpg') as $v){
+		  	unlink($v);
+		  }
+		 $folderThumbs = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS.'thumbs';
+		 $folder= WWW_ROOT .'img'.DS.'properties'.DS.$id;
+		 rmdir($folderThumbs);
+		 rmdir($folder);
+		return true;
 
+	}
 
 /**
  * Validation rules

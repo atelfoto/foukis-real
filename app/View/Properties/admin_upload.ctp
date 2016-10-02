@@ -13,6 +13,11 @@
 							array('controller'=>'properties','action'=>'index'),
 							array('class' => 'btn btn-default','escape'=>false)); ?>
 				</li>
+				<li class="pull-right">
+					<?php echo $this->html->link('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('rename'),
+							array('controller'=>'properties','action'=>'rename',$property['Property']['id']),
+							array('class' => 'btn btn-success','escape'=>false)); ?>
+				</li>
 			</ul>
 			<div class=" box-body">
 				<?php echo $this->Form->create('Property', array('url'=>array('action'=>"upload"),'type'=>'file')); ?>
