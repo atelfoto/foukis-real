@@ -29,7 +29,7 @@ $this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>
 		  					 array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?></span>
 		 </p>
 			<?php // if ($property['Property']['mediaQuantities']>0 ): ?>
-			<?php if (!empty('img/properties/'.$property['Property']['id'] .'/*.jpg')): ?>
+			<?php if ($property['Property']['mediaQuantities'] > 0): ?>
 				<div id="slider" class="flexslider">
 					<ul class="slides">
 					<?php foreach (glob('img/properties/'.$property['Property']['id'] .'/*.jpg') as  $v):  ?>

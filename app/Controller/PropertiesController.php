@@ -28,20 +28,11 @@ class PropertiesController extends AppController {
 /**
 * index
 **/
-// public function index(){
-// 		$this->layout = 'home';
-// 		$this->Property->recursive = 0;
-// 		$name = $property['Property']['name'];
-// 		$this->set(array('name','properties', $this->paginate()));
-
-// }
-
 	public function index() {
 		$this->layout ='home';
 		$this->Property->recursive = 0;
 		$this->paginate = array('Property'=>array(
 			"limit"=>8,
-		//	"active"=>1,
 			'order'=>array(
 				'Property.created'=>'desc')
 			));
@@ -54,32 +45,27 @@ class PropertiesController extends AppController {
 /**
 * view
 **/
-
-	public function view($id = null) {
-		$this->layout = 'home';
-		if (!$id) {
-			throw new NotFoundException(__('Invalid property'));
+	public function view($id = null){
+		if(!$id){
+			throw new NotFoundException('Aucune page ne correspond à cet ID');
 		}
 		$property = $this->Property->find('first',array(
-			'conditions'=>array('Property.id'=>$id,	//'type'=>'post'
-			'Property.online'=>1
+			'conditions' => array('Property.id' => $id,
+				"Property.online"=>1
 				),
-			'recursive'=>1
-			));
-		if (empty($property)) {
-			throw new NotFoundException("Error Processing Request", 1);
-
+			'recursive'  => 1
+			)
+		);
+		if(empty($property)){
+			throw new NotFoundException('Aucune page ne correspond à cet ID');
 		}
-		if($id !=$property['Property']['id']){
-			$this->redirect($post['Post']['link'],301);
+		if($id != $property['Property']['id']){
+			$this->redirect($property['Property']['link'],301);
 		}
 		$name = $property['Property']['name'];
 		$d['property'] = $property;
 		$this->set($d);
-		//$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
-		//$this->set('property', $this->Property->find('first', $options));
 		$this->set(compact('name'));
-
 	}
 
 /**

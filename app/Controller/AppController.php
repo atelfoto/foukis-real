@@ -57,17 +57,17 @@ class AppController extends Controller {
  * [$components description]
  * @var array
  */
-// public $components = array(
+ public $components = array(
 //         'Acl',
 //         'Auth' => array(
 //             'authorize' => array(
 //                 'Actions' => array('actionPath' => 'controllers')
 //             )
 //         ),
-//         'Session',
-//         'DebugKit.Toolbar',
-//         "flash"
-//     );
+         'Session',
+         'DebugKit.Toolbar',
+         "flash"
+     );
 /**
  * [beforeFilter description]
  * @return [type] [description]

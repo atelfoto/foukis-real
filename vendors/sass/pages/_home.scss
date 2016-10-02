@@ -98,10 +98,12 @@ h2.title{
   				img{
   				//	border: 1px #000 solid;
   				//	@include border-radius(4px);
-  					z-index: -10;
+  					display: inline-block;
+  					z-index: 1;
   					position: relative;
-  					width: 95%;
+  					width: 98%;
   					left: 3px;
+  					@include border-radius(6px);
   					// inset 3px -5px 5px 0px rgba(50, 50, 50, 0.75);
   				//	 box-shadow: rgba(50,50,50, 0.75)  3px -5px 5px 0px inset;
   					// box-shadow: rgba(0,0,0,0.5) 0 0 10px 5px;

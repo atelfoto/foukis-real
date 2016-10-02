@@ -11,6 +11,7 @@
  		<li><span class="label label-warning"><?php echo $this->Paginator->sort('area_id'); ?></span></li>
  		<li><span class="label label-warning"><?php echo $this->Paginator->sort('bedrooms'); ?></span></li>
  		<li><span class="label label-warning"><?php echo $this->Paginator->sort('created'); ?></span></li>
+ 		<li><span class="label label-warning"><?php echo $this->Paginator->sort('id'); ?></span></li>
  		</ul>
  		<hr>
 	<?php foreach ($properties as $property): ?>
@@ -25,8 +26,15 @@
 				 <?php endif ?>
 			</h4>
  			<figure>
- 				<!-- <img src="http://dummyimage.com/200x150/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image"> -->
+ 			<?php // if (!file_exists('img/properties/'.$property['Property']['id'] .'thumbs/*.jpg')): ?>
+ 			<?php if ($property['Property']['mediaQuantities'] > 0): ?>
+ 				<?php  echo  $this->Html->image('properties/2/thumbs/10002_1l.jpg', $options = array("class"=>"img-thumbnail")); ?>
+ 			<?php else: ?>
  				<?php echo  $this->Html->image('properties/fond_thumb.jpg', $options = array("class"=>"img-thumbnail")); ?>
+ 			<?php endif ?>
+ 				<!-- <img src="http://dummyimage.com/200x150/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image"> -->
+
+
  			</figure>
  			<h4 class="area"><?php echo $property['Area']['name']; ?></h4>
  			<div class="caption-left">
@@ -38,8 +46,10 @@
 				</p>
  			</div>
  			<div class="caption-right">
- 				<?php echo $this->Html->link('<span class="icon-info"></span><br><p> <small>'.__("see details").'</small></p>',
- 				 array('controller' => 'properties', 'action' => 'view',$property['Property']['id']),array('escape'=>false)); ?>
+ 				<a href="<?php  echo $this->Html->url($property['Property']['link']); ?>" class="btn">
+ 					<span class="icon-info"></span><br>
+ 					<p> <small><?php  echo __('see detail') ?></small></p>
+ 				</a>
  			</div>
  		</div>
  	</div>
