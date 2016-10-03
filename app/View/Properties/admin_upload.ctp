@@ -25,6 +25,12 @@
 					,'data-upload-url'=>$property['Property']['id'],
 					));  ?>
 				<?php echo  $this->Form->end(); ?>
+				<?php
+				$dir = WWW_ROOT.'img/properties/'.$property['Property']['id']."/";
+				$files = glob($dir.'*.jpg');
+				//debug($dir);
+				//debug($files);
+				//die(); ?>
 			</div>
 		</div>
 	</div>
@@ -34,7 +40,7 @@
 <?=  $this->Html->scriptStart(array('inline'=>false)); ?>
 $("#PropertyFiles").fileinput({
 	language: "fr",
-//	uploadUrl:'download',
+	//uploadUrl:'download',
 	removeIcon: '<i class="icon-trash text-danger"></i>',
 	uploadIcon: '<i class="icon-up-circled text-info"></i>',
 	zoomIcon: '<i class="icon-zoom-in"></i>',
@@ -64,6 +70,11 @@ $("#PropertyFiles").fileinput({
     resizeImage: true,
     maxImageWidth: 720,
 	class:'file-loading',
+	//initialPreview: [
+	//<?php //  foreach ($files as $file): ?>
+	    // <!--   "<img src='<?php // echo $file; ?>' alt=''>", -->
+	//	<?php // endforeach ?>
+	//],
 	//browseClass: "btn btn-primary ",
 });
 <?= $this->Html->scriptEnd(); ?>

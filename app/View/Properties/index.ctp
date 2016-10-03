@@ -26,15 +26,11 @@
 				 <?php endif ?>
 			</h4>
  			<figure>
- 			<?php // if (!file_exists('img/properties/'.$property['Property']['id'] .'thumbs/*.jpg')): ?>
  			<?php if ($property['Property']['mediaQuantities'] > 0): ?>
  				<?php  echo  $this->Html->image('properties/2/thumbs/10002_1l.jpg', $options = array("class"=>"img-thumbnail")); ?>
  			<?php else: ?>
  				<?php echo  $this->Html->image('properties/fond_thumb.jpg', $options = array("class"=>"img-thumbnail")); ?>
  			<?php endif ?>
- 				<!-- <img src="http://dummyimage.com/200x150/4d494d/686a82.gif&text=placeholder+image" alt="placeholder+image"> -->
-
-
  			</figure>
  			<h4 class="area"><?php echo $property['Area']['name']; ?></h4>
  			<div class="caption-left">
@@ -59,9 +55,6 @@
 		<?php  echo $this->element("pagination-counter"); ?>
  	</div>
 </div>
-
-
-<!-- </div> --><!-- end containing of content -->
 
 
 
