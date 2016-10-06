@@ -17,7 +17,7 @@
 				<li class="pull-right">
 					<?php echo $this->html->link('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('rename'),
 							array('controller'=>'properties','action'=>'rename',$property['Property']['id']),
-							array('class' => 'btn btn-success addtoproperty','id'=>$property['Property']['id'],'escape'=>false)); ?>
+							array('class' => 'btn btn-success addtoproperty','escape'=>false)); ?>
 				</li>
 			</ul>
 			<div class=" box-body">
@@ -29,9 +29,7 @@
 				<?php
 				$dir = WWW_ROOT.'img/properties/'.$property['Property']['id']."/";
 				$files = glob($dir.'*.jpg');
-				//debug($dir);
-				//debug($files);
-				//die(); ?>
+				?>
 			</div>
 		</div>
 	</div>

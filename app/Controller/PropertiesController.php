@@ -161,13 +161,14 @@ class PropertiesController extends AppController {
 
 
 /**
-* admin_download
-**/
+ * [admin_upload description]
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
 	public function admin_upload($id=null){
 		$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
 		$this->set('property', $this->Property->find('first', $options));
 		$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id;
-		//	debug($dir);
 		if(!file_exists($dir))
 			mkdir($dir, 0777);
 		$dirThumbs = $dir.DS.'thumbs/';
@@ -176,7 +177,6 @@ class PropertiesController extends AppController {
 		if (!empty($this->request->data)) {
 			$this->set('_serialize', array('properties'));
 			$imageName = $this->request->data['Property']['files'][0]['name'];
-			// $imageName = $this->request->data['Property']['files'][0]['name'];
 			$extension =strtolower(pathinfo($this->request->data['Property']['files'][0]['name'],PATHINFO_EXTENSION));
 			if (file_exists($dir.'/'.$imageName)) {
 				$imageName = date('His') . $imageName;
@@ -207,167 +207,32 @@ class PropertiesController extends AppController {
 				}
 				$this->Qimage->watermark(array('file' => $dir.'/'.$imageName));
 				$this->Flash->success(__('Files saved successfully'),array('class' => 'alert alert-success'));
-				if (is_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'])) {
-					$counts = count(glob($dir_content.'*.jpg'));
-	 				$this->Property->saveField('mediaQuantities',$counts);
-	 				debug("ok");die();
-				}
+				// if (is_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'])) {
+				// 	$counts = count(glob($dir_content.'*.jpg'));
+	 		// 		$this->Property->saveField('mediaQuantities',$counts);
+	 		// 		debug("ok");die();
+				// }
 			}else  if (!empty($this->request->data['Property']['files'][0]['tmp_name'])) {
 				$this->Flash->error(__('There was a problem uploading file. Please try again.'));
 				}
 			return true;
 		}
-		if ($this->request->is(array('post', 'put'))) {
-			debug('ok');
-			die();
-		}
 	}
-	public function admin_uploadold($id=null){
-		$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
-		$this->set('property', $this->Property->find('first', $options));
-		$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id;
-		if(!file_exists($dir))
-			mkdir($dir, 0777);
-		$dirThumbs = $dir.DS.'thumbs/';
-		if(!file_exists($dirThumbs))
-			mkdir($dirThumbs,0777);
-		if (!empty($this->request->data)) {
-			$this->set('_serialize', array('properties'));
-			$imageName = $this->request->data['Property']['files'][0]['name'];
-			// $imageName = $this->request->data['Property']['files'][0]['name'];
-			$extension =strtolower(pathinfo($this->request->data['Property']['files'][0]['name'],PATHINFO_EXTENSION));
-			if (file_exists($dir.'/'.$imageName)) {
-				$imageName = date('His') . $imageName;
-			}
-			if (!empty($this->request->data['Property']['files'][0]['tmp_name'])&&
-				in_array($extension,array('jpg','png','jpeg'))) {
-				move_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'], $dir.'/'.$imageName);
-				list($width, $height) =  getimagesize($dir.'/'.$imageName);
-				if ($width > $height) {
-					$this->Qimage->resize(array(
-						'height' => 200,
-						'width' => 300,
-						'file' =>  $dir.'/'.$imageName,'output' => $dirThumbs
-						)
-					);
-				}else{
-					$this->Qimage->resize(array(
-						'height' => 200,
-						'width' => 133,
-						'file' =>  $dir.'/'.$imageName,
-						'output' => $dirThumbs
-						)
-					);
-				}
-				$this->Qimage->watermark(array('file' => $dir.'/'.$imageName));
-				$this->Flash->success(__('Files saved successfully'),array('class' => 'alert alert-success'));
-			}else  if (!empty($this->request->data['Property']['files'][0]['tmp_name'])) {
-				$this->Flash->error(__('There was a problem uploading file. Please try again.'));
-				}
-			return true;
-	//	$files = glob($dir."/*.jp*g");
-	//	$compteur = count($files);
-	//	debug($compteur);
-	//	die();
-	//	$this->Property->create;
-	//	$this->Property->saveField('mediaQuantities',$compteur);
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			debug('ok');
-			die();
-		}
-	}
-
-	/**
-	* admin_rename
-	**/
-	// public function admin_rename($id=null){
-	// 	$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
-	// 	$this->set('property', $this->Property->find('first', $options));
-	// 	$this->Property->id = $id;
-	// 	//debug($dir);
-	// 	$counts = count(glob($dir.'*.jpg'));
-	// 	debug($counts);die();
-
-	// 	//debug($count);
-	// 	$this->Property->saveField('mediaQuantities', $counts);
-	// }
-
-	/**
-	* admin_rename
-	**/
-	 public function admin_rename($id=null){
-
-	 	//debug("ok");
-	 	//die();
-	 	//$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
-	 	//$this->set('property', $this->Property->find('first', $options));
-
-	 	$this->Property->id = $id;
-	 	$dir_content = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
-	 	// $dirImages = $dir_content.'images'.DS;
-	 	// if(!file_exists($dirImages))
-	 	// 	mkdir($dirImages,0777);
-//	 	debug($dir);
-	 	$counts = count(glob($dir_content.'*.jpg'));
-	 //	debug($counts);
-
-	 	$this->Property->saveField('mediaQuantities',$counts);
-
-	 //	debug("ok");
-	 	// $dir = scandir($dir_content);
-	 	// $dir = scandir($dir_content);
-	 	// while($file = readdir($dir)){
-	 	// 	$array = explode('.', $file);
-	 	// 	if(isset($array[0])){
-	 	// 		$array[0] = $array[0].'10';
-	 	// 		$fileName = implode('.',$array);
-	 	// 		rename($dir_content.DIRECTORY_SEPARATOR.$file, $dir_content.DIRECTORY_SEPARATOR.$fileName);
-	 	// 	}
-	 	// }
-	 }
-
-
-
-
-
 
 /**
-* admin_count
-**/
-	public function admin_count(){
-		$files = glob($uploadPath."/*.jp*g");
-		$compteur = count($files);
-		debug($compteur);
-		$this->Property->create;
-		$this->Property->saveField('mediaQuantities',$compteur);
+ * [admin_rename description]
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+	 public function admin_count($id=null){
+	 	$dir_content = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
+	 	$counts = count(glob($dir_content.'*.jpg'));
+	 	if ($this->Property->saveField('mediaQuantities',$counts)) {
+	 		$this->Flash->success(__('Your pictures has been published in the folder  %s.',h($id)));
+	 		return $this->redirect(array('controller'=>'properties','action'=>'index'));
+	 	}
 
-	}
-
-public function admin_download2($id=null){
-	if (!empty($this->request->data)) {
-		$this->set('_serialize', array('properties'));
-		$uploadFolder = 'img/properties/';
-		$imageName = $this->request->data['Property']['files'][0]['name'];
-		$extension =strtolower(pathinfo($this->request->data['Property']['files'][0]['name'],PATHINFO_EXTENSION));
-		$uploadPath = WWW_ROOT. $uploadFolder;
-		if (file_exists($uploadPath.'/'.$imageName)) {
-			$imageName = date('His') . $imageName;
-		}
-		if (!empty($this->request->data['Property']['files'][0]['tmp_name'])&&
-			in_array($extension,array('jpg','png','jpeg'))) {
-			move_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'], $uploadPath.'/'.$imageName);
-			$this->Flash->success(__('Files saved successfully'),array('class' => 'alert alert-success'));
-
-		}else  if (!empty($this->request->data['Property']['files'][0]['tmp_name'])) {
-				$this->Flash->error(__('There was a problem uploading file. Please try again.'));
-		}
-		return true;
-	}
-	$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id;
-			if(!file_exists($dir))
-				mkdir($dir, 0777);
-}
+	 }
 /**
  * admin_enable method
  * @param  [type] $id [description]
