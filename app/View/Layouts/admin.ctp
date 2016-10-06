@@ -44,6 +44,10 @@ th a.asc:after	 {
 content: ' ⇡';
 }
 </style>
+	<script type="text/javascript">
+
+		var basePath = "<?php echo Router::url('/'); ?>"
+	</script>
 </head>
 <body class="skin-blue">
 	<div  class="wrapper">

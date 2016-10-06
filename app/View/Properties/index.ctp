@@ -27,7 +27,7 @@
 			</h4>
  			<figure>
  			<?php if ($property['Property']['mediaQuantities'] > 0): ?>
- 				<?php  echo  $this->Html->image('properties/2/thumbs/10002_1l.jpg', $options = array("class"=>"img-thumbnail")); ?>
+ 				<?php  echo  $this->Html->image("properties/".$property['Property']['id']."/thumbs/".$property['Property']['id']."-01.jpg", $options = array("class"=>"img-thumbnail"),array("style"=>'max-height::125px;')); ?>
  			<?php else: ?>
  				<?php echo  $this->Html->image('properties/fond_thumb.jpg', $options = array("class"=>"img-thumbnail")); ?>
  			<?php endif ?>
@@ -43,8 +43,8 @@
  			</div>
  			<div class="caption-right">
  				<a href="<?php  echo $this->Html->url($property['Property']['link']); ?>" class="btn">
- 					<span class="icon-info"></span><br>
- 					<p> <small><?php  echo __('see detail') ?></small></p>
+ 					<p><span class="icon-info"></span><br>
+ 					 <small><?php  echo __('see detail') ?></small></p>
  				</a>
  			</div>
  		</div>

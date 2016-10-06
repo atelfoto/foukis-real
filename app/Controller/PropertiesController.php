@@ -167,6 +167,65 @@ class PropertiesController extends AppController {
 		$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
 		$this->set('property', $this->Property->find('first', $options));
 		$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id;
+		//	debug($dir);
+		if(!file_exists($dir))
+			mkdir($dir, 0777);
+		$dirThumbs = $dir.DS.'thumbs/';
+		if(!file_exists($dirThumbs))
+			mkdir($dirThumbs,0777);
+		if (!empty($this->request->data)) {
+			$this->set('_serialize', array('properties'));
+			$imageName = $this->request->data['Property']['files'][0]['name'];
+			// $imageName = $this->request->data['Property']['files'][0]['name'];
+			$extension =strtolower(pathinfo($this->request->data['Property']['files'][0]['name'],PATHINFO_EXTENSION));
+			if (file_exists($dir.'/'.$imageName)) {
+				$imageName = date('His') . $imageName;
+			}
+					if (!empty($this->request->data['Property']['files'][0]['tmp_name'])&&
+				in_array($extension,array('jpg','png','jpeg'))) {
+				$j=1;
+            $counts = count(glob($dir.DS.'*.jpg'));
+            $imageName = $counts + 1 ;
+            $imageName = $id.'-'.sprintf('%02d', $imageName).".jpg" ;
+				move_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'], $dir.'/'.$imageName);
+				list($width, $height) =  getimagesize($dir.'/'.$imageName);
+				if ($width > $height) {
+					$this->Qimage->resize(array(
+						'height' => 200,
+						'width' => 300,
+						'file' =>  $dir.'/'.$imageName,'output' => $dirThumbs
+						)
+					);
+				}else{
+					$this->Qimage->resize(array(
+						'height' => 200,
+						'width' => 133,
+						'file' =>  $dir.'/'.$imageName,
+						'output' => $dirThumbs
+						)
+					);
+				}
+				$this->Qimage->watermark(array('file' => $dir.'/'.$imageName));
+				$this->Flash->success(__('Files saved successfully'),array('class' => 'alert alert-success'));
+				if (is_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'])) {
+					$counts = count(glob($dir_content.'*.jpg'));
+	 				$this->Property->saveField('mediaQuantities',$counts);
+	 				debug("ok");die();
+				}
+			}else  if (!empty($this->request->data['Property']['files'][0]['tmp_name'])) {
+				$this->Flash->error(__('There was a problem uploading file. Please try again.'));
+				}
+			return true;
+		}
+		if ($this->request->is(array('post', 'put'))) {
+			debug('ok');
+			die();
+		}
+	}
+	public function admin_uploadold($id=null){
+		$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
+		$this->set('property', $this->Property->find('first', $options));
+		$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id;
 		if(!file_exists($dir))
 			mkdir($dir, 0777);
 		$dirThumbs = $dir.DS.'thumbs/';
@@ -222,51 +281,51 @@ class PropertiesController extends AppController {
 	/**
 	* admin_rename
 	**/
-	public function admin_rename($id=null){
-		$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
-		$this->set('property', $this->Property->find('first', $options));
-		$this->Property->id = $id;
-		$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
-		$dirImages = $dir.'images'.DS;
-		if(!file_exists($dirImages))
-			mkdir($dirImages,0777);
-		//debug($dir);
-		$counts = count(glob($dir.'*.jpg'));
-		//debug($counts);die();
-
-			foreach ($counts as $count) {
-			//	for($i =1; $i <$counts; $i++){
-				rename($count,$dirImages.$id.'toto-'.$i.".jpg");
-		//	}
-		}
-		//debug($count);
-	//	$this->Property->saveField('mediaQuantities', $counts);
-	}
-
-	/**
-	* admin_rename
-	**/
 	// public function admin_rename($id=null){
 	// 	$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
 	// 	$this->set('property', $this->Property->find('first', $options));
 	// 	$this->Property->id = $id;
-	// 	$dir_content = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
-	// 	$dirImages = $dir_content.'images'.DS;
-	// 	if(!file_exists($dirImages))
-	// 		mkdir($dirImages,0777);
 	// 	//debug($dir);
-	// 	$counts = count(glob($dir_content.'*.jpg'));
-	// 	$dir = scandir($dir_content);
-	// 	//$dir = scandir($dir_content);
-	// 	while($file = readdir($dir)){
-	// 		$array = explode('.', $file);
-	// 		if(isset($array[0])){
-	// 			$array[0] = $array[0].'10';
-	// 			$fileName = implode('.',$array);
-	// 			rename($dir_content.DIRECTORY_SEPARATOR.$file, $dir_content.DIRECTORY_SEPARATOR.$fileName);
-	// 		}
-	// 	}
+	// 	$counts = count(glob($dir.'*.jpg'));
+	// 	debug($counts);die();
+
+	// 	//debug($count);
+	// 	$this->Property->saveField('mediaQuantities', $counts);
 	// }
+
+	/**
+	* admin_rename
+	**/
+	 public function admin_rename($id=null){
+
+	 	//debug("ok");
+	 	//die();
+	 	//$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
+	 	//$this->set('property', $this->Property->find('first', $options));
+
+	 	$this->Property->id = $id;
+	 	$dir_content = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
+	 	// $dirImages = $dir_content.'images'.DS;
+	 	// if(!file_exists($dirImages))
+	 	// 	mkdir($dirImages,0777);
+//	 	debug($dir);
+	 	$counts = count(glob($dir_content.'*.jpg'));
+	 //	debug($counts);
+
+	 	$this->Property->saveField('mediaQuantities',$counts);
+
+	 //	debug("ok");
+	 	// $dir = scandir($dir_content);
+	 	// $dir = scandir($dir_content);
+	 	// while($file = readdir($dir)){
+	 	// 	$array = explode('.', $file);
+	 	// 	if(isset($array[0])){
+	 	// 		$array[0] = $array[0].'10';
+	 	// 		$fileName = implode('.',$array);
+	 	// 		rename($dir_content.DIRECTORY_SEPARATOR.$file, $dir_content.DIRECTORY_SEPARATOR.$fileName);
+	 	// 	}
+	 	// }
+	 }
 
 
 

@@ -1,3 +1,4 @@
+<?php // echo  $this->Html->script(array('admin/addtoproperty.js'), array('inline'=>false)); ?>
 <?php echo $this->assign('title', __('property')); ?>
  <?php $this->Html->addCrumb(__('property'),array('controller'=>'properties','action'=>'index','admin'=>true)); ?>
  <?php $this->Html->addCrumb('upload' ); ?>
@@ -11,12 +12,12 @@
 				<li class="pull-right">
 					<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
 							array('controller'=>'properties','action'=>'index'),
-							array('class' => 'btn btn-default','escape'=>false)); ?>
+							array('class' => 'btn btn-default addtoproperty','escape'=>false)); ?>
 				</li>
 				<li class="pull-right">
 					<?php echo $this->html->link('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('rename'),
 							array('controller'=>'properties','action'=>'rename',$property['Property']['id']),
-							array('class' => 'btn btn-success','escape'=>false)); ?>
+							array('class' => 'btn btn-success addtoproperty','id'=>$property['Property']['id'],'escape'=>false)); ?>
 				</li>
 			</ul>
 			<div class=" box-body">
