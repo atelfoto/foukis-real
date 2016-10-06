@@ -20,12 +20,12 @@
  			<div class="box-body">
 
 
- 			<?php foreach (glob('img/properties/'.$property['Property']['id'].'/*.jpg') as  $v):  ?>
- 				<img src="/<?php echo $v; ?>" alt="">
+ 			<?php // foreach (glob('img/properties/'.$property['Property']['id'].'/*.jpg') as  $v):  ?>
+ 				<!-- <img src="/<?php // echo $v; ?>" alt=""> -->
 
 
 
- 			 <?php endforeach ?>
+ 			 <?php // endforeach ?>
 
  			</div>
  		</div>

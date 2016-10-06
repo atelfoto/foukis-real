@@ -225,28 +225,53 @@ class PropertiesController extends AppController {
 	public function admin_rename($id=null){
 		$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
 		$this->set('property', $this->Property->find('first', $options));
-		// $property = $this->Property->find('first',array(
-		// 'fields'     =>array('id'),
-		// 'conditions' => array('id'=> $user_id, 'token'=>$token)
-		// ));
-		//$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
 		$this->Property->id = $id;
-		//debug($this->Property->id);
-		//die();
 		$dir = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
-		debug($dir);
-		$count = count(glob($dir.'*.jpg'));
-		debug($count);
-		//die();
+		$dirImages = $dir.'images'.DS;
+		if(!file_exists($dirImages))
+			mkdir($dirImages,0777);
+		//debug($dir);
+		$counts = count(glob($dir.'*.jpg'));
+		//debug($counts);die();
+
+			foreach ($counts as $count) {
+			//	for($i =1; $i <$counts; $i++){
+				rename($count,$dirImages.$id.'toto-'.$i.".jpg");
+		//	}
+		}
 		//debug($count);
-		//die();
-		//$this->Property->set($this->request->data);
-		$this->Property->saveField('mediaQuantities', $count);
-
-		//$this->set('property', $this->Property->find('first', $options));
-
-
+	//	$this->Property->saveField('mediaQuantities', $counts);
 	}
+
+	/**
+	* admin_rename
+	**/
+	// public function admin_rename($id=null){
+	// 	$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
+	// 	$this->set('property', $this->Property->find('first', $options));
+	// 	$this->Property->id = $id;
+	// 	$dir_content = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
+	// 	$dirImages = $dir_content.'images'.DS;
+	// 	if(!file_exists($dirImages))
+	// 		mkdir($dirImages,0777);
+	// 	//debug($dir);
+	// 	$counts = count(glob($dir_content.'*.jpg'));
+	// 	$dir = scandir($dir_content);
+	// 	//$dir = scandir($dir_content);
+	// 	while($file = readdir($dir)){
+	// 		$array = explode('.', $file);
+	// 		if(isset($array[0])){
+	// 			$array[0] = $array[0].'10';
+	// 			$fileName = implode('.',$array);
+	// 			rename($dir_content.DIRECTORY_SEPARATOR.$file, $dir_content.DIRECTORY_SEPARATOR.$fileName);
+	// 		}
+	// 	}
+	// }
+
+
+
+
+
 
 /**
 * admin_count
