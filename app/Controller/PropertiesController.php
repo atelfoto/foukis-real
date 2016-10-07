@@ -65,7 +65,9 @@ public function index() {
 	// 	)
 	// );
 	$areas = $this->Property->Area->find('list');
-	$this->set(compact('areas'));
+	$states = $this->Property->State->find('list');
+	$types = $this->Property->Type->find('list');
+	$this->set(compact('areas','states','types'));
 	$this->set('properties', $this->Paginator->paginate(
 	//	 array("Property.online"=>1)
 		));

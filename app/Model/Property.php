@@ -29,7 +29,7 @@ class Property extends AppModel {
  */
   	public $actsAs = array(
         'Search.Searchable',
-     //   'containable'
+        'containable'
     );
 
 /**
@@ -104,7 +104,7 @@ class Property extends AppModel {
 	            'min' => 1,
 	        //    'max' => 3
 	        )),
-	        'message' => 'Merci de choisir une options'
+	        'message' => 'Merci de choisir au moins une options'
 	    ),
 		'type_id' => array(
 			'notBlank' => array(
@@ -297,14 +297,24 @@ class Property extends AppModel {
 		'price' => array(
 			'field' => 'Property.price >=',
 			'type' => 'value'
-			)
-		,
+			),
+		'state_id' => array(
+			'field' => 'Property.state_id',
+			'type' => 'like',
+			//'formField' => 'blog_input',
+           // 'modelField' => 'value',
+           // 'model' => 'Area'
+			),
 		'area_id' => array(
 			'field' => 'Property.area_id',
 			'type' => 'like',
 			//'formField' => 'blog_input',
            // 'modelField' => 'value',
            // 'model' => 'Area'
+			),
+		'type_id' => array(
+			'field' => 'Property.type_id',
+			'type' => 'like'
 			)
 		);
 }

@@ -19,15 +19,19 @@
 	),
 	'class' => 'well form-horizontal'
 ));
-    echo  $this->Form->input("Property.name", array(
-	'placeholder'=>__('name')));
+ //    echo  $this->Form->input("Property.name", array(
+	// 'placeholder'=>__('name')));
 	echo  $this->Form->input("Property.size", array(
 	'placeholder'=>__('size')));
 	echo  $this->Form->input("Property.price", array(
 	'placeholder'=>__('price')));
 	echo  $this->Form->input("Property.area_id", array(
-	//	"name"=> $this->data['Property']["area_id"],
-	//	"name"=>"Property.area_id",
+	'empty'=>__('choose')
+	));
+	echo  $this->Form->input("Property.state_id", array(
+	'empty'=>__('choose')
+	));
+	echo  $this->Form->input("Property.type_id", array(
 	'empty'=>__('choose')
 	));
   ?>
