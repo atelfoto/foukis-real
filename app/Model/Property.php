@@ -23,6 +23,14 @@ class Property extends AppModel {
  * @var string
  */
 	public $displayField = 'name';
+/**
+ * [$actsAs description]
+ * @var array
+ */
+  	public $actsAs = array(
+        'Search.Searchable',
+     //   'containable'
+    );
 
 /**
  * afterFind callback
@@ -207,7 +215,6 @@ class Property extends AppModel {
 	);
 
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
-public $actsAs = array('containable');
 /**
  * belongsTo associations
  *
@@ -278,5 +285,26 @@ public $actsAs = array('containable');
 			'finderQuery' => '',
 		)
 	);
-
+	public $filterArgs = array(
+		'name' => array(
+			'field' => 'Property.name',
+			'type' => 'like'
+			),
+		'size' => array(
+			'field' => 'Property.size >=',
+			'type' => 'value'
+			),
+		'price' => array(
+			'field' => 'Property.price >=',
+			'type' => 'value'
+			)
+		,
+		'area_id' => array(
+			'field' => 'Property.area_id',
+			'type' => 'like',
+			//'formField' => 'blog_input',
+           // 'modelField' => 'value',
+           // 'model' => 'Area'
+			)
+		);
 }

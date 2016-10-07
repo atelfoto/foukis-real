@@ -17,7 +17,7 @@ class PropertiesController extends AppController {
  *
  * @var array
  */
-	public $components = array( 'Flash','Session','RequestHandler',"Qimage");
+	public $components = array( 'Flash','Session','RequestHandler',"Qimage","Search.Prg","Paginator");
 
 	public function offerings(){
 		$this->layout='home';
@@ -28,20 +28,48 @@ class PropertiesController extends AppController {
 /**
 * index
 **/
-	public function index() {
-		$this->layout ='home';
-		$this->Property->recursive = 0;
-		$this->paginate = array('Property'=>array(
-			"limit"=>8,
-			'order'=>array(
-				'Property.created'=>'desc')
-			));
-		$d["properties"] = $this->Paginate(array(
-			"Property.online"=>1
+	// public function index() {
+	// 	$this->Property->recursive = 0;
+	// 	$this->Prg->commonProcess(null, array(
+	// 		'paramType' => 'querystring'
+	// 		)
+	// 	);
+	// 	$this->paginate = array('Property'=>array(
+	// 		"limit"=>8,
+	// 		'order'=>array(
+	// 			'Property.created'=>'desc')
+	// 		));
+	// 	$d["properties"] = $this->Paginate(array(
+	// 		"Property.online"=>1
+	// 		)
+	// 	);
+	// 	$this->set($d );
+	// }
+public function index() {
+	$this->Property->recursive = 0;
+	$this->Prg->commonProcess(null, array(
+		'paramType' => 'querystring'
+		));
+	$this->Paginator->settings = array(
+		'Property' => array(
+			'paramType' => 'querystring',
+			'conditions' => $this->Property->parseCriteria(
+				$this->Prg->parsedParams()
+				)
 			)
 		);
-		$this->set($d );
-	}
+	// $this->paginate = array('Property'=>array(
+	// 	"limit"=>8,
+	// 	'order'=>array(
+	// 		'Property.created'=>'desc')
+	// 	)
+	// );
+	$areas = $this->Property->Area->find('list');
+	$this->set(compact('areas'));
+	$this->set('properties', $this->Paginator->paginate(
+	//	 array("Property.online"=>1)
+		));
+}
 /**
 * view
 **/
@@ -207,11 +235,6 @@ class PropertiesController extends AppController {
 				}
 				$this->Qimage->watermark(array('file' => $dir.'/'.$imageName));
 				$this->Flash->success(__('Files saved successfully'),array('class' => 'alert alert-success'));
-				// if (is_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'])) {
-				// 	$counts = count(glob($dir_content.'*.jpg'));
-	 		// 		$this->Property->saveField('mediaQuantities',$counts);
-	 		// 		debug("ok");die();
-				// }
 			}else  if (!empty($this->request->data['Property']['files'][0]['tmp_name'])) {
 				$this->Flash->error(__('There was a problem uploading file. Please try again.'));
 				}

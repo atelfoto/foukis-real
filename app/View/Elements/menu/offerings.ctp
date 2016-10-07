@@ -32,7 +32,7 @@
 	<?php echo $this->Form->year("year", "1900",date('Y'),
 	 array(
 	"empty"=>__('year'),
-	"class"=>__('form-control'))); ?>
+	"class"=>'form-control')); ?>
 	</div>
 	<?php echo  $this->Form->input('price', array(
 	'placeholder'=>__('price'),
