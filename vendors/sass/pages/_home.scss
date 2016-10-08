@@ -178,6 +178,11 @@ h2.title{
 	}
 //@include susy-breakpoint(750px, $desktop) {
 @media only screen and(max-width: 750px){
+	.content, h2.title {
+		border-left: 0px ;
+		border-right: 0px ;
+		box-shadow:none;
+	}
 
 
 		.stretch-container {

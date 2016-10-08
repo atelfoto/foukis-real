@@ -75,7 +75,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 					<!--nocache-->
 					<?php echo $this->Flash->render(); ?>
 					<!--/nocache-->
-					<?php if ($this->request->controller=='pages'): ?>
+					<?php if ($this->request->controller=='pages' || $this->request->controller=='users' ): ?>
 
 					<?php else: ?>
 
