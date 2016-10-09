@@ -9,29 +9,6 @@ App::uses('AppController', 'Controller');
  * @property SessionComponent $Session
  */
 class MenusController extends AppController {
-
-	/**
-	* daschboard
-	**/
-	public function admin_dashboard(){
-
-	}
-	/**
-	* contact
-	**/
-	public function contact(){
-	$this->layout = "home";
-
-	}
-
-	/**
-	* offerings
-	**/
-	public function offerings(){
-		$this->layout='home';
-	//	$this->loadModel('Type');
-	}
-
 /**
  * Components
  *
@@ -46,21 +23,58 @@ class MenusController extends AppController {
 		$this->layout='admin';
 		$this->Menu->recursive = 0;
 		$menus = $this->Menu->find('all',array(
-		//	'conditions'=>array('type'=>'post','online'=>1),
-			'fields'    =>array('name',"id",'controller','icon')
+			'conditions'=>array('online'=>1),
+			'fields'    =>array('name',"id",'controller','icon'),
+			'order' =>array('name'=>"asc")
 			));
 		return $menus;
 	}
 /**
- * index method pour tester
- *
- * @return void
- */
-	public function index() {
-		$this->layout='home';
-		$this->Menu->recursive = 0;
-		$this->set('menus', $this->Paginator->paginate());
+* daschboard
+**/
+	public function admin_dashboard(){
+		$this->loadModel('User');
+		$this->set('users_count', $this->User->find('count'));
+		$users_total = $this->User->find('count');
+		$this->set(compact("users_total"));
+		$this->set('users_count',$this->User->find('count', array(
+			'conditions' =>array('User.active'=>1))));
+
+		$this->loadModel('Post');
+		$posts_total = $this->Post->find('count');
+		$this->set(compact("posts_total"));
+		$this->set('posts_count',$this->Post->find('count', array(
+			'conditions' =>array('Post.online'=>1))));
+
+		$this->loadModel('Property');
+		$properties_total = $this->Property->find('count');
+		$this->set(compact("properties_total"));
+		$this->set('properties_count',$this->Property->find('count', array(
+			'conditions' =>array('Property.online'=>1))));
+
+		$menus_total = $this->Menu->find('count');
+		$this->set(compact("menus_total"));
+		$this->set('menus_count',$this->Menu->find('count', array(
+			'conditions' =>array('Menu.online'=>1))));
+
+
 	}
+/**
+* contact
+**/
+	public function contact(){
+//	$this->layout = "home";
+
+	}
+
+/**
+* offerings
+**/
+	public function offerings(){
+	//	$this->layout='home';
+	//	$this->loadModel('Type');
+	}
+
 
 /**
  * admin_index method

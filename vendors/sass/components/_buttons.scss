@@ -16,34 +16,58 @@ div.button {
 		text-decoration:none;
     	cursor: pointer;
 		color:#fff;
-		margin-left: 20px;
+		width: 100%;
+		// margin-left: 20px;
 		 border: solid 1px darken($color,20);
 		 @include background-image( linear-gradient(top,$color,darken($color,10)) );
 		 @include box-shadow(inset 0px 1px 1px lighten($color,20));
 		 border-radius: 5px;
+		 margin-top: 10px
 	}
 	button:active{
 	    @include background-image( linear-gradient(bottom,$color,darken($color,10)) );
-
-	 }
-	 button:focus {
-    outline: none;
+	}
+	button:focus {
+		outline: none;
+	}
+	// button:before{
+	// 	//background-color:#ccd0d5;
+	// 	background-color: rgba(204, 208, 213,0.4);
+	// 	content:"";
+	// 	display:block;
+	// 	position:absolute;
+	// 	//width:50%;
+	// 	width:130%;
+	// 	height:120%;
+	// 	//height:100%;
+	// 	padding:24px;
+	// 	 left:-8px;
+	// 	 top:-8px;
+	// 	z-index:-1;
+	// 	border-radius: 5px;
+	// 	@include box-shadow(inset 0px 1px 1px #909193,0px 1px 0px #fff);
+	// }
 }
-	button:before{
-		//background-color:#ccd0d5;
-		background-color: rgba(204, 208, 213,0.4);
-		content:"";
-		display:block;
-		position:absolute;
-		//width:50%;
-		width:130%;
-		height:120%;
-		//height:100%;
-		padding:24px;
-		 left:-8px;
-		 top:-8px;
-		z-index:-1;
+@media only screen and (min-width: 750px){
+	div.button button{
+		width: 75px;
+		margin-left: 30px;
+		margin-top: 0px;
+	}
+	div.button button:before {
+		left:-11px;
+		background-color: rgba(204, 208, 213, 0.4);
+		content: "";
+		display: block;
+		position: absolute;
+		width: 130%;
+		height: 120%;
+		padding: 24px;
+		left: -8px;
+		top: -8px;
+		z-index: -1;
 		border-radius: 5px;
-		@include box-shadow(inset 0px 1px 1px #909193,0px 1px 0px #fff);
+		-webkit-box-shadow: inset 0px 1px 1px #909193, 0px 1px 0px #fff;
+		box-shadow: inset 0px 1px 1px #909193, 0px 1px 0px #fff;
 	}
 }

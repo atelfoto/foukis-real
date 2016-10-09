@@ -17,11 +17,11 @@
 									<?php echo $this->Form->input('active', array('label' =>false));?>
 								</li>
 								<li >
-									<?php echo $this->Form->button('<i class="fa fa-check fa-lg" style="color:#fff;">&nbsp;</i>'.__('publish'),
-							 array('class' => 'btn btn-success btn-lg')); ?>
+									<?php echo $this->Form->button('<i class="icon-ok btn-sm" style="color:#fff;">&nbsp;</i>'.__('publish'),
+							 array('class' => 'btn btn-success btn-sm')); ?>
 								</li >
 								<li >
-									<?php echo $this->html->link('<i class="fa fa-times-circle fa-lg" style="color:#f00;">&nbsp;</i>'.__('Closed'),
+									<?php echo $this->html->link('<i class="icon-cancel-circled btn-sm" style="color:#f00;">&nbsp;</i>'.__('Closed'),
 							array('controller'=>'users','action'=>'index'),
 							array('class' => 'btn btn-default','type'=>'button','escape'=>false)); ?>
 								</li >
@@ -107,7 +107,7 @@ $('#myTab a').click(function (e) {
 //pour les toogle
   $(function() {
     $('#UserActive').bootstrapToggle({
-    size:'large',
+    size:'small',
     onstyle:'primary',
     offstyle:'danger',
     });

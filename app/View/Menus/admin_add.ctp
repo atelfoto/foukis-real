@@ -67,6 +67,9 @@
 							 'empty'=> __('choose'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user_id"></i></div>'
 							 ));?>
+
+				</div>
+				<div class="tab-pane fade" role="tabpanel" id="publication">
 					<?php echo $this->Form->input('description', array('class' => 'form-control',
 							 'placeholder' => __('Description'),
 							 'after'=>false
@@ -80,9 +83,6 @@
 							 'placeholder' => __('Keywords'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-keywords"></i></div>'
 							 ));?>
-				</div>
-				<div class="tab-pane fade" role="tabpanel" id="publication">
-
 				</div>
 			</div>
 			<div class="text-right box-footer" style="margin-top:10px;">
@@ -109,4 +109,21 @@ $('#myTab a').click(function (e) {
 		offstyle:'danger',
     });
   });
+//pour les meta description
+$(document).ready(function(e) {
+  $('#MenuDescription').keyup(function() {
+    var nombreCaractere = $(this).val().length;
+    var nombreMots = jQuery.trim($(this).val()).split(' ').length;
+    if($(this).val() === '') {
+     	nombreMots = 0;
+    }
+    var msg = ' ' + nombreMots + ' mot(s) | ' + nombreCaractere + ' Caractere(s) / 160';
+    $('#compteur').text(msg);
+    if (nombreCaractere > 160) {
+    	$('#compteur').addClass("mauvais");
+    	} else {
+    	$('#compteur').removeClass("mauvais");
+    }
+  })
+});
  <?= $this->Html->scriptEnd(); ?>

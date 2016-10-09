@@ -5,8 +5,6 @@
  			<?= $this->Form->create('User',array("url"=>array('controller'=>'users','action'=>'login'),'novalidate' => true,
  				'inputDefaults' => array(
  					'div' => 'form-group',
- 					//'label' => array('class' => 'control-label'),
- 						//	'wrapInput' => 'col col-md-9',
  					'class' => 'form-control'
  						),
  						'class' => 'form-horizontal'
@@ -16,15 +14,14 @@
  				 ?>
  				<fieldset>
  					<?= $this->Form->input('username', array('required'=>false,
- 						'label' =>array('name'=>__('Username'),'class'=>"control-label") ,
+ 						'label' =>array('name'=>__('Username'),'class'=>"control-label"),
  						'placeholder'=>__('Username'),'autofocus'=>true)); ?>
  					<?= $this->Form->input('password', array('required'=>false,
  						'label' => array("name"=> __('Password'),"class"=>'control-label'),
  						'placeholder'=>__('Password :'))); ?>
  					<?php echo  $this->Form->input('remember', array(
  					'type'=>'checkbox', "checked"=>true,
- 					'label'=>array('name'=>__('Remember me'),'class'=>'control-label') ,
- 					//'div'=>false,
+ 					'label'=>array('name'=>__('Remember me'),'class'=>'control-label'),
  					 'required'=>false,'class'=>'input')); ?>
  					<ul>
  						<li>

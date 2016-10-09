@@ -14,7 +14,7 @@ module.exports=function(grunt){
             dist: {
                 files: {
                     'app/webroot/js/home.min.js': ["vendors/js/jquery.min.js","vendors/js/*.js",'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js'],
-                    'app/webroot/js/admin.min.js': ["vendors/js/jquery.min.js",'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',"bower_components/bootstrap-toggle/js/bootstrap-toggle.js","vendors/js/admin/app.min.js",'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js','node_modules/bootstrap-datepicker/js/locales/bootstrap-datepicker.fr.js',"node_modules/chosen-js/chosen.jquery.js"]
+                    'app/webroot/js/admin.min.js': ["vendors/js/admin/jquery.2.1.3.min.js",'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',"bower_components/bootstrap-toggle/js/bootstrap-toggle.js","vendors/js/admin/app.js",'node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js','node_modules/bootstrap-datepicker/js/locales/bootstrap-datepicker.fr.js',"node_modules/chosen-js/chosen.jquery.js"]
                 //    'app/webroot/js/admin/fileinput/fileinput.min.js':["vendors/js/fileinput/fileinput.js"]
                     //'app/webroot/js/admin.min.js': ["bower_components/bootstrap-toggle/js/bootstrap-toggle.js","node_modules/datatables.net/js/jquery.dataTables.js"]
 

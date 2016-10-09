@@ -38,13 +38,14 @@
 	@include span(12);
 	float: right;
 	max-width: 460px;
-	height: 330px;
+	height: 350px;
   	position: absolute;
-  	top: 10%;
+  	// top: 10%;
   	left:0;
     color: #fff; // width: 250px;// height: 270px;
     margin-top: 0px;
     margin-left: 0px;
+    width: 100%;
     //padding: 30px;
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid #4b4b4b;
@@ -101,6 +102,7 @@
 	margin-start: 0px;
 	margin-end: 0px;
 	font-weight: bold;
+	text-align: center;
 }
 
 input.input#UserRemember{
@@ -119,6 +121,8 @@ input.input#UserRemember{
     left:50%;
     margin-top: -165px;
     margin-left: -230px;
+    max-width: 460px;
+	height: 330px;
 }
 
 }

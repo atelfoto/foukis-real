@@ -25,13 +25,13 @@
 									<?php echo $this->Form->input('online', array('label' => false));?>
 								</li>
 								<li>
-									<?php echo $this->Form->button('<i class="fa fa-check fa-lg" style="color:#fff;">&nbsp;</i>'.__('publish'),
-							 array('class' => 'btn btn-success btn-lg')); ?>
+									<?php echo $this->Form->button('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('publish'),
+							 array('class' => 'btn btn-success ')); ?>
 								</li>
 								<li>
-									<?php echo $this->html->link('<i class="fa fa-times-circle fa-lg" style="color:#f00;">&nbsp;</i>'.__('Closed'),
+									<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('Closed'),
 							array('controller'=>'posts','action'=>'index'),
-							array('class' => 'btn btn-default','escape'=>false)); ?>
+							array('class' => 'btn btn-default btn-sm','escape'=>false)); ?>
 								</li >
 							</ul>
 						</div>
@@ -51,8 +51,7 @@
 							 'placeholder' => __('Content')));?>
 							</div>
 							<div class="form-group">
-								<?php echo $this->Form->input('type', array('class' => 'form-control',
-							 'placeholder' => __('Type')));?>
+								<?php echo $this->Form->input('type', array('value'=>'post','type'=>'hidden'));?>
 							</div>
 							<div class="form-group">
 								<?php echo $this->Form->input('user_id', array('class' => 'form-control',
@@ -99,7 +98,6 @@ $('#myTab a').click(function (e) {
 //pour les toogle
   $(function() {
     $('#PostOnline').bootstrapToggle({
-		size:'large',
 		onstyle: 'primary',
 		offstyle:'danger',
     });

@@ -209,7 +209,11 @@ $(document).ready(function(e) {
     }
     var msg = ' ' + nombreMots + ' mot(s) | ' + nombreCaractere + ' Caractere(s) / 160';
     $('#compteur').text(msg);
-    if (nombreCaractere > 160) { $('#compteur').addClass("mauvais"); } else { $('#compteur').removeClass("mauvais"); }
+    if (nombreCaractere > 160) {
+    	$('#compteur').addClass("mauvais");
+    	} else {
+    	$('#compteur').removeClass("mauvais");
+    }
   })
 });
 <?= $this->Html->scriptEnd(); ?>

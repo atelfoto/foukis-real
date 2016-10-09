@@ -30,7 +30,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->meta('favicon.ico','/admin2-favicon.ico', array('type' => 'icon'));
 		echo $this->Html->meta(array('name' => 'robots', 'content' => 'no index, no follow'));
 		echo $this->Html->css('AdminLTE.min');
-		//echo $this->Html->css('admin.min');
 		echo $this->fetch('css');
 	?>
 <style>

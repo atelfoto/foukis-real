@@ -63,7 +63,7 @@ class Menu extends AppModel {
 		)
 	);
 /**
- * [$actsAs description]
+ * [$actsAs description plugi sluggable pour faire le champ slug automatiquement]
  * @var array
  */
 	public $actsAs = array(

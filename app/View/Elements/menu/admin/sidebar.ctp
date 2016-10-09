@@ -10,7 +10,7 @@
 		</span> <i class="icon-angle-left pull-right"></i></a>
 		<ul class="treeview-menu">
 			<li <?php if ($this->request->controller ==$v['controller'] && $this->request->action =='admin_index'):?> class="active"<?php endif; ?>>
-			<?php  echo $this->Html->link("<i class='icon-circle-empty'></i>".__("{$v['controller']} manager"),
+			<?php  echo $this->Html->link("<i class='icon-circle-empty'></i>".__("%s manager",$v['controller']  ),
 			array('controller' => $v['controller'], 'action' => 'index'),array('escape'=>false));?>
 			</li>
 			<li <?php if ($this->request->controller ==$v['controller'] && $this->request->action =='admin_add'):?> class="active"<?php  endif; ?>>
