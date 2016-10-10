@@ -60,72 +60,6 @@ public function logout() {
 	}
 
 /**
- * add method
- *
- * @return void
- */
-	public function add() {
-		if ($this->request->is('post')) {
-			$this->User->create();
-			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved.'),array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Flash->error(__('The user could not be saved. Please, try again.'),array('class' => 'alert alert-danger'));
-			}
-		}
-		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
-	}
-
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function edit($id = null) {
-		if (!$this->User->exists($id)) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		if ($this->request->is(array('post', 'put'))) {
-			if ($this->User->save($this->request->data)) {
-				$this->Flash->success(__('The user has been saved.'), array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-				$this->Flash->error(__('The user could not be saved. Please, try again.'), array('class' => 'alert alert-danger'));
-			}
-		} else {
-			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
-			$this->request->data = $this->User->find('first', $options);
-		}
-		$groups = $this->User->Group->find('list');
-		$this->set(compact('groups'));
-	}
-
-/**
- * delete method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function delete($id = null) {
-		$this->User->id = $id;
-		if (!$this->User->exists()) {
-			throw new NotFoundException(__('Invalid user'));
-		}
-		$this->request->onlyAllow('post', 'delete');
-		if ($this->User->delete()) {
-			$this->Flash->success(__('The user has been deleted.'), array('class' => 'alert alert-success'));
-		} else {
-			$this->Flash->error(__('The user could not be deleted. Please, try again.'), array('class' => 'alert alert-danger'));
-		}
-		return $this->redirect(array('action' => 'index'));
-	}
-
-/**
  * admin_index method
  *
  * @return void
@@ -157,8 +91,8 @@ public function logout() {
  *
  * @return void
  */
-	public function admin_add() {
-		$this->layout="admin";
+
+	public function admin_addold() {
 		if ($this->request->is('post')) {
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
@@ -171,6 +105,47 @@ public function logout() {
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
 	}
+
+/**
+ * [admin_signup description]
+ * @return [type] [description]
+ */
+	public function admin_add(){
+			if (!empty($this->request->data)) {
+				$this->User->create($this->request->data);
+				if($this->User->validates()){
+					$token = md5(time(). ' - ' . uniqid());
+					$this->User->create(array(
+						'username'=> $this->request->data['User']['username'],
+						'password'=> $this->Auth->password($this->request->data['User']['password']),
+						'mail'   => $this->request->data['User']['mail'],
+						'lastlogin'=> $this->request->data ['User']['lastlogin'] = '2010-01-01 12:00:00',
+						'token'  => $token
+						));
+					$this->User->save();
+					App::uses('CakeEmail','Network/Email');
+					$CakeEmail = new CakeEmail('smtp'); // à changer par Default sur le site en ligne sinon smtp en local
+					$CakeEmail->to($this->request->data['User']["mail"]);
+					$CakeEmail->subject(__(' your registration to our site'));
+					$CakeEmail->viewVars(
+						$this->request->data['User']+
+						array(
+							'token'=>$token,
+							'id'=>$this->User->id
+							)
+						);
+					$CakeEmail->emailFormat('html');
+					$CakeEmail->template('admin_signup');
+					$CakeEmail->send();
+					$this->Flash->success(
+						__("Thank you you are registered mail sent to you to confirm your compte.Please check your spam in case."),
+						array('class'=>'success','type'=>'ok-sign'));
+					return $this->redirect(array('action'=>'index'));
+				}else{
+					$this->Flash->error(__("Thank you to correct your mistakes"),array('class'=>'danger','type'=>'info'));
+				}
+			}
+		}
 
 /**
  * admin_edit method

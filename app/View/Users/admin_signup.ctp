@@ -7,20 +7,23 @@
 	'inputDefaults' => array(
 		'div' => 'form-group',
 		'label' => array(
-			'class' => 'col col-md-4 control-label'
+			'class' => 'col col-md-3 control-label'
 		),
 		//"between"=>'<div class="input-group"><div class="input-group-addon">
 		//<i class="icon-user"></i>
 		//</div>',
 		"after"=>'</div>',
 		'error' => array('attributes' => array('wrap' => 'span', 'class' => 'help-block text-danger  col-md-9 col-md-offset-3')),
+		//'wrapInput' => 'col col-md-3',
 		'class' => 'form-control'
 	),
 	'class' => 'well form-horizontal'
 	)); ?>
 	<div class="box-header with-border">
 		<h3 class="box-title"><i class="icon-user"></i>&nbsp;<?php echo __('Add User'); ?></h3>
+
 		<div class="box-tools pull-right">
+
 			<?php echo $this->Form->button('<i class="icon-ok " style="color:#fff;">&nbsp;</i>'.__('publish'),
 									array('class' => 'btn btn-success btn-sm')); ?>
 			<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
@@ -51,11 +54,6 @@
 				"between"=>'<div class="input-group"><div class="input-group-addon">
 		<i class="icon-key"></i>
 		</div>',));?>
-		<?php echo $this->Form->input('password2', array(
-			'class' => 'form-control',
-			'placeholder' => __('Confirm Password'),
-			'label'=>array("text"=>__('confirm password'),'class'=>'col-md-4'),
-			"between"=>'<div class="input-group"><div class="input-group-addon"><i class="icon-key"></i></div>'));?>
 		<?php echo $this->Form->input('group_id', array('class' => 'form-control',
 				"between"=>'<div class="input-group"><div class="input-group-addon">
 		<i class="icon-users"></i>

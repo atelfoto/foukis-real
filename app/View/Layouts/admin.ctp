@@ -60,12 +60,12 @@ content: ' ⇡';
 				<div class="navbar-custom-menu">
 					<ul class="nav navbar-nav">
 						<li class="dropdown">
-							<a href="<?= $this->Html->url(array('controller' => 'helps', 'action' => 'index')); ?> " class="dropdown-toogle">
+							<a href="<?= $this->Html->url(array('controller' => 'helps', 'action' => 'index')); ?> " class="">
 								<i class="icon-help-circled"></i>	Aide
 							</a>
 						</li>
 						<li class="dropdown user user-menu">
-							<a href="#" class="dropdown-toogle" data-toogle="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 								<?php echo  $this->Html->image("avatars/gravatar_mini.jpg", array('class'=>"user-image",'title'=>"avatar")); ?>
 								<span class="hidden-xs">philippe</span>
 							</a>
@@ -144,7 +144,10 @@ content: ' ⇡';
 			<strong>Copyright &copy; 2007-<?php echo date('Y'); ?> <a href=""><?php echo env('HTTP_HOST'); ?></a>.</strong> All rights reserved.
 		</footer>
 	</div>
-	<?php echo  $this->Html->script(array('admin.min'));
-		  echo $this->fetch('script');?>
+	<?php echo  $this->Html->script(array('admin.min')); ?>
+	<?php $this->Html->scriptStart(array('inline'=>false)); ?>
+	//	$('.dropdown-toggle').dropdown();
+	<?php $this->Html->scriptEnd(); ?>
+	<?php echo $this->fetch('script');?>
 </body>
 </html>
