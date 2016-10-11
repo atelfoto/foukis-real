@@ -51,8 +51,11 @@
 							 'placeholder' => __('Password')));?>
 							</div>
 							<div class="form-group">
-								<?php echo $this->Form->input('group_id', array('class' => 'form-control','placeholder' => __('Group Id')));?>
+								<?php echo $this->Form->input('role', array('class' => 'form-control','options' => array("admin", "member"),));?>
 							</div>
+							<!-- <div class="form-group">
+								<?php // echo $this->Form->input('group_id', array('class' => 'form-control','placeholder' => __('Group Id')));?>
+							</div> -->
 							<!-- 	<div class="form-group">
 								<?php echo $this->Form->input('firstname', array('class' => 'form-control',
 							 'placeholder' => __('Firstname')));?>
@@ -68,10 +71,6 @@
 							<div class="form-group">
 								<?php echo $this->Form->input('avatar', array('class' => 'form-control',
 							 'placeholder' => __('Avatar')));?>
-							</div>
-							<div class="form-group">
-								<?php echo $this->Form->input('role', array('class' => 'form-control',
-							 'placeholder' => __('Role')));?>
 							</div>
 							<div class="form-group">
 								<?php echo $this->Form->input('token', array('class' => 'form-control',

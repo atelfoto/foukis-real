@@ -211,12 +211,12 @@ public function index() {
 			if (file_exists($dir.'/'.$imageName)) {
 				$imageName = date('His') . $imageName;
 			}
-					if (!empty($this->request->data['Property']['files'][0]['tmp_name'])&&
+			if (!empty($this->request->data['Property']['files'][0]['tmp_name'])&&
 				in_array($extension,array('jpg','png','jpeg'))) {
 				$j=1;
-            $counts = count(glob($dir.DS.'*.jpg'));
-            $imageName = $counts + 1 ;
-            $imageName = $id.'-'.sprintf('%02d', $imageName).".jpg" ;
+            	$counts = count(glob($dir.DS.'*.jpg'));
+            	$imageName = $counts + 1 ;
+            	$imageName = $id.'-'.sprintf('%02d', $imageName).".jpg" ;
 				move_uploaded_file($this->request->data['Property']['files'][0]['tmp_name'], $dir.'/'.$imageName);
 				list($width, $height) =  getimagesize($dir.'/'.$imageName);
 				if ($width > $height) {

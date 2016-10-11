@@ -22,9 +22,9 @@ class UserFixture extends CakeTestFixture {
 		'avatar' => array('type' => 'integer', 'null' => true, 'default' => '1', 'length' => 1, 'unsigned' => false),
 		'created' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'modified' => array('type' => 'datetime', 'null' => true, 'default' => null),
-		'role' => array('type' => 'string', 'null' => false, 'default' => 'member', 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
+		'role' => array('type' => 'string', 'null' => true, 'default' => 'member', 'length' => 50, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
 		'token' => array('type' => 'string', 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'charset' => 'utf8'),
-		'lastlogin' => array('type' => 'datetime', 'null' => false, 'default' => null),
+		'lastlogin' => array('type' => 'datetime', 'null' => true, 'default' => null),
 		'indexes' => array(
 			'PRIMARY' => array('column' => 'id', 'unique' => 1),
 			'username' => array('column' => 'username', 'unique' => 0)
@@ -49,11 +49,11 @@ class UserFixture extends CakeTestFixture {
 			'lastname' => 'Lorem ipsum dolor sit amet',
 			'active' => 1,
 			'avatar' => 1,
-			'created' => '2016-09-03 16:14:39',
-			'modified' => '2016-09-03 16:14:39',
+			'created' => '2016-10-10 12:12:20',
+			'modified' => '2016-10-10 12:12:20',
 			'role' => 'Lorem ipsum dolor sit amet',
 			'token' => 'Lorem ipsum dolor sit amet',
-			'lastlogin' => '2016-09-03 16:14:39'
+			'lastlogin' => '2016-10-10 12:12:20'
 		),
 	);
 

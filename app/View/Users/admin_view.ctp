@@ -22,7 +22,7 @@
 		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New User'),
 								 array('action' => 'add'), array('escape' => false)); ?> </li>
 		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Groups'), array('controller' => 'groups', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Group'), array('controller' => 'groups', 'action' => 'add'), array('escape' => false)); ?> </li>
+		<!-- <li><?php //  echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Group'), array('controller' => 'groups', 'action' => 'add'), array('escape' => false)); ?> </li> -->
 		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Posts'), array('controller' => 'posts', 'action' => 'index'), array('escape' => false)); ?> </li>
 		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Post'), array('controller' => 'posts', 'action' => 'add'), array('escape' => false)); ?> </li>
 							</ul>
@@ -62,20 +62,20 @@
 			&nbsp;
 		</td>
 </tr>
-<tr>
-		<th><?php echo __('Password'); ?></th>
+<!-- <tr>
+		<th><?php // echo __('Password'); ?></th>
 		<td>
-			<?php echo h($user['User']['password']); ?>
+			<?php // echo h($user['User']['password']); ?>
 			&nbsp;
 		</td>
-</tr>
-<tr>
-		<th><?php echo __('Group'); ?></th>
-		<td>
-			<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?>
+</tr> -->
+<!-- <tr> -->
+		<!-- <th><?php // echo __('Group'); ?></th> -->
+<!-- 		<td>
+			<?php // echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?>
 			&nbsp;
 		</td>
-</tr>
+</tr> -->
 <tr>
 		<th><?php echo __('Firstname'); ?></th>
 		<td>

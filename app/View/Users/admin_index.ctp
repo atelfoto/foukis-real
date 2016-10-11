@@ -21,7 +21,7 @@
 						<th><?php echo $this->Paginator->sort('name'); ?></th>
 						<th><?php echo $this->Paginator->sort('username'); ?></th>
 						<th><?php echo $this->Paginator->sort('mail'); ?></th>
-						<th><?php echo $this->Paginator->sort('group_id'); ?></th>
+						<th><?php echo $this->Paginator->sort('role'); ?></th>
 						<th><?php echo $this->Paginator->sort('created'); ?></th>
 						<th><?php echo $this->Paginator->sort('modified'); ?></th>
 						<th><?php echo $this->Paginator->sort('lastlogin'); ?></th>
@@ -36,8 +36,9 @@
 						<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
 						<td><?php echo h($user['User']['username']); ?>&nbsp;</td>
 						<td><?php echo h($user['User']['mail']); ?>&nbsp;</td>
-						<td><?php echo $this->Html->link($user['Group']['name'],
-						array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?></td>
+						<!-- <td><?php // echo $this->Html->link($user['Group']['name'],
+						// array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?></td> -->
+						<td> <?php echo h($user['User']['role']) ?></td>
 						<td><?php  echo $this->Time->format($user['User']['created'], '%A %e %B, %Y'); ?>&nbsp;</td>
 						<td><?php echo h($user['User']['modified']); ?>&nbsp;</td>
 						<td><?php echo h($user['User']['lastlogin']); ?>&nbsp;</td>
@@ -100,7 +101,7 @@
 				<h4 ><?php echo __('Remove User') ?></h4>
 			</div>
 			<div class="modal-body">
-				<p> <?php echo __('Are you sure you want to delete'); ?> <b style="color:#f00;">&nbsp;<?php echo $v['name'];?> &nbsp;</b>
+				<p> <?php echo __('Are you sure you want to delete'); ?> <b style="color:#f00;">&nbsp;<?php echo $v['username'];?> &nbsp;</b>
 					<?php echo __('of your') ?>
 					<span class="label-uname strong"></span> ?
 				</p>

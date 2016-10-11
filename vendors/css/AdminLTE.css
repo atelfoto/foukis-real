@@ -4589,7 +4589,7 @@ output {
 /* line 114, ../sass/admin/bootstrap/bootstrap/_forms.scss */
 .form-control {
 	display: block;
-	width: 100%;
+	width: 99%;
 	height: 34px;
 	padding: 6px 12px;
 	font-size: 14px;
@@ -6058,7 +6058,7 @@ tbody.collapse.in {
 	position: relative;
 	z-index: 2;
 	float: left;
-	width: 100%;
+	width: 98%;
 	margin-bottom: 0;
 }
 
@@ -11583,13 +11583,13 @@ a:focus {
 	display: block;
 	margin-bottom: 20px;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-	cursor:pointer;
+	cursor: pointer;
 }
-/* line 13, ../sass/admin/components/_small-box.scss */
+/* line 14, ../sass/admin/components/_small-box.scss */
 .small-box > .inner {
 	padding: 10px;
 }
-/* line 17, ../sass/admin/components/_small-box.scss */
+/* line 18, ../sass/admin/components/_small-box.scss */
 .small-box > .small-box-footer {
 	position: relative;
 	text-align: center;
@@ -11601,12 +11601,12 @@ a:focus {
 	background: rgba(0, 0, 0, 0.1);
 	text-decoration: none;
 }
-/* line 27, ../sass/admin/components/_small-box.scss */
+/* line 28, ../sass/admin/components/_small-box.scss */
 .small-box > .small-box-footer:hover {
 	color: #fff;
 	background: rgba(0, 0, 0, 0.15);
 }
-/* line 33, ../sass/admin/components/_small-box.scss */
+/* line 34, ../sass/admin/components/_small-box.scss */
 .small-box h3 {
 	font-size: 38px;
 	font-weight: bold;
@@ -11614,22 +11614,22 @@ a:focus {
 	white-space: nowrap;
 	padding: 0;
 }
-/* line 42, ../sass/admin/components/_small-box.scss */
+/* line 43, ../sass/admin/components/_small-box.scss */
 .small-box p {
 	font-size: 15px;
 }
-/* line 44, ../sass/admin/components/_small-box.scss */
+/* line 45, ../sass/admin/components/_small-box.scss */
 .small-box p > small {
 	display: block;
 	color: #f9f9f9;
 	font-size: 13px;
 	margin-top: 5px;
 }
-/* line 52, ../sass/admin/components/_small-box.scss */
+/* line 53, ../sass/admin/components/_small-box.scss */
 .small-box h3, .small-box p {
 	z-index: 5px;
 }
-/* line 57, ../sass/admin/components/_small-box.scss */
+/* line 58, ../sass/admin/components/_small-box.scss */
 .small-box .icon {
 	-webkit-transition: all 0.3s linear;
 	-o-transition: all 0.3s linear;
@@ -11641,26 +11641,26 @@ a:focus {
 	font-size: 90px;
 	color: rgba(0, 0, 0, 0.15);
 }
-/* line 68, ../sass/admin/components/_small-box.scss */
+/* line 69, ../sass/admin/components/_small-box.scss */
 .small-box:hover {
 	text-decoration: none;
 	color: #f9f9f9;
 }
-/* line 72, ../sass/admin/components/_small-box.scss */
+/* line 73, ../sass/admin/components/_small-box.scss */
 .small-box:hover .icon {
 	font-size: 95px;
 }
 
 @media (max-width: 767px) {
-	/* line 80, ../sass/admin/components/_small-box.scss */
+	/* line 81, ../sass/admin/components/_small-box.scss */
 	.small-box {
 		text-align: center;
 	}
-	/* line 82, ../sass/admin/components/_small-box.scss */
+	/* line 83, ../sass/admin/components/_small-box.scss */
 	.small-box .icon {
 		display: none;
 	}
-	/* line 85, ../sass/admin/components/_small-box.scss */
+	/* line 86, ../sass/admin/components/_small-box.scss */
 	.small-box p {
 		font-size: 12px;
 	}

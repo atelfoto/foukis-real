@@ -44,10 +44,6 @@
 								 'placeholder' => __('Name'),'autofocus',
 								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-name"></i></div>'
 								 ));?>
-						<?php //  echo $this->Form->input('id2', array('class' => 'form-control',
-							//	 'placeholder' => __('Id2'),
-							//	 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-id2"></i></div>'
-							//	 ));?>
 						<?php echo $this->Form->input('Characteristic', array('class' => 'form-control',
 							'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-characteristics"></i></div>',
 								 ));?>

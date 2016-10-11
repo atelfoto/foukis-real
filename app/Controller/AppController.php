@@ -31,7 +31,11 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-		public $helpers = array(
+/**
+ * [$helpers description]
+ * @var array
+ */
+	public $helpers = array(
 		'Text',
 		"Html",
 		'Form',
@@ -40,6 +44,22 @@ class AppController extends Controller {
 		'Session',
 		'Cache',
 	);
+/**
+ * [$components description]
+ * @var array
+ */
+ public $components = array(
+//         'Acl',
+         // 'Auth' => array(
+         //     'authorize' => array(
+         //         'Actions' => array('actionPath' => 'controllers')
+         //     )
+         // ),
+         'Session',
+         'DebugKit.Toolbar',
+         "flash",
+         "Auth"
+     );
 	/**
 	 * beforeFilter callback
 	 *
@@ -48,26 +68,45 @@ class AppController extends Controller {
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->layout = 'home';
+		$this->Auth->loginAction = array('controller'=>'users','action'=>'login','admin'=>false);
+		$this->Auth->authorize = array('Controller');
+		if (!isset($this->request->params['prefix'])){
+			$this->Auth->allow();
+		}
 		if(isset($this->request->params['prefix']) && $this->request->params['prefix']=='admin'){
 			$this->layout = 'admin';
 		}
+		if(isset($this->request->params['prefix']) && $this->request->params['prefix']=='member'){
+			$this->layout = 'member';
+		}
+		// if(isset($this->request->params['prefix']) && $this->request->params['prefix']=='admin'){
+		// 	$this->layout = 'admin';
+		// }
 	}
-
 /**
- * [$components description]
- * @var array
+ * [isAuthorized description]
+ * @param  [type]  $user [description]
+ * @return boolean       [description]
  */
- public $components = array(
-//         'Acl',
-//         'Auth' => array(
-//             'authorize' => array(
-//                 'Actions' => array('actionPath' => 'controllers')
-//             )
-//         ),
-         'Session',
-         'DebugKit.Toolbar',
-         "flash"
-     );
+	public function isAuthorized($user){
+		if(!isset($this->request->params['prefix'])){
+			return true;
+		}
+		$roles = array(
+			'admin'=>10,
+			"member"=>5,
+			);
+		if(isset($roles[$this->request->params['prefix']] )){
+			$lvlAction = $roles[$this->request->params['prefix']];
+			$lvlUser = $roles[$user['role']];
+			if($lvlUser >= $lvlAction){
+				return true;
+			}else{
+				return false;
+			}
+		}
+		return false;
+	}
 /**
  * [beforeFilter description]
  * @return [type] [description]

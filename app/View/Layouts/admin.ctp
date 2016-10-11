@@ -66,16 +66,24 @@ content: ' ⇡';
 						</li>
 						<li class="dropdown user user-menu">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<?php echo  $this->Html->image("avatars/gravatar_mini.jpg", array('class'=>"user-image",'title'=>"avatar")); ?>
-								<span class="hidden-xs">philippe</span>
+								<?php if ($this->Session->read('Auth.User.avatar')==1):
+								echo $this->Html->image($this->Session->read('Auth.User.avatarm').'?'.rand(),array('class'=>'user-image','title'=>'avatar'));
+								else:
+									echo $this->Html->image('avatars/gravatar_mini.jpg',array('class'=>"user-image",'title'=>'avatar'));
+								endif ?>
+								<span class="hidden-xs text-capitalize"><?php echo $this->Session->read('Auth.User.username'); ?></span>
 							</a>
 							<ul class="dropdown-menu" role="menu" >
 								<li class="user-header">
-									<?php echo  $this->Html->image("avatars/gravatar_thumb.jpg", array("class"=>"img-circle center-block", 'title'=>'avatar')); ?>
-									<!-- <img src="" alt=""> -->
+									<?php if ($this->Session->read('Auth.User.avatar')==1):
+									echo $this->Html->image($this->Session->read('Auth.User.avatart') . '?' . rand(),array('class'=>'img-circle center-block','title'=>'avatar'));
+									else:
+										echo $this->Html->image('avatars/gravatar_thumb.jpg',array('class'=>"img-circle center-block",'title'=>'avatar'));
+									endif
+									?>
 									<p>
-										philippe
-										<small><?php echo __('Member since'); ?>&nbsp; </small>
+										<?php echo $this->Session->read('Auth.User.username'); ?>
+										<small> <?php echo __('Member since'); ?>&nbsp; <?php echo $this->Session->read('Auth.User.created'); ?></small>
 									</p>
 								</li>
 								<li class="user-body">
@@ -100,16 +108,17 @@ content: ' ⇡';
 		</header>
 		<aside class="main-sidebar">
 			<div class="sidebar">
-    			<div class="user-panel">
-    			  <div class="pull-left image">
-    			  	<?php echo  $this->Html->image("avatars/gravatar_mini.jpg",
-    			  	array('class'=>'img-circle center-block',
-    			  			'alt'=> __('user image'),
-    			  			'title'=>'avatar')); ?>
-    			    <!-- <img src="pages/img/user2-160x160.jpg" class="img-circle" alt="User Image"> -->
-    			  </div>
+				<div class="user-panel">
+					<div class="pull-left image">
+						<?php if ($this->Session->read('Auth.User.avatar')==1):
+						echo $this->Html->image($this->Session->read('Auth.User.avatarm') . '?' . rand(),
+							array('class'=>'img-circle center-block','alt'=>'User Image','title'=>'avatar'));
+						else:
+							echo $this->Html->image('avatars/gravatar_mini.jpg',array('class'=>'img-circle center-block','alt'=>'User Image','title'=>'avatar'));
+						endif ?>
+					</div>
     			  <div class="pull-left info">
-    			    <p>philippe</p>
+    			    <p><?php echo $this->Session->read('Auth.User.username'); ?></p>
     			    <!-- Status -->
     			    <a href="#"><i class="icon-circle text-success"></i> Online</a>
     			  </div>

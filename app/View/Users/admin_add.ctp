@@ -30,39 +30,46 @@
 		</div>
 	</div>
 	<div class="box-body box-body-offerings">
-		<?php echo $this->Form->input('name', array('class' => 'form-control',
-		'placeholder' => __('Name'),
-		"between"=>'<div class="input-group"><div class="input-group-addon">
-		<i class="icon-user"></i>
-		</div>'
-		));?>
+		<?php // echo $this->Form->input('name', array('class' => 'form-control',
+		// 'placeholder' => __('Name'),
+		// "between"=>'<div class="input-group"><div class="input-group-addon">
+		// <i class="icon-user"></i>
+		// </div>'
+		// ));?>
 		<?php echo $this->Form->input('username', array('class' => 'form-control',
 		'placeholder' => __('Username'),
 		"between"=>'<div class="input-group"><div class="input-group-addon">
 		<i class="icon-user"></i>
 		</div>',));?>
 		<?php echo $this->Form->input('mail', array('class' => 'form-control',
-		'placeholder' => __('Mail'),
-				"between"=>'<div class="input-group"><div class="input-group-addon">
-		<i class="icon-mail"></i>
-		</div>',));?>
+			'placeholder' => __('Mail'),
+			"between"=>'<div class="input-group"><div class="input-group-addon">
+			<i class="icon-mail"></i>
+			</div>',));?>
 		<?php echo $this->Form->input('password', array('class' => 'form-control',
-		'placeholder' => __('Password'),
-				"between"=>'<div class="input-group"><div class="input-group-addon">
-		<i class="icon-key"></i>
-		</div>',));?>
+			'placeholder' => __('password'),
+			"between"=>'<div class="input-group"><div class="input-group-addon">
+			<i class="icon-key"></i>
+			</div>',));?>
 		<?php echo $this->Form->input('password2', array(
 			'class' => 'form-control',
-			'placeholder' => __('Confirm Password'),
-			'label'=>array("text"=>__('confirm password'),'class'=>'col-md-4'),
+			'placeholder' => __('Confirm Password'), 'type'=>'password',
+			'label'=>array("text"=>__('confirm password'),'class'=>'col-md-4 control-label'),
 			"between"=>'<div class="input-group"><div class="input-group-addon"><i class="icon-key"></i></div>'));?>
-		<?php echo $this->Form->input('group_id', array('class' => 'form-control',
-				"between"=>'<div class="input-group"><div class="input-group-addon">
+		<?php echo $this->Form->input('role', array('class' => 'form-control','options' => array("admin", "member"),
+			"empty"=>__('choose'), "between"=>'<div class="input-group"><div class="input-group-addon">
 		<i class="icon-users"></i>
-		</div>',));?>
+		</div>'
+		));?>
+		<?php // echo $this->Form->input('group_id', array('class' => 'form-control',
+			//"empty"=>__('choose'),
+			//"between"=>'<div class="input-group"><div class="input-group-addon">
+		//<i class="icon-users"></i>
+		//</div>',));?>
 	</div>
 	<div class="text-right box-footer">
 		<?php echo $this->Form->submit(__('publish'), array('div'=>false,'class' => 'btn btn-success')); ?>
+		<?php echo $this->Form->button("reset",array("type"=>"reset",'class'=>"btn btn-default")); ?>
 		<?php echo $this->html->link('<i class="icon-cancel-circled" style="color:#f00;">&nbsp;</i>'.__('closed'),
 		array('controller'=>'users','action'=>'index'),
 		array('class' => 'btn btn-default','escape'=>false)); ?>
