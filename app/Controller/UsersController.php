@@ -384,7 +384,7 @@ public function admin_disable($id=null) {
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
-		$this->request->onlyAllow('post', 'delete');
+		$this->request->allowMethod('post', 'delete');
 		if ($this->User->delete()) {
 			$this->Flash->success(__('The user has been deleted.'), array('class' => 'alert alert-success'));
 		} else {

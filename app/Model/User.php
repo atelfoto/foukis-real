@@ -42,7 +42,12 @@ class User extends AppModel {
 		$info = pathinfo($filename);
 		return strtolower($info['extension']) == 'jpg';
 	}
-
+/**
+ * [afterFind description]
+ * @param  [type]  $results [description]
+ * @param  boolean $primary [description]
+ * @return [type]           [description]
+ */
 	function afterFind($results, $primary = false){
 		foreach($results as $k => $result){
 			if(isset($result[$this->alias]['avatar']) && isset($result[$this->alias]['id'])){
