@@ -138,7 +138,7 @@ public function index() {
 			$this->Property->create();
 			if ($this->Property->save($this->request->data)) {
 				$this->Flash->success(__('The property has been saved.'),array('class' => 'alert alert-success'));
-				return $this->redirect(array('action' => 'index'));
+				return $this->redirect(array('action' => 'upload',$this->Property->id));
 			} else {
 				$this->Flash->error(__('The property could not be saved. Please, try again.'),array('class' => 'alert alert-danger'));
 			}
@@ -246,6 +246,7 @@ public function index() {
 	 public function admin_count($id=null){
 	 	$dir_content = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
 	 	$counts = count(glob($dir_content.'*.jpg'));
+	 	$this->Property->id = $id;// est nécésaire pour sauvegarder un champ
 	 	if ($this->Property->saveField('mediaQuantities',$counts)) {
 	 		$this->Flash->success(__('Your pictures has been published in the folder  %s.',h($id)));
 	 		return $this->redirect(array('controller'=>'properties','action'=>'index'));

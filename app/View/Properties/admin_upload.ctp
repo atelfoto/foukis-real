@@ -15,8 +15,8 @@
 							array('class' => 'btn btn-default addtoproperty','escape'=>false)); ?>
 				</li>
 				<li class="pull-right">
-					<?php echo $this->html->link('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('rename'),
-							array('controller'=>'properties','action'=>'rename',$property['Property']['id']),
+					<?php  echo $this->html->link('<i class="icon-ok" style="color:#fff;">&nbsp;</i>'.__('rename'),
+							array('controller'=>'properties','action'=>'count',$property['Property']['id']),
 							array('class' => 'btn btn-success addtoproperty','escape'=>false)); ?>
 				</li>
 			</ul>
@@ -68,6 +68,8 @@ $("#PropertyFiles").fileinput({
     showAjaxErrorDetails:true,
     resizeImage: true,
     maxImageWidth: 720,
+    maxImageHeight: 540,
+    resizePreference: 'height',
 	class:'file-loading',
 	//initialPreview: [
 	//<?php //  foreach ($files as $file): ?>

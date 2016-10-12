@@ -60,18 +60,21 @@ class Property extends AppModel {
 		$id =$property['Property']['id'];
 		$file = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS;
 		$fileThumbs = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS.'thumbs'.DS;
-		 foreach(glob($file.'*.jpg') as $v){
-		 	unlink($v);
-		 }
-		  foreach(glob($fileThumbs.'*.jpg') as $v){
+		foreach(glob($file.'*.jpg') as $v){
+			unlink($v);
+		}
+		foreach(glob($fileThumbs.'*.jpg') as $v){
 		  	unlink($v);
-		  }
-		 $folderThumbs = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS.'thumbs';
-		 $folder= WWW_ROOT .'img'.DS.'properties'.DS.$id;
-		 rmdir($folderThumbs);
-		 rmdir($folder);
+		}
+		$folderThumbs = WWW_ROOT .'img'.DS.'properties'.DS.$id.DS.'thumbs';
+		if (file_exists($folderThumbs)) {
+		  	rmdir($folderThumbs);
+		  	$folder= WWW_ROOT .'img'.DS.'properties'.DS.$id;
+		  	if (file_exists($folder)) {
+		  		rmdir($folder);
+		  	}
+		}
 		return true;
-
 	}
 
 /**
