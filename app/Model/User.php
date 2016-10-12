@@ -29,10 +29,55 @@ class User extends AppModel {
 		}
 		return true;
 	}
+public function afterSave($created, $options = Array()){
+	if(isset($this->data[$this->alias]['avatar']) && !empty($this->data[$this->alias]['avatarf']['tmp_name'])){
+		$file = $this->data[$this->alias]['avatarf'];
+		$dest = IMAGES . 'avatars' . DS . ceil($this->id/1000);
+		if(!file_exists($dest)){
+			mkdir($dest, 0777, true);
+		}
+		require APP . 'Vendor' . DS . 'autoload.php';
+		$imagine = new Imagine\Gd\Imagine();
+		try{
+			$imagine
+			->open($file['tmp_name'])
+			->thumbnail(
+				new Imagine\Image\Box(90, 90),
+				Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND)
+			->save($dest . DS . $this->id . '_thumb.jpg');
+			$imagine
+			->open($file['tmp_name'])
+			->thumbnail(
+				new Imagine\Image\Box(45, 45),
+				Imagine\Image\ImageInterface::THUMBNAIL_OUTBOUND)
+			->save($dest . DS . $this->id . '_mini.jpg');
+			$imagine
+			->open($file['tmp_name'])
+			->resize(
+				new Imagine\Image\Box(150,217))
+			->save($dest . DS . $this->id . '.jpg');
+		}catch(Imagine\Exception\Exception $e){
+             //   debug($e);
+		}
+	}
+
+}
+/**
+ * [identicalFields description]
+ * @param  [type] $check [description]
+ * @param  [type] $limit [description]
+ * @return [type]        [description]
+ */
 	public function identicalFields($check, $limit){
         $field = key($check);
         return $check[$field] == $this->data['User']['password'];
     }
+/**
+ * [isJpg description]
+ * @param  [type]  $check [description]
+ * @param  [type]  $limit [description]
+ * @return boolean        [description]
+ */
 	public function isJpg($check, $limit){
 		$field = key($check);
 		$filename= $check[$field]['name'];

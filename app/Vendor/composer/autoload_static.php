@@ -28,6 +28,16 @@ class ComposerStaticInit7fe8674aeccd2b336610e974ead60e7e
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'I' => 
+        array (
+            'Imagine' => 
+            array (
+                0 => __DIR__ . '/..' . '/imagine/imagine/lib',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
@@ -631,6 +641,7 @@ class ComposerStaticInit7fe8674aeccd2b336610e974ead60e7e
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit7fe8674aeccd2b336610e974ead60e7e::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit7fe8674aeccd2b336610e974ead60e7e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit7fe8674aeccd2b336610e974ead60e7e::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit7fe8674aeccd2b336610e974ead60e7e::$classMap;
 
         }, null, ClassLoader::class);

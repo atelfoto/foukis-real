@@ -234,10 +234,10 @@ class UsersController extends AppController {
 				$this->User->create();
 				$this->User->save($this->request->data, true, array('firstname','lastname','name','mail'));
 				if(!empty($this->request->data['User']['avatarf']['tmp_name'])) {
-					$directory = IMAGES. 'avatars' . DS . ceil($this->User->id/1000);
-					if(!file_exists($directory))
-						mkdir($directory, 0777);
-					move_uploaded_file($this->request->data['User']['avatarf']['tmp_name'], $directory . DS . $this->User->id . '.jpg');
+					//$directory = IMAGES. 'avatars' . DS . ceil($this->User->id/1000);
+					//if(!file_exists($directory))
+					//	mkdir($directory, 0777);
+					//move_uploaded_file($this->request->data['User']['avatarf']['tmp_name'], $directory . DS . $this->User->id . '.jpg');
 					$this->User->saveField('avatar', 1);
 				}
 				$user = $this->User->read();

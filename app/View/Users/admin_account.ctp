@@ -31,6 +31,10 @@
  					<div class="form-group"><?=  $this->Form->input('name', array('label'=> __('Name') ,'class'=>'form-control')); ?></div>
  					<div class="form-group"><?=  $this->Form->input('firstname', array('label'=>__('firstname') ,"class"=>'form-control')); ?></div>
  					<div class="form-group"><?=  $this->Form->input('mail', array('label'=>__('email') ,"class"=>'form-control')); ?></div>
+ 					<div class="form-group"><?php  echo  $this->Form->input('password', array('label'=>array("text"=>__('password') ,"class"=>'form-label'),
+ 					"class"=>"form-control",'value'=>$this->Session->read('Auth.User.password'))); ?></div>
+ 					<!-- <div class="form-group"><?php //  echo  $this->Form->input('password2', array('label'=>array("text"=>__('confirm password') ,"class"=>'form-label'),
+ 					// 'type'=>"password",'class'=>"form-control")); ?></div> -->
  					<hr class="" style="padding-bottom:20px;">
  					<div class="button text-right">
  						<button  type="submit" class="btn btn-primary"><i class="fa fa fa-check fa-lg" style="color:#fff;">&nbsp;</i><?= __('Change'); ?> </button>

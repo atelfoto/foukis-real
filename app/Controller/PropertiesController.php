@@ -58,12 +58,6 @@ public function index() {
 				)
 			)
 		);
-	// $this->paginate = array('Property'=>array(
-	// 	"limit"=>8,
-	// 	'order'=>array(
-	// 		'Property.created'=>'desc')
-	// 	)
-	// );
 	$areas = $this->Property->Area->find('list');
 	$states = $this->Property->State->find('list');
 	$types = $this->Property->Type->find('list');
