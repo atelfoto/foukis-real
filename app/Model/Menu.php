@@ -73,7 +73,8 @@ class Menu extends AppModel {
 	        'lowercase' => true,    // Do we lowercase the slug ?
 	        'separator' => '-',     //
 	        'overwrite' => false    // Does the slug is auto generated when field is saved no matter what
-		)
+		),
+		"Containable"
 	);
 /**
  * construire le champs controller au pluriel selon le champ name

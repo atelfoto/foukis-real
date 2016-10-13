@@ -29,7 +29,7 @@ class Property extends AppModel {
  */
   	public $actsAs = array(
         'Search.Searchable',
-        'containable'
+        'Containable'
     );
 
 /**

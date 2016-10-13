@@ -6,6 +6,7 @@ App::uses('AppModel', 'Model');
  * @property Property $Property
  */
 class Area extends AppModel {
+	public $actsAs = array('Containable');
 
 /**
  * Display field

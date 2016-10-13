@@ -99,6 +99,7 @@ $(window).load(function() {
     animationLoop: true,
     touch: true,
     slideshow: true,
+    smoothHeight: true,
     sync: "#carousel"
   });
 });

@@ -27,8 +27,8 @@
  */
 	Router::parseExtensions('json');
 
-	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'index'));
-	//Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
+	//Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'index'));
+	Router::connect('/', array('controller' => 'pages', 'action' => 'index'));
 	Router::connect('/post/:slug',array('controller'=>'posts','action'=>'view'),array('pass'=>array('slug'),'slug'=>'[a-z0-9\-]+'));
 	Router::connect('/menus/:slug',array('controller'=>'menus','action'=>'view'),array('pass'=>array('slug'),'slug'=>'[a-z0-9\-]+'));
 	Router::connect('/properties/:id',array('controller'=>'properties','action'=>'view'),array('pass'=>array('id'),'id'=>'[0-9\-]+'));
