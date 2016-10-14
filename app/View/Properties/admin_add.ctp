@@ -91,10 +91,10 @@
 							//	 'placeholder' => __('MediaQuantities'),
 							//	 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-carrousels"></i></div>'
 							//	 ));?>
-						<?php // echo $this->Form->input('user_id', array('class' => 'form-control',
-							 //  'empty' => __('choose'),
-							 //  'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
-							 //  ));?>
+						<?php  echo $this->Form->input('user_id', array(
+							 'value' =>$this->Session->read('Auth.User.id'),'type'=>'hidden',
+							'after'=>false
+							   ));?>
 						<?php // echo $this->Form->input('modified_by', array('class' => 'form-control',
 							 //  'placeholder' => __('Created by'),
 							 //  'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-modified_by"></i></div>'

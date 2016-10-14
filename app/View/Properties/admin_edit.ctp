@@ -94,13 +94,9 @@
 								 'placeholder' => __('Quantities Pictures'), 'disabled'=>true,
 								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-carrousels"></i></div>'
 								 ));?>
-						<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-								 'empty' => __('choose'),
-								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
-								 ));?>
-						<?php echo $this->Form->input('modified_by', array('class' => 'form-control',
-								 'placeholder' => __('Modified By'),
-								 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
+						<?php echo $this->Form->input('modified_by', array(
+							 'value' =>$this->Session->read('Auth.User.username'),'type'=>'hidden',
+							'after'=>false
 								 ));?>
 					</div>
 					<div class="clear-both">

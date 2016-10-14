@@ -55,7 +55,7 @@
 							</div>
 							<div class="form-group">
 								<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-							 'empty' => __('choose')));?>
+							 'value' =>$this->Session->read('Auth.User.id'),'type'=>'hidden'));?>
 							</div>
 					  	</div>
 					  	<div class="tab-pane fade" role="tabpanel" id="publication">
@@ -66,7 +66,13 @@
 							</div>
 							<div class="form-group">
 								<?php echo $this->Form->input('robots', array('class' => 'form-control',
-							 'placeholder' => __('Robots')));?>
+							 'empty' => __('choose'),
+						     "options"=>array(
+						     "Paramètres globaux"=>"Paramètres globaux",
+						     "Index, Follow"=>"Index, Follow",
+						     "No index, follow"=>"No index, follow",
+						     "Index, Nofollow"=>"Index, Nofollow",
+						     "No index, no follow"=>"No index, no follow")));?>
 							</div>
 							<div class="form-group">
 								<?php echo $this->Form->input('keywords', array('class' => 'form-control',

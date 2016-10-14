@@ -52,28 +52,35 @@
 							 ));?>
 					<?php echo $this->Form->input('content', array('class' => 'form-control',
 							 'placeholder' => __('Content'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-content"></i></div>'
+							 "after"=>false
 							 ));?>
 					<?php echo $this->Form->input('type', array('value'=>'post','type'=>'hidden'));?>
-					<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-							 'empty' => __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user_id"></i></div>'
+					<?php echo $this->Form->input('user_id', array(
+							 'value' =>$this->Session->read('Auth.User.id'),'type'=>'hidden',
+							'after'=>false
 							 ));?>
 
 				</div>
 				<div class="tab-pane fade" role="tabpanel" id="publication">
 					<?php echo $this->Form->input('description', array('class' => 'form-control',
 							 'placeholder' => __('Description'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-description"></i></div>'
+							 "after"=>false
 							 ));?>
 					<p id='compteur' class='text-right'><i>0 mots - 0 Caractere / 250</i></p>
-					<?php echo $this->Form->input('robots', array('class' => 'form-control',
-							 'placeholder' => __('Robots'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-robots"></i></div>'
-							 ));?>
+
 					<?php echo $this->Form->input('keywords', array('class' => 'form-control',
 							 'placeholder' => __('Keywords'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-keywords"></i></div>'
+							 ));?>
+					<?php echo $this->Form->input('robots', array('class' => 'form-control',
+						     "options"=>array(
+						     "Paramètres globaux"=>"Paramètres globaux",
+						     "Index, Follow"=>"Index, Follow",
+						     "No index, follow"=>"No index, follow",
+						     "Index, Nofollow"=>"Index, Nofollow",
+						     "No index, no follow"=>"No index, no follow"),
+							 'empty' => __('choose'),
+							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-robots"></i></div>'
 							 ));?>
 
 				</div>
