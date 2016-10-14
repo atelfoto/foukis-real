@@ -6,6 +6,8 @@
   "compass",
   "susy",
   "utils/variables",
+  'base/fonts',
+  "fonts/fontello/fontello",
   "compass/layout.scss",
   "breakpoint",
   'utils/functions',
@@ -21,8 +23,6 @@
 // 3. Base stuff  'base/base','base/helpers'
 @import
 	'base/base',
-  'base/fonts',
-  "fonts/fontello/fontello",
   'base/typography';
 
 // 4. Layout-related sections

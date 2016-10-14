@@ -1,13 +1,13 @@
 // -----------------------------------------------------------------------------
 // This file contains all @font-face declarations, if any.
 // -----------------------------------------------------------------------------
-@include font-face('roboto_condensedregular',
+@include font-face('Roboto Condensed',
     font-files('roboto-condensed/robotocondensed-regular.woff2',woff2,
         'roboto-condensed/robotocondensed-regular.woff',woff,
         'roboto-condensed/robotocondensed-regular.ttf',truetype,
         'roboto-condensed/robotocondensed-regular.svg#roboto_condensedregular',svg),
         'roboto-condensed/robotocondensed-regular.eot',normal,normal);
-@include font-face('dancing_scriptregular',
+@include font-face('Dancing Script',
     font-files('dancing-script/dancing-script.regular.woff2',woff2,
         'dancing-script/dancing-script.regularregular.woff',woff,
         'dancing-script/dancing-script.regular.ttf',truetype,
