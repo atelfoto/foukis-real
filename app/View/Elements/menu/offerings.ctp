@@ -56,7 +56,6 @@
 	"type"=>'checkbox',"checked"=>false,
 	"label"=>array('text'=>__('I also like to acquire a free estimate for my good and to be contacted (e) by your agency.'),
 	"style"=>"margin-left:10px;"),"class"=>"input","style"=>'margin-left:250px;')); ?>
-	<!-- Je souhaite également obtenir une estimation gratuite pour mon bien et être contacté(e) par votre agence. -->
 	<div class="button text-right">
 	<?php echo $this->Form->button("submit", array(
 	'class'=>"btn btn-primary")); ?>

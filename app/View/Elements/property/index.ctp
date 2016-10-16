@@ -11,7 +11,7 @@
  	</ul>
  	<hr>
 	<p style="float: left;"> <?php echo __("There are %s announcements corresponding to your research.",
-		$this->Paginator->counter(array('format' =>'<strong>'. __('{:count}')."</strong>"))); ?></p>
+		$this->Paginator->counter(array('format' =>"<strong>{:count}</strong>"))); ?></p>
  	<div class="paginations" ">
 
 		<?php echo $this->element('pagination'); ?>

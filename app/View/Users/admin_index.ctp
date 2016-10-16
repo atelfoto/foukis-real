@@ -4,7 +4,7 @@
  	<div class="col-xs-12">
  	<div class="box box-primary">
 		<div class="box-header">
-			<h3 class="box-title"><i class="icon-users"></i>&nbsp;<?php echo __('Users'); ?></h3>
+			<h2 class="box-title"><i class="icon-users"></i>&nbsp;<?php echo __('Users'); ?></h2>
 			<div class="box-tools pull-right">
 				<button class="btn btn-sm" data-toggle="modal" data-target="#ModalAide">
 					<i class="icon-help-circled">&nbsp;Help</i>
