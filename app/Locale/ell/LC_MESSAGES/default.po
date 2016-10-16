@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-10-16 18:27+0100\n"
+"PO-Revision-Date: 2016-10-17 01:37+0100\n"
 "Last-Translator: philippe wagner <atelfoto@msn.com>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "Language: el_GR\n"
@@ -26,8 +26,9 @@ msgstr ""
 
 #: Console/Templates/admin/views/index.ctp:23;134
 #: Console/Templates/public/views/index.ctp:23 View/Helps/admin_view.ctp:5
+#, fuzzy
 msgid "Help"
-msgstr ""
+msgstr "Ο σύνδεσμος έχει σωθεί."
 
 #: Console/Templates/admin/views/index.ctp:140 View/Helps/admin_add.ctp:78
 #: View/Helps/admin_edit.ctp:24;63 View/Posts/admin_add.ctp:32;87
@@ -250,8 +251,9 @@ msgstr ""
 "Η ιδιότητα δεν θα μπορούσε να εξοικονομηθεί. Παρακαλούμε, προσπαθήστε ξανά."
 
 #: Controller/PropertiesController.php:215
+#, fuzzy
 msgid "Files saved successfully"
-msgstr ""
+msgstr "Ο σύνδεσμος έχει σωθεί."
 
 #: Controller/PropertiesController.php:217
 msgid "There was a problem uploading file. Please try again."
@@ -336,16 +338,17 @@ msgid "The type could not be deleted. Please, try again."
 msgstr "Η σελίδα δεν ήταν δυνατό να διαγραφεί. Παρακαλούμε, προσπαθήστε ξανά."
 
 #: Controller/UsersController.php:28
-msgid "Bonjour  %s Vous êtes maintenants connecté"
+msgid "Good morning %s You are now linked"
 msgstr ""
 
 #: Controller/UsersController.php:36
-msgid "Votre nom d'user ou mot de passe sont incorrects."
+msgid "Your name to employ or password is wrong."
 msgstr ""
 
 #: Controller/UsersController.php:46
-msgid "Vous êtes maintenants Déconnecté"
-msgstr ""
+#, fuzzy
+msgid "you are now disconnected"
+msgstr "Σας ευχαριστώ για τη διόρθωση πεδία σας."
 
 #: Controller/UsersController.php:96;308;385
 msgid "Invalid user"
@@ -533,8 +536,9 @@ msgstr ""
 
 #: View/Areas/admin_add.ctp:1;2 View/Areas/admin_edit.ctp:1;2
 #: View/Elements/property/form.ctp:3
+#, fuzzy
 msgid "area"
-msgstr ""
+msgstr "Η σελίδα έχει αποθηκευτεί."
 
 #: View/Areas/admin_add.ctp:6
 msgid "Add Area"
@@ -706,8 +710,9 @@ msgstr ""
 #: View/Helps/admin_index.ctp:100 View/Properties/admin_index.ctp:138
 #: View/States/admin_index.ctp:90 View/Statuses/admin_index.ctp:91
 #: View/Types/admin_index.ctp:90 View/Users/admin_index.ctp:105
+#, fuzzy
 msgid "of your"
-msgstr ""
+msgstr "Mail σας μας έχει φτάσει."
 
 #: View/Areas/admin_index.ctp:90
 msgid "areas"
@@ -732,8 +737,9 @@ msgid "Delete"
 msgstr ""
 
 #: View/Areas/admin_view.ctp:5 View/Properties/admin_view.ctp:81
+#, fuzzy
 msgid "Area"
-msgstr ""
+msgstr "Η σελίδα έχει αποθηκευτεί."
 
 #: View/Areas/admin_view.ctp:16
 msgid "Edit Area"
@@ -811,8 +817,9 @@ msgstr ""
 #: View/Areas/admin_view.ctp:83 View/Characteristics/admin_view.ctp:82
 #: View/States/admin_view.ctp:83 View/Statuses/admin_view.ctp:76
 #: View/Types/admin_view.ctp:83
+#, fuzzy
 msgid "Area Id"
-msgstr ""
+msgstr "Δεν βρέθηκαν σελίδες για αυτό το αναγνωριστικό"
 
 #: View/Areas/admin_view.ctp:84 View/Characteristics/admin_view.ctp:83
 #: View/States/admin_view.ctp:84 View/Statuses/admin_view.ctp:77
@@ -918,8 +925,9 @@ msgstr ""
 
 #: View/Characteristics/add.ctp:1;2 View/Characteristics/admin_add.ctp:1;2
 #: View/Characteristics/admin_edit.ctp:1;2 View/Characteristics/edit.ctp:1;2
+#, fuzzy
 msgid "characteristic"
-msgstr ""
+msgstr "Η ιδιότητα έχει αποθηκευτεί."
 
 #: View/Characteristics/add.ctp:6
 msgid "Add Characteristic"
@@ -951,8 +959,9 @@ msgid "characteristics"
 msgstr ""
 
 #: View/Characteristics/admin_view.ctp:5 View/Characteristics/view.ctp:18
+#, fuzzy
 msgid "Characteristic"
-msgstr ""
+msgstr "Η ιδιότητα έχει αποθηκευτεί."
 
 #: View/Characteristics/admin_view.ctp:16 View/Characteristics/edit.ctp:6
 msgid "Edit Characteristic"
@@ -1149,8 +1158,9 @@ msgid "Password"
 msgstr ""
 
 #: View/Elements/users/login.ctp:21 View/Elements/users/signup.ctp:24
+#, fuzzy
 msgid "Password :"
-msgstr ""
+msgstr "Σας ευχαριστώ για τη διόρθωση πεδία σας."
 
 #: View/Elements/users/login.ctp:24
 msgid "Remember me"
@@ -1187,8 +1197,9 @@ msgid "confirm Password :"
 msgstr "Σας ευχαριστώ για τη διόρθωση πεδία σας."
 
 #: View/Helps/admin_add.ctp:1;2 View/Helps/admin_edit.ctp:1;2
+#, fuzzy
 msgid "help"
-msgstr ""
+msgstr "Ο σύνδεσμος έχει σωθεί."
 
 #: View/Helps/admin_add.ctp:6
 msgid "Admin Add Help"
@@ -1283,8 +1294,9 @@ msgstr ""
 #: View/Helps/admin_view.ctp:57 View/Menus/admin_view.ctp:106
 #: View/Posts/admin_view.ctp:92 View/Properties/admin_view.ctp:172
 #: View/Users/admin_view.ctp:5
+#, fuzzy
 msgid "User"
-msgstr ""
+msgstr "Ο σύνδεσμος έχει σωθεί."
 
 #: View/Layouts/admin.ctp:54
 msgid "Foukis Real Estate"
@@ -1315,12 +1327,14 @@ msgid "Real Estate in Greece"
 msgstr ""
 
 #: View/Layouts/home.ctp:106
+#, fuzzy
 msgid "home"
-msgstr ""
+msgstr "Αρχική"
 
 #: View/Menus/admin_add.ctp:1;2 View/Menus/admin_edit.ctp:1;2
+#, fuzzy
 msgid "menu"
-msgstr ""
+msgstr "Ο σύνδεσμος έχει σωθεί."
 
 #: View/Menus/admin_add.ctp:6
 msgid "Admin Add Menu"
@@ -1378,8 +1392,9 @@ msgid "Disable this Menu"
 msgstr ""
 
 #: View/Menus/admin_view.ctp:5 View/Menus/view.ctp:18
+#, fuzzy
 msgid "Menu"
-msgstr ""
+msgstr "Ο σύνδεσμος έχει σωθεί."
 
 #: View/Menus/admin_view.ctp:16
 msgid "Edit Menu"
@@ -1402,8 +1417,9 @@ msgid "contact"
 msgstr "Επαφές"
 
 #: View/Posts/admin_add.ctp:1;2 View/Posts/admin_edit.ctp:1;2
+#, fuzzy
 msgid "post"
-msgstr ""
+msgstr "Δεν θα μπορούσε να σωθεί το σύνδεσμο. Παρακαλούμε, προσπαθήστε ξανά."
 
 #: View/Posts/admin_add.ctp:6
 msgid "Admin Add Post"
@@ -1447,8 +1463,9 @@ msgstr ""
 
 #: View/Posts/admin_view.ctp:64 View/Properties/admin_view.ctp:95
 #: View/Types/admin_view.ctp:5 View/Users/admin_view.ctp:148
+#, fuzzy
 msgid "Type"
-msgstr ""
+msgstr "Η σελίδα έχει αποθηκευτεί."
 
 #: View/Properties/admin_add.ctp:6
 msgid "Admin Add Property"
@@ -1529,12 +1546,14 @@ msgstr ""
 
 #: View/Properties/admin_view.ctp:74 View/States/admin_view.ctp:5
 #: View/States/view.ctp:18
+#, fuzzy
 msgid "State"
-msgstr ""
+msgstr "Η σελίδα έχει αποθηκευτεί."
 
 #: View/Properties/admin_view.ctp:88 View/Statuses/admin_view.ctp:5
+#, fuzzy
 msgid "Status"
-msgstr ""
+msgstr "Ο σύνδεσμος έχει σωθεί."
 
 #: View/Properties/admin_view.ctp:195
 msgid "Related Characteristics"
@@ -1557,8 +1576,9 @@ msgid "overview"
 msgstr "Υπηρεσίες"
 
 #: View/Properties/view.ctp:60
+#, fuzzy
 msgid "type of flat"
-msgstr ""
+msgstr "Άκυρη καρουζέλ"
 
 #: View/Properties/view.ctp:61
 msgid "complete surface"
@@ -1578,8 +1598,9 @@ msgstr ""
 
 #: View/States/add.ctp:1;2 View/States/admin_add.ctp:1;2
 #: View/States/admin_edit.ctp:1;2 View/States/edit.ctp:1;2
+#, fuzzy
 msgid "state"
-msgstr ""
+msgstr "Η σελίδα έχει αποθηκευτεί."
 
 #: View/States/add.ctp:6
 msgid "Add State"
@@ -1614,8 +1635,9 @@ msgid "Delete State"
 msgstr ""
 
 #: View/Statuses/admin_add.ctp:1;2 View/Statuses/admin_edit.ctp:1;2
+#, fuzzy
 msgid "status"
-msgstr ""
+msgstr "Ο σύνδεσμος έχει σωθεί."
 
 #: View/Statuses/admin_add.ctp:6
 msgid "Admin Add Status"
@@ -1650,8 +1672,9 @@ msgid "Delete Status"
 msgstr ""
 
 #: View/Types/admin_add.ctp:1;2 View/Types/admin_edit.ctp:1;2
+#, fuzzy
 msgid "type"
-msgstr ""
+msgstr "Η σελίδα έχει αποθηκευτεί."
 
 #: View/Types/admin_add.ctp:6
 msgid "Admin Add Type"
@@ -1708,8 +1731,9 @@ msgstr ""
 
 #: View/Users/admin_add.ctp:1;2 View/Users/admin_edit.ctp:1;2
 #: View/Users/admin_signup.ctp:1;2
+#, fuzzy
 msgid "user"
-msgstr ""
+msgstr "Ο σύνδεσμος έχει σωθεί."
 
 #: View/Users/admin_add.ctp:22 View/Users/admin_signup.ctp:23
 msgid "Add User"
@@ -1717,8 +1741,9 @@ msgstr ""
 
 #: View/Users/admin_add.ctp:45 View/Users/admin_edit.ctp:47
 #: View/Users/admin_signup.ctp:48 View/Users/admin_view.ctp:63
+#, fuzzy
 msgid "Mail"
-msgstr ""
+msgstr "Ευχαριστούμε you.Your mail μας φτάσει."
 
 #: View/Users/admin_add.ctp:56 View/Users/password.ctp:14
 msgid "Confirm Password"
@@ -1864,8 +1889,9 @@ msgid "Thank you to submit the number of rooms"
 msgstr ""
 
 #: Model/Property.php:validation for field size;validation level
+#, fuzzy
 msgid "This field must be numeric"
-msgstr ""
+msgstr "Σας ευχαριστώ για τη διόρθωση πεδία σας."
 
 #: Model/Property.php:validation for field price
 msgid "money"

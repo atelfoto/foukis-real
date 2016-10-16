@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: croogo deutsch\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2016-10-16 18:41+0100\n"
+"PO-Revision-Date: 2016-10-17 01:37+0100\n"
 "Last-Translator: philippe wagner <atelfoto@msn.com>\n"
 "Language-Team: \n"
 "Language: de_DE\n"
@@ -99,7 +99,7 @@ msgstr ""
 #: Controller/AreasController.php:150
 #, fuzzy
 msgid "The area has been deleted."
-msgstr "Link wurde gespeichert"
+msgstr "Typ wurde gespeichert"
 
 #: Controller/AreasController.php:152
 #, fuzzy
@@ -119,13 +119,12 @@ msgstr "Anlage wurde gespeichert"
 #: Controller/CharacteristicsController.php:57;80
 #, fuzzy
 msgid "The characteristic could not be saved. Please, try again."
-msgstr ""
-"Anlage konnte nicht gespeichert werden. Bitte versuchen Sie es nochmal."
+msgstr "%s konnte nicht gespeichert werden. Bitte nochmal versuchen."
 
 #: Controller/CharacteristicsController.php:151
 #, fuzzy
 msgid "The characteristic has been deleted."
-msgstr "Klassifizierungsliste wurde gespeicht."
+msgstr "Link wurde gespeichert"
 
 #: Controller/CharacteristicsController.php:153
 #, fuzzy
@@ -335,12 +334,12 @@ msgstr "Kommentar posten"
 #: Controller/StatusesController.php:54;75
 #, fuzzy
 msgid "The status has been saved."
-msgstr "Kommentar gespeichert"
+msgstr "Kontakt gespeichert"
 
 #: Controller/StatusesController.php:57;78
 #, fuzzy
 msgid "The status could not be saved. Please, try again."
-msgstr "Aktion konnte nicht gespeichert werden. Bitte nochmal versuchen."
+msgstr "%s konnte nicht gespeichert werden. Bitte nochmal versuchen."
 
 #: Controller/StatusesController.php:147
 #, fuzzy
@@ -378,16 +377,17 @@ msgid "The type could not be deleted. Please, try again."
 msgstr "Der Begriff konnte nicht gelöscht werden. Bitte nochmal versuchen"
 
 #: Controller/UsersController.php:28
-msgid "Bonjour  %s Vous êtes maintenants connecté"
+msgid "Good morning %s You are now linked"
 msgstr ""
 
 #: Controller/UsersController.php:36
-msgid "Votre nom d'user ou mot de passe sont incorrects."
+msgid "Your name to employ or password is wrong."
 msgstr ""
 
 #: Controller/UsersController.php:46
-msgid "Vous êtes maintenants Déconnecté"
-msgstr ""
+#, fuzzy
+msgid "you are now disconnected"
+msgstr "Sie sind hier:"
 
 #: Controller/UsersController.php:96;308;385
 #, fuzzy
@@ -822,7 +822,7 @@ msgstr "Einstellungen auflisten"
 #: View/Areas/admin_view.ctp:22 View/Properties/admin_view.ctp:27
 #, fuzzy
 msgid "New Area"
-msgstr "Neue Registerkarte"
+msgstr "Link"
 
 #: View/Areas/admin_view.ctp:24 View/Characteristics/admin_view.ctp:25
 #: View/Properties/admin_view.ctp:20 View/States/admin_view.ctp:24
@@ -2075,9 +2075,6 @@ msgstr "Bitte geben Sie eine gültige Emailadresse ein."
 
 #~ msgid "Incorrect password."
 #~ msgstr "Passwort vergessen?"
-
-#~ msgid "You are disconnected"
-#~ msgstr "Sie sind hier:"
 
 #~ msgid "Passwords do not match"
 #~ msgstr "Passwörter stimmen nicht überein. Bitte nochmal versuchen."

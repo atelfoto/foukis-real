@@ -25,7 +25,7 @@ class UsersController extends AppController {
 	        	$this->request->prefix;
 	            $this->User->id =  $this->Auth->user("id");
 					$this->User->saveField('lastlogin',date('Y-m-d H:i:s'));
-					$this->Flash->success( __("Bonjour  %s Vous êtes maintenants connecté",  $this->Auth->user("username") ),array('class'=>'success' ,'type'=>'ok'));
+					$this->Flash->success( __("Good morning %s You are now linked",  $this->Auth->user("username") ),array('class'=>'success' ,'type'=>'ok'));
 					if ($this->Session->read('Auth.User.role')== "admin") {
 						return $this->redirect($this->Auth->redirect(array('controller' => 'menus', 'action' => 'dashboard','admin'=>true)));
 					}
@@ -33,7 +33,7 @@ class UsersController extends AppController {
 						return $this->redirect($this->Auth->redirect(array('controller' => 'menus', 'action' => 'dashboard','member'=>true)));
 					}
 	        } else {
-	            $this->Flash->error(__('Votre nom d\'user ou mot de passe sont incorrects.'));
+	            $this->Flash->error(__("Your name to employ or password is wrong.")); //Votre nom d'user ou mot de passe sont incorrects.
 	        }
 	    }
 	}
@@ -43,7 +43,7 @@ class UsersController extends AppController {
  */
 	public function admin_logout(){
 		$this->Auth->logout();
-		$this->Flash->success(__("Vous êtes maintenants Déconnecté"),array('class'=>'success','type'=>'ok'));
+		$this->Flash->success(__("you are now disconnected"),array('class'=>'success','type'=>'ok'));
 		$this->redirect('/');
 	}
 

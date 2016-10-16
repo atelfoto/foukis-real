@@ -338,15 +338,15 @@ msgid "The type could not be deleted. Please, try again."
 msgstr ""
 
 #: Controller/UsersController.php:28
-msgid "Bonjour  %s Vous êtes maintenants connecté"
+msgid "Good morning %s You are now linked"
 msgstr ""
 
 #: Controller/UsersController.php:36
-msgid "Votre nom d'user ou mot de passe sont incorrects."
+msgid "Your name to employ or password is wrong."
 msgstr ""
 
 #: Controller/UsersController.php:46
-msgid "Vous êtes maintenants Déconnecté"
+msgid "you are now disconnected"
 msgstr ""
 
 #: Controller/UsersController.php:96;308;385
