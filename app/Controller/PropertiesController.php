@@ -49,8 +49,9 @@ public function index() {
 	$types = $this->Property->Type->find('list');
 	$this->set(compact('areas','states','types','statuses'));
 	$this->set('properties', $this->Paginator->paginate(
-		 array("Property.online"=>1)
-		));
+		array("Property.online"=>1)
+		)
+	);
 }
 /**
 * view
@@ -86,7 +87,7 @@ public function index() {
 	public function admin_index() {
 		$this->Property->recursive = 0;
 		$this->paginate = array('Property'=>array(
-			"limit"=>10,
+			"limit"=>22,
 			'order'=>array(
 				//'Property.created'=>'desc')
 				'Property.id'=>'asc')

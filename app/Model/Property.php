@@ -307,25 +307,26 @@ class Property extends AppModel {
 			),
 		'state_id' => array(
 			'field' => 'Property.state_id',
-			'type' => 'like',
-			//'formField' => 'blog_input',
-           // 'modelField' => 'value',
-           // 'model' => 'Area'
+			'type' => 'value',
+			'formField' => 'Property.state_id',
+           'modelField' => 'value',
+            'model' => 'State'
 			),
 		'area_id' => array(
 			'field' => 'Property.area_id',
-			'type' => 'like',
-			//'formField' => 'blog_input',
-           // 'modelField' => 'value',
-           // 'model' => 'Area'
+			'type' => 'value',
+			'formField' => 'Property.area_id',
+            'modelField' => 'value',
+            'model' => 'Area'
 			),
 		'type_id' => array(
 			'field' => 'Property.type_id',
-			'type' => 'like'
+			'type' => 'value',
+			'model'=>'Type'
 			),
 		'status_id' => array(
 			'field' => 'Property.status_id',
-			'type' => 'like'
+			'type' => 'value'
 			)
 		);
 }

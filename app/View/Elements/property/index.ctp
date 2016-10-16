@@ -4,6 +4,7 @@
  		<li><?php echo $this->Paginator->sort('price'); ?></li>
  		<li><?php echo $this->Paginator->sort('size'); ?></li>
  		<li><?php echo $this->Paginator->sort('area_id'); ?></li>
+ 		<li><?php echo $this->Paginator->sort('type_id'); ?></li>
  		<li><?php echo $this->Paginator->sort('bedrooms'); ?></li>
  		<li><?php echo $this->Paginator->sort('created'); ?></li>
  		<li><?php echo $this->Paginator->sort('id'); ?></li>

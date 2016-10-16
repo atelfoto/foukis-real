@@ -182,13 +182,31 @@ h2.title{
       cursor: $cursor-disabled !important;
 }
 
-.properties-view p {
-	margin-bottom: 20px;
-	span.price{
-		float: right;
-		font-size: 2em;
-		color: #00f;
-		font-weight: bold;
+.properties-view {
+
+	p {
+		margin-bottom: 20px;
+		span.price{
+			float: right;
+			font-size: 2em;
+			color: #00f;
+			font-weight: bold;
+		}
+	}
+	div.properties-fichier {
+		text-transform: capitalize;
+		overflow: hidden;
+		@include box-shadow(rgba(0,0,0, 0.4) 0 0 25px, rgba(0,0,0, 0.2) 0 0 3px 1px inset);
+		h3{
+			margin-left: 10px;
+			margin-top: 10px;
+
+		}
+		div{
+			@include span(1 of 3);
+			position: relative;
+
+		}
 	}
 }
 

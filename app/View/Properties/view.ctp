@@ -23,7 +23,8 @@ $this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>
 		<p class="properties-title"> <?php echo $property['Type']['name'] ?> -&nbsp;F <?php echo h($property['Property']['bedrooms']); ?>-
 		<?php echo $property['Status']['name'] ?>-
 		<?php echo $this->Number->format($property['Property']['size'],
-		array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> - <?php echo $property['Area']['name'] ?>
+		array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> - <?php echo $property['Area']['name'] ?> -
+		<?php echo $property['State']['value'] ?>
 		<span class="price" style="float:right;"><?php echo  $this->Number->currency($property['Property']['price'],' €',
 		  					 array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?></span>
 		 </p>
@@ -53,26 +54,41 @@ $this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>
 			<?php endif ?>
 		<h3>Description</h3>
 		 <?php echo $property['Property']['content'] ?> <br>
-		<div class="properties-fichier">
-			 <h3><?php echo __('details of the overall') ?>  <!-- Fiche détaillée du bien immobilier--></h3>
-			<p><b><?php echo __('overview') ?> <!-- vue globale --> </b>
-			<hr>
-			<b> <?php echo __('type of flat') ?> <!-- Type d'appartement --> </b>: F<?php echo h($property['Property']['bedrooms']); ?> <br>
-			<b> <?php echo __('complete surface') ?> <!-- Surface totale --> :</b> <?php echo $this->Number->format($property['Property']['size'],
-			array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> <br>
-			<b> <?php echo __('number of rooms') ?> <!-- nombre de pièces --> :</b>&nbsp;<?php echo h($property['Property']['bedrooms']); ?> <br>
-			<b> <?php echo __('year building') ?> <!-- année construction --> :</b>&nbsp;<?php echo h($property['Property']['dateYear']); ?>
-			</p>
-			<p><b> <?php echo __('most') ?> <!-- Les Plus --></b><br>
-			<?php foreach ($property['Characteristic'] as $characteristic): ?>
-				<span class="label label-info" style="margin-right:5px;"><i class="icon-<?php  echo $characteristic['name']; ;?>"></i>
-					<?php  echo $characteristic['value']; ;?>
-				</span>
-			<?php endforeach ?>
-			</p>
-			<hr>
+		 <div class="properties-fichier">
+		 	<h3><?php echo __('details of the overall') ?>  <!-- Fiche détaillée du bien immobilier--></h3>
+		 	<div>
+		 		<p><b><?php echo __('overview') ?> <!-- vue globale --> </b>
+		 			<hr>
+		 			<b> <?php echo __('type of flat') ?> <!-- Type d'appartement --> </b>: F<?php echo h($property['Property']['bedrooms']); ?> <br>
+		 			<b> <?php echo __('complete surface') ?> <!-- Surface totale --> :</b> <?php echo $this->Number->format($property['Property']['size'],
+		 			array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> <br>
+		 			<b> <?php echo __('number of rooms') ?> <!-- nombre de pièces --> :</b>&nbsp;<?php echo h($property['Property']['bedrooms']); ?> <br>
+		 			<b> <?php echo __('year building') ?> <!-- année construction --> :</b>&nbsp;<?php echo h($property['Property']['dateYear']); ?>
+		 		</p>
+		 		<p><b> <?php echo __('most') ?> <!-- Les Plus --></b><br>
+		 			<?php foreach ($property['Characteristic'] as $characteristic): ?>
+		 				<span class="label label-info" style="margin-right:5px;"><i class="icon-<?php  echo $characteristic['name']; ;?>"></i>
+		 					<?php  echo $characteristic['value']; ;?>
+		 				</span>
+		 			<?php endforeach ?>
+		 		</p>
+		 	</div>
+		 	<div>
+		 		<p>
+		 			<b> <?php echo _("equipment"); ?></b>
+		 			<hr>
+		 		</p>
 
-		</div>
+		 	</div>
+		 	<div>
+		 		<p>
+		 			<b> <?php echo _("simulate your monthly payments"); ?></b>
+		 			<hr>
+		 		</p>
+
+
+		 	</div>
+		 </div>
 	</div>
 <!-- 	<hr class="style-two">
 </div> -->
