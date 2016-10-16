@@ -14,17 +14,18 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: View/Layouts/admin.ctp:17
-#: View/Layouts/default.OLD.ctp:17
-#: View/Layouts/default.ctp:17
-#: View/Layouts/error.ctp:17
-msgid "CakePHP: the rapid development php framework"
+msgid "Foukis: Admin"
 msgstr ""
 
 #: View/Layouts/admin.ctp:18
-#: View/Layouts/default.OLD.ctp:18
 #: View/Layouts/default.ctp:18
 #: View/Layouts/home.ctp:18
 msgid "CakePHP %s"
+msgstr ""
+
+#: View/Layouts/default.ctp:17
+#: View/Layouts/error.ctp:17
+msgid "CakePHP: the rapid development php framework"
 msgstr ""
 
 #: View/Layouts/home.ctp:17

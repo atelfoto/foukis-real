@@ -1571,7 +1571,7 @@ msgstr ""
 
 #: View/Properties/index.ctp:1
 msgid "I search a property to be bought"
-msgstr ""
+msgstr "Je recherche un bien à acheter"
 
 #: View/Properties/index.ctp:32
 #, fuzzy

@@ -3,7 +3,7 @@
  <?php $this->Html->addCrumb('edit' ); ?>
 <div class="areas index row">
 	<div class="col-sm-12 page-header">
-		<h3><i class="icon-areas"></i>&nbsp;<?php echo __('Admin Add Area'); ?>		</h3>
+		<h3><i class="icon-areas"></i>&nbsp;<?php echo __('Add Area'); ?>		</h3>
 	</div>
 	<div class="col-sm-12">
 		<div class="box box-primary  with-border nav-tabs-custom">
