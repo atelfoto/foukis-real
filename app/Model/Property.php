@@ -298,7 +298,11 @@ class Property extends AppModel {
 			'type' => 'value'
 			),
 		'price' => array(
-			'field' => 'Property.price >=',
+			'field' => 'Property.price <=',
+			'type' => 'value'
+			),
+		'bedrooms' => array(
+			'field' => 'Property.bedrooms >=',
 			'type' => 'value'
 			),
 		'state_id' => array(
@@ -317,6 +321,10 @@ class Property extends AppModel {
 			),
 		'type_id' => array(
 			'field' => 'Property.type_id',
+			'type' => 'like'
+			),
+		'status_id' => array(
+			'field' => 'Property.status_id',
 			'type' => 'like'
 			)
 		);

@@ -22,29 +22,14 @@ class PropertiesController extends AppController {
 	public function offerings(){
 		$this->layout='home';
 		$types = $this->Property->Type->find('list');
-		$this->set(compact('types'));
+		$statuses = $this->Property->Status->find('list');
+		$this->set(compact('types','statuses'));
 	}
 
 /**
 * index
 **/
-	// public function index() {
-	// 	$this->Property->recursive = 0;
-	// 	$this->Prg->commonProcess(null, array(
-	// 		'paramType' => 'querystring'
-	// 		)
-	// 	);
-	// 	$this->paginate = array('Property'=>array(
-	// 		"limit"=>8,
-	// 		'order'=>array(
-	// 			'Property.created'=>'desc')
-	// 		));
-	// 	$d["properties"] = $this->Paginate(array(
-	// 		"Property.online"=>1
-	// 		)
-	// 	);
-	// 	$this->set($d );
-	// }
+
 public function index() {
 	$this->Property->recursive = 0;
 	$this->Prg->commonProcess(null, array(
@@ -60,10 +45,11 @@ public function index() {
 		);
 	$areas = $this->Property->Area->find('list');
 	$states = $this->Property->State->find('list');
+	$statuses = $this->Property->Status->find('list');
 	$types = $this->Property->Type->find('list');
-	$this->set(compact('areas','states','types'));
+	$this->set(compact('areas','states','types','statuses'));
 	$this->set('properties', $this->Paginator->paginate(
-	//	 array("Property.online"=>1)
+		 array("Property.online"=>1)
 		));
 }
 /**
@@ -120,10 +106,6 @@ public function index() {
 		if (!$this->Property->exists($id)) {
 			throw new NotFoundException(__('Invalid property'));
 		}
-		// if ($id != $property['Property']['id'] || $property['Property']['online'] != 1) {
-		// 	 throw new NotFoundException("Error Processing Request", 1);
-
-		// }
 		$options = array('conditions' => array('Property.' . $this->Property->primaryKey => $id));
 		$this->set('property', $this->Property->find('first', $options));
 	}

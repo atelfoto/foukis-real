@@ -32,6 +32,27 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('styles.min');
 		echo $this->fetch('css');
 	?>
+<style>
+ul.tri li a.desc, ul.tri li a{
+	margin-left: 5px;
+	background-color: #777;
+	padding: .2em .6em .3em;
+    font-size: 75%;
+    line-height: 1;
+    color: #fff;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+ul.tri li a.desc, ul.tri li a.asc{
+background-color: #f0ad4e;
+}
+ul.tri li a.desc:after	 {
+content: ' ⇣';
+}
+ul.tri li a.asc:after	 {
+content: ' ⇡';
+}
+</style>
 </head>
 <body id="home">
 	<div  class="site-container" id="site-container">
@@ -78,7 +99,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 					<?php if ($this->request->controller=='pages' || $this->request->controller=='users' ): ?>
 
 					<?php else: ?>
-
 					<p class="breadcrumb ">
 						<?php   echo $this->Html->getCrumbs(' / ', array(
 							'text' => '<span class="icon-home-1"  aria-hidden="true"></span>' ,
@@ -86,13 +106,12 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 							'escape' => false,'title'=> __('home')
 							)
 						);
-						?><?php // echo '/'. $this->fetch('title'); ?><?= isset($name) ? "<small>/".$name."</small>" : false ; ?>
+						?>
 					</p>
-					<?php endif ?>
 					<div class="page-header" id="page-header">
-						<!-- <h2 class="title"><?php  echo $this->fetch('title'); ?> <?= isset($cat) ? "<small>".$cat."</small>" : false ; ?></h2> -->
-						<?= isset($name) ? '<h2 class="title">'. $name."</h2>" : false ; ?>
+						<h2 class="title"><?php  echo $this->fetch('title'); ?></h2>
 					</div>
+					<?php endif ?>
 					<?php echo $this->fetch('content'); ?>
 					<?php echo $this->element('vegas'); ?>
 				</div>

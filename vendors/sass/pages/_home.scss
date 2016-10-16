@@ -56,21 +56,47 @@ h2.title{
 		position: relative;
   }
 
+  .properties{
+  	background-color: #ddd;
+  	border-bottom: 2px solid black;
+  	@include box-shadow(0px 29px 25px -9px #656565);
+  	z-index: 50;
+  	form{
+  		div.button.text-right{
+  			margin-right: 20px;
+  			margin-top: 20px;
+  		}
+  	}
+  }
+
+ .properties-body{
+  	// @include column-count(3);
+  	@include columns(3 auto);
+  	@include column-gap(1.5em);
+  	@include column-rule(1px, solid, black);
+  	//  columns: 3 auto;
+    // column-width: auto;
+    // column-count: 3;
+    // -moz-columns: 3 auto;
+    	// column-gap: 1.5em;
+
+  }
+
   .content {
   	ul.tri{
   		display:flex;
-  		margin-bottom: 10px;
-  		li span.label{
-  			margin-left: 5px;
-  		}
-
+  		margin-bottom: 20px;
+  		margin-top: 20px;
   	}
+  	ul.tri > li:first-child{
+  			text-transform: capitalize;
+  			font-weight: bold;
+  		}
   	.box-thumbnail{
   		@include span(1 of 4);
   		padding-left: 0px;
   		padding-right: 0px;
   		position: relative;
-
   		.thumbnail{
   			border: 2px #000 solid;
   			@include border-radius(4px);
@@ -78,18 +104,20 @@ h2.title{
   			margin-bottom: 10px;
   			box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
   			position: relative;
+  			padding-bottom: 5px;
   			h4{
-  				padding-left: 10px;
+  				padding-left: 4px;
   				padding-top: 3px;
   				text-align: center;
   				&.area{
   					text-align: left;
+  					font-weight: bold;
   				}
   			}
   			figure{
-  				margin-top: 15px;
-  				margin-left: 10px;
-  				margin-right: 10px;
+  				margin-top: 10px;
+  				margin-left: 5px;
+  				margin-right: 5px;
   				// border: 2px #000 solid;
   				@include border-radius(6px);
   				// box-shadow: rgba(50,50,50, 0.75)  3px -5px 5px 0px inset;
@@ -118,11 +146,16 @@ h2.title{
   			}
 
   			.caption-left{
-  				@include span(3 of 4);
+  				@include span(2 of 3);
   				margin-right: 0px;
+  				padding-left: 5px;
+  				padding-right: 1px;
+  				p{
+  					line-height: 20px;
+  				}
   			}
   			.caption-right{
-  				@include span(1 of 4);
+  				@include span(1 of 3);
   			  margin: 0;
   			  padding: 0 3px 0;
   			  float: none;
@@ -130,6 +163,9 @@ h2.title{
   			  /* float: right; */
   			  display: inline-block;
   			  text-align: center;
+  			  p{
+  			  	line-height: 20px;
+  			  }
   			}
   		}
   	}
@@ -144,6 +180,16 @@ h2.title{
       background-color: $pagination-disabled-bg;
       border-color: $pagination-disabled-border;
       cursor: $cursor-disabled !important;
+}
+
+.properties-view p {
+	margin-bottom: 20px;
+	span.price{
+		float: right;
+		font-size: 2em;
+		color: #00f;
+		font-weight: bold;
+	}
 }
 
 %stretched {

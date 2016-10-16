@@ -55,7 +55,7 @@
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-.icon-eye:before { content: '\e70a'; } /* '' */
+.icon-eye:before, .icon-View:before { content: '\e70a'; } /* '' */
 .icon-ok:before { content: '\e800'; } /* '' */
 .icon-mobile:before { content: '\e800'; } /* '' */
 .icon-home-1:before { content: '\e801'; } /* '' */

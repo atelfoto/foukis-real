@@ -1,8 +1,8 @@
-<div class="characteristics view">
+<div class="statuses view">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1><?php echo __('Characteristic'); ?></h1>
+				<h1><?php echo __('Status'); ?></h1>
 			</div>
 		</div>
 	</div>
@@ -13,64 +13,58 @@
 					<div class="panel-heading">Actions</div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-								<li><?php echo $this->Html->link('<span class="icon-edit"></span>&nbsp;&nbsp;'.__('Edit Characteristic'),
-									array('action' => 'edit', $characteristic['Characteristic']['id']), array('escape' => false)); ?> </li>
-								<li><?php echo $this->Form->postLink('<span class="icon-cancel"></span>&nbsp;&nbsp;'.__('Delete Characteristic'),
-									array('action' => 'delete', $characteristic['Characteristic']['id']), array('escape' => false),
-									__('Are you sure you want to delete # %s?', $characteristic['Characteristic']['id'])); ?> </li>
-								<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Characteristics'),
-									array('action' => 'index'), array('escape' => false)); ?> </li>
-								<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Characteristic'),
-									array('action' => 'add'), array('escape' => false)); ?> </li>
-								<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Properties'),
-									array('controller' => 'properties', 'action' => 'index'), array('escape' => false)); ?> </li>
-								<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'),
-									array('controller' => 'properties', 'action' => 'add'), array('escape' => false)); ?> </li>
+									<li><?php echo $this->Html->link('<span class="icon-edit"></span>&nbsp;&nbsp;'.__('Edit Status'),
+							 array('action' => 'edit', $status['Status']['id']), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Form->postLink('<span class="icon-cancel"></span>&nbsp;&nbsp;'.__('Delete Status'),
+								 array('action' => 'delete', $status['Status']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $status['Status']['id'])); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Statuses'),
+								 array('action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Status'),
+								 array('action' => 'add'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Properties'), array('controller' => 'properties', 'action' => 'index'), array('escape' => false)); ?> </li>
+		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false)); ?> </li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
 			</div><!-- end actions -->
 		</div><!-- end col md 3 -->
+
 		<div class="col-md-9">
 			<table  class="table table-striped">
 				<tbody>
-					<tr>
-						<th><?php echo __('Id'); ?></th>
-						<td>
-							<?php echo h($characteristic['Characteristic']['id']); ?>
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<th><?php echo __('Name'); ?></th>
-						<td>
-							<?php echo h($characteristic['Characteristic']['name']); ?>
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<th><?php echo __('Value'); ?></th>
-						<td>
-							<?php echo h($characteristic['Characteristic']['value']); ?>
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
-						<th><?php echo __('Online'); ?></th>
-						<td>
-							<?php echo h($characteristic['Characteristic']['online']); ?>
-							&nbsp;
-						</td>
-					</tr>
+				<tr>
+		<th><?php echo __('Id'); ?></th>
+		<td>
+			<?php echo h($status['Status']['id']); ?>
+			&nbsp;
+		</td>
+</tr>
+<tr>
+		<th><?php echo __('Name'); ?></th>
+		<td>
+			<?php echo h($status['Status']['name']); ?>
+			&nbsp;
+		</td>
+</tr>
+<tr>
+		<th><?php echo __('Value'); ?></th>
+		<td>
+			<?php echo h($status['Status']['value']); ?>
+			&nbsp;
+		</td>
+</tr>
 				</tbody>
 			</table>
+
 		</div><!-- end col md 9 -->
+
 	</div>
 </div>
+
 <div class="related row">
 	<div class="col-md-12">
 	<h3><?php echo __('Related Properties'); ?></h3>
-	<?php if (!empty($characteristic['Property'])): ?>
+	<?php if (!empty($status['Property'])): ?>
 	<table  class="table table-striped">
 	<thead>
 	<tr>
@@ -98,7 +92,7 @@
 	</tr>
 	</thead>
 	<tbody>
-	<?php foreach ($characteristic['Property'] as $property): ?>
+	<?php foreach ($status['Property'] as $property): ?>
 		<tr>
 			<td><?php echo $property['id']; ?></td>
 			<td><?php echo $property['id2']; ?></td>

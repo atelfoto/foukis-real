@@ -63,9 +63,9 @@
 							 'placeholder' => __('Content'),
 							 'after'=>false
 							 ));?>
-					<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-							 'empty'=> __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user_id"></i></div>'
+					<?php echo $this->Form->input('user_id', array(
+							 'value' =>$this->Session->read('Auth.User.id'),'type'=>'hidden',
+							'after'=>false
 							 ));?>
 
 				</div>

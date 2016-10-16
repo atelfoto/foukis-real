@@ -13,16 +13,14 @@
 	),
 	'class' => 'well form-horizontal'
 )); ?>
-	<?php echo  $this->Form->input("name", array(
-	'placeholder'=>__('name'))); ?>
-	<?php echo $this->Form->input('email', array(
-		'placeholder' => 'Email'
-	)); ?>
-	<?php echo  $this->Form->input("phone", array(
-	'placeholder'=>__('phone'))); ?>
+	<?php echo  $this->Form->input('status_id', array(
+		"label"=>array('text'=>__('your property is '),"class"=>"control-label"))); ?>
 	<?php echo  $this->Form->input("Type_id", array(
-	'empty'=>__('property type'),
-	'class'=>"form-control")); ?>
+		'empty'=>__('property type'),
+		'class'=>"form-control")); ?>
+		<?php echo  $this->Form->input("bedrooms", array(
+		"label"=>array('text'=>__('nb of bedrooms'),'class'=>"control-label"),
+		"placeholder"=>__('nb of bedrooms'),'type'=>'number')); ?>
 	<?php echo  $this->Form->input("size", array(
 		"placeholder"=>__('size'),
 		'type'=>'number'
@@ -39,6 +37,13 @@
 	"class"=>'form-control',
 	'type'=>"number"
 	)); ?>
+	<?php echo  $this->Form->input("name", array(
+	'placeholder'=>__('name'))); ?>
+	<?php echo $this->Form->input('email', array(
+		'placeholder' => 'Email'
+	)); ?>
+	<?php echo  $this->Form->input("phone", array(
+	'placeholder'=>__('phone'))); ?>
 	<?php echo  $this->Form->input("address", array(
 	'placeholder'=>__('Enter your address...'),
 	'type'=>'textarea',
@@ -47,6 +52,11 @@
 	'placeholder'=>__('Enter your message...'),
 	'type'=>'textarea',
 	)); ?>
+	<?php echo  $this->Form->input("estimate", array(
+	"type"=>'checkbox',"checked"=>false,
+	"label"=>array('text'=>__('I also like to acquire a free estimate for my good and to be contacted (e) by your agency.'),
+	"style"=>"margin-left:10px;"),"class"=>"input","style"=>'margin-left:250px;')); ?>
+	<!-- Je souhaite également obtenir une estimation gratuite pour mon bien et être contacté(e) par votre agence. -->
 	<div class="button text-right">
 	<?php echo $this->Form->button("submit", array(
 	'class'=>"btn btn-primary")); ?>
