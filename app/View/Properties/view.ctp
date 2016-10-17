@@ -65,8 +65,8 @@ $this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>
 		 				<b> <?php  echo __('type of flat') ?></b>: F<?php  echo h($property['Property']['bedrooms']); ?><br>
 		 			<?php endif ?>
 		 			<b> <?php echo __('complete surface') ?>  :</b> <?php echo $this->Number->format($property['Property']['size'],
-		 			array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> <br>
-		 			<?php echo ($property['Property']['bedrooms']==0) ? " " :  "<b>".  __('number of rooms')." : </b> ".h($property['Property']['bedrooms']) ; ?><br>
+		 			array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?>
+		 			<?php echo ($property['Property']['bedrooms']==0) ? " " :  "<br><b>".  __('number of rooms')." : </b> ".h($property['Property']['bedrooms']) ; ?><br>
 		 			<b> <?php echo __('year building') ?>  :</b>&nbsp;<?php echo h($property['Property']['dateYear']); ?>
 		 		</p>
 		 		<p><b> <?php echo __('most') ?> </b><br>
