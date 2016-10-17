@@ -52,7 +52,7 @@ msgstr ""
 #: Controller/HelpsController.php:97;121
 #: Controller/MenusController.php:180;204
 #: Controller/PostsController.php:158
-#: Controller/PropertiesController.php:246;270
+#: Controller/PropertiesController.php:247;271
 #: Controller/StatesController.php:93;117
 #: Controller/StatusesController.php:93;117
 #: Controller/TypesController.php:93;117
@@ -65,7 +65,7 @@ msgstr ""
 #: Controller/HelpsController.php:103;127
 #: Controller/MenusController.php:186;210
 #: Controller/PostsController.php:164
-#: Controller/PropertiesController.php:252
+#: Controller/PropertiesController.php:253
 #: Controller/StatesController.php:99;123
 #: Controller/StatusesController.php:99;123
 #: Controller/TypesController.php:99;123
@@ -78,7 +78,7 @@ msgstr ""
 #: Controller/HelpsController.php:105;129
 #: Controller/MenusController.php:188;212
 #: Controller/PostsController.php:166
-#: Controller/PropertiesController.php:254;278
+#: Controller/PropertiesController.php:255;279
 #: Controller/StatesController.php:101;125
 #: Controller/StatusesController.php:101;125
 #: Controller/TypesController.php:101;125
@@ -91,7 +91,7 @@ msgstr ""
 #: Controller/HelpsController.php:109;133
 #: Controller/MenusController.php:192;216
 #: Controller/PostsController.php:170
-#: Controller/PropertiesController.php:258;282
+#: Controller/PropertiesController.php:259;283
 #: Controller/StatesController.php:105;129
 #: Controller/StatusesController.php:105;129
 #: Controller/TypesController.php:105;129
@@ -240,40 +240,40 @@ msgstr ""
 msgid "The post could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/PropertiesController.php:107;146;296
+#: Controller/PropertiesController.php:108;147;297
 msgid "Invalid property"
 msgstr ""
 
-#: Controller/PropertiesController.php:122;150
+#: Controller/PropertiesController.php:123;151
 msgid "The property has been saved."
 msgstr ""
 
-#: Controller/PropertiesController.php:125;153
+#: Controller/PropertiesController.php:126;154
 msgid "The property could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/PropertiesController.php:215
+#: Controller/PropertiesController.php:216
 msgid "Files saved successfully"
 msgstr ""
 
-#: Controller/PropertiesController.php:217
+#: Controller/PropertiesController.php:218
 msgid "There was a problem uploading file. Please try again."
 msgstr ""
 
-#: Controller/PropertiesController.php:233
+#: Controller/PropertiesController.php:234
 msgid "Your pictures has been published in the folder  %s."
 msgstr ""
 
-#: Controller/PropertiesController.php:276
+#: Controller/PropertiesController.php:277
 #: Controller/UsersController.php:363
 msgid "User ID %s has been disabled."
 msgstr ""
 
-#: Controller/PropertiesController.php:300
+#: Controller/PropertiesController.php:301
 msgid "The property has been deleted."
 msgstr ""
 
-#: Controller/PropertiesController.php:302
+#: Controller/PropertiesController.php:303
 msgid "The property could not be deleted. Please, try again."
 msgstr ""
 
@@ -609,7 +609,7 @@ msgstr ""
 #: View/Posts/admin_view.ctp:43
 #: View/Properties/admin_add.ctp:44
 #: View/Properties/admin_edit.ctp:51
-#: View/Properties/admin_view.ctp:60;201
+#: View/Properties/admin_view.ctp:86;224
 #: View/States/add.ctp:43
 #: View/States/admin_add.ctp:43
 #: View/States/admin_edit.ctp:47
@@ -636,7 +636,7 @@ msgstr ""
 #: View/Characteristics/admin_edit.ctp:50
 #: View/Characteristics/admin_view.ctp:52
 #: View/Characteristics/edit.ctp:51
-#: View/Properties/admin_view.ctp:202
+#: View/Properties/admin_view.ctp:225
 #: View/States/add.ctp:47
 #: View/States/admin_add.ctp:47
 #: View/States/admin_edit.ctp:51
@@ -664,7 +664,7 @@ msgstr ""
 #: View/Menus/admin_edit.ctp:43
 #: View/Menus/admin_view.ctp:36
 #: View/Posts/admin_view.ctp:36
-#: View/Properties/admin_view.ctp:46;200
+#: View/Properties/admin_view.ctp:72;223
 #: View/States/admin_edit.ctp:43
 #: View/States/admin_view.ctp:36;78
 #: View/States/edit.ctp:43
@@ -836,7 +836,7 @@ msgid "Delete"
 msgstr ""
 
 #: View/Areas/admin_view.ctp:5
-#: View/Properties/admin_view.ctp:81
+#: View/Properties/admin_view.ctp:107
 msgid "Area"
 msgstr ""
 
@@ -853,7 +853,7 @@ msgstr ""
 #: View/Helps/admin_view.ctp:19
 #: View/Menus/admin_view.ctp:19
 #: View/Posts/admin_view.ctp:19
-#: View/Properties/admin_view.ctp:19;217
+#: View/Properties/admin_view.ctp:20;240
 #: View/States/admin_view.ctp:19;129
 #: View/Statuses/admin_view.ctp:19;120
 #: View/Types/admin_view.ctp:19;129
@@ -862,18 +862,18 @@ msgid "Are you sure you want to delete # %s?"
 msgstr ""
 
 #: View/Areas/admin_view.ctp:20
-#: View/Properties/admin_view.ctp:26
+#: View/Properties/admin_view.ctp:33
 msgid "List Areas"
 msgstr ""
 
 #: View/Areas/admin_view.ctp:22
-#: View/Properties/admin_view.ctp:27
+#: View/Properties/admin_view.ctp:36
 msgid "New Area"
 msgstr ""
 
 #: View/Areas/admin_view.ctp:24
 #: View/Characteristics/admin_view.ctp:25
-#: View/Properties/admin_view.ctp:20
+#: View/Properties/admin_view.ctp:21
 #: View/States/admin_view.ctp:24
 #: View/Statuses/admin_view.ctp:24
 #: View/Types/admin_view.ctp:24
@@ -882,7 +882,7 @@ msgstr ""
 
 #: View/Areas/admin_view.ctp:25;138
 #: View/Characteristics/admin_view.ctp:27;135
-#: View/Properties/admin_view.ctp:22
+#: View/Properties/admin_view.ctp:24
 #: View/States/admin_view.ctp:25;138
 #: View/Statuses/admin_view.ctp:25;129
 #: View/Types/admin_view.ctp:25;138
@@ -894,7 +894,7 @@ msgstr ""
 #: View/Helps/admin_view.ctp:85
 #: View/Menus/admin_view.ctp:85
 #: View/Posts/admin_view.ctp:85
-#: View/Properties/admin_view.ctp:137;203
+#: View/Properties/admin_view.ctp:163;226
 #: View/States/admin_view.ctp:57;92
 #: View/Statuses/admin_view.ctp:84
 #: View/Types/admin_view.ctp:57;92
@@ -912,7 +912,7 @@ msgstr ""
 
 #: View/Areas/admin_view.ctp:79
 #: View/Characteristics/admin_view.ctp:78
-#: View/Properties/admin_view.ctp:53
+#: View/Properties/admin_view.ctp:79
 #: View/States/admin_view.ctp:79
 #: View/Statuses/admin_view.ctp:72
 #: View/Types/admin_view.ctp:79
@@ -930,7 +930,7 @@ msgstr ""
 #: View/Posts/admin_add.ctp:51
 #: View/Posts/admin_edit.ctp:54
 #: View/Posts/admin_view.ctp:57
-#: View/Properties/admin_view.ctp:67
+#: View/Properties/admin_view.ctp:93
 #: View/States/admin_view.ctp:81
 #: View/Statuses/admin_view.ctp:74
 #: View/Types/admin_view.ctp:81
@@ -980,7 +980,7 @@ msgstr ""
 #: View/Characteristics/admin_view.ctp:85
 #: View/Properties/admin_add.ctp:67
 #: View/Properties/admin_edit.ctp:74
-#: View/Properties/admin_view.ctp:102
+#: View/Properties/admin_view.ctp:128
 #: View/States/admin_view.ctp:87
 #: View/Statuses/admin_view.ctp:79
 #: View/Types/admin_view.ctp:87
@@ -991,7 +991,7 @@ msgstr ""
 #: View/Characteristics/admin_view.ctp:86
 #: View/Properties/admin_add.ctp:71
 #: View/Properties/admin_edit.ctp:78
-#: View/Properties/admin_view.ctp:109
+#: View/Properties/admin_view.ctp:135
 #: View/States/admin_view.ctp:88
 #: View/Statuses/admin_view.ctp:80
 #: View/Types/admin_view.ctp:88
@@ -1002,7 +1002,7 @@ msgstr ""
 #: View/Characteristics/admin_view.ctp:87
 #: View/Properties/admin_add.ctp:75
 #: View/Properties/admin_edit.ctp:82
-#: View/Properties/admin_view.ctp:116
+#: View/Properties/admin_view.ctp:142
 #: View/States/admin_view.ctp:89
 #: View/Statuses/admin_view.ctp:81
 #: View/Types/admin_view.ctp:89
@@ -1013,7 +1013,7 @@ msgstr ""
 #: View/Characteristics/admin_view.ctp:88
 #: View/Properties/admin_add.ctp:79
 #: View/Properties/admin_edit.ctp:86
-#: View/Properties/admin_view.ctp:123
+#: View/Properties/admin_view.ctp:149
 #: View/States/admin_view.ctp:90
 #: View/Statuses/admin_view.ctp:82
 #: View/Types/admin_view.ctp:90
@@ -1024,7 +1024,7 @@ msgstr ""
 #: View/Characteristics/admin_view.ctp:89
 #: View/Properties/admin_add.ctp:83
 #: View/Properties/admin_edit.ctp:90
-#: View/Properties/admin_view.ctp:130
+#: View/Properties/admin_view.ctp:156
 #: View/States/admin_view.ctp:91
 #: View/Statuses/admin_view.ctp:83
 #: View/Types/admin_view.ctp:91
@@ -1033,7 +1033,7 @@ msgstr ""
 
 #: View/Areas/admin_view.ctp:93
 #: View/Characteristics/admin_view.ctp:91
-#: View/Properties/admin_view.ctp:144
+#: View/Properties/admin_view.ctp:170
 #: View/States/admin_view.ctp:93
 #: View/Statuses/admin_view.ctp:85
 #: View/Types/admin_view.ctp:93
@@ -1042,7 +1042,7 @@ msgstr ""
 
 #: View/Areas/admin_view.ctp:94
 #: View/Characteristics/admin_view.ctp:92
-#: View/Properties/admin_view.ctp:151
+#: View/Properties/admin_view.ctp:177
 #: View/States/admin_view.ctp:94
 #: View/Statuses/admin_view.ctp:86
 #: View/Types/admin_view.ctp:94
@@ -1054,7 +1054,7 @@ msgstr ""
 #: View/Helps/admin_view.ctp:78
 #: View/Menus/admin_view.ctp:99
 #: View/Posts/admin_view.ctp:78
-#: View/Properties/admin_view.ctp:158
+#: View/Properties/admin_view.ctp:184
 #: View/States/admin_view.ctp:95
 #: View/Statuses/admin_view.ctp:87
 #: View/Types/admin_view.ctp:95
@@ -1067,7 +1067,7 @@ msgstr ""
 #: View/Helps/admin_view.ctp:71
 #: View/Menus/admin_view.ctp:92
 #: View/Posts/admin_view.ctp:71
-#: View/Properties/admin_view.ctp:165
+#: View/Properties/admin_view.ctp:191
 #: View/States/admin_view.ctp:96
 #: View/Statuses/admin_view.ctp:88
 #: View/Types/admin_view.ctp:96
@@ -1086,7 +1086,7 @@ msgstr ""
 
 #: View/Areas/admin_view.ctp:98
 #: View/Characteristics/admin_view.ctp:96
-#: View/Properties/admin_view.ctp:179
+#: View/Properties/admin_view.ctp:205
 #: View/States/admin_view.ctp:98
 #: View/Statuses/admin_view.ctp:90
 #: View/Types/admin_view.ctp:98
@@ -1156,12 +1156,12 @@ msgid "Delete Characteristic"
 msgstr ""
 
 #: View/Characteristics/admin_view.ctp:21
-#: View/Properties/admin_view.ctp:32
+#: View/Properties/admin_view.ctp:51
 msgid "List Characteristics"
 msgstr ""
 
 #: View/Characteristics/admin_view.ctp:23
-#: View/Properties/admin_view.ctp:33;226
+#: View/Properties/admin_view.ctp:54;249
 msgid "New Characteristic"
 msgstr ""
 
@@ -1316,17 +1316,19 @@ msgstr ""
 msgid "mini surface"
 msgstr ""
 
-#: View/Elements/property/index.ctp:12
-msgid "There are %s announcements corresponding to your research."
-msgstr ""
-
-#: View/Elements/property/index.ctp:24
+#: View/Elements/property/index.ctp:25
 msgid "month"
 msgstr ""
 
-#: View/Elements/property/index.ctp:53
+#: View/Elements/property/index.ctp:54
 msgid "see detail"
 msgstr ""
+
+#: View/Elements/property/index.ctp:13
+msgid "There is %s answer to your research."
+msgid_plural "There are %s announcements corresponding to your research."
+msgstr[0] ""
+msgstr[1] ""
 
 #: View/Elements/users/login.ctp:3;32
 msgid "Login"
@@ -1495,7 +1497,7 @@ msgstr ""
 #: View/Helps/admin_view.ctp:24
 #: View/Menus/admin_view.ctp:24
 #: View/Posts/admin_view.ctp:24
-#: View/Properties/admin_view.ctp:34
+#: View/Properties/admin_view.ctp:57
 #: View/Users/admin_view.ctp:21
 msgid "List Users"
 msgstr ""
@@ -1503,7 +1505,7 @@ msgstr ""
 #: View/Helps/admin_view.ctp:25
 #: View/Menus/admin_view.ctp:25
 #: View/Posts/admin_view.ctp:25
-#: View/Properties/admin_view.ctp:35
+#: View/Properties/admin_view.ctp:60
 #: View/Users/admin_view.ctp:24
 msgid "New User"
 msgstr ""
@@ -1511,7 +1513,7 @@ msgstr ""
 #: View/Helps/admin_view.ctp:57
 #: View/Menus/admin_view.ctp:106
 #: View/Posts/admin_view.ctp:92
-#: View/Properties/admin_view.ctp:172
+#: View/Properties/admin_view.ctp:198
 #: View/Users/admin_view.ctp:5
 msgid "User"
 msgstr ""
@@ -1686,7 +1688,7 @@ msgid "New Post"
 msgstr ""
 
 #: View/Posts/admin_view.ctp:64
-#: View/Properties/admin_view.ctp:95
+#: View/Properties/admin_view.ctp:121
 #: View/Types/admin_view.ctp:5
 #: View/Users/admin_view.ctp:148
 msgid "Type"
@@ -1744,52 +1746,52 @@ msgstr ""
 msgid "Edit Property"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:18
+#: View/Properties/admin_view.ctp:19
 msgid "Delete Property"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:24
+#: View/Properties/admin_view.ctp:27
 #: View/States/admin_view.ctp:20
 msgid "List States"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:25
+#: View/Properties/admin_view.ctp:30
 #: View/States/admin_view.ctp:22
 msgid "New State"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:28
+#: View/Properties/admin_view.ctp:39
 #: View/Statuses/admin_view.ctp:20
 msgid "List Statuses"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:29
+#: View/Properties/admin_view.ctp:42
 #: View/Statuses/admin_view.ctp:22
 msgid "New Status"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:30
+#: View/Properties/admin_view.ctp:45
 #: View/Types/admin_view.ctp:20
 msgid "List Types"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:31
+#: View/Properties/admin_view.ctp:48
 #: View/Types/admin_view.ctp:22
 msgid "New Type"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:74
+#: View/Properties/admin_view.ctp:100
 #: View/States/admin_view.ctp:5
 #: View/States/view.ctp:18
 msgid "State"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:88
+#: View/Properties/admin_view.ctp:114
 #: View/Statuses/admin_view.ctp:5
 msgid "Status"
 msgstr ""
 
-#: View/Properties/admin_view.ctp:195
+#: View/Properties/admin_view.ctp:218
 msgid "Related Characteristics"
 msgstr ""
 
@@ -1801,32 +1803,40 @@ msgstr ""
 msgid "search"
 msgstr ""
 
-#: View/Properties/view.ctp:57
+#: View/Properties/view.ctp:58
 msgid "details of the overall"
 msgstr ""
 
-#: View/Properties/view.ctp:58
+#: View/Properties/view.ctp:60
 msgid "overview"
 msgstr ""
 
-#: View/Properties/view.ctp:60
+#: View/Properties/view.ctp:65
 msgid "type of flat"
 msgstr ""
 
-#: View/Properties/view.ctp:61
+#: View/Properties/view.ctp:67
 msgid "complete surface"
 msgstr ""
 
-#: View/Properties/view.ctp:63
+#: View/Properties/view.ctp:69
 msgid "number of rooms"
 msgstr ""
 
-#: View/Properties/view.ctp:64
+#: View/Properties/view.ctp:70
 msgid "year building"
 msgstr ""
 
-#: View/Properties/view.ctp:66
+#: View/Properties/view.ctp:72
 msgid "most"
+msgstr ""
+
+#: View/Properties/view.ctp:82
+msgid "equipment"
+msgstr ""
+
+#: View/Properties/view.ctp:89
+msgid "simulate your monthly payments"
 msgstr ""
 
 #: View/States/add.ctp:1;2
@@ -2120,7 +2130,7 @@ msgid "This name has already been selected"
 msgstr ""
 
 #: Model/Property.php:validation for field Characteristic
-msgid "Merci de choisir au moins une options"
+msgid "Thank you for choosing one at least options"
 msgstr ""
 
 #: Model/Property.php:validation for field dateYear

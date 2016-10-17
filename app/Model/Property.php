@@ -107,7 +107,7 @@ class Property extends AppModel {
 	            'min' => 1,
 	        //    'max' => 3
 	        )),
-	        'message' => 'Merci de choisir au moins une options'
+	        'message' => 'Thank you for choosing one at least options'
 	    ),
 		'type_id' => array(
 			'notBlank' => array(

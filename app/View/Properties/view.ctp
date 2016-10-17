@@ -20,7 +20,7 @@ $this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>
   ?>
 <!-- <div class="container container- content"> -->
 	<div class=" page-content content properties-view">
-		<p class="properties-title"> <?php echo $property['Type']['name'] ?> -&nbsp;F <?php echo h($property['Property']['bedrooms']); ?>-
+		<p class="properties-title"> <?php echo $property['Type']['name'] ?> <?php echo ($property['Property']['bedrooms']==0) ? " " :  "-<b>".  __('number of rooms')." : </b> ".h($property['Property']['bedrooms']) ; ?>-
 		<?php echo $property['Status']['name'] ?>-
 		<?php echo $this->Number->format($property['Property']['size'],
 		array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> - <?php echo $property['Area']['name'] ?> -
@@ -55,17 +55,21 @@ $this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>
 		<h3>Description</h3>
 		 <?php echo $property['Property']['content'] ?> <br>
 		 <div class="properties-fichier">
-		 	<h3><?php echo __('details of the overall') ?>  <!-- Fiche détaillée du bien immobilier--></h3>
+		 	<h3><?php echo __('details of the overall') ?></h3>
 		 	<div>
-		 		<p><b><?php echo __('overview') ?> <!-- vue globale --> </b>
+		 		<p><b><?php echo __('overview') ?></b>
 		 			<hr>
-		 			<b> <?php echo __('type of flat') ?> <!-- Type d'appartement --> </b>: F<?php echo h($property['Property']['bedrooms']); ?> <br>
-		 			<b> <?php echo __('complete surface') ?> <!-- Surface totale --> :</b> <?php echo $this->Number->format($property['Property']['size'],
+		 			<?php if ($property['Property']['bedrooms']==0): ?>
+
+		 			<?php else: ?>
+		 				<b> <?php  echo __('type of flat') ?></b>: F<?php  echo h($property['Property']['bedrooms']); ?><br>
+		 			<?php endif ?>
+		 			<b> <?php echo __('complete surface') ?>  :</b> <?php echo $this->Number->format($property['Property']['size'],
 		 			array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> <br>
-		 			<b> <?php echo __('number of rooms') ?> <!-- nombre de pièces --> :</b>&nbsp;<?php echo h($property['Property']['bedrooms']); ?> <br>
-		 			<b> <?php echo __('year building') ?> <!-- année construction --> :</b>&nbsp;<?php echo h($property['Property']['dateYear']); ?>
+		 			<?php echo ($property['Property']['bedrooms']==0) ? " " :  "<b>".  __('number of rooms')." : </b> ".h($property['Property']['bedrooms']) ; ?><br>
+		 			<b> <?php echo __('year building') ?>  :</b>&nbsp;<?php echo h($property['Property']['dateYear']); ?>
 		 		</p>
-		 		<p><b> <?php echo __('most') ?> <!-- Les Plus --></b><br>
+		 		<p><b> <?php echo __('most') ?> </b><br>
 		 			<?php foreach ($property['Characteristic'] as $characteristic): ?>
 		 				<span class="label label-info" style="margin-right:5px;"><i class="icon-<?php  echo $characteristic['name']; ;?>"></i>
 		 					<?php  echo $characteristic['value']; ;?>
@@ -75,14 +79,14 @@ $this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>
 		 	</div>
 		 	<div>
 		 		<p>
-		 			<b> <?php echo _("equipment"); ?></b>
+		 			<b> <?php echo __("equipment"); ?></b>
 		 			<hr>
 		 		</p>
 
 		 	</div>
 		 	<div>
 		 		<p>
-		 			<b> <?php echo _("simulate your monthly payments"); ?></b>
+		 			<b> <?php echo __("simulate your monthly payments"); ?></b>
 		 			<hr>
 		 		</p>
 

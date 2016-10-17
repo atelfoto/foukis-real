@@ -10,8 +10,8 @@
  		<li><?php echo $this->Paginator->sort('id'); ?></li>
  	</ul>
  	<hr>
-	<p style="float: left;"> <?php echo __("There are %s announcements corresponding to your research.",
-		$this->Paginator->counter(array('format' =>"<strong>{:count}</strong>"))); ?></p>
+	<p style="float: left;"> <?php echo __n("There is %s answer to your research.","There are %s announcements corresponding to your research.",
+		$this->Paginator->counter(array('format' =>"<strong>{:count}</strong>")),$this->Paginator->counter(array('format' =>"<strong>{:count}</strong>"))); ?></p>
  	<div class="paginations" ">
 
 		<?php echo $this->element('pagination'); ?>
