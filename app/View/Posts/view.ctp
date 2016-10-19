@@ -4,7 +4,7 @@ echo $this->Html->meta(array('name' => 'keywords', 'content' => $post['Post']['k
 ?>
 <?php  echo $this->assign('title', $post['Post']['name']); ?>
  <?php  $this->Html->addCrumb($post['Post']['name']); ?>
-<div class="content">
+<div class="content post">
 	<?= $post['Post']['content']; ?>
 </div>
 

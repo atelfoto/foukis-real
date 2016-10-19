@@ -55,7 +55,27 @@ h2.title{
 		box-shadow: #fff 0 0 50px, #fff 0 0 30px 10px inset;
 		position: relative;
   }
+.content.post{
+	ul li{
+			list-style-type: disc;
+			list-style-position: inside;
+			margin-left: 15px;
+			&:first-letter{
+				text-transform: capitalize;
+			}
+	}
+	ol li{
+		list-style-position: inside;
+		margin-left: 15px;
+		&:before{
+			font-weight: bold;
+		}
+		&:first-letter{
+			text-transform: capitalize;
 
+		}
+	}
+}
   .properties{
   	background-color: #ddd;
   	border-bottom: 2px solid black;
