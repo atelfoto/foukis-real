@@ -10,9 +10,13 @@
      //font-size: 3.3em;
      letter-spacing: .2em;
      color: #222;
-     text-transform: capitalize;
+
      margin-top: 20px;
      margin-bottom: 10px;
+     text-transform: lowercase;
+     &:first-letter{
+     	text-transform: capitalize;
+     }
  }
 h3{
 	font-size: $font-size-h3;

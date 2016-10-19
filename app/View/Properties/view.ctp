@@ -20,7 +20,7 @@ $this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>
   ?>
 <!-- <div class="container container- content"> -->
 	<div class=" page-content content properties-view">
-		<p class="properties-title"> <?php echo $property['Type']['name'] ?> <?php echo ($property['Property']['bedrooms']==0) ? " " :  "-<b>".  __('number of rooms')." : </b> ".h($property['Property']['bedrooms']) ; ?>-
+		<p class="properties-title"> <?php echo $property['Type']['name'] ?> <?php echo ($property['Property']['bedrooms']==0) ? " " :  "-".  __('number of rooms')." :  ".h($property['Property']['bedrooms']) ; ?>-
 		<?php echo $property['Status']['name'] ?>-
 		<?php echo $this->Number->format($property['Property']['size'],
 		array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> - <?php echo $property['Area']['name'] ?> -

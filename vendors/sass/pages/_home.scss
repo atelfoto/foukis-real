@@ -206,6 +206,10 @@ h2.title{
 
 	p {
 		margin-bottom: 20px;
+		text-transform: lowercase;
+		&:first-letter{
+			text-transform: capitalize;
+		}
 		span.price{
 			float: right;
 			font-size: 2em;
