@@ -16,7 +16,7 @@
 <?php  echo $this->Html->css(array('flexslider/flexslider'),array('inline'=>false)); ?>
 <?php $this->assign('title',$property['Property']['name']);
 $this->Html->addCrumb(__('Properties'),array("controller"=>"properties","action"=>"index"));
-$this->Html->addCrumb( $property['Property']['name']);
+$this->Html->addCrumb( $property['Property']['name'],$property['Property']['id']);
   ?>
 	<div class=" page-content content properties-view">
 		<p class="properties-title"> <?php echo $property['Type']['name'] ?> <?php echo ($property['Property']['bedrooms']==0) ? " " :  "-".  __('number of rooms')." :  ".h($property['Property']['bedrooms']) ; ?>-

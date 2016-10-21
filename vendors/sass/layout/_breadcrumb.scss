@@ -12,10 +12,6 @@
   	border-left: 2px solid #31708f;
 	border-right: 2px solid #31708f;
 	box-shadow: #fff 0 0 50px, #fff 0 0 30px 10px inset;
-	a{
-		text-transform: lowercase;
-		&:first-letter{
-			text-transform: capitalize;
-		}
-	}
+	text-transform: lowercase;
+
 }
