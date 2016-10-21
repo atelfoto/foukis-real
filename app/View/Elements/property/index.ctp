@@ -12,31 +12,34 @@
  	<hr>
 	<p style="float: left;"> <?php echo __n("There is %s answer to your research.","There are %s announcements corresponding to your research.",
 		$this->Paginator->counter(array('format' =>"<strong>{:count}</strong>")),$this->Paginator->counter(array('format' =>"<strong>{:count}</strong>"))); ?></p>
- 	<div class="paginations" ">
+ 	<div class="paginations">
 
 		<?php echo $this->element('pagination'); ?>
  	</div>
 	<?php foreach ($properties as $property): ?>
  	<div class="box-thumbnail">
- 		<div class="thumbnail" >
+ 		<div class="thumbnail">
  			<h4> <b><?php echo  $this->Number->currency($property['Property']['price'],' €',
-				 array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?></b>/
+				 array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?></b>
 				 <?php if ($property['Status']['name']=="To Let"): ?>
-				 	<?php echo __('month') ?>
+				 	<?php echo '/'. __('month') ?>
 				 <?php else: ?>
-				 	<?php echo $property['Status']['name']; ?>
+				 	<?php // echo $property['Status']['name']; ?>
 				 <?php endif ?>
 			</h4>
  			<figure>
  			<?php if ($property['Property']['mediaQuantities'] > 0): ?>
- 				<?php  echo  $this->Html->image("properties/".$property['Property']['id']."/thumbs/".$property['Property']['id']."-01.jpg", $options = array("class"=>"img-thumbnail"),array("style"=>'max-height::125px;')); ?>
+ 				<?php  echo  $this->Html->image("properties/".$property['Property']['id']."/thumbs/".$property['Property']['id']."-01.jpg", $options = array("class"=>"img-thumbnail")); ?>
+    			<figcaption>
+    				<span class="icon-camera">&nbsp;<?php echo h($property['Property']['mediaQuantities']); ?></span>
+    			</figcaption>
  			<?php else: ?>
  				<?php echo  $this->Html->image('properties/fond_thumb.jpg', $options = array("class"=>"img-thumbnail")); ?>
  			<?php endif ?>
  			</figure>
  			<h4 class="area"><?php echo $property['Area']['name']; ?></h4>
  			<div class="caption-left">
- 				<p> <span class="display:inline-block">
+ 				<p> <span class="">
  				<?php echo $this->Text->truncate($property['Type']['name'], 10); ?>
  				<?php if ($property['Property']['bedrooms']==0): ?>
  				<?php else: ?>

@@ -15,10 +15,9 @@
 <?php //  echo $this->Html->meta(array('name'=>'twitter:image','content'=>"http://".env('HTTP_HOST')."/img/summary.jpg"),NULL,array('inline'=>false));?>
 <?php  echo $this->Html->css(array('flexslider/flexslider'),array('inline'=>false)); ?>
 <?php $this->assign('title',$property['Property']['name']);
-$this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>"index"));
-// $this->Html->addCrumb( $property['Property']['name']);
+$this->Html->addCrumb(__('Properties'),array("controller"=>"properties","action"=>"index"));
+$this->Html->addCrumb( $property['Property']['name']);
   ?>
-<!-- <div class="container container- content"> -->
 	<div class=" page-content content properties-view">
 		<p class="properties-title"> <?php echo $property['Type']['name'] ?> <?php echo ($property['Property']['bedrooms']==0) ? " " :  "-".  __('number of rooms')." :  ".h($property['Property']['bedrooms']) ; ?>-
 		<?php echo $property['Status']['name'] ?>-
@@ -58,44 +57,69 @@ $this->Html->addCrumb(__('Property'),array("controller"=>"properties","action"=>
 		 	<h3><?php echo __('details of the overall') ?></h3>
 		 	<div>
 		 		<p><b><?php echo __('overview') ?></b>
-		 			<hr>
+		 		</p>
+		 		<hr>
+		 		<p>
 		 			<?php if ($property['Property']['bedrooms']==0): ?>
 
 		 			<?php else: ?>
-		 				<b> <?php  echo __('type of flat') ?></b>: F<?php  echo h($property['Property']['bedrooms']); ?><br>
+		 				<b><?php  echo __('type of flat') ?></b>: F<?php  echo h($property['Property']['bedrooms']); ?><br>
 		 			<?php endif ?>
 		 			<b> <?php echo __('complete surface') ?>  :</b> <?php echo $this->Number->format($property['Property']['size'],
 		 			array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?>
 		 			<?php echo ($property['Property']['bedrooms']==0) ? " " :  "<br><b>".  __('number of rooms')." : </b> ".h($property['Property']['bedrooms']) ; ?><br>
-		 			<b> <?php echo __('year building') ?>  :</b>&nbsp;<?php echo h($property['Property']['dateYear']); ?>
-		 		</p>
-		 		<p><b> <?php echo __('most') ?> </b><br>
-		 			<?php foreach ($property['Characteristic'] as $characteristic): ?>
-		 				<span class="label label-info" style="margin-right:5px;"><i class="icon-<?php  echo $characteristic['name']; ;?>"></i>
-		 					<?php  echo $characteristic['value']; ;?>
-		 				</span>
-		 			<?php endforeach ?>
+		 			<b> <?php echo __('year building') ?>  :</b>&nbsp;<?php echo h($property['Property']['dateYear']); ?> <br>
+		 			<b> <?php echo __('level') ?>  :</b>&nbsp;<?php echo h($property['Property']['level']); ?>
 		 		</p>
 		 	</div>
-		 	<div>
+		 	<div >
 		 		<p>
 		 			<b> <?php echo __("equipment"); ?></b>
-		 			<hr>
 		 		</p>
-
+		 		<hr>
+		 		<p>
+		 			<b><?php echo __('door') ?> : </b><br>
+		 			<b><?php echo __('insulation') ?> : </b><br>
+		 			<b><?php echo __('heating') ?> : </b><br>
+		 			<b><?php echo __('hot water') ?> : </b><br>
+		 			<b><?php echo __('elevator') ?> : </b><br>
+		 			<b><?php echo __('digital lock') ?> : </b><br>
+		 			<b><?php echo __('intercom') ?> : </b><br>
+		 			<b><?php echo __('air-conditioning') ?> : </b><br>
+		 			<b><?php echo __('ktchens') ?> : </b><br>
+		 			<b><?php echo __('living rooms') ?> : </b><br>
+		 			<b><?php echo __('bathrooms') ?> : </b><br>
+		 		</p>
 		 	</div>
 		 	<div>
 		 		<p>
 		 			<b> <?php echo __("simulate your monthly payments"); ?></b>
 		 			<hr>
 		 		</p>
-
-
+		 	</div>
+		 	<div>
+		 		<p><b> <?php echo __('most') ?> </b>
+		 		<p>
+		 		<hr>
+		 		<p>
+		 			<?php foreach ($property['Characteristic'] as $characteristic): ?>
+		 				<span class="label label-info" style="margin-right:5px;"><i class="icon-<?php  echo $characteristic['name']; ;?>"></i>
+		 					<?php  echo $characteristic['value']; ;?>
+		 				</span>
+		 			<?php endforeach ?> <br>
+		 			<b><?php echo __('number of lots') ?> : </b><br>
+		 			<b><?php echo __('common expenses per year') ?> : </b><br>
+		 		</p>
+		 	</div>
+		 	<div>
+		 		<p><b>perf</b></p>
+		 	</div>
+		 	<div>
+		 		<p><b>perf</b></p>
 		 	</div>
 		 </div>
 	</div>
-<!-- 	<hr class="style-two">
-</div> -->
+
 <?php if ($property['Property']['mediaQuantities']>0 ): ?>
 <?php echo  $this->Html->script(array("jquery.flexslider-min"),array('inline'=>false)); ?>
 	<?=  $this->Html->scriptStart(array('inline'=>false)); ?>

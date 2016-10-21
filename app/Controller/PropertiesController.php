@@ -54,6 +54,64 @@ public function index() {
 	);
 }
 /**
+ * [rent description]
+ * @return [type] [description]
+ */
+public function rent() {
+	$this->Property->recursive = 0;
+	$this->Prg->commonProcess(null, array(
+		'paramType' => 'querystring'
+		));
+	$this->Paginator->settings = array(
+		'Property' => array(
+			'paramType' => 'querystring',
+			'conditions' => $this->Property->parseCriteria(
+				$this->Prg->parsedParams()
+				)
+			)
+		);
+	$areas = $this->Property->Area->find('list',array(
+		'order'=>array('Area.value'=>"asc"),
+		"conditions"=>array('Area.online'=>1)));
+	$states = $this->Property->State->find('list');
+	$statuses = $this->Property->Status->find('list');
+	$types = $this->Property->Type->find('list');
+	$this->set(compact('areas','states','types','statuses'));
+	$this->set('properties', $this->Paginator->paginate(
+		array("Property.online"=>1,"Status.value LIKE"=>'ToLet')
+		)
+	);
+}
+/**
+ * [buy description]
+ * @return [type] [description]
+ */
+public function buy() {
+	$this->Property->recursive = 0;
+	$this->Prg->commonProcess(null, array(
+		'paramType' => 'querystring'
+		));
+	$this->Paginator->settings = array(
+		'Property' => array(
+			'paramType' => 'querystring',
+			'conditions' => $this->Property->parseCriteria(
+				$this->Prg->parsedParams()
+				)
+			)
+		);
+	$areas = $this->Property->Area->find('list',array(
+		'order'=>array('Area.value'=>"asc"),
+		'conditions'=>array('Area.online'=>1)));
+	$states = $this->Property->State->find('list');
+	$statuses = $this->Property->Status->find('list');
+	$types = $this->Property->Type->find('list');
+	$this->set(compact('areas','states','types','statuses'));
+	$this->set('properties', $this->Paginator->paginate(
+		array("Property.online"=>1,"Status.value LIKE"=>'ForSale')
+		)
+	);
+}
+/**
 * view
 **/
 	public function view($id = null){

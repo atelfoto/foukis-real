@@ -1,26 +1,26 @@
 <footer  id="footer">
 <ul class="stretch">
 	<li class='stretch-container'>
-	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'index')); ?>">
+	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'buy')); ?>">
 		<div class='stretch-offset'>
 	<span class="icon-home-1" ></span>
-	<p><?php echo __('residential'); ?></p>
+	<p><?php echo __('buy'); ?></p>
 		</div>
 	</a>
 	</li>
 	<li class='stretch-container'>
-	<a href="">
+	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'rent')); ?>">
 		<div class='stretch-offset'>
 		<span class="icon-building-filled" aria-hidden="true"></span>
-		<p><?php echo __('land') ?></p>
+		<p><?php echo __('rent') ?></p>
 		</div>
 	</a>
 	</li>
 	<li class='stretch-container'>
-	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'index')); ?>">
+	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'offerings')); ?>">
 		<div class='stretch-offset'>
 		<span class="icon-money" aria-hidden="true"></span>
-		<p><?php echo __('business premises') ?></p>
+		<p><?php echo __('offerings') ?></p>
 		</div>
 	</a>
 	</li>

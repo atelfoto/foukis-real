@@ -1,5 +1,6 @@
 <?php  echo $this->assign('title', __('I search a property to be bought')); ?>
- <?php  $this->Html->addCrumb(__('Properties')); ?>
+ <?php   $this->Html->addCrumb(__('properties'),array('controller'=>"properties",'action'=>'index')); ?>
+ <?php   $this->Html->addCrumb(__('buy')); ?>
 <div class="index content properties">
 	<?php
     echo $this->Form->create(false, array(
@@ -27,8 +28,6 @@
   <?php
 
     echo '<div class="button text-right">';
-	// echo  $this->Form->input("Property.status_id", array(
-	// 'value'=>'ForSale','after'=>false,'required'=>false,"style"=>"display:none","label"=>array("style"=>"display:none")	));
     echo $this->Form->button(__('search'),array('class'=>"btn btn-primary"));
     echo "</div>";
     echo $this->Form->end();

@@ -3,32 +3,32 @@
 	// @include sticky-footer(205px, "#site-container", "#container_footer", "#footer");
 @include layout($desktop);
 h1.title{
- 	padding-left: 50px;//@include container;//position: absolute;
- 	width: 100%;
- 	text-transform: capitalize;
- 	font-family: $typo-header;
- 	font-style: italic;
- 	font-weight: bold;
- 	letter-spacing:-2px;
- 	line-height: -10px;  	//line-height:1em;  	//text-shadow:0 3px 3px #000;
- 	@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
-  	float: left;  	//margin-top: 0.5em;  	//margin-bottom: 0.5em;
-  	span{
-  		top: 30px;
-  		color:#00f;
-  		font-size:4em;
-  		line-height: .2em;
+	padding-left: 50px;//@include container;//position: absolute;
+	width: 100%;
+	text-transform: capitalize;
+	font-family: $typo-header;
+	font-style: italic;
+	font-weight: bold;
+	letter-spacing:-2px;
+	line-height: -10px;  	//line-height:1em;  	//text-shadow:0 3px 3px #000;
+	@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
+		float: left;  	//margin-top: 0.5em;  	//margin-bottom: 0.5em;
+		span{
+			top: 30px;
+			color:#00f;
+			font-size:4em;
+			line-height: .2em;
 
-  	}
-  	small{
-  		position: relative;
-  		display: inline-block;
-  		z-index: 0;
-  		left: 10px;
-  		top: -50px;
-  		color: #fff;
-  		font-size: 3em;	//@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
-  	}
+		}
+		small{
+			position: relative;
+			display: inline-block;
+			z-index: 0;
+			left: 10px;
+			top: -50px;
+			color: #fff;
+			font-size: 3em;	//@include text-shadow(rgba(black, 0.2) 1px 1px 0, rgba(black, 0.2) 2px 2px 0, rgba(black, 0.2) 3px 3px 0);
+		}
 }
 
 h2.title{
@@ -41,20 +41,20 @@ h2.title{
 	box-shadow: #fff 0 0 50px, #fff 0 0 30px 10px inset;
 }
  .content{
-  	background: $bg-color;
-  	//background: #fff;
-  	height: 100%;
-  	//color:#fff;
-  	color:#000;
-  	margin-top:0;
-  	padding-top: 10px;
-  	padding-bottom: 50px;
-  	@include span(4 of 4);
-  	border-left: 2px solid #31708f;
+		background: $bg-color;
+		//background: #fff;
+		height: 100%;
+		//color:#fff;
+		color:#000;
+		margin-top:0;
+		padding-top: 10px;
+		padding-bottom: 50px;
+		@include span(4 of 4);
+		border-left: 2px solid #31708f;
 		border-right: 2px solid #31708f;
 		box-shadow: #fff 0 0 50px, #fff 0 0 30px 10px inset;
 		position: relative;
-  }
+	}
 .content.post{
 	ul li{
 			list-style-type: disc;
@@ -76,134 +76,148 @@ h2.title{
 		}
 	}
 }
-  .properties{
-  	background-color: #ddd;
-  	border-bottom: 2px solid black;
-  	@include box-shadow(0px 29px 25px -9px #656565);
-  	z-index: 50;
-  	form{
-  		div.button.text-right{
-  			margin-right: 20px;
-  			margin-top: 20px;
-  		}
-  	}
-  }
+	.properties{
+		background-color: #ddd;
+		border-bottom: 2px solid black;
+		@include box-shadow(0px 29px 25px -9px #656565);
+		z-index: 50;
+		form{
+			div.button.text-right{
+				margin-right: 20px;
+				margin-top: 20px;
+			}
+		}
+	}
 
  .properties-body{
-  	// @include column-count(3);
-  	@include columns(3 auto);
-  	@include column-gap(1.5em);
-  	@include column-rule(1px, solid, black);
-  	//  columns: 3 auto;
-    // column-width: auto;
-    // column-count: 3;
-    // -moz-columns: 3 auto;
-    	// column-gap: 1.5em;
+		// @include column-count(3);
+		@include columns(3 auto);
+		@include column-gap(1.5em);
+		@include column-rule(1px, solid, black);
+		//  columns: 3 auto;
+		// column-width: auto;
+		// column-count: 3;
+		// -moz-columns: 3 auto;
+			// column-gap: 1.5em;
 
-  }
+	}
 
-  .content {
-  	ul.tri{
-  		display:flex;
-  		margin-bottom: 20px;
-  		margin-top: 20px;
-  	}
-  	ul.tri > li:first-child{
-  			text-transform: capitalize;
-  			font-weight: bold;
-  		}
-  	.box-thumbnail{
-  		@include span(1 of 4);
-  		padding-left: 0px;
-  		padding-right: 0px;
-  		position: relative;
-  		.thumbnail{
-  			border: 2px #000 solid;
-  			@include border-radius(4px);
-  			margin-right: 10px;
-  			margin-bottom: 10px;
-  			box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
-  			position: relative;
-  			padding-bottom: 5px;
-  			h4{
-  				padding-left: 4px;
-  				padding-top: 3px;
-  				text-align: center;
-  				&.area{
-  					text-align: left;
-  					font-weight: bold;
-  				}
-  			}
-  			figure{
-  				margin-top: 10px;
-  				margin-left: 5px;
-  				margin-right: 5px;
-  				// border: 2px #000 solid;
-  				@include border-radius(6px);
-  				// box-shadow: rgba(50,50,50, 0.75)  3px -5px 5px 0px inset;
-  				position: relative;
-  				z-index: 10;
-  				img{
-  				//	border: 1px #000 solid;
-  				//	@include border-radius(4px);
-  					display: inline-block;
-  					z-index: 1!important;
-  					position: relative;
-  					width: 98%;
-  					left: 3px;
-  					top:3px;
-  					max-height: 125px;
-  					@include border-radius(6px);
-					  border-top: 3px solid #444444;
+	.content {
+		ul.tri{
+			display:flex;
+			margin-bottom: 20px;
+			margin-top: 20px;
+		}
+		ul.tri > li:first-child{
+				text-transform: capitalize;
+				font-weight: bold;
+			}
+		.box-thumbnail{
+			@include span(1 of 4);
+			padding-left: 0px;
+			padding-right: 0px;
+			position: relative;
+			.thumbnail{
+				border: 2px #000 solid;
+				@include border-radius(4px);
+				margin-right: 10px;
+				margin-bottom: 10px;
+				box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
+				position: relative;
+				padding-bottom: 5px;
+				max-height: 241.5px;
+				h4{
+					padding-left: 4px;
+					padding-top: 3px;
+					text-align: center;
+					&.area{
+						text-align: left;
+						font-weight: bold;
+					}
+				}
+				figure{
+					margin-top: 10px;
+					margin-left: 5px;
+					margin-right: 5px;
+					// border: 2px #000 solid;
+					@include border-radius(6px);
+					// box-shadow: rgba(50,50,50, 0.75)  3px -5px 5px 0px inset;
+					position: relative;
+					z-index: 10;
+					img{
+					//	border: 1px #000 solid;
+					//	@include border-radius(4px);
+						display: inline-block;
+						z-index: 1!important;
+						position: relative;
+						width: 98%;
+						left: 3px;
+						top:3px;
+						max-height: 125px;
+						@include border-radius(6px);
+						border-top: 3px solid #444444;
 						border-right: 3px solid #CCCCCC;
 						border-bottom: 3px solid #CCCCCC;
 						border-left: 3px solid #444444;
-  					// inset 3px -5px 5px 0px rgba(50, 50, 50, 0.75);
-  				//	 box-shadow: rgba(50,50,50, 0.75)  3px -5px 5px 0px inset;
-  					// box-shadow: rgba(0,0,0,0.5) 0 0 10px 5px;
-  					//box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
-  				}
-  			}
+						// inset 3px -5px 5px 0px rgba(50, 50, 50, 0.75);
+					//	 box-shadow: rgba(50,50,50, 0.75)  3px -5px 5px 0px inset;
+						// box-shadow: rgba(0,0,0,0.5) 0 0 10px 5px;
+						//box-shadow: rgba(0,0,0,0.5) 5px 5px 10px;
+					}
+					figcaption{
+						margin-top: -30px;
+						margin-left: 10px;
+						position: relative;
+						z-index: 51;
+						color: #fff;
+							span.icon-camera{
+								background-color: rgba(0,0,0, 0.5);
+								padding-left: 5px;
+								padding-right: 5px;
+								@include border-radius(6px);
+							}
 
-  			.caption-left{
-  				@include span(2 of 3);
-  				margin-right: 0px;
-  				padding-left: 5px;
-  				padding-right: 1px;
-  				p{
-  					line-height: 20px;
-  				}
-  			}
-  			.caption-right{
-  				@include span(1 of 3);
-  			  margin: 0;
-  			  padding: 0 3px 0;
-  			  float: none;
-  			  //padding-right: 3px;
-  			  /* float: right; */
-  			  display: inline-block;
-  			  text-align: center;
-  			  p{
-  			  	line-height: 20px;
-  			  }
-  			}
-  		}
-  	}
-  }
+					}
+				}
+
+				.caption-left{
+					@include span(2 of 3);
+					margin-right: 0px;
+					padding-left: 5px;
+					padding-right: 1px;
+					p{
+						line-height: 20px;
+					}
+				}
+				.caption-right{
+					@include span(1 of 3);
+					margin: 0;
+					padding: 0 3px 0;
+					float: none;
+					//padding-right: 3px;
+					/* float: right; */
+					display: inline-block;
+					text-align: center;
+					p{
+						line-height: 20px;
+					}
+				}
+			}
+		}
+	}
  .paginations{
- 	text-align: center;
- 	@include span(4 of 4);
+	text-align: center;
+	@include span(4 of 4);
  }
 
  .pagination li:hover span.disabled {
 	 color: $pagination-disabled-color;
-      background-color: $pagination-disabled-bg;
-      border-color: $pagination-disabled-border;
-      cursor: $cursor-disabled !important;
+			background-color: $pagination-disabled-bg;
+			border-color: $pagination-disabled-border;
+			cursor: $cursor-disabled !important;
 }
 
 .properties-view {
-
 	p {
 		margin-bottom: 20px;
 		text-transform: lowercase;
@@ -218,17 +232,28 @@ h2.title{
 		}
 	}
 	div.properties-fichier {
-		text-transform: capitalize;
 		overflow: hidden;
 		@include box-shadow(rgba(0,0,0, 0.4) 0 0 25px, rgba(0,0,0, 0.2) 0 0 3px 1px inset);
 		h3{
 			margin-left: 10px;
 			margin-top: 10px;
-
+			&:first-letter{
+				text-transform: capitalize;
+			}
 		}
 		div{
 			@include span(1 of 3);
 			position: relative;
+  		min-height: 330px;
+			p {
+				line-height: normal;
+				b{
+					display: inline-block;
+					&:first-letter{
+						text-transform: capitalize;
+					}
+				}
+			}
 
 		}
 	}
