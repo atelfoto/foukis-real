@@ -13,61 +13,57 @@
 					<div class="panel-heading">Actions</div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-									<li><?php echo $this->Html->link('<span class="icon-edit"></span>&nbsp;&nbsp;'.__('Edit Type'),
-							 array('action' => 'edit', $type['Type']['id']), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Form->postLink('<span class="icon-cancel"></span>&nbsp;&nbsp;'.__('Delete Type'),
-								 array('action' => 'delete', $type['Type']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $type['Type']['id'])); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Types'),
-								 array('action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Type'),
-								 array('action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Properties'), array('controller' => 'properties', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false)); ?> </li>
-							</ul>
+								<li><?php echo $this->Html->link('<span class="icon-edit"></span>&nbsp;&nbsp;'.__('Edit Type'),
+									array('action' => 'edit', $type['Type']['id']), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Form->postLink('<span class="icon-cancel"></span>&nbsp;&nbsp;'.__('Delete Type'),
+									array('action' => 'delete', $type['Type']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $type['Type']['id'])); ?> </li>
+								<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Types'),
+									array('action' => 'index'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Type'),
+									array('action' => 'add'), array('escape' => false)); ?> </li>
+									<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Properties'), array('controller' => 'properties', 'action' => 'index'), array('escape' => false)); ?> </li>
+									<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false)); ?> </li>
+								</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
 			</div><!-- end actions -->
 		</div><!-- end col md 3 -->
-
 		<div class="col-md-9">
 			<table  class="table table-striped">
 				<tbody>
-				<tr>
-		<th><?php echo __('Id'); ?></th>
-		<td>
-			<?php echo h($type['Type']['id']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Name'); ?></th>
-		<td>
-			<?php echo h($type['Type']['name']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Value'); ?></th>
-		<td>
-			<?php echo h($type['Type']['value']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Online'); ?></th>
-		<td>
-			<?php echo h($type['Type']['online']); ?>
-			&nbsp;
-		</td>
-</tr>
+					<tr>
+						<th><?php echo __('Id'); ?></th>
+						<td>
+							<?php echo h($type['Type']['id']); ?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo __('Name'); ?></th>
+						<td>
+							<?php echo h($type['Type']['name']); ?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo __('Value'); ?></th>
+						<td>
+							<?php echo h($type['Type']['value']); ?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo __('Online'); ?></th>
+						<td>
+							<?php echo h($type['Type']['online']); ?>
+							&nbsp;
+						</td>
+					</tr>
 				</tbody>
 			</table>
-
 		</div><!-- end col md 9 -->
-
 	</div>
 </div>
-
 <div class="related row">
 	<div class="col-md-12">
 	<h3><?php echo __('Related Properties'); ?></h3>

@@ -19,6 +19,7 @@
 						<th><?php echo $this->Paginator->sort('id'); ?></th>
 						<th><?php echo $this->Paginator->sort('name'); ?></th>
 						<th><?php echo $this->Paginator->sort('value'); ?></th>
+						<th><?php echo $this->Paginator->sort('property_count',__('count')); ?></th>
 						<th><?php echo $this->Paginator->sort('online'); ?></th>
 					<th colspan="3" class="actions"></th>
 					</tr>
@@ -29,6 +30,7 @@
 						<td><?php echo h($area['Area']['id']); ?>&nbsp;</td>
 						<td><?php echo h($area['Area']['name']); ?>&nbsp;</td>
 						<td><?php echo h($area['Area']['value']); ?>&nbsp;</td>
+						<td><span class="badge"><?php echo h($area['Area']['property_count']); ?></span>&nbsp;</td>
 						<td><?php if($area['Area'][ 'online' ] == 0) {
 						echo $this->Html->link('<span class="label label-danger">'.__('Offline').'</span>',
 						array('action'=>'enable', $area['Area']['id']),
@@ -42,6 +44,8 @@
 					}
 					?>
 						</td>
+						<!-- <td> <?php // echo $this->Html->link($area['Area']['id'], array('controller' => 'properties',
+						// 'action' => 'view', $area['Area']['Property']['id'] )); ?></td> -->
 						<td class="actions">
 							<?php echo $this->Html->link('<span class="icon-eye"></span>',
 					 array('action' => 'view', $area['Area']['id']),

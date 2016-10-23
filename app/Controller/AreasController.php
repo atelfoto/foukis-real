@@ -10,6 +10,8 @@ App::uses('AppController', 'Controller');
  */
 class AreasController extends AppController {
 
+//	public $name = "Property.online";
+
 /**
  * Components
  *
@@ -18,14 +20,96 @@ class AreasController extends AppController {
 	public $components = array('Paginator', 'Flash', 'Session');
 
 /**
+* index
+**/
+	public function index(){
+
+		$this->Area->recursive = 1;
+		$this->paginate = array('Area'=>array(
+			'limit'=>50
+			)
+		);
+		 $properties = $this->Area->Property->find('list',array(
+		 	'conditions'=>array("Property.online"=>1)));
+		 // $d['property']= $properties;
+		 //  $this->set($d);
+		 // debug($d);
+		 // die();
+		// debug($properties);
+		 $this->set(compact('properties'));
+		// $this->set('properties',$this->Paginator->paginate(
+		// 	array("Property.online"=>1)));
+		$areas = $this->Area->find('list');
+		//debug($areas);die();
+		$this->set('areas', $this->Paginator->paginate(
+			array("Area.online"=>1)));
+		$this->loadModel('Type');
+		// $types = $this->Area->Type->find('list',array(
+		// 	'conditions'=>array("Type.online"=>1)));
+		// $this->set('types',$this->Paginator->paginate(
+		// 	array('Type.online'=>1)));
+
+	}
+/**
+ * [admin_view description]
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
+	public function view($id = null) {
+		//$this->Area->recursive = 0;
+		if (!$this->Area->exists($id)) {
+			throw new NotFoundException(__('Invalid area'));
+		}
+		$this->loadModel('Characteristic');
+		$characteristics = $this->Characteristic->find('list');
+		$this->set(compact('characteristics'));
+		$this->paginate = array('Property'=>array(
+			"limit"=>1,
+			//'conditions'=>array("Area.online"=>1),
+			'order'=>array(
+				'Property.id'=>'asc')
+			));
+		$d["property"] = $this->Paginate();
+		$this->set($d );
+		$options = array('conditions' => array('Area.' . $this->Area->primaryKey => $id));
+		$this->set('area', $this->Area->find('first', $options));
+
+	}
+// public function view($id=null){
+// 		if(!$id){
+// 			throw new NotFoundException(__('No pages were found for this ID') ,array('class'=>'danger','type'=>'sign'));
+// 		}
+// 		$area = $this->Area->find('first',array(
+// 			'conditions'=>array('Area.id'=>$id	//'type'=>'post'
+// 				),
+// 			'recursive'=>0
+// 			));
+// 		if(empty($area)){
+// 			throw new NotFoundException(__('No pages were found for this ID') ,array('class'=>'danger','type'=>'sign'));
+// 		}
+// 		if($id != $area['Area']['id']){
+// 			$this->redirect($area['Area']['link'],301);
+// 		}
+// 		$name = $area['Area']['name'];
+// 		$d['area'] = $area;
+// 		$this->set($d);
+// 		$this->set(compact('name'));
+// }
+/**
  * admin_index method
  *
  * @return void
  */
 	public function admin_index() {
-		$this->layout='admin';
 		$this->Area->recursive = 0;
-		$this->set('areas', $this->Paginator->paginate());
+		$this->paginate = array('Area'=>array(
+			"limit"=>20,
+			'order'=>array(
+				'Area.value'=>'asc')
+			));
+		$d["areas"] = $this->Paginate();
+		$this->set($d );
+		//$this->set('areas', $this->Paginator->paginate());
 	}
 
 /**
@@ -39,6 +123,9 @@ class AreasController extends AppController {
 		if (!$this->Area->exists($id)) {
 			throw new NotFoundException(__('Invalid area'));
 		}
+		$this->loadModel('Characteristic');
+		$characteristics = $this->Characteristic->find('list');
+		$this->set(compact('characteristics'));
 		$options = array('conditions' => array('Area.' . $this->Area->primaryKey => $id));
 		$this->set('area', $this->Area->find('first', $options));
 	}
@@ -49,7 +136,6 @@ class AreasController extends AppController {
  * @return void
  */
 	public function admin_add() {
-		$this->layout='admin';
 		if ($this->request->is('post')) {
 			$this->Area->create();
 			if ($this->Area->save($this->request->data)) {

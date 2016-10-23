@@ -163,7 +163,7 @@ class Property extends AppModel {
 			'numeric' => array(
 				'rule' => array('numeric'),
 				'message' => 'Thank you to submit the number of rooms',
-				//'allowEmpty' => false,
+				'allowEmpty' => true,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
@@ -179,16 +179,16 @@ class Property extends AppModel {
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
 		),
-		'level' => array(
-			'numeric' => array(
-				'rule' => array('numeric'),
-				'message' => 'This field must be numeric',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
+		// 'level' => array(
+		// 	'numeric' => array(
+		// 		'rule' => array('numeric'),
+		// 		'message' => 'This field must be numeric',
+		// 		//'allowEmpty' => false,
+		// 		//'required' => false,
+		// 		//'last' => false, // Stop validation after this rule
+		// 		//'on' => 'create', // Limit validation to 'create' or 'update' operations
+		// 	),
+		// ),
 		'price' => array(
 			// 'numeric' => array(
 			// 	'rule' => array('numeric'),
@@ -236,21 +236,28 @@ class Property extends AppModel {
 			'foreignKey' => 'area_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			// 'counterCache'=>true,
+			// 'counterScope' => array(
+   //              'Property.online' => 1
+   //          )
+			'counterCache'=>array('property_count'=>array('Property.online'=>1))
 		),
 		'Status' => array(
 			'className' => 'Status',
 			'foreignKey' => 'status_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'counterCache'=>array('property_count'=>array('Property.online'=>1))
 		),
 		'Type' => array(
 			'className' => 'Type',
 			'foreignKey' => 'type_id',
 			'conditions' => '',
 			'fields' => '',
-			'order' => ''
+			'order' => '',
+			'counterCache'=>array('property_count'=>array('Property.online'=>1))
 		),
 		// 'Media' => array(
 		// 	'className' => 'Media',

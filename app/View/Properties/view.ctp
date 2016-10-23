@@ -19,13 +19,18 @@ $this->Html->addCrumb(__('Properties'),array("controller"=>"properties","action"
 $this->Html->addCrumb( $property['Property']['name'],$property['Property']['id']);
   ?>
 	<div class=" page-content content properties-view">
-		<p class="properties-title"> <?php echo $property['Type']['name'] ?> <?php echo ($property['Property']['bedrooms']==0) ? " " :  "-".  __('number of rooms')." :  ".h($property['Property']['bedrooms']) ; ?>-
-		<?php echo $property['Status']['name'] ?>-
-		<?php echo $this->Number->format($property['Property']['size'],
-		array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> - <?php echo $property['Area']['name'] ?> -
-		<?php echo $property['State']['value'] ?>
-		<span class="price" style="float:right;"><?php echo  $this->Number->currency($property['Property']['price'],' €',
-		  					 array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?></span>
+		<p class="properties-title">
+			<?php echo $this->Html->link($property['Type']['name'], array('controller' => 'types', 'action' => 'view',$property['Type']['id'])); ?> /
+			<?php echo ($property['Property']['bedrooms']==0) ? " " :  "".  __('number of rooms')." :  ".h($property['Property']['bedrooms']) ; ?> /
+			<?php echo $this->Html->link($property['Status']['name'], array('controller' => 'statuses', 'action' => 'view',$property['Status']['id'])); ?> /
+			<?php echo $this->Number->format($property['Property']['size'],
+			array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?> /
+			<?php echo $this->Html->link($property['Area']['name'], array('controller' => 'areas', 'action' => 'view',$property['Area']['id'])); ?> /
+			<?php echo $this->Html->link($property['State']['name'], array('controller' => 'states', 'action' => 'view',$property['State']['id'])); ?> /
+			<span class="price" style="float:right;">
+				<?php echo  $this->Number->currency($property['Property']['price'],' €',
+				array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?>
+		  	</span>
 		 </p>
 			<?php if ($property['Property']['mediaQuantities'] > 0): ?>
 				<div id="slider" class="flexslider">

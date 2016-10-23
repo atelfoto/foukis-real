@@ -51,7 +51,6 @@ public function index(){
 * view
 **/
 public function view($slug=null){
-	$this->layout = "home";
 		if(!$slug){
 			throw new NotFoundException(__('No pages were found for this ID') ,array('class'=>'danger','type'=>'sign'));
 		}

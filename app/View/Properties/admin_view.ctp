@@ -1,3 +1,5 @@
+ <?php $this->Html->addCrumb(__('property'),array('controller'=>'properties','action'=>'index','admin'=>true)); ?>
+ <?php $this->Html->addCrumb($property['Property']['id']); ?>
 <div class="properties view">
 	<div class="row">
 		<div class="col-md-12">
@@ -76,13 +78,6 @@
 						</td>
 					</tr>
 					<tr>
-						<th><?php echo __('Id2'); ?></th>
-						<td>
-							<?php echo h($property['Property']['id2']); ?>
-							&nbsp;
-						</td>
-					</tr>
-					<tr>
 						<th><?php echo __('Name'); ?></th>
 						<td>
 							<?php echo h($property['Property']['name']); ?>
@@ -122,6 +117,16 @@
 						<td>
 							<?php echo $this->Html->link($property['Type']['name'], array('controller' => 'types', 'action' => 'view', $property['Type']['id'])); ?>
 							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo __('Characteristic') ?></th>
+						<td>
+						<?php if (!empty($property['Characteristic'])): ?>
+							<?php foreach ($property['Characteristic'] as $characteristic): ?>
+								<?php echo $this->Html->link($characteristic['value'], array('controller' => 'characteristics', 'action' => 'view', $characteristic['id']), array('escape' => false)); ?> <?php echo " - " ?>
+							<?php endforeach ?>
+						<?php endif; ?>
 						</td>
 					</tr>
 					<tr>

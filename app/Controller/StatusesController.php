@@ -17,6 +17,21 @@ class StatusesController extends AppController {
  */
 	public $components = array('Paginator', 'Flash', 'Session');
 
+	/**
+ * admin_view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		if (!$this->Status->exists($id)) {
+			throw new NotFoundException(__('Invalid status'));
+		}
+		$options = array('conditions' => array('Status.' . $this->Status->primaryKey => $id));
+		$this->set('status', $this->Status->find('first', $options));
+	}
+
 /**
  * admin_index method
  *

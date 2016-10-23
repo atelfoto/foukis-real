@@ -1,26 +1,39 @@
-<?php echo $this->Html->meta(array('name' => 'robots', 'content' =>$state['State']['robots']),NULL,array("inline"=>false)); ?>
-<?php  $this->Html->meta('description', $this->Text->truncate($state['State']['description'], 300, array("exact"=>false)),array('inline' => false)); ?>
-<?php echo $this->Html->meta(array('property' => 'og:type', 'type' => 'meta', 'content' => "article" ),NULL,array("inline"=>false)); ?>
-<?php echo $this->Html->meta(array('property' => 'og:title', 'type' => 'meta', 'content' => $state['State']['name']),NULL,array("inline"=>false)); ?>
-<?php echo $this->Html->meta(array('property' => 'og:url', 'type' => 'meta', 'content' =>
-"http://".env('HTTP_HOST')."/state/".$state['State']['slug'] ),NULL,array("inline"=>false));  ;?>
-<?php echo $this->Html->meta(array('property' => 'og:description', 'type' => 'meta', 'content' =>
-	$this->Text->truncate($state['State']['description'], 200, array("exact"=>false))),NULL,array("inline"=>false));  ;?>
-<?php echo $this->Html->meta(array('name'=>'twitter:card','content'=>"summary"),NULL,array('inline'=>false));  ;?>
-<?php echo $this->Html->meta(array('name'=>'twitter:title','content'=>"château de chazeron ".$state['State']['name']),NULL,array('inline'=>false));  ;?>
-<?php echo $this->Html->meta(array('name'=>'twitter:url','content'=>"http://".env('HTTP_HOST')."/state/".$state['State']['slug']),NULL,array('inline'=>false)); ?>
-<?php echo $this->Html->meta(array('name' => 'twitter:description','content'=>
-$this->Text->truncate($state['State']['description'], 160, array("exact"=>false))
-),NULL,array("inline"=>false)); ;?>
-<?php  echo $this->Html->meta(array('name'=>'twitter:image','content'=>"http://".env('HTTP_HOST')."/img/summary.jpg"),NULL,array('inline'=>false));?>
-
-<?php $this->assign('title',$state['State']['name']);
-$this->Html->addCrumb(__('State'),array("controller"=>"states","action"=>"index"));
-$this->Html->addCrumb( $state['State']['name']);  ?>
-<div class="container container-">
-	<div class=" page-content">
-		<h2> <?php echo $state['State']['name'] ?></h2>
-		 <?php echo $state['State']['content'] ?>
-	</div>
-	<hr class="style-two">
-</div>
+<?php  echo $this->assign('title', h($state['State']['name'])); ?>
+ <?php   $this->Html->addCrumb(__('properties'),array('controller'=>"properties",'action'=>'index')); ?>
+ <?php   $this->Html->addCrumb(__('states'),array('controller'=>"states",'action'=>'index')); ?>
+ <?php   $this->Html->addCrumb(h($state['State']['name'])); ?>
+ <div class="index content thumbslist">
+ 	<hr class="hr">
+ 	<?php if (!empty($state['Property'])): ?>
+		<?php foreach ($state['Property'] as $property): ?>
+			<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'view', $property['id'])); ?>">
+				<figure class="media-left" style="min-height: 128px;">
+					<?php if ($property['mediaQuantities'] > 0): ?>
+						<?php  echo  $this->Html->image("properties/".$property['id']."/thumbs/".$property['id']."-01.jpg",
+						$options = array("class"=>"img-thumbnail","width"=>"192" , "height"=>"128")); ?>
+						<figcaption>
+							<span class="icon-camera">&nbsp;<?php echo h($property['mediaQuantities']); ?></span>
+						</figcaption>
+					<?php else: ?>
+						<?php echo  $this->Html->image('properties/fond_thumb.jpg', $options = array("class"=>"img-thumbnail","width"=>"192" , "height"=>"128")); ?>
+						<figcaption>
+							<span></span>
+						</figcaption>
+					<?php endif ?>
+				</figure>
+				<div class="media-body" style="min-height: 128px;">
+					<h4><?php echo $property['name'] ?></h4>
+					<?php echo ($property['bedrooms']==0) ? " " : __('bedrooms').' '. h($property['bedrooms']) ; ?>
+					<?php echo $this->Number->format($property['size'],
+					array('before'=>false,'places' => 2,'after' => ' m²','escape' => false,'decimals' => '.','thousands' => ',')); ?>
+					<?php echo (empty($property["level"])) ? " " : __('level').' '.h($property['level']); ?>
+					<br>
+					<?php echo $this->Text->truncate(ltrim(strip_tags($property['content'])), 200, array("exact"=>false)); ?> <br>
+					<?php echo  $this->Number->currency($property['price'],' €',
+					array('wholePosition'=>"after",'thousands'=>'.',"decimals"=>','));?>
+				</div>
+			</a>
+			<hr class="hr">
+		<?php endforeach; ?>
+	<?php endif; ?>
+ </div>

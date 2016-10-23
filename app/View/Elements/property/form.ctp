@@ -6,7 +6,7 @@
 	'empty'=>__('all the states'),"label"=>array('text'=>__('states'),"class"=>'control-label')
 	));
 	echo  $this->Form->input(ltrim("Property.type_id"), array(
-	'empty'=>__('what'),"label"=>array('text'=>__('what ?'),"class"=>'control-label')
+	'empty'=>__('what type'),"label"=>array('text'=>__('what ?'),"class"=>'control-label')
 	));
 	echo  $this->Form->input("Property.price", array(
 	'placeholder'=>__('price maxi'),"label"=>array('text'=>__('price maxi'),"class"=>'control-label')));

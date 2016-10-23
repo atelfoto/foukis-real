@@ -16,7 +16,20 @@ class StatesController extends AppController {
  * @var array
  */
 	public $components = array('Paginator', 'Flash', 'Session');
-
+/**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		if (!$this->State->exists($id)) {
+			throw new NotFoundException(__('Invalid state'));
+		}
+		$options = array('conditions' => array('State.' . $this->State->primaryKey => $id));
+		$this->set('state', $this->State->find('first', $options));
+	}
 /**
  * admin_index method
  *

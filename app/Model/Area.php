@@ -6,7 +6,21 @@ App::uses('AppModel', 'Model');
  * @property Property $Property
  */
 class Area extends AppModel {
-	public $actsAs = array('Containable');
+
+	/**
+ * [$actsAs description]
+ * @var array
+ */
+	public $actsAs = array(
+		'Sluggable.Sluggable' => array(
+	        'field'     => 'name',  // Field that will be slugged
+	        'slug'      => 'slug',  // Field that will be used for the slug
+	        'lowercase' => true,    // Do we lowercase the slug ?
+	        'separator' => '-',     //
+	        'overwrite' => false    // Does the slug is auto generated when field is saved no matter what
+		),
+		'Containable'
+	);
 
 /**
  * Display field
@@ -33,6 +47,7 @@ class Area extends AppModel {
 		),
 	);
 
+
 	// The Associations below have been created with all possible keys, those that are not needed can be removed
 
 /**
@@ -44,8 +59,8 @@ class Area extends AppModel {
 		'Property' => array(
 			'className' => 'Property',
 			'foreignKey' => 'area_id',
-			'dependent' => false,
-			'conditions' => '',
+			'dependent' => true,
+			'conditions' => array('Property.online' => 1),
 			'fields' => '',
 			'order' => '',
 			'limit' => '',
@@ -55,5 +70,6 @@ class Area extends AppModel {
 			'counterQuery' => ''
 		)
 	);
+
 
 }

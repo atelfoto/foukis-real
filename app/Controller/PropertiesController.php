@@ -19,6 +19,12 @@ class PropertiesController extends AppController {
  */
 	public $components = array( 'Flash','Session','RequestHandler',"Qimage","Search.Prg","Paginator");
 
+	 // public $paginate = array(
+  //       'order' => array(
+  //           'Property.area_id' => 'asc'
+  //       )
+  //   );
+
 	public function offerings(){
 		$this->layout='home';
 		$types = $this->Property->Type->find('list');
@@ -27,9 +33,9 @@ class PropertiesController extends AppController {
 	}
 
 /**
-* index
-**/
-
+ * [index description]
+ * @return [type] [description]
+ */
 public function index() {
 	$this->Property->recursive = 0;
 	$this->Prg->commonProcess(null, array(
@@ -43,16 +49,48 @@ public function index() {
 				)
 			)
 		);
-	$areas = $this->Property->Area->find('list');
+	// $properties = $this->Property->find('list',array(
+	// 	'order'=>array("Property.price"=>"asc"),
+	// 	'conditions'=>array("Property.online"=>1)));
+	$areas = $this->Property->Area->find('list',array(
+		'order'=>array('Area.value'=>"asc"),
+		"conditions"=>array('Area.online'=>1)));
 	$states = $this->Property->State->find('list');
 	$statuses = $this->Property->Status->find('list');
 	$types = $this->Property->Type->find('list');
 	$this->set(compact('areas','states','types','statuses'));
+	// $this->paginate = array('Property'=>array(
+	// 		//"limit"=>22,
+	// 		'conditions'=>array("Property.online"=>1),
+	// 		'order'=>array(
+	// 			'Property.area_id'=>'asc')
+	// 		));
+	// 	$d["properties"] = $this->Paginate();
+	// 	$this->set($d );
 	$this->set('properties', $this->Paginator->paginate(
-		array("Property.online"=>1)
+		array("Property.online"=>1),
+		array("order"=>array('Property.price'=>"asc"))
 		)
 	);
 }
+/**
+ * [area description]
+ * @return [type] [description]
+ */
+	public function area(){
+		// $this->Property->recursive = 0;
+		// $areas = $this->Property->Area->find('list');
+		// $this->set('area');
+		$this->Property->recursive = 0;
+		$this->paginate = array('Property'=>array(
+			"limit"=>22,
+			'order'=>array(
+				'Property.area_id'=>'asc')
+			));
+		$d["properties"] = $this->Paginate();
+		$this->set($d );
+	}
+
 /**
  * [rent description]
  * @return [type] [description]
@@ -112,8 +150,10 @@ public function buy() {
 	);
 }
 /**
-* view
-**/
+ * [view description]
+ * @param  [type] $id [description]
+ * @return [type]     [description]
+ */
 	public function view($id = null){
 		if(!$id){
 			throw new NotFoundException('Aucune page ne correspond à cet ID');
@@ -148,7 +188,7 @@ public function buy() {
 			"limit"=>22,
 			'order'=>array(
 				//'Property.created'=>'desc')
-				'Property.id'=>'asc')
+				'Property.area_id'=>'asc')
 			));
 		$d["properties"] = $this->Paginate();
 		$this->set($d );
@@ -256,15 +296,15 @@ public function buy() {
 				list($width, $height) =  getimagesize($dir.'/'.$imageName);
 				if ($width > $height) {
 					$this->Qimage->resize(array(
-						'height' => 200,
-						'width' => 300,
+						'height' => 133,
+						'width' => 200,
 						'file' =>  $dir.'/'.$imageName,'output' => $dirThumbs
 						)
 					);
 				}else{
 					$this->Qimage->resize(array(
-						'height' => 200,
-						'width' => 133,
+						'height' => 133,
+						'width' => 88,
 						'file' =>  $dir.'/'.$imageName,
 						'output' => $dirThumbs
 						)

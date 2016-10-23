@@ -47,6 +47,7 @@
 							 'placeholder' => __('Name'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-name"></i></div>'
 							 ));?>
+					<?php echo  $this->Form->input('slug', array("type"=>"hidden")); ?>
 					<?php echo $this->Form->input('value', array('class' => 'form-control',
 							 'placeholder' => __('Value'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-value"></i></div>'

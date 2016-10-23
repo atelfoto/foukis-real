@@ -17,10 +17,10 @@
 	</a>
 	</li>
 	<li class='stretch-container'>
-	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'offerings')); ?>">
+	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'index')); ?>">
 		<div class='stretch-offset'>
 		<span class="icon-money" aria-hidden="true"></span>
-		<p><?php echo __('offerings') ?></p>
+		<p><?php echo __('all') ?></p>
 		</div>
 	</a>
 	</li>
@@ -33,10 +33,10 @@
 	</a>
 	</li>
 	<li class='stretch-container'>
-	<a href="">
+	<a href="<?php echo $this->Html->url(array('controller' => 'properties', 'action' => 'offerings')); ?>">
 		<div class='stretch-offset'>
 		<span class="icon-money" aria-hidden="true"></span>
-		<p><?php echo __('property') ?></p>
+		<p><?php echo __('offerings') ?></p>
 		</div>
 	</a>
 	</li>

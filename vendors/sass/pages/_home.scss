@@ -230,6 +230,16 @@ h2.title{
 			color: #00f;
 			font-weight: bold;
 		}
+		a{
+			color: #00f;
+			text-decoration: underline;
+			&:fist-letter{
+				text-transform: capitalize;
+			}
+		}
+		a:hover{
+			color: rgba(0,0,255, 0.5)
+		}
 	}
 	div.properties-fichier {
 		overflow: hidden;
@@ -258,7 +268,10 @@ h2.title{
 		}
 	}
 }
-
+ul.list-area{
+	  columns: 4 auto;
+    column-gap: 1.5em;
+}
 %stretched {
 		//border: 3px solid $stretch-color;
 		@include border-radius(8px);

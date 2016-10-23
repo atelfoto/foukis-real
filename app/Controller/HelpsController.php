@@ -24,7 +24,13 @@ class HelpsController extends AppController {
  */
 	public function admin_index() {
 		$this->Help->recursive = 0;
-		$this->set('helps', $this->Paginator->paginate());
+		$this->paginate = array('Help'=>array(
+			//"limit"=>20,
+			'order'=>array(
+				'Help.name'=>'asc')
+			));
+		$d["helps"] = $this->Paginate();
+		$this->set($d );
 	}
 
 /**

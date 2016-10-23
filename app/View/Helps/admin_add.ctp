@@ -47,26 +47,10 @@
 							 'placeholder' => __('Slug'),
 							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-slug"></i></div>'
 							 ));?>
-					<?php echo $this->Form->input('user_id', array('class' => 'form-control',
-							 'empty' => __('choose'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-user"></i></div>'
-							 ));?>
+					<?php echo $this->Form->input('user_id', array('value' =>$this->Session->read('Auth.User.id'),'type'=>'hidden'));?>
 					<?php echo $this->Form->input('content', array('class' => 'form-control',
 							 'placeholder' => __('Content'),
 							 'after'=>false
-							 ));?>
-					<?php echo $this->Form->input('robots', array('class' => 'form-control',
-							 'placeholder' => __('Robots'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-robots"></i></div>'
-							 ));?>
-					<?php echo $this->Form->input('description', array('class' => 'form-control',
-							 'placeholder' => __('Description'),
-							 'after'=>false
-							 ));?>
-					<p id='compteur' class='text-right'><i>0 mots - 0 Caractere / 250</i></p>
-					<?php echo $this->Form->input('keywords', array('class' => 'form-control',
-							 'placeholder' => __('Keywords'),
-							 'between'=>'<div class="input-group"><div class="input-group-addon"><i class="icon-key"></i></div>'
 							 ));?>
 				</div>
 				<div class="tab-pane fade" role="tabpanel" id="publication">

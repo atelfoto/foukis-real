@@ -19,6 +19,7 @@
 						<th><?php echo $this->Paginator->sort('id'); ?></th>
 						<th><?php echo $this->Paginator->sort('name'); ?></th>
 						<th><?php echo $this->Paginator->sort('value'); ?></th>
+						<th><?php echo $this->Paginator->sort('property_count',__('count')); ?></th>
 						<th>&nbsp;</th>
 					<th colspan="3" class="actions"></th>
 					</tr>
@@ -29,6 +30,7 @@
 						<td><?php echo h($status['Status']['id']); ?>&nbsp;</td>
 						<td><?php echo h($status['Status']['name']); ?>&nbsp;</td>
 						<td><?php echo h($status['Status']['value']); ?>&nbsp;</td>
+						<td><span class="badge"><?php echo h($status['Status']['property_count']); ?></span>&nbsp;</td>
 						<td><?php if($status['Status'][ 'online' ] == 0) {
 						echo $this->Html->link('<span class="label label-danger">'.__('Offline').'</span>',
 						array('action'=>'enable', $status['Status']['id']),
@@ -89,7 +91,7 @@
 			<div class="modal-body">
 				<p> <?php echo __('Are you sure you want to delete'); ?> <b style="color:#f00;">&nbsp;<?php echo $v['name'];?> &nbsp;</b>
 					<?php echo __('of your').' '.__('statuses') ; ?>
-					<span class="label-uname strong"></span> ? 
+					<span class="label-uname strong"></span> ?
 				</p>
 			</div>
 			<div class="modal-footer">

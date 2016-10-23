@@ -28,6 +28,20 @@ class TypesController extends AppController {
 	}
 
 /**
+ * view method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function view($id = null) {
+		if (!$this->Type->exists($id)) {
+			throw new NotFoundException(__('Invalid type'));
+		}
+		$options = array('conditions' => array('Type.' . $this->Type->primaryKey => $id));
+		$this->set('type', $this->Type->find('first', $options));
+	}
+/**
  * admin_view method
  *
  * @throws NotFoundException
@@ -41,7 +55,6 @@ class TypesController extends AppController {
 		$options = array('conditions' => array('Type.' . $this->Type->primaryKey => $id));
 		$this->set('type', $this->Type->find('first', $options));
 	}
-
 /**
  * admin_add method
  *

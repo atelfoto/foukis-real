@@ -17,21 +17,23 @@
     );
     ?>
     <div class="properties-body">
-    <?php
-    echo $this->element('property/form');
-	 echo  $this->Form->input('Property.bedrooms',array(
-	 	"empty"=>"rooms mini",
-	 	"options" => array(0,1,2,3,4,5),
-	 	"label"=>array('text'=>"mini rooms","class"=>"control-label")));
- 	?>
+    	<?php
+    		echo $this->element('property/form');
+	 		echo  $this->Form->input('Property.bedrooms',array(
+	 			"empty"=>"rooms mini",
+	 			"options" => array(0,1,2,3,4,5),
+	 			"label"=>array('text'=>"mini rooms","class"=>"control-label"
+	 				)
+	 			)
+	 		);
+ 		?>
 	</div>
-  <?php
-
-    echo '<div class="button text-right">';
-    echo $this->Form->button(__('search'),array('class'=>"btn btn-primary"));
-    echo "</div>";
-    echo $this->Form->end();
-?>
+  		<?php
+  			echo '<div class="button text-right">';
+  		  	echo $this->Form->button(__('search'),array('class'=>"btn btn-primary"));
+  		  	echo "</div>";
+  		  	echo $this->Form->end();
+  		?>
 </div>
 <?php echo $this->element('property/index') ?>
 

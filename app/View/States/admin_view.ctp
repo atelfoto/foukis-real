@@ -13,61 +13,57 @@
 					<div class="panel-heading">Actions</div>
 						<div class="panel-body">
 							<ul class="nav nav-pills nav-stacked">
-									<li><?php echo $this->Html->link('<span class="icon-edit"></span>&nbsp;&nbsp;'.__('Edit State'),
-							 array('action' => 'edit', $state['State']['id']), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Form->postLink('<span class="icon-cancel"></span>&nbsp;&nbsp;'.__('Delete State'),
-								 array('action' => 'delete', $state['State']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $state['State']['id'])); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List States'),
-								 array('action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New State'),
-								 array('action' => 'add'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Properties'), array('controller' => 'properties', 'action' => 'index'), array('escape' => false)); ?> </li>
-		<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link('<span class="icon-edit"></span>&nbsp;&nbsp;'.__('Edit State'),
+									array('action' => 'edit', $state['State']['id']), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Form->postLink('<span class="icon-cancel"></span>&nbsp;&nbsp;'.__('Delete State'),
+									array('action' => 'delete', $state['State']['id']), array('escape' => false), __('Are you sure you want to delete # %s?', $state['State']['id'])); ?> </li>
+								<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List States'),
+									array('action' => 'index'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New State'),
+									array('action' => 'add'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link('<span class="icon-list"></span>&nbsp;&nbsp;'.__('List Properties'), array('controller' => 'properties', 'action' => 'index'), array('escape' => false)); ?> </li>
+								<li><?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false)); ?> </li>
 							</ul>
 						</div><!-- end body -->
 				</div><!-- end panel -->
 			</div><!-- end actions -->
 		</div><!-- end col md 3 -->
-
 		<div class="col-md-9">
 			<table  class="table table-striped">
 				<tbody>
-				<tr>
-		<th><?php echo __('Id'); ?></th>
-		<td>
-			<?php echo h($state['State']['id']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Name'); ?></th>
-		<td>
-			<?php echo h($state['State']['name']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Value'); ?></th>
-		<td>
-			<?php echo h($state['State']['value']); ?>
-			&nbsp;
-		</td>
-</tr>
-<tr>
-		<th><?php echo __('Online'); ?></th>
-		<td>
-			<?php echo h($state['State']['online']); ?>
-			&nbsp;
-		</td>
-</tr>
+					<tr>
+						<th><?php echo __('Id'); ?></th>
+						<td>
+							<?php echo h($state['State']['id']); ?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo __('Name'); ?></th>
+						<td>
+							<?php echo h($state['State']['name']); ?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo __('Value'); ?></th>
+						<td>
+							<?php echo h($state['State']['value']); ?>
+							&nbsp;
+						</td>
+					</tr>
+					<tr>
+						<th><?php echo __('Online'); ?></th>
+						<td>
+							<?php echo h($state['State']['online']); ?>
+							&nbsp;
+						</td>
+					</tr>
 				</tbody>
 			</table>
-
 		</div><!-- end col md 9 -->
-
 	</div>
 </div>
-
 <div class="related row">
 	<div class="col-md-12">
 	<h3><?php echo __('Related Properties'); ?></h3>
@@ -133,7 +129,6 @@
 	</tbody>
 	</table>
 <?php endif; ?>
-
 	<div class="actions">
 		<?php echo $this->Html->link('<span class="icon-plus"></span>&nbsp;&nbsp;'.__('New Property'), array('controller' => 'properties', 'action' => 'add'), array('escape' => false, 'class' => 'btn btn-default')); ?>	</div>
 	</div><!-- end col md 12 -->
